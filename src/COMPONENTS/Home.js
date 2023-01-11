@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 // 
 import '../STYLESHEETS/Home.css'
 // 
-import { RxHamburgerMenu } from 'react-icons/rx'
+import { RxArrowRight, RxHamburgerMenu } from 'react-icons/rx'
 // 
 import logo from '../PHOTOS/stock.png'
+import img1 from '../PHOTOS/stock2.jpg'
 // 
 import { Link } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
@@ -31,9 +32,10 @@ export default function Home() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+
     }, [])
     return (
-        <div className='main home'>
+        <div className='main'>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>
@@ -42,9 +44,19 @@ export default function Home() {
             </div>
 
             {/* BODY */}
+            <div className="home">
+                <div className='home-left'>
+                    <img id="home-img" src={img1} />
+                </div>
+                <div className='home-right'>
+
+                </div>
+            </div>
 
             {/* FOOTER */}
-            <Footer />
+            <div className='bottom'>
+                <Footer />
+            </div>
         </div>
     )
 }

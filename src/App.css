@@ -72,6 +72,10 @@ body {
   background-color: #F4E04D;
 }
 
+.no-bg {
+  background-color: rgba(0,0,0,0);
+}
+
 .dark {
   color: #0A0A0A;
 }
@@ -88,12 +92,23 @@ body {
 
 .font3 {}
 
+/*  */
+
+.border1 {
+  border: 1px solid #FEFEFE;
+}
+.border2 {
+  border: 1px solid #0a0a0a;
+}
+.no-border {
+  border: 0;
+}
+
 @media only screen and (min-width: 350px) {
   .top {
     padding: 1em;
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
   .top img {
@@ -141,6 +156,6 @@ body {
   }
 
   .top-icon {
-    font-size: 1.6em;
+    font-size: 2em;
   }
 }

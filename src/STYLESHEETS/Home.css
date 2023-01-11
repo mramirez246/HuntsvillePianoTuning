@@ -18,4 +18,15 @@
 
 @media only screen and (min-width: 1000px) {}
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .home {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       position: relative;
+       box-sizing: border-box;
+    }
+    .home img {
+        width: auto;
+        height: 100%;
+    }
+}
