@@ -1,0 +1,102 @@
+@media only screen and (min-width: 350px) {
+    .about {
+        padding: 1em;
+    }
+    .about-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+    .about-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5em;
+        margin-top: 1em;
+    }
+
+    .about-img {
+        background-image: url('../PHOTOS/shop.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 30vh;
+        width: 100%;
+    }
+
+    .about-sub {
+        font-size: 1.8em;
+        letter-spacing: -1px;
+    }
+
+    .about-section p {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .about-section {
+        width: 78vw;
+        margin: 1em auto;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    
+
+    .about-section {
+        width: 65%;
+    }
+
+    .about-sub {
+        width: 100%;
+    }
+
+    .about-section p {
+        width: 100%;
+    }
+
+    .about-img {
+        width: 100%;
+        height: 40vh;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .about-wrap {
+        gap: 2em;
+    }
+
+    .about-section {
+        width: 55vw;
+    }
+
+    .about-sub {
+        font-size: 2em;
+        letter-spacing: -2px;
+    }
+
+    .about-section p {
+        font-size: 1.2em;
+        font-weight: 300;
+
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .about-section {
+        width: 50vw;
+    }
+
+    .about-sub {
+        font-size: 2.5em;
+        letter-spacing: -3px;
+    }
+
+    .about-img {
+        height: 60vh;
+    }
+    .about-section p {
+        font-size: 1.3em;
+        padding: 0.6em 0;
+    }
+}

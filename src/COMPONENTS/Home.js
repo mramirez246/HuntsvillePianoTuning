@@ -5,7 +5,7 @@ import '../STYLESHEETS/Home.css'
 import { RxArrowRight, RxHamburgerMenu } from 'react-icons/rx'
 // 
 import logo from '../PHOTOS/stock.png'
-import img1 from '../PHOTOS/stock2.jpg'
+import img1 from '../PHOTOS/shop.jpg'
 // 
 import { Link } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
@@ -39,17 +39,26 @@ export default function Home() {
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>
-                <img src={logo} />
+                <Link to="/"><img src={logo} /></Link>
                 <RxHamburgerMenu className='top-icon' onClick={openNav} />
             </div>
-
             {/* BODY */}
-            <div className="home">
-                <div className='home-left'>
-                    <img id="home-img" src={img1} />
-                </div>
-                <div className='home-right'>
-
+            <div className="home font1">
+                <div className='home-panel1'>
+                    <div>
+                        <h1>Everything is in a bagel, and a bagel is in everything.</h1>
+                        <div className='home-panel1-img'></div>
+                    </div>
+                    <div className='right'>
+                        <div className='home-panel1-img-right'></div>
+                        <div className='home-panel1-right-info bg1 color2'>
+                            <h2 className='home-panel1-sub'>Everything bagel, now.</h2>
+                            <p className='home-panel1-text'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.
+                            </p>
+                            <button className='home-panel1-btn border1 color2 no-bg'>Order Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
