@@ -3,6 +3,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+// 
+import { randomString } from '../Global'
+// 
+import { doc, setDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,6 +28,16 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
+// FIRESTORE
+export const sendContactForm = async (args) => {
+    await setDoc(doc(db, "ContactEntries", randomString(30)), {
+        Name: args.Name,
+        Email: args.Email,
+        Reason: args.Reason,
+        Message: args.Message
+    });
+}
+
 // AUTH
 /*
 
@@ -32,7 +46,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 
 createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        // Signed in 
+        // Signed in
         const user = userCredential.user;
         // ...
     })
@@ -47,7 +61,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 
 signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        // Signed in 
+        // Signed in
         const user = userCredential.user;
         // ...
     })

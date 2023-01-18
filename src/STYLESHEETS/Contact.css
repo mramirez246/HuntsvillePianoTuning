@@ -66,6 +66,13 @@
         min-height: 150px;
         font-family: 'Roboto', sans-serif;
     }
+    .contact-pair textarea:focus {
+        outline: none;
+    }
+
+    .contact-pair select {
+        padding: 0.8em
+    }
 
     .contact-methods {
         padding: 1em;
@@ -86,6 +93,11 @@
 
     .contact-right img {
         width: 100%;
+    }
+    .contact-left button {
+        width: 100%;
+        padding: 0.8em;
+        font-size: 1em;
     }
 }
 

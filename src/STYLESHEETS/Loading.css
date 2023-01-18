@@ -1,0 +1,15 @@
+.loading-wrap {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.737);
+    z-index: 100;
+}
+.loading {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    margin: 0 auto;
+    width: fit-content;
+    transform: translateY(50vh);
+}

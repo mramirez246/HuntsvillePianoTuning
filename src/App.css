@@ -117,6 +117,9 @@ body {
   border-top: 1px solid #0A0A0A;
   border-bottom: 1px solid #0A0A0A;
 }
+.border-red {
+  border: 1px solid red;
+}
 /*  */
 .divider {
   border:0;
