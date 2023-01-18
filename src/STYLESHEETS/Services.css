@@ -17,12 +17,11 @@
 
     .service-block {
         padding: 1em;
-        border-radius: 10px;
     }
 
     .service-block h2 {
         letter-spacing: -1px;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 1.5em;
         padding: 0.5em 0;
     }
@@ -45,7 +44,7 @@
         -moz-appearance: none;
         font-size: 0.8em;
         padding: 0.8em 3em;
-        border-radius: 10px;
+        border-radius: 3px;
         margin: 0.5em 0;
     }
 
@@ -62,7 +61,6 @@
         background-repeat: no-repeat;
         height: 200px;
         width: 100%;
-        border-radius: 10px;
         margin-bottom: 0.8em;
     }
 }

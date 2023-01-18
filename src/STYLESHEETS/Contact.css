@@ -1,0 +1,132 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .contact {
+        padding: 1em;
+    }
+
+    .contact-info {
+        font-size: 1.4em;
+        font-weight: 300;
+        letter-spacing: -1px;
+        padding: 1em 0;
+    }
+
+    .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .contact-left {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.6em;
+    }
+
+    .contact-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.2em;
+    }
+
+    .contact-pair label {
+        letter-spacing: -1px;
+        font-size: 1em;
+    }
+
+    .contact-pair input[type=text] {
+        padding: 0.8em;
+    }
+
+    .contact-pair input[type=email] {
+        padding: 0.8em;
+    }
+
+    .contact-pair input[type=text]:focus {
+        outline: none;
+    }
+
+    .contact-pair input[type=email]:focus {
+        outline: none;
+    }
+
+    .contact-pair textarea {
+        padding: 0.8em;
+        min-height: 150px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .contact-methods {
+        padding: 1em;
+    }
+
+    .contact-method {
+        display: flex;
+        font-size: 1em;
+        font-weight: 300;
+        align-items: center;
+        gap: 0.6em;
+        padding: 0.3em;
+    }
+
+    .contact-icon {
+        font-size: 1.5em;
+    }
+
+    .contact-right img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .contact-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .contact-wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-info {
+        width: 70vw;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .contact-method p {
+        font-size: 0.9em;
+    }
+    .contact-left {
+        height: fit-content;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .contact-left {
+        padding: 2em;
+    }
+    .contact-info {
+        font-size: 1.8em;
+        width: 50vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contact-left {
+        padding: 4em;
+    }
+    
+}

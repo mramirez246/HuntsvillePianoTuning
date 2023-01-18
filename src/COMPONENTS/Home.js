@@ -49,14 +49,14 @@ export default function Home() {
                         <h1>Everything is in a bagel, and a bagel is in everything.</h1>
                         <div className='home-panel1-img'></div>
                     </div>
-                    <div className='right'>
+                    <div className='home-right'>
                         <div className='home-panel1-img-right'></div>
-                        <div className='home-panel1-right-info bg1 color2'>
+                        <div className='home-panel1-right-info'>
                             <h2 className='home-panel1-sub'>Everything bagel, now.</h2>
                             <p className='home-panel1-text'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.
                             </p>
-                            <button className='home-panel1-btn border1 color2 no-bg'>Order Now</button>
+                            <button className='home-panel1-btn border2 color1 no-bg'>Order Now</button>
                         </div>
                     </div>
                 </div>

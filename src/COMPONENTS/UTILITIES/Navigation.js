@@ -40,7 +40,7 @@ export default function Navigation() {
                 <Link className='nav-link color1' to="/">Menu</Link>
                 <Link className='nav-link color1' to="/">Events</Link>
                 <Link className='nav-link color1' to="/">Blog</Link>
-                <Link className='nav-link color1' to="/">Contact Us</Link>
+                <Link className='nav-link color1' to="/contact">Contact Us</Link>
             </div>
             <p className='copy font1 color1'>&copy; Happy Code 2023. All Rights Reserved.</p>
         </div>
