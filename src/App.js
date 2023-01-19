@@ -6,11 +6,13 @@ import './App.css';
 import About from './COMPONENTS/About';
 import Bio from './COMPONENTS/Bio';
 import Contact from './COMPONENTS/Contact';
-// 
+import History from './COMPONENTS/History';
+import Locations from './COMPONENTS/Locations'
 import Home from './COMPONENTS/Home.js'
 import Pricing from './COMPONENTS/Pricing';
 import Products from './COMPONENTS/Products';
 import Services from './COMPONENTS/Services';
+// 
 import Failure from './COMPONENTS/UTILITIES/Failure';
 import Loading from './COMPONENTS/UTILITIES/Loading';
 import Success from './COMPONENTS/UTILITIES/Success';
@@ -42,6 +44,8 @@ function App() {
         <Route exact path="/pricing" element={<Pricing />} />
         <Route exact path="/bio" element={<Bio />} />
         <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/history" element={<History />} />
+        <Route exact path="/locations" element={<Locations />} />
       </Routes>
     </BrowserRouter>
   );

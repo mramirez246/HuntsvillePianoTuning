@@ -1,0 +1,76 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .history {
+        padding: 1em;
+    }
+
+    .history-wrap {
+        margin-top: 1em;
+    }
+
+    .history-block {}
+
+    .history-block h1 {
+        font-size: 1.4em;
+        letter-spacing: -1px;
+    }
+
+    .history-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        padding: 1em 0;
+    }
+
+    .history-pair p {
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+    .history-pair img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 800px) {
+    .history-pair {
+        padding: 1em;
+        grid-template-columns: 60% 40%;
+    }
+    .history-pair p {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .history-block h1 {
+        font-size: 1.8em;
+    }
+    .history-wrap {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .history-pair {
+        grid-template-columns: 1fr 1fr;
+    }
+    .history-pair p {
+        font-size: 1.1em;
+    }
+}

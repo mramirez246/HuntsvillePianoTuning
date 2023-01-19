@@ -85,6 +85,12 @@ body {
   color: #FEFEFE;
 }
 
+.red {
+  color: red;
+}
+
+/*  */
+
 .font1 {
   font-family: 'Poppins', sans-serif;
 }

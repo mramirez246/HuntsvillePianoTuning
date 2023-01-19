@@ -1,0 +1,70 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .map {
+        width: 100%;
+        min-height: 35vh;
+    }
+    .locations {
+        padding: 1em;
+    }
+    .location-pair {
+        margin-top: 1em;
+    }
+    .location-pair h1 {
+        font-size: 1.3em;
+        letter-spacing: -1px;
+    }
+    .location-pair h2 {
+        font-size: 1em;
+        font-weight: 300;
+        padding: 0.5em 0;
+    }
+    .location-pair h3 {
+        font-size: 1em;
+    }
+    .location-pair ul {
+        list-style-type: none;
+        padding: 0.3em;
+    }
+    .location-pair li {
+        font-size: 0.9em;
+        padding: 0.2em 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .location-pair-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0.5em;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {
+    .location-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .map {
+        height: 50vh;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .location-pair {
+        grid-template-columns: 35% 65%;
+    }
+}
