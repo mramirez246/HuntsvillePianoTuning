@@ -1,0 +1,68 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .mailinglist {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em;
+    }
+    .mailinglist h1 {
+        font-size: 1.8em;
+        line-height: 25px;
+        font-weight: 400;
+    }
+    .mailinglist-block p {
+        font-size: 0.9em;
+        font-weight: 300;
+        line-height: 18px;
+        padding: 1em 0;
+    }
+    .mailinglist-btns {
+        display: flex;
+        gap: 1em;
+    }
+    .mailinglist-btn {
+        padding: 0.8em 2em;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .mailinglist-btns {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .mailinglist {
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+        padding: 2em;
+        align-items: center;
+    }
+    .mailinglist h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .mailinglist {
+        gap: 3em;
+    }
+    .mailinglist > * {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {}

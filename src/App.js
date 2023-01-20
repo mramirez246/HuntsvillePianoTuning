@@ -2,6 +2,10 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 // 
+import Failure from './COMPONENTS/UTILITIES/Failure';
+import Loading from './COMPONENTS/UTILITIES/Loading';
+import Success from './COMPONENTS/UTILITIES/Success';
+// 
 
 import About from './COMPONENTS/About';
 import Bio from './COMPONENTS/Bio';
@@ -12,10 +16,10 @@ import Home from './COMPONENTS/Home.js'
 import Pricing from './COMPONENTS/Pricing';
 import Products from './COMPONENTS/Products';
 import Services from './COMPONENTS/Services';
-// 
-import Failure from './COMPONENTS/UTILITIES/Failure';
-import Loading from './COMPONENTS/UTILITIES/Loading';
-import Success from './COMPONENTS/UTILITIES/Success';
+import Gallery from './COMPONENTS/Gallery';
+import MailingList from './COMPONENTS/MailingList';
+
+
 
 function App() {
   const loading = useSelector((state) => state.loading.value)
@@ -35,7 +39,7 @@ function App() {
         failure ?
           <Failure /> : <div></div>
       }
-      
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
@@ -46,6 +50,8 @@ function App() {
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/history" element={<History />} />
         <Route exact path="/locations" element={<Locations />} />
+        <Route exact path="/gallery" element={<Gallery />} />
+        <Route exact path="/mailinglist" element={<MailingList />} />
       </Routes>
     </BrowserRouter>
   );

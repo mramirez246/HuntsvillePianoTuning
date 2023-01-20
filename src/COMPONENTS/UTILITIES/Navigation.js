@@ -37,7 +37,7 @@ export default function Navigation() {
             <div className='nav-links font1'>
                 <Link className='nav-link color1' to="/">Home</Link>
                 <Link className='nav-link color1' to="/about">About</Link>
-                <Link className='nav-link color1' to="/">Menu</Link>
+                <Link className='nav-link color1' to="/gallery">Gallery</Link>
                 <Link className='nav-link color1' to="/">Events</Link>
                 <Link className='nav-link color1' to="/">Blog</Link>
                 <Link className='nav-link color1' to="/contact">Contact Us</Link>
