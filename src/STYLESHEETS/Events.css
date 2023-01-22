@@ -1,0 +1,125 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .events {
+        padding: 1em;
+    }
+
+    .events-left {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .event-list-block {
+        display: flex;
+        align-items: center;
+    }
+
+    .event-list-block h4 {
+        font-size: 1.3em;
+        font-weight: 300;
+        letter-spacing: -1px;
+        padding: 0.5em;
+    }
+
+    .event-date-pair {
+        padding: 1em;
+        margin: 0.5em;
+    }
+
+    .event-day {
+        font-weight: 200;
+        font-size: 1.6em;
+        text-align: center;
+    }
+
+    .event-date {
+        font-size: 0.8em;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .event-icon {
+        font-size: 3em;
+        margin-right: 0.5em;
+    }
+
+    .event-img {
+        width: 100%;
+    }
+
+    .event {
+        padding: 1em 0;
+    }
+
+    .event h1 {
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: -1px;
+        padding: 0.6em 0;
+    }
+
+    .event p {
+        padding: 0.5em 0;
+        font-weight: 200;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .events-left {
+        width: 80vw;
+    }
+
+    .event-icon {
+        font-size: 2.4em;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .events-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+
+    .events-left {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .event-list-block h4 {
+        font-size: 1.1em;
+    }
+    .event-day {
+        font-size: 1.4em;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .events-wrap {
+        grid-template-columns: 1fr 2fr;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .event {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+    .event-post {
+        width: 85%;
+    }
+}

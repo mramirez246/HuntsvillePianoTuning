@@ -18,6 +18,9 @@ import Products from './COMPONENTS/Products';
 import Services from './COMPONENTS/Services';
 import Gallery from './COMPONENTS/Gallery';
 import MailingList from './COMPONENTS/MailingList';
+import Blog from './COMPONENTS/Blog';
+import BlogPost from './COMPONENTS/BlogPost';
+import Events from './COMPONENTS/Events';
 
 
 
@@ -52,6 +55,9 @@ function App() {
         <Route exact path="/locations" element={<Locations />} />
         <Route exact path="/gallery" element={<Gallery />} />
         <Route exact path="/mailinglist" element={<MailingList />} />
+        <Route exact path="/blog" element={<Blog />} />
+        <Route exact path="/blogpost" element={<BlogPost />} />
+        <Route exact path="/events" element={<Events />} />
       </Routes>
     </BrowserRouter>
   );

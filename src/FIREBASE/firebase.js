@@ -6,7 +6,9 @@ import { getStorage } from "firebase/storage";
 // 
 import { randomString } from '../Global'
 // 
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, collection, getDocs } from "firebase/firestore";
+// 
+import { setBlogsState } from '../REDUX/SLICES/BlogsSlice'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,6 +31,7 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 // FIRESTORE
+// CONTACT
 export const sendContactForm = async (args) => {
     await setDoc(doc(db, "ContactEntries", randomString(30)), {
         Name: args.Name,
@@ -36,6 +39,27 @@ export const sendContactForm = async (args) => {
         Reason: args.Reason,
         Message: args.Message
     });
+}
+// BLOG
+export const getBlogs = async (dispatch) => {
+    const querySnapshot = await getDocs(collection(db, "Blogs"));
+    var blogs = []
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        const d = doc.data()
+        const blog = {
+            id: doc.id,
+            Date: d.Date,
+            Title: d.Title,
+            Desc: d.Desc,
+            ImgPath: d.ImgPath,
+            Author: d.Author,
+            Tags: d.Tags
+        }
+        blogs.push(blog)
+    });
+    dispatch(setBlogsState(blogs))
 }
 
 // AUTH

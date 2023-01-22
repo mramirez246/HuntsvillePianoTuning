@@ -47,6 +47,13 @@ body {
   height: 1em;
 }
 
+.left {
+  display: flex;
+  justify-content: left;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
 /* COLORS */
 
 .color1 {
@@ -70,11 +77,11 @@ body {
 }
 
 .bg3 {
-  background-color: #e6e6ed;
+  background-color: #e0e0ed;
 }
 
 .no-bg {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .dark {
@@ -104,35 +111,43 @@ body {
 .border1 {
   border: 1px solid #FEFEFE;
 }
+
 .border2 {
   border: 1px solid #0a0a0a;
 }
+
 .no-border {
   border: 0;
 }
+
 .border-top1 {
   border: 0;
   border-top: 1px solid #0a0a0a;
 }
+
 .border-bottom1 {
   border: 0;
   border-bottom: 1px solid #0A0A0A;
 }
+
 .border-vert1 {
   border: 0;
   border-top: 1px solid #0A0A0A;
   border-bottom: 1px solid #0A0A0A;
 }
+
 .border-red {
   border: 1px solid red;
 }
+
 /*  */
 .divider {
-  border:0;
+  border: 0;
   border-bottom: 1px solid #b0b0b0;
   width: 60%;
   margin: 1em 0;
 }
+
 .padding {
   padding: 1em;
 }
@@ -151,6 +166,7 @@ body {
   .top-icon {
     font-size: 2em;
   }
+
   .page-title {
     font-weight: 600;
     font-size: 3.4em;
@@ -167,6 +183,7 @@ body {
   .top-icon {
     font-size: 1.8em;
   }
+
   .page-title {
     text-align: center;
   }
@@ -180,6 +197,7 @@ body {
   .top-icon {
     font-size: 1.6em;
   }
+
   .page-title {
     font-size: 4em;
   }
@@ -193,8 +211,10 @@ body {
   .top-icon {
     font-size: 1.8em;
   }
+
   .page-title {
     font-size: 4.5em;
+    line-height: 80px;
   }
 }
 
@@ -206,6 +226,7 @@ body {
   .top-icon {
     font-size: 2em;
   }
+
   .page-title {
     font-size: 5em;
   }
