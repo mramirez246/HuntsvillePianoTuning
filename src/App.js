@@ -21,6 +21,7 @@ import MailingList from './COMPONENTS/MailingList';
 import Blog from './COMPONENTS/Blog';
 import BlogPost from './COMPONENTS/BlogPost';
 import Events from './COMPONENTS/Events';
+import FAQ from './COMPONENTS/FAQ';
 
 
 
@@ -58,6 +59,7 @@ function App() {
         <Route exact path="/blog" element={<Blog />} />
         <Route exact path="/blogpost" element={<BlogPost />} />
         <Route exact path="/events" element={<Events />} />
+        <Route exact path="/faq" element={<FAQ />} />
       </Routes>
     </BrowserRouter>
   );

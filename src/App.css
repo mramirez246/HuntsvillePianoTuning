@@ -172,6 +172,11 @@ body {
     font-size: 3.4em;
     letter-spacing: -3px;
   }
+  .page-subtitle {
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: -1px;
+  }
 
 }
 
@@ -187,6 +192,10 @@ body {
   .page-title {
     text-align: center;
   }
+  .page-subtitle {
+    text-align: center;
+    font-size: 1.3em;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -200,6 +209,9 @@ body {
 
   .page-title {
     font-size: 4em;
+  }
+  .page-subtitle {
+    font-size: 1.4em;
   }
 }
 
@@ -215,6 +227,9 @@ body {
   .page-title {
     font-size: 4.5em;
     line-height: 80px;
+  }
+  .page-subtitle {
+    font-size: 1.7em;
   }
 }
 

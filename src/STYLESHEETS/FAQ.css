@@ -1,0 +1,81 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .faq {
+        padding: 1em;
+    }
+
+    .faq-wrap {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5em;
+    }
+
+    .faq-block {
+        cursor: pointer;
+        padding: 1em;
+        height: fit-content;
+    }
+    .faq-block h1 {
+        font-size: 1.4em;
+        letter-spacing: -1px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+    .faq-block p {
+        font-size: 1em;
+        font-weight: 300;
+        padding: 1em 0.3em;
+    }
+    .faq-icon {
+        font-size: 1.5em;
+    }
+    .faq-input {
+        width: 100%;
+        display: block;
+        margin: 0.5em auto;
+        padding: 0.8em;
+        border-radius: 4px;
+        font-size: 1em;
+        max-width: 500px;
+    }
+    .faq-input:focus {
+        outline: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {
+    .faq-block {
+        padding: 1.2em;
+    }
+    .faq-block h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .faq-block {
+        padding: 1.5em;
+    }
+    .faq-block h1 {
+        font-size: 1.7em;
+    }
+    .faq-block p {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {}
