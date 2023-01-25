@@ -22,6 +22,7 @@ import Blog from './COMPONENTS/Blog';
 import BlogPost from './COMPONENTS/BlogPost';
 import Events from './COMPONENTS/Events';
 import FAQ from './COMPONENTS/FAQ';
+import Careers from './COMPONENTS/Careers';
 
 
 
@@ -60,6 +61,7 @@ function App() {
         <Route exact path="/blogpost" element={<BlogPost />} />
         <Route exact path="/events" element={<Events />} />
         <Route exact path="/faq" element={<FAQ />} />
+        <Route exact path="/careers" element={<Careers />} />
       </Routes>
     </BrowserRouter>
   );
