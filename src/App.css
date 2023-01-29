@@ -68,6 +68,7 @@ body {
   color: #585757;
 }
 
+
 .bg1 {
   background-color: #0A0A0A;
 }
@@ -78,6 +79,9 @@ body {
 
 .bg3 {
   background-color: #e0e0ed;
+}
+.bg4 {
+  background-color: #F6F6F8;
 }
 
 .no-bg {
@@ -114,6 +118,9 @@ body {
 
 .border2 {
   border: 1px solid #0a0a0a;
+}
+.border3 {
+  border: 1px solid #c2c2cb;
 }
 
 .no-border {
@@ -176,6 +183,10 @@ body {
     font-size: 1.2em;
     font-weight: 300;
     letter-spacing: -1px;
+  }
+  .page-title-sm {
+    font-size: 2.3em;
+    text-align: left;
   }
 
 }

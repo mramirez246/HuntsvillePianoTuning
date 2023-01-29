@@ -23,6 +23,7 @@ import BlogPost from './COMPONENTS/BlogPost';
 import Events from './COMPONENTS/Events';
 import FAQ from './COMPONENTS/FAQ';
 import Careers from './COMPONENTS/Careers';
+import Shop from './COMPONENTS/Shop';
 
 
 
@@ -62,6 +63,7 @@ function App() {
         <Route exact path="/events" element={<Events />} />
         <Route exact path="/faq" element={<FAQ />} />
         <Route exact path="/careers" element={<Careers />} />
+        <Route exact path="/shop" element={<Shop />} />
       </Routes>
     </BrowserRouter>
   );

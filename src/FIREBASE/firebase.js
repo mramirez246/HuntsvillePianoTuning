@@ -61,6 +61,10 @@ export const getBlogs = async (dispatch) => {
     });
     dispatch(setBlogsState(blogs))
 }
+// 
+// STORE
+// Create a function that pulls products from DB
+// Create function that updates the quantity
 
 // AUTH
 /*
