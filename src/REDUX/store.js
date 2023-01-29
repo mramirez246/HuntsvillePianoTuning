@@ -5,6 +5,7 @@ import successReducer from './SLICES/SuccessSlice'
 import failureReducer from './SLICES/FailureSlice'
 import blogsReducer from './SLICES/BlogsSlice'
 import blogPostReducer from './SLICES/BlogPostSlice'
+import productsReducer from './SLICES/ProductsSlice'
 
 export default configureStore({
   reducer: {
@@ -13,7 +14,8 @@ export default configureStore({
     success: successReducer,
     failure: failureReducer,
     blogs: blogsReducer,
-    blogPost: blogPostReducer
+    blogPost: blogPostReducer,
+    products: productsReducer
   },
 })
 

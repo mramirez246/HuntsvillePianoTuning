@@ -22,8 +22,9 @@ import img8 from '../PHOTOS/STORE/img8.jpeg'
 import { HiShoppingCart } from 'react-icons/hi'
 import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 import { BsTrashFill } from 'react-icons/bs'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
+import { getProducts } from '../FIREBASE/firebase'
 
 export default function Shop() {
     const dispatch = useDispatch()
@@ -44,125 +45,125 @@ export default function Shop() {
         document.querySelector(".nav-body").style.width = "0";
     }
 
-    const products = [
-        {
-            id: 0,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img1],
-            Category: "Tech"
-        },
-        {
-            id: 1,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 150,
-            Quantity: 14,
-            Img: [img2],
-            Category: "Tech"
-        },
-        {
-            id: 2,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img3],
-            Category: "Tech"
-        },
-        {
-            id: 3,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img4],
-            Category: "Food"
-        },
-        {
-            id: 4,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img5],
-            Category: "Food"
-        },
-        {
-            id: 5,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img6],
-            Category: "Food"
-        },
-        {
-            id: 6,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img7],
-            Category: "Beauty"
-        },
-        {
-            id: 7,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img8],
-            Category: "Beauty"
-        },
-        {
-            id: 8,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img4],
-            Category: "Beauty"
-        },
-        {
-            id: 9,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 170,
-            Quantity: 14,
-            Img: [img5],
-            Category: "Sports"
-        },
-        {
-            id: 10,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 140,
-            Quantity: 14,
-            Img: [img1],
-            Category: "Sports"
-        },
-        {
-            id: 11,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 120,
-            Quantity: 14,
-            Img: [img2],
-            Category: "Sports"
-        },
-        {
-            id: 12,
-            Name: "Everything Bagel",
-            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-            Price: 190,
-            Quantity: 14,
-            Img: [img3],
-            Category: "Sports"
-        },
-    ]
+    // const products = [
+    //     {
+    //         id: 0,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img1],
+    //         Category: "Tech"
+    //     },
+    //     {
+    //         id: 1,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 150,
+    //         Quantity: 14,
+    //         Img: [img2],
+    //         Category: "Tech"
+    //     },
+    //     {
+    //         id: 2,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img3],
+    //         Category: "Tech"
+    //     },
+    //     {
+    //         id: 3,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img4],
+    //         Category: "Food"
+    //     },
+    //     {
+    //         id: 4,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img5],
+    //         Category: "Food"
+    //     },
+    //     {
+    //         id: 5,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img6],
+    //         Category: "Food"
+    //     },
+    //     {
+    //         id: 6,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img7],
+    //         Category: "Beauty"
+    //     },
+    //     {
+    //         id: 7,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img8],
+    //         Category: "Beauty"
+    //     },
+    //     {
+    //         id: 8,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img4],
+    //         Category: "Beauty"
+    //     },
+    //     {
+    //         id: 9,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 170,
+    //         Quantity: 14,
+    //         Img: [img5],
+    //         Category: "Sports"
+    //     },
+    //     {
+    //         id: 10,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 140,
+    //         Quantity: 14,
+    //         Img: [img1],
+    //         Category: "Sports"
+    //     },
+    //     {
+    //         id: 11,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 120,
+    //         Quantity: 14,
+    //         Img: [img2],
+    //         Category: "Sports"
+    //     },
+    //     {
+    //         id: 12,
+    //         Name: "Everything Bagel",
+    //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
+    //         Price: 190,
+    //         Quantity: 14,
+    //         Img: [img3],
+    //         Category: "Sports"
+    //     },
+    // ]
     const tempCartItems = [
         {
             id: 0,
@@ -193,6 +194,8 @@ export default function Shop() {
             Img: img4
         }
     ]
+    const products = useSelector((state) => state.products.value)
+
     const [categories, setCategories] = useState([])
     const [tempProds, setTempProds] = useState([])
     const [prodID, setProdID] = useState(-1)
@@ -349,15 +352,18 @@ export default function Shop() {
 
     useEffect(() => {
         closeNav()
+        getProducts(dispatch).then(() => {
+            var tempCategs = []
+            for (var i in products) {
+                tempCategs.push(products[i].Category)
+            }
+            const temp = [...new Set(tempCategs)]
+            setCategories(temp)
+            setTempProds(products)
+        })
         window.scrollTo(0, 0)
-        var tempCategs = []
-        for (var i in products) {
-            tempCategs.push(products[i].Category)
-        }
-        const temp = [...new Set(tempCategs)]
-        setCategories(temp)
-        setTempProds(products)
-        setTempCart(tempCartItems)
+
+
     }, [])
     return (
         <div>
@@ -423,55 +429,59 @@ export default function Shop() {
                     <h1 className='page-title-sm'>Shop</h1>
                     <div className='shop-cart-icon' onClick={() => { setToggleCart(!toggleCart); calcTotal() }}><HiShoppingCart /></div>
                 </div>
-                {
-                    toggleCart ?
-                        <div id="cart" className='cart'>
-                            <h1>Cart</h1>
-                            <div className='cart-wrap border3'>
-                                <div className='cart-prods'>
-                                    {
-                                        tempCart.map((item, i) => {
-                                            return (
-                                                <div key={i} className='cart-item bg4'>
-                                                    <img src={item.Img} className="cart-item-img" />
-                                                    <div className='cart-item-block'>
-                                                        <h4 className='cart-item-name'>{item.Name}</h4>
-                                                        <div className='separate'>
-                                                            <div className='flex'>
-                                                                <h4 className='cart-item-price color3'>${item.Price}</h4>
+                {toggleCart ?
+                    <div id="cart" className='cart'>
+                        <h1> Cart</h1>
+                        <div className='cart-wrap border3'>
+                            {
+                                tempCart.length > 0 ?
+                                    <div>
+                                        <div className='cart-prods'>
+                                            {
+                                                tempCart.map((item, i) => {
+                                                    return (
+                                                        <div key={i} className='cart-item bg4'>
+                                                            <img src={item.Img} className="cart-item-img" />
+                                                            <div className='cart-item-block'>
+                                                                <h4 className='cart-item-name'>{item.Name}</h4>
+                                                                <div className='separate'>
+                                                                    <div className='flex'>
+                                                                        <h4 className='cart-item-price color3'>${item.Price}</h4>
 
-                                                                <button onClick={() => { removeItem(item); }} className='no-bg no-border red cart-item-rem'>Remove</button>
+                                                                        <button onClick={() => { removeItem(item); }} className='no-bg no-border red cart-item-rem'>Remove</button>
+                                                                    </div>
+                                                                    <div className='cart-item-qty-block'>
+                                                                        <button className='no-bg no-border' onClick={() => { decreaseQty(item) }}><AiFillMinusCircle /></button>
+                                                                        <p className=''>{item.Quantity}</p>
+                                                                        <button className='no-bg no-border' onClick={() => { increaseQty(item) }}><AiFillPlusCircle /></button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div className='cart-item-qty-block'>
-                                                                <button className='no-bg no-border' onClick={() => { decreaseQty(item) }}><AiFillMinusCircle /></button>
-                                                                <p className=''>{item.Quantity}</p>
-                                                                <button className='no-bg no-border' onClick={() => { increaseQty(item) }}><AiFillPlusCircle /></button>
-                                                            </div>
+
                                                         </div>
-                                                    </div>
-
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                                <div className='cart-review bg1 color2'>
-                                    <div className='cart-rev-pair'>
-                                        <p>Sub Total:</p>
-                                        <h4 className='color3'>${subTotal}</h4>
-                                    </div>
-                                    <div className='cart-rev-pair'>
-                                        <p>Taxes:</p>
-                                        <h4 className='color3'>${taxes}</h4>
-                                    </div>
-                                    <div className='cart-rev-pair'>
-                                        <p>Total:</p>
-                                        <h4>${total}</h4>
-                                    </div>
-                                    <button onClick={review} className='pay-now-btn bg2 no-border'>Review Cart</button>
-                                </div>
-                            </div>
-                        </div> : <div></div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                        <div className='cart-review bg1 color2'>
+                                            <div className='cart-rev-pair'>
+                                                <p>Sub Total:</p>
+                                                <h4 className='color3'>${subTotal}</h4>
+                                            </div>
+                                            <div className='cart-rev-pair'>
+                                                <p>Taxes:</p>
+                                                <h4 className='color3'>${taxes}</h4>
+                                            </div>
+                                            <div className='cart-rev-pair'>
+                                                <p>Total:</p>
+                                                <h4>${total}</h4>
+                                            </div>
+                                            <button onClick={review} className='pay-now-btn bg2 no-border'>Review Cart</button>
+                                        </div>
+                                    </div> : <p className='no-cart-items'>No cart items added yet.</p>
+                            }
+                        </div>
+                    </div> : <div></div>
                 }
                 <div className='shop-wrap'>
                     <div className='shop-left'>

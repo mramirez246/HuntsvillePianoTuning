@@ -1,14 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, orderBy } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // 
 import { randomString } from '../Global'
 // 
 import { doc, setDoc, collection, getDocs } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
 // 
 import { setBlogsState } from '../REDUX/SLICES/BlogsSlice'
+import { setProductsState } from '../REDUX/SLICES/ProductsSlice'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -65,6 +67,64 @@ export const getBlogs = async (dispatch) => {
 // STORE
 // Create a function that pulls products from DB
 // Create function that updates the quantity
+const createOrder = async (date, orderID, subTotal, tax, total) => {
+    // Email Customer
+
+    await setDoc(doc(db, "Orders", orderID), {
+        Date: new Date(),
+        SubTotal: subTotal,
+        Tax: tax,
+        Total: total
+    });
+}
+const createOrderItems = async (orderID, cartItems) => {
+    for (var i in cartItems) {
+        const item = cartItems[i]
+        await setDoc(doc(db, "Orders", orderID, "Items", randomString(10)), {
+            Name: item.Name,
+            Price: item.Price,
+            Quantity: item.Quantity,
+        });
+    }
+}
+export const purchaseItems = (date, subTotal, tax, total, cartItems) => {
+    const orderID = randomString(10)
+    createOrder(date, orderID, subTotal, tax, total)
+        .then(() => {
+            createOrderItems(orderID, cartItems)
+        })
+}
+export const getProducts = async (dispatch) => {
+    var products = []
+    var count = 0
+    const querySnapshot = await getDocs(collection(db, "Products"), orderBy("Category"));
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        const d = doc.data()
+        const imgPath = d.Img
+        getDownloadURL(ref(storage, imgPath))
+            .then((url) => {
+                count += 1
+                const product = {
+                    id: doc.id,
+                    Name: d.Name,
+                    Desc: d.Desc,
+                    Price: d.Price,
+                    Quantity: d.Quantity,
+                    Category: d.Category,
+                    Img: url
+                }
+                products.push(product)
+                if (count == querySnapshot.size) {
+                    dispatch(setProductsState(products))
+                }
+            })
+            .catch((error) => {
+                // Handle any errors
+                console.log(error)
+            });
+    });
+}
 
 // AUTH
 /*
