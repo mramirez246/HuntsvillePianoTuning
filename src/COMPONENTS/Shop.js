@@ -25,6 +25,7 @@ import { BsTrashFill } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
 import { getProducts } from '../FIREBASE/firebase'
+import Modal from './UTILITIES/Modal'
 
 export default function Shop() {
     const dispatch = useDispatch()
@@ -201,11 +202,12 @@ export default function Shop() {
     const [prodID, setProdID] = useState(-1)
     const [toggleCart, setToggleCart] = useState(false)
     const [cartItems, setCartItems] = useState([])
-    const [tempCart, setTempCart] = useState([])
     const [subTotal, setSubTotal] = useState(0)
     const [total, setTotal] = useState(0)
     const [taxes, setTaxes] = useState(0)
+    const [showReview, setShowReview] = useState(false)
     const [showModal, setShowModal] = useState(false)
+
 
     const chooseCategory = () => {
         const categs = document.querySelectorAll('.cbCategory')
@@ -231,14 +233,14 @@ export default function Shop() {
     }
     const addToCart = (item) => {
         var exists = false
-        for (var i in tempCart) {
-            const ci = tempCart[i]
+        for (var i in cartItems) {
+            const ci = cartItems[i]
             if (ci.id == item.id) {
                 exists = true
             }
         }
         if (!exists) {
-            var thing = [...tempCart]
+            var thing = [...cartItems]
             thing.push({
                 id: item.id,
                 Name: item.Name,
@@ -248,17 +250,24 @@ export default function Shop() {
             })
 
             dispatch(setSuccessState(true))
-            setTempCart(thing)
+            setCartItems(thing)
             setTimeout(() => {
                 dispatch(setSuccessState(false))
             }, 3000);
 
+            const tempSub = parseFloat(subTotal) + item.Price
+            const tempTax = tempSub * tx
+            const tempTot = tempSub + tempTax
+
+            setSubTotal(tempSub)
+            setTaxes(tempTax.toFixed(2))
+            setTotal(tempTot.toFixed(2))
         }
     }
     const increaseQty = (item) => {
         var tempItem = {}
         var maxQty = 0
-        const tempArr = [...tempCart]
+        const tempArr = [...cartItems]
         for (var i in tempProds) {
             if (tempProds[i].id == item.id) {
                 maxQty = tempProds[i].Quantity
@@ -273,7 +282,7 @@ export default function Shop() {
                 tempArr[i] = tempItem
             }
         }
-        setTempCart(tempArr)
+        setCartItems(tempArr)
         // Totals
         const tempSub = parseFloat(subTotal) + tempItem.Price
         const tempTax = tempSub * tx
@@ -294,7 +303,7 @@ export default function Shop() {
             setTotal(tempTot.toFixed(2))
         }
         var tempItem = {}
-        const tempArr = [...tempCart]
+        const tempArr = [...cartItems]
         tempItem = {
             ...item,
             Quantity: item.Quantity > 1 ? item.Quantity - 1 : 1
@@ -305,7 +314,7 @@ export default function Shop() {
                 tempArr[i] = tempItem
             }
         }
-        setTempCart(tempArr)
+        setCartItems(tempArr)
         // Totals
 
     }
@@ -320,21 +329,30 @@ export default function Shop() {
         setTaxes(newTax.toFixed(2))
         setTotal(newTotal)
 
-        const thing = tempCart.filter(function (it) {
+        const thing = cartItems.filter(function (it) {
             return it.id !== item.id
         })
-        setTempCart(thing)
+        setCartItems(thing)
     }
     const review = () => {
+        setShowReview(true)
+    }
+    const payNow = () => {
         setShowModal(true)
+        setShowReview(false)
+        setToggleCart(false)
+        setCartItems([])
+        setTimeout(() => {
+            setShowModal(false)
+        }, 4000);
     }
     // 
     const calcTotal = () => {
         var tempSub = 0
         var tempTax = 0
         var tempTot = 0
-        for (var i in tempCart) {
-            tempSub += (tempCart[i].Price * tempCart[i].Quantity)
+        for (var i in cartItems) {
+            tempSub += (cartItems[i].Price * cartItems[i].Quantity)
         }
         tempTax = tempSub * tx
         tempTot = tempSub + tempTax
@@ -352,35 +370,25 @@ export default function Shop() {
 
     useEffect(() => {
         closeNav()
-        getProducts(dispatch).then(() => {
-            var tempCategs = []
-            for (var i in products) {
-                tempCategs.push(products[i].Category)
-            }
-            const temp = [...new Set(tempCategs)]
-            setCategories(temp)
-            setTempProds(products)
-        })
         window.scrollTo(0, 0)
-
-
+        getProducts(dispatch, setTempProds, setCategories)
     }, [])
     return (
         <div>
             {/* Cart Review */}
             {
-                showModal ?
+                showReview ?
                     <div className='modal-cart-review font1'>
                         <div className='modal-cart-review-wrap bg2'>
                             <div className='separate'>
                                 <h1>Review your cart.</h1>
-                                <div onClick={() => { setShowModal(false) }} className='modal-icon'>
+                                <div onClick={() => { setShowReview(false) }} className='modal-icon'>
                                     <HiXMark />
                                 </div>
                             </div>
                             <div className='cart-rev'>
                                 {
-                                    tempCart.map((item, i) => {
+                                    cartItems.map((item, i) => {
                                         return (
                                             <div className='rev-item' key={i}>
                                                 <img src={item.Img} />
@@ -412,9 +420,13 @@ export default function Shop() {
                                 </div>
                             </div>
                             <br />
-                            <button className='cart-rev-btn bg1 color2 no-border'>Pay Now</button>
+                            <button onClick={payNow} className='cart-rev-btn bg1 color2 no-border'>Pay Now</button>
                         </div>
                     </div> : <div></div>
+            }
+            {
+                showModal ?
+                    <Modal heading="Your purchase has been confirmed." text="A digital receipt has been emailed to you and your order has been sent to the merchant." /> : <p></p>
             }
 
             {/* NAGIVATION */}
@@ -432,13 +444,13 @@ export default function Shop() {
                 {toggleCart ?
                     <div id="cart" className='cart'>
                         <h1> Cart</h1>
-                        <div className='cart-wrap border3'>
+                        <div className='border3'>
                             {
-                                tempCart.length > 0 ?
-                                    <div>
+                                cartItems.length > 0 ?
+                                    <div className='cart-wrap'>
                                         <div className='cart-prods'>
                                             {
-                                                tempCart.map((item, i) => {
+                                                cartItems.map((item, i) => {
                                                     return (
                                                         <div key={i} className='cart-item bg4'>
                                                             <img src={item.Img} className="cart-item-img" />

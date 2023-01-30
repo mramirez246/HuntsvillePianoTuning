@@ -22,6 +22,8 @@
     .modal-cart-review-wrap {
         padding: 1em;
         max-height: 85vh;
+        display: block;
+        margin: 0 auto;
     }
 
     .modal-cart-review-wrap h1 {
@@ -82,7 +84,11 @@
     }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .modal-cart-review-wrap {
+        width: 375px;
+    }
+}
 
 @media only screen and (min-width: 800px) {}
 

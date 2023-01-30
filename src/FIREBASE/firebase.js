@@ -6,7 +6,7 @@ import { getStorage } from "firebase/storage";
 // 
 import { randomString } from '../Global'
 // 
-import { doc, setDoc, collection, getDocs } from "firebase/firestore";
+import { doc, setDoc, collection, getDocs, updateDoc } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
 // 
 import { setBlogsState } from '../REDUX/SLICES/BlogsSlice'
@@ -87,6 +87,21 @@ const createOrderItems = async (orderID, cartItems) => {
         });
     }
 }
+const updateProductQuantity = async (cartItems, products) => {
+    // REVIEW
+    for (var i in cartItems) {
+        const item = cartItems[i]
+        const itemRef = doc(db, "Products", item.id);
+
+        for (var j in products) {
+            if (products[j].id == item.id) {
+                await updateDoc(itemRef, {
+                    Quantity: products[j].Quantity - item.Quantity
+                });
+            }
+        }
+    }
+}
 export const purchaseItems = (date, subTotal, tax, total, cartItems) => {
     const orderID = randomString(10)
     createOrder(date, orderID, subTotal, tax, total)
@@ -94,7 +109,7 @@ export const purchaseItems = (date, subTotal, tax, total, cartItems) => {
             createOrderItems(orderID, cartItems)
         })
 }
-export const getProducts = async (dispatch) => {
+export const getProducts = async (dispatch, setProducts, setCategories) => {
     var products = []
     var count = 0
     const querySnapshot = await getDocs(collection(db, "Products"), orderBy("Category"));
@@ -117,6 +132,13 @@ export const getProducts = async (dispatch) => {
                 products.push(product)
                 if (count == querySnapshot.size) {
                     dispatch(setProductsState(products))
+                    setProducts(products)
+                    var tempCategs = []
+                    for (var i in products) {
+                        tempCategs.push(products[i].Category)
+                    }
+                    const temp = [...new Set(tempCategs)]
+                    setCategories(temp)
                 }
             })
             .catch((error) => {
