@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux'
 import img1 from '../PHOTOS/BLOG/blog1.jpg'
 import img2 from '../PHOTOS/BLOG/blog2.jpg'
 import img3 from '../PHOTOS/BLOG/blog3.jpg'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function BlogPost() {
     const navigate = useNavigate()
@@ -37,6 +38,7 @@ export default function BlogPost() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "BlogPost", Views: 0 })
     }, [])
     return (
         <div className='main'>

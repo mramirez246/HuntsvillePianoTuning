@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 // 
 import '../STYLESHEETS/MailingList.css'
 // 
@@ -6,6 +7,7 @@ import '../STYLESHEETS/MailingList.css'
 export default function MailingList() {
 
     useEffect(() => {
+        firebaseGetPageViews({ Name: "Mailing List", Views: 0 })
     }, [])
     return (
         <div className='main'>

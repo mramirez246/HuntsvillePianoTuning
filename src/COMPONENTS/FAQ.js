@@ -9,6 +9,7 @@ import Navigation from './UTILITIES/Navigation'
 import logo from '../PHOTOS/stock.png'
 import img1 from '../PHOTOS/shop.jpg'
 import '../STYLESHEETS/FAQ.css'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function FAQ() {
     const faqs = [
@@ -87,6 +88,7 @@ export default function FAQ() {
         closeNav()
         window.scrollTo(0, 0)
         setTempFAQs(faqs)
+        firebaseGetPageViews({ Name: "FAQ", Views: 0 })
     }, [])
     return (
         <div>

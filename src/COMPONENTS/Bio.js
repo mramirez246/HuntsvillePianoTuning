@@ -9,6 +9,7 @@ import Navigation from './UTILITIES/Navigation'
 import logo from '../PHOTOS/stock.png'
 import img1 from '../PHOTOS/shop.jpg'
 import '../STYLESHEETS/Bio.css'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Bio() {
     function openNav() {
@@ -31,7 +32,7 @@ export default function Bio() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
-
+        firebaseGetPageViews({ Name: "Bio", Views: 0 })
     }, [])
     return (
         <div>

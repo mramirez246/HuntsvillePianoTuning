@@ -1,0 +1,53 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .login {
+        padding: 1em;
+    }
+    .login-wrap {
+        width: 100%;
+        margin: 4em auto;
+    }
+    .login-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0.8em 0;
+    }
+    .login-pair label {
+        font-weight: 300;
+        font-size: 0.9em;
+    }
+    .login-pair input {
+     padding: 0.8em;
+    }
+    .login-btn {
+        padding: 0.8em;
+        width: 100%;
+    }
+    .login-error {
+        font-size: 0.9em;
+        padding: 0.6em 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .login-wrap {
+        width: 365px;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}

@@ -8,6 +8,7 @@ import Navigation from './UTILITIES/Navigation'
 // 
 import logo from '../PHOTOS/stock.png'
 import img1 from '../PHOTOS/product.jpg'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Products() {
     const products = [
@@ -99,6 +100,7 @@ export default function Products() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "Products", Views: 0 })
     }, [])
     return (
         <div>

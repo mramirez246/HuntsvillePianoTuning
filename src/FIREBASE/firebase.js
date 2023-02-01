@@ -6,11 +6,16 @@ import { getStorage } from "firebase/storage";
 // 
 import { randomString } from '../Global'
 // 
-import { doc, setDoc, collection, getDocs, updateDoc } from "firebase/firestore";
+import { doc, setDoc, collection, getDocs, updateDoc, getDoc } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 // 
 import { setBlogsState } from '../REDUX/SLICES/BlogsSlice'
 import { setProductsState } from '../REDUX/SLICES/ProductsSlice'
+import { setDashUserState } from "../REDUX/SLICES/DashboardUserSlice";
+import { setPageViewsState } from '../REDUX/SLICES/PageViewsSlice'
+import { setLoadingState } from "../REDUX/SLICES/LoadingSlice";
+import { setContactEntriesState } from '../REDUX/SLICES/ContactEntriesSlice'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -39,7 +44,8 @@ export const sendContactForm = async (args) => {
         Name: args.Name,
         Email: args.Email,
         Reason: args.Reason,
-        Message: args.Message
+        Message: args.Message,
+        Date: args.Date
     });
 }
 // BLOG
@@ -146,6 +152,102 @@ export const getProducts = async (dispatch, setProducts, setCategories) => {
                 console.log(error)
             });
     });
+}
+
+// LOGIN
+export const firebaseLogin = (email, password, setErrorMsg, setShowError, navigate, dispatch) => {
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const _ = userCredential.user;
+            // ...
+            dispatch(setDashUserState({ Email: email }))
+            navigate('/dashboard')
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+
+            if (errorCode == "auth/configuration-not-found") {
+                setErrorMsg("Email not found.")
+                setShowError(true)
+            } else if (errorCode == "auth/invalid-email") {
+                setErrorMsg("Email has incorrect format.")
+                setShowError(true)
+            }
+            else if (errorCode == "auth/wrong-password") {
+                setErrorMsg("Password is incorrect.")
+                setShowError(true)
+            }
+            dispatch(setLoadingState(false))
+        });
+}
+export const firebaseSignOut = (dispatch) => {
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        dispatch(setDashUserState({}))
+    }).catch((error) => {
+        // An error happened.
+    });
+}
+
+// DASHBOARD
+const firebaseStorePageViews = async (page) => {
+    const pageRef = doc(db, "Pages", page.Name);
+    console.log(page.Views)
+    await updateDoc(pageRef, {
+        Views: page.Views + 1
+    });
+}
+export const firebaseGetPageViews = async (page) => {
+    const docRef = doc(db, "Pages", page.Name);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        const thing = {
+            Name: docSnap.data().Name,
+            Views: docSnap.data().Views
+        }
+        firebaseStorePageViews(thing)
+    } else {
+        // doc.data() will be undefined in this case
+        firebaseCreatePageViews(page)
+    }
+}
+const firebaseCreatePageViews = async (page) => {
+    await setDoc(doc(db, "Pages", page.Name), {
+        Views: 1,
+        Name: page.Name
+    });
+}
+// 
+export const dashGetPageViews = async (dispatch) => {
+    var pages = []
+    const querySnapshot = await getDocs(collection(db, "Pages"), orderBy("Views", "desc"));
+    querySnapshot.forEach((doc) => {
+        const d = doc.data()
+        const page = {
+            Name: d.Name,
+            Views: d.Views
+        }
+        pages.push(page)
+    });
+    dispatch(setPageViewsState(pages))
+}
+// 
+export const dashGetContactEntries = async (dispatch) => {
+    var entries = []
+    const querySnapshot = await getDocs(collection(db, "ContactEntries"), orderBy("Date", "asc"));
+    querySnapshot.forEach((doc) => {
+        const d = doc.data()
+        const entry = {
+            Name: d.Name,
+            Email: d.Email,
+            Reason: d.Reason,
+            Message: d.Message,
+        }
+        entries.push(entry)
+    });
+    dispatch(setContactEntriesState(entries))
 }
 
 // AUTH

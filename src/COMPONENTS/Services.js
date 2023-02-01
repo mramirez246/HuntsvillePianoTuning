@@ -8,6 +8,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs'
 import Footer from './UTILITIES/Footer'
 import { Link } from 'react-router-dom'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 // 
 
 export default function Services() {
@@ -90,6 +91,7 @@ export default function Services() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "Services", Views: 0 })
     }, [])
     return (
         <div>

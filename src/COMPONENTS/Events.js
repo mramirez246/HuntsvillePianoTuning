@@ -12,6 +12,7 @@ import img1 from '../PHOTOS/EVENTS/event1.jpg'
 import img2 from '../PHOTOS/EVENTS/event2.jpg'
 import img3 from '../PHOTOS/EVENTS/event3.jpg'
 import img4 from '../PHOTOS/EVENTS/event4.jpg'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Events() {
     const events = [
@@ -71,6 +72,7 @@ export default function Events() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "Events", Views: 0 })
     }, [])
     return (
         <div className='main'>

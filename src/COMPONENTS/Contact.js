@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 // 
 import { AiFillMail, AiTwotonePhone } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
-import { sendContactForm } from '../FIREBASE/firebase'
+import { firebaseGetPageViews, sendContactForm } from '../FIREBASE/firebase'
 import { useDispatch } from 'react-redux'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
@@ -50,7 +50,8 @@ export default function Contact() {
                 Name: name,
                 Email: email,
                 Reason: reason,
-                Message: message
+                Message: message,
+                Date: new Date()
             }
             sendContactForm(components)
                 .then(() => {
@@ -82,6 +83,7 @@ export default function Contact() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "Contact", Views: 0 })
     }, [])
     return (
         <div className='main'>
@@ -100,16 +102,16 @@ export default function Contact() {
                         <div className='contact-split'>
                             <div className='contact-pair'>
                                 <label>Your name</label>
-                                <input id="tbName" className={`no-border bg3 ${missingInfo ? "border-red" : ""}`} type="text" placeholder='John Doe' />
+                                <input id="tbName" className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} type="text" placeholder='John Doe' />
                             </div>
                             <div className='contact-pair'>
                                 <label>Your email</label>
-                                <input id="tbEmail" className={`no-border bg3 ${missingInfo ? "border-red" : ""}`} type="email" placeholder='jdoe@happy.com' />
+                                <input id="tbEmail" className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} type="email" placeholder='jdoe@happy.com' />
                             </div>
                         </div>
                         <div className='contact-pair'>
                             <label>Reason for contact</label>
-                            <select className={`no-border bg3 ${missingInfo ? "border-red" : ""}`} id='ddReason'>
+                            <select className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} id='ddReason'>
                                 <option>Question</option>
                                 <option>Comment</option>
                                 <option>Concern</option>
@@ -117,7 +119,7 @@ export default function Contact() {
                         </div>
                         <div className='contact-pair'>
                             <label>Your message</label>
-                            <textarea id="taMessage" className={`no-border bg3 ${missingInfo ? "border-red" : ""}`} placeholder='Leave a message here...'></textarea>
+                            <textarea id="taMessage" className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} placeholder='Leave a message here...'></textarea>
                         </div>
                         <button className='bg1 color2 no-border' onClick={sendForm}>Send</button>
                     </div>

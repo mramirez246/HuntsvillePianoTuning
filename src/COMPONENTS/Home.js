@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 // 
 import '../STYLESHEETS/Home.css'
 // 
-import { RxArrowRight, RxHamburgerMenu } from 'react-icons/rx'
+import { RxHamburgerMenu } from 'react-icons/rx'
 // 
 import logo from '../PHOTOS/stock.png'
 import img1 from '../PHOTOS/shop.jpg'
@@ -10,6 +10,7 @@ import img1 from '../PHOTOS/shop.jpg'
 import { Link } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Home() {
     function openNav() {
@@ -32,7 +33,7 @@ export default function Home() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
-
+        firebaseGetPageViews({ Name: "Home", Views: 0 })
     }, [])
     return (
         <div className='main'>

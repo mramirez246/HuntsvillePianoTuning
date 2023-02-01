@@ -8,6 +8,7 @@ import Footer from './UTILITIES/Footer';
 import Navigation from './UTILITIES/Navigation';
 // 
 import logo from '../PHOTOS/stock.png'
+import { firebaseGetPageViews } from '../FIREBASE/firebase';
 
 export default function Pricing() {
     function openNav() {
@@ -30,6 +31,7 @@ export default function Pricing() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "Pricing", Views: 0 })
     }, [])
     return (
         <div className='main'>

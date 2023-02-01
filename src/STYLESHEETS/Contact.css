@@ -42,7 +42,9 @@
 
     .contact-pair label {
         letter-spacing: -1px;
-        font-size: 1em;
+        font-size: 0.9em;
+        font-weight: 300;
+        margin-top: 0.5em;
     }
 
     .contact-pair input[type=text] {

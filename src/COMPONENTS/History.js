@@ -8,6 +8,7 @@ import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
 // 
 import img1 from '../PHOTOS/shop.jpg'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function History() {
     function openNav() {
@@ -30,6 +31,7 @@ export default function History() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "History", Views: 0 })
     }, [])
     return (
         <div className='main'>

@@ -24,7 +24,8 @@ import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 import { BsTrashFill } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
-import { getProducts } from '../FIREBASE/firebase'
+import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
+import { firebaseGetPageViews, getProducts } from '../FIREBASE/firebase'
 import Modal from './UTILITIES/Modal'
 
 export default function Shop() {
@@ -371,7 +372,12 @@ export default function Shop() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        dispatch(setLoadingState(true))
         getProducts(dispatch, setTempProds, setCategories)
+            .then(() => {
+                dispatch(setLoadingState(false))
+            })
+        firebaseGetPageViews({ Name: "Shop", Views: 0 })
     }, [])
     return (
         <div>

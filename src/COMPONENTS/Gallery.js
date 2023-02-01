@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import img1 from '../PHOTOS/car.jpg'
 import img2 from '../PHOTOS/city.jpg'
 import img3 from '../PHOTOS/van.jpg'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Gallery() {
     function openNav() {
@@ -38,6 +39,7 @@ export default function Gallery() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "Gallery", Views: 0 })
     }, [])
     return (
         <div className='main'>

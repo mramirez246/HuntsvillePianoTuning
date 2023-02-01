@@ -6,6 +6,7 @@ import logo from '../PHOTOS/stock.png'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 // 
 
 export default function History() {
@@ -29,6 +30,7 @@ export default function History() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        firebaseGetPageViews({ Name: "Locations", Views: 0 })
     }, [])
     return (
         <div className='main'>

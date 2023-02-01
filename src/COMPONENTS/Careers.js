@@ -6,6 +6,7 @@ import logo from '../PHOTOS/stock.png'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Careers() {
     function openNav() {
@@ -97,6 +98,7 @@ export default function Careers() {
         window.scrollTo(0, 0)
         setTempArr(careers)
         pickCareerType(careerTypes[0])
+        firebaseGetPageViews({ Name: "Careers", Views: 0 })
     }, [])
     return (
         <div className='main'>

@@ -10,6 +10,7 @@ import img1 from '../PHOTOS/blog.jpg'
 // 
 import { setBlogPostState } from '../REDUX/SLICES/BlogPostSlice'
 import { useDispatch } from 'react-redux'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Blog() {
     const dispatch = useDispatch()
@@ -103,6 +104,7 @@ export default function Blog() {
         window.scrollTo(0, 0)
         setFirstBlog(testBlogs[0])
         testBlogs.shift()
+        firebaseGetPageViews({ Name: "Blog", Views: 0 })
     }, [])
     return (
         <div className='main'>

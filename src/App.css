@@ -80,6 +80,7 @@ body {
 .bg3 {
   background-color: #e0e0ed;
 }
+
 .bg4 {
   background-color: #F6F6F8;
 }
@@ -98,6 +99,10 @@ body {
 
 .red {
   color: red;
+}
+
+.blue {
+  color: #0f0fa2;
 }
 
 /*  */
@@ -119,6 +124,7 @@ body {
 .border2 {
   border: 1px solid #0a0a0a;
 }
+
 .border3 {
   border: 1px solid #c2c2cb;
 }
@@ -159,6 +165,7 @@ body {
   padding: 1em;
 }
 
+
 @media only screen and (min-width: 350px) {
   .top {
     padding: 1em;
@@ -179,11 +186,13 @@ body {
     font-size: 3.4em;
     letter-spacing: -3px;
   }
+
   .page-subtitle {
     font-size: 1.2em;
     font-weight: 300;
     letter-spacing: -1px;
   }
+
   .page-title-sm {
     font-size: 2.3em;
     text-align: left;
@@ -203,6 +212,7 @@ body {
   .page-title {
     text-align: center;
   }
+
   .page-subtitle {
     text-align: center;
     font-size: 1.3em;
@@ -221,6 +231,7 @@ body {
   .page-title {
     font-size: 4em;
   }
+
   .page-subtitle {
     font-size: 1.4em;
   }
@@ -239,6 +250,7 @@ body {
     font-size: 4.5em;
     line-height: 80px;
   }
+
   .page-subtitle {
     font-size: 1.7em;
   }
