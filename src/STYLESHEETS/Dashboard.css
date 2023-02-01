@@ -29,7 +29,7 @@
 
     .dash-comp {
         padding: 1em;
-        height: 275px;
+        height: 300px;
         overflow-y: scroll;
         border: 1px solid black;
         margin: 1em;
@@ -82,7 +82,8 @@
         height: 40px;
         font-size: 0.9em;
         padding: 0.4em;
-        margin: 0.1em;
+        margin: 0.1em; 
+        width: fit-content;
     }
 
     .dash-contact-table tr td {
@@ -91,6 +92,7 @@
         border: 1px solid #111;
         white-space: nowrap;
         padding: 0.4em;
+        max-width: fit-content;
     }
 
     .dash-contact-msg {

@@ -5,7 +5,8 @@ import logo from '../PHOTOS/stock.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { dashGetContactEntries, dashGetPageViews, firebaseSignOut } from '../FIREBASE/firebase'
-import { HiEye } from 'react-icons/hi'
+import { VscEye } from 'react-icons/vsc'
+
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 
 export default function About() {
@@ -46,7 +47,7 @@ export default function About() {
                                             <h3>{page.Name}</h3>
                                             <div className='flex'>
                                                 <p className=''>{page.Views}</p>
-                                                <HiEye color="" />
+                                                <VscEye color="" />
                                             </div>
                                         </div>
                                     )

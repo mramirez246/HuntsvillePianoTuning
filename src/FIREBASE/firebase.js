@@ -7,6 +7,7 @@ import { getStorage } from "firebase/storage";
 import { randomString } from '../Global'
 // 
 import { doc, setDoc, collection, getDocs, updateDoc, getDoc } from "firebase/firestore";
+import { query, where, onSnapshot } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 // 
@@ -221,33 +222,39 @@ const firebaseCreatePageViews = async (page) => {
 }
 // 
 export const dashGetPageViews = async (dispatch) => {
-    var pages = []
-    const querySnapshot = await getDocs(collection(db, "Pages"), orderBy("Views", "desc"));
-    querySnapshot.forEach((doc) => {
-        const d = doc.data()
-        const page = {
-            Name: d.Name,
-            Views: d.Views
-        }
-        pages.push(page)
+    const q = query(collection(db, "Pages"), orderBy("Views", "desc"));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        var pages = []
+        querySnapshot.forEach((doc) => {
+            const d = doc.data()
+            const page = {
+                id: doc.id,
+                Name: d.Name,
+                Views: d.Views
+            }
+            pages.push(page)
+        });
+        dispatch(setPageViewsState(pages))
     });
-    dispatch(setPageViewsState(pages))
 }
 // 
 export const dashGetContactEntries = async (dispatch) => {
-    var entries = []
-    const querySnapshot = await getDocs(collection(db, "ContactEntries"), orderBy("Date", "asc"));
-    querySnapshot.forEach((doc) => {
-        const d = doc.data()
-        const entry = {
-            Name: d.Name,
-            Email: d.Email,
-            Reason: d.Reason,
-            Message: d.Message,
-        }
-        entries.push(entry)
+    const q = query(collection(db, "ContactEntries"), orderBy("Date", "desc"));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        var entries = []
+        querySnapshot.forEach((doc) => {
+            const d = doc.data()
+            const entry = {
+                id: doc.id,
+                Name: d.Name,
+                Email: d.Email,
+                Reason: d.Reason,
+                Message: d.Message
+            }
+            entries.push(entry)
+        });
+        dispatch(setContactEntriesState(entries))
     });
-    dispatch(setContactEntriesState(entries))
 }
 
 // AUTH
@@ -350,6 +357,19 @@ await setDoc(doc(db, "cities", "LA"), {
     name: "Los Angeles",
     state: "CA",
     country: "USA"
+});
+
+// -----------------GET DOCS LISTENER--------------------
+
+import { collection, query, where, onSnapshot } from "firebase/firestore";
+
+const q = query(collection(db, "cities"), where("state", "==", "CA"));
+const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  const cities = [];
+  querySnapshot.forEach((doc) => {
+      cities.push(doc.data().name);
+  });
+  console.log("Current cities in CA: ", cities.join(", "));
 });
 
 // -----------------GET DOC--------------------
