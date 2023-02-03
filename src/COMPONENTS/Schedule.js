@@ -44,25 +44,48 @@ export default function Schedule() {
     }
     const getAvailableTimes = () => {
         const chosenDate = document.querySelector("#dpDay").value.replace(/-/g, '\/')
-        const type = document.querySelector('#ddType').value
-        var chosenType = {}
-        for (var i in eventTypes) {
-            if (type == eventTypes[i].Type) {
-                chosenType = eventTypes[i]
+
+        if (chosenDate != "") {
+            const type = document.querySelector('#ddType').value
+            var chosenType = {}
+            for (var i in eventTypes) {
+                if (type == eventTypes[i].Type) {
+                    chosenType = eventTypes[i]
+                }
             }
+            // 
+            const duration = chosenType.Duration
+            // 
+            const open = new Date(chosenType.StartHour.seconds * 1000).getHours()
+            const close = new Date(chosenType.EndHour.seconds * 1000).getHours()
+            // 
+            const startOfDay = new Date(chosenDate).setHours(open, 0, 0, 0) / 1000
+            const endOfDay = new Date(chosenDate).setHours(close, 0, 0, 0) / 1000
+
+            var tempSlots = []
+
+            for (var i = startOfDay; i <= endOfDay - chosenType.Duration * 60; i += chosenType.Duration * 60) {
+                const full = new Date(i * 1000)
+                const tStart2 = full.getTime()
+                const tEnd2 = (full.getTime() / 1000) + (duration * 60)
+
+                for (var i in scheduledEvents) {
+                    const eve = scheduledEvents[i]
+                    const tStart1 = eve.Start.seconds
+                    const tEnd1 = eve.End.seconds
+                    if ((tStart1 > tStart2 && tStart1 < tEnd2) || (tEnd1 > tStart2 && tEnd1 < tEnd2)) {
+                        // NOTHING
+                    } else {
+                        const slot = `${full.getHours()}:${full.getMinutes() < 10 ? "0" : ""}${full.getMinutes()}`
+                        tempSlots.push(slot)
+                        break;
+                    }
+                }
+
+
+            }
+            setSlots(tempSlots)
         }
-        const open = new Date(chosenType.StartHour.seconds * 1000).getHours()
-        const close = new Date(chosenType.EndHour.seconds * 1000).getHours()
-        // 
-        const startOfDay = new Date(chosenDate).setHours(open, 0, 0, 0) / 1000
-        const endOfDay = new Date(chosenDate).setHours(close, 0, 0, 0) / 1000
-        var tempSlots = []
-        for (var i = startOfDay; i <= endOfDay - chosenType.Duration * 60; i += chosenType.Duration * 60) {
-            const full = new Date(i * 1000)
-            const slot = `${full.getHours()}:${full.getMinutes() < 10 ? "0" : ""}${full.getMinutes()}`
-            tempSlots.push(slot)
-        }
-        setSlots(tempSlots)
     }
 
     useEffect(() => {
