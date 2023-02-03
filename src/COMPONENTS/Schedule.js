@@ -66,13 +66,13 @@ export default function Schedule() {
 
             for (var i = startOfDay; i <= endOfDay - chosenType.Duration * 60; i += chosenType.Duration * 60) {
                 const full = new Date(i * 1000)
-                const tStart2 = full.getTime()
-                const tEnd2 = (full.getTime() / 1000) + (duration * 60)
+                const tStart1 = full.getTime()
+                const tEnd1 = (full.getTime() / 1000) + (duration * 60)
 
                 for (var i in scheduledEvents) {
                     const eve = scheduledEvents[i]
-                    const tStart1 = eve.Start.seconds
-                    const tEnd1 = eve.End.seconds
+                    const tStart2 = eve.Start.seconds
+                    const tEnd2 = eve.End.seconds
                     if ((tStart1 > tStart2 && tStart1 < tEnd2) || (tEnd1 > tStart2 && tEnd1 < tEnd2)) {
                         // NOTHING
                     } else {
