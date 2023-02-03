@@ -6,10 +6,11 @@ import { getStorage } from "firebase/storage";
 // 
 import { randomString } from '../Global'
 // 
-import { doc, setDoc, collection, getDocs, updateDoc, getDoc } from "firebase/firestore";
-import { query, where, onSnapshot } from "firebase/firestore";
+import { doc, setDoc, collection, getDocs, updateDoc, getDoc, where } from "firebase/firestore";
+import { query, onSnapshot } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { Timestamp } from "firebase/firestore";
 // 
 import { setBlogsState } from '../REDUX/SLICES/BlogsSlice'
 import { setProductsState } from '../REDUX/SLICES/ProductsSlice'
@@ -17,6 +18,8 @@ import { setDashUserState } from "../REDUX/SLICES/DashboardUserSlice";
 import { setPageViewsState } from '../REDUX/SLICES/PageViewsSlice'
 import { setLoadingState } from "../REDUX/SLICES/LoadingSlice";
 import { setContactEntriesState } from '../REDUX/SLICES/ContactEntriesSlice'
+import { setEventTypesState } from '../REDUX/SLICES/EventTypesSlice'
+import { setScheduledEventsState } from '../REDUX/SLICES/ScheduledEventsSlice'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -154,6 +157,47 @@ export const getProducts = async (dispatch, setProducts, setCategories) => {
             });
     });
 }
+// 
+// SCHEDULE
+export const getEventTypes = async (dispatch) => {
+    const q = query(collection(db, "EventTypes"), orderBy("Type","asc"));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        const types = [];
+        querySnapshot.forEach((doc) => {
+            const d = doc.data()
+            const type = {
+                Type: d.Type,
+                DOW: d.DOW,
+                Duration: d.Duration,
+                Desc: d.Desc,
+                StartHour: d.StartHour,
+                EndHour: d.EndHour
+            }
+            types.push(type)
+        });
+        dispatch(setEventTypesState(types))
+    });
+}
+export const getScheduledEvents = async (dispatch, date, dateEnd) => {
+    const fDateStart = Timestamp.fromDate(date)
+    const fDateEnd = Timestamp.fromDate(dateEnd)
+
+    const q = query(collection(db, "ScheduledEvents"), where("End", ">=", fDateStart), where("End", "<=", fDateEnd));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        const events = [];
+        querySnapshot.forEach((doc) => {
+            const d = doc.data()
+            const event = {
+                id: doc.id,
+                Name: d.Name,
+                Start: d.Start,
+                End: d.End,
+            }
+            events.push(event)
+        });
+        dispatch(setScheduledEventsState(events))
+    });
+}
 
 // LOGIN
 export const firebaseLogin = (email, password, setErrorMsg, setShowError, navigate, dispatch) => {
@@ -194,7 +238,6 @@ export const firebaseSignOut = (dispatch) => {
 // DASHBOARD
 const firebaseStorePageViews = async (page) => {
     const pageRef = doc(db, "Pages", page.Name);
-    console.log(page.Views)
     await updateDoc(pageRef, {
         Views: page.Views + 1
     });

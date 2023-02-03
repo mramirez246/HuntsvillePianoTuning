@@ -9,6 +9,8 @@ import productsReducer from './SLICES/ProductsSlice'
 import dashUserReducer from './SLICES/DashboardUserSlice'
 import pageViewsReducer from './SLICES/PageViewsSlice'
 import contactEntriesReducer from './SLICES/ContactEntriesSlice'
+import eventTypesReducer from './SLICES/EventTypesSlice'
+import scheduledEventsReducer from './SLICES/ScheduledEventsSlice'
 
 export default configureStore({
   reducer: {
@@ -21,7 +23,9 @@ export default configureStore({
     products: productsReducer,
     dashUser: dashUserReducer,
     pageViews: pageViewsReducer,
-    contactEntries: contactEntriesReducer
+    contactEntries: contactEntriesReducer,
+    eventTypes: eventTypesReducer,
+    scheduledEvents: scheduledEventsReducer
   },
 })
 

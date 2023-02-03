@@ -26,6 +26,7 @@ import Careers from './COMPONENTS/Careers';
 import Shop from './COMPONENTS/Shop';
 import Login from './COMPONENTS/Login';
 import Dashboard from './COMPONENTS/Dashboard'
+import Schedule from './COMPONENTS/Schedule';
 
 
 
@@ -66,6 +67,7 @@ function App() {
         <Route exact path="/faq" element={<FAQ />} />
         <Route exact path="/careers" element={<Careers />} />
         <Route exact path="/shop" element={<Shop />} />
+        <Route exact path="/schedule" element={<Schedule />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
       </Routes>
