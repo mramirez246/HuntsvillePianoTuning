@@ -63,25 +63,42 @@ export default function Schedule() {
             const endOfDay = new Date(chosenDate).setHours(close, 0, 0, 0) / 1000
 
             var tempSlots = []
+            for (var i in scheduledEvents) {
+                console.log(new Date(scheduledEvents[i].Start.seconds * 1000))
+                console.log("---")
+                console.log(new Date(scheduledEvents[i].End.seconds * 1000))
+                console.log("-----------------")
+            }
 
-            for (var i = startOfDay; i <= endOfDay - chosenType.Duration * 60; i += chosenType.Duration * 60) {
-                const full = new Date(i * 1000)
+            for (var i = startOfDay; i <= endOfDay - chosenType.Duration * 60; i += 10 * 60) {
+                const full = new Date(i)
                 const tStart1 = full.getTime()
-                const tEnd1 = (full.getTime() / 1000) + (duration * 60)
+                const tEnd1 = (full.getTime()) + (duration * 60)
 
-                for (var i in scheduledEvents) {
-                    const eve = scheduledEvents[i]
-                    const tStart2 = eve.Start.seconds
-                    const tEnd2 = eve.End.seconds
-                    if ((tStart1 > tStart2 && tStart1 < tEnd2) || (tEnd1 > tStart2 && tEnd1 < tEnd2)) {
-                        // NOTHING
-                    } else {
-                        const slot = `${full.getHours()}:${full.getMinutes() < 10 ? "0" : ""}${full.getMinutes()}`
-                        tempSlots.push(slot)
-                        break;
+
+                if (scheduledEvents.length > 0) {
+                    for (var j in scheduledEvents) {
+                        const eve = scheduledEvents[j]
+                        const tStart2 = eve.Start.seconds
+                        const tEnd2 = eve.End.seconds
+
+                        const res1 = (tStart1 >= tStart2 && tStart1 < tEnd2)
+                        const res2 = (tEnd1 > tStart2 && tEnd1 < tEnd2)
+
+                        if (!res1 && !res2) {
+                            const thing = new Date(tStart1 * 1000)
+                            const slot = `${thing.getHours()}:${thing.getMinutes() < 10 ? "0" : ""}${thing.getMinutes()}`
+                            tempSlots.push(slot)
+                            break;
+                        } else {
+                            break
+                        }
                     }
+                } else {
+                    const thing = new Date(tStart1 * 1000)
+                    const slot = `${thing.getHours()}:${thing.getMinutes() < 10 ? "0" : ""}${thing.getMinutes()}`
+                    tempSlots.push(slot)
                 }
-
 
             }
             setSlots(tempSlots)
@@ -105,6 +122,7 @@ export default function Schedule() {
             {/* BODY */}
             <div className="schedule font1">
                 <h1 className='page-title'>Schedule</h1>
+                <br />
                 <div className='schedule-wrap'>
                     <div className='schedule-left'>
                         <div>
