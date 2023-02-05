@@ -27,6 +27,7 @@ import Shop from './COMPONENTS/Shop';
 import Login from './COMPONENTS/Login';
 import Dashboard from './COMPONENTS/Dashboard'
 import Schedule from './COMPONENTS/Schedule';
+import Landing from './COMPONENTS/Landing';
 
 
 
@@ -70,6 +71,7 @@ function App() {
         <Route exact path="/schedule" element={<Schedule />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/landing" element={<Landing />} />
       </Routes>
     </BrowserRouter>
   );

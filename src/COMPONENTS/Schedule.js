@@ -15,6 +15,7 @@ import { getDayOfWeek_Word, getMonth_Word } from '../Global'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
 import { setFailureState } from '../REDUX/SLICES/FailureSlice'
+import { c_businessName, emailjs_fromEmail, emailjs_schedule_message } from '../Constants'
 
 export default function Schedule() {
     const eventTypes = useSelector((state) => state.eventTypes.value)
@@ -159,12 +160,12 @@ export default function Schedule() {
 
             }
             var templateParams = {
-                from_name: 'Happy Code LLC',
+                from_name: c_businessName,
                 to_name: name,
                 date_string: `${chosenSlotInfo.DayOfWeek}, ${chosenSlotInfo.Month} ${chosenSlotInfo.Day} ${chosenSlotInfo.Year} @ ${chosenSlotInfo.Slot}`,
                 to_email: email,
-                message: `Thank you for scheduling an appointment with ${"Happy Code LLC"}. Please make sure to arrive 10 minutes before your confirmed time to not lose your place in line. Otherwise, you can schedule another time for a different date.`,
-                business_email: "happycode.inbox@gmail.com"
+                message: emailjs_schedule_message,
+                from_email: emailjs_fromEmail
             };
 
             createScheduledEvent(args, templateParams)

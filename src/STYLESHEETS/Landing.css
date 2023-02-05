@@ -1,0 +1,146 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .landing-about {
+        padding: 2em 1em;
+    }
+
+    .landing-about-text {
+        font-weight: 300;
+        font-size: 1em;
+    }
+
+    .landing-about img {
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    .landing-contact {
+        padding: 2em 1em;
+    }
+
+    .landing-about-tiles {
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        height: fit-content;
+    }
+
+    .landing-about-tile1 {
+        background-image: url('../PHOTOS/landing2.jpeg');
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        padding: 2em;
+        height: fit-content;
+    }
+
+    .landing-about-tile1 h3 {
+        font-size: 1.4em;
+    }
+
+    .landing-about-tile1 p {
+        font-size: 0.9em;
+        padding: 0.4em 0;
+    }
+
+    .landing-about-tile2 {
+        background-image: url('../PHOTOS/landing3.jpeg');
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        padding: 2em;
+        height: fit-content;
+    }
+
+    .landing-about-tile2 h3 {
+        font-size: 1.4em;
+    }
+
+    .landing-about-tile2 p {
+        font-size: 0.9em;
+        padding: 0.4em 0;
+    }
+
+    .black-out-top {
+        position: relative;
+        z-index: 2;
+    }
+
+    .landing-about-btn {
+        display: block;
+        padding: 0.8em;
+        margin: 0.5em auto;
+        width: 80%;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .landing-about-tiles {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .landing-about {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 1em;
+    }
+
+    .landing-about-tiles {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-about-text {
+        font-size: 1.2em;
+    }
+    .landing-about-btn {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .landing-about-tile1 {
+        padding: 3em;
+    }
+    .landing-about-tile2 {
+        padding: 3em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .landing-about-tile1 {
+        padding: 4em;
+    }
+    .landing-about-tile2 {
+        padding: 4em;
+    }
+
+    .landing-about-tile1 h3 {
+        font-size: 2em;
+    }
+
+    .landing-about-tile1 p {
+        font-size: 1.2em;
+    }
+    .landing-about-tile2 h3 {
+        font-size: 2em;
+    }
+
+    .landing-about-tile2 p {
+        font-size: 1.2em;
+    }
+}

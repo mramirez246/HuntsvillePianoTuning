@@ -15,6 +15,7 @@ import { useDispatch } from 'react-redux'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
 import { setFailureState } from '../REDUX/SLICES/FailureSlice'
+import { c_businessName, emailjs_contact_message, emailjs_fromEmail } from '../Constants'
 
 export default function Contact() {
     const dispatch = useDispatch()
@@ -53,7 +54,15 @@ export default function Contact() {
                 Message: message,
                 Date: new Date()
             }
-            sendContactForm(components)
+            const params = {
+                to_name: name,
+                to_email: email,
+                from_name: c_businessName,
+                from_email: emailjs_fromEmail,
+                message: emailjs_contact_message,
+                reply_to: emailjs_fromEmail
+            }
+            sendContactForm(components, params)
                 .then(() => {
                     dispatch(setLoadingState(false))
                     dispatch(setSuccessState(true))
