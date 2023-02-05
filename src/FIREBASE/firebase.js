@@ -11,6 +11,7 @@ import { query, onSnapshot } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { Timestamp } from "firebase/firestore";
+import emailjs from 'emailjs-com';
 // 
 import { setBlogsState } from '../REDUX/SLICES/BlogsSlice'
 import { setProductsState } from '../REDUX/SLICES/ProductsSlice'
@@ -20,6 +21,7 @@ import { setLoadingState } from "../REDUX/SLICES/LoadingSlice";
 import { setContactEntriesState } from '../REDUX/SLICES/ContactEntriesSlice'
 import { setEventTypesState } from '../REDUX/SLICES/EventTypesSlice'
 import { setScheduledEventsState } from '../REDUX/SLICES/ScheduledEventsSlice'
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -160,7 +162,7 @@ export const getProducts = async (dispatch, setProducts, setCategories) => {
 // 
 // SCHEDULE
 export const getEventTypes = async (dispatch) => {
-    const q = query(collection(db, "EventTypes"), orderBy("Type","asc"));
+    const q = query(collection(db, "EventTypes"), orderBy("Type", "asc"));
     const _ = onSnapshot(q, (querySnapshot) => {
         const types = [];
         querySnapshot.forEach((doc) => {
@@ -197,6 +199,25 @@ export const getScheduledEvents = async (dispatch, date, dateEnd) => {
         });
         dispatch(setScheduledEventsState(events))
     });
+}
+export const createScheduledEvent = async (args, params) => {
+    const fStart = Timestamp.fromDate(new Date(args.Start * 1000))
+    const fEnd = Timestamp.fromDate(new Date(args.End * 1000))
+
+    await setDoc(doc(db, "ScheduledEvents", randomString(15)), {
+        Name: args.Name,
+        End: fEnd,
+        Start: fStart,
+        Email: args.Email,
+        Type: args.Type
+    });
+
+    emailjs.send('service_xq1rj6f', 'template_65xnt8b', params, "eaOYb8X6nqSrLTHBS")
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
 }
 
 // LOGIN
