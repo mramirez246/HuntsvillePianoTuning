@@ -1,0 +1,93 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .schedule-admin {
+        padding: 1em;
+    }
+
+    .schedule-admin-date {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 1em 2em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+    }
+
+    .schedule-admin-btn {
+        padding: 1em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+    }
+
+    .schedule-admin-eve {
+        padding: 1em;
+        height: fit-content;
+    }
+    .schedule-admin-eve h4 {
+        font-size: 1.5em;
+    }
+    .schedule-admin-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+       
+    }
+    .schedule-admin-times {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.4em;
+        height: fit-content;
+    }
+    .schedule-clock {
+        text-align: center;
+        font-size: 2.4em;
+    }
+    .clock-wrap {
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+        border-bottom: 2px solid black;
+        width: fit-content;
+    }
+    .clock-icon {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {
+    .schedule-admin {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .schedule-clock {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .schedule-admin {
+        width: 90vw;
+        margin: 0 auto;
+    }
+    .schedule-admin-wrap {
+        max-height: 60vh;
+        overflow-y: scroll;
+        min-height: 60vh;
+    }
+    .schedule-admin-times {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1200px) {}

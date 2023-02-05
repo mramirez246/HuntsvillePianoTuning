@@ -209,7 +209,6 @@ export const getEventTypes = async (dispatch) => {
 export const getScheduledEvents = async (dispatch, date, dateEnd) => {
     const fDateStart = Timestamp.fromDate(date)
     const fDateEnd = Timestamp.fromDate(dateEnd)
-
     const q = query(collection(db, "ScheduledEvents"), where("End", ">=", fDateStart), where("End", "<=", fDateEnd));
     const _ = onSnapshot(q, (querySnapshot) => {
         const events = [];
@@ -220,10 +219,12 @@ export const getScheduledEvents = async (dispatch, date, dateEnd) => {
                 Name: d.Name,
                 Start: d.Start,
                 End: d.End,
+                Type: d.Type
             }
             events.push(event)
         });
-        dispatch(setScheduledEventsState(events))
+        const sorted = events.sort((a,b) => a.Start - b.Start);
+        dispatch(setScheduledEventsState(sorted))
     });
 }
 export const createScheduledEvent = async (args, params) => {

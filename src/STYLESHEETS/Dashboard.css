@@ -16,11 +16,14 @@
     }
 
     .dash-out {
-        font-size: 0.8em;
-        background-color: red;
-        padding: 0.5em 1.5em;
+        font-size: 1.2em;
         height: fit-content;
         border-radius: 5px;
+        position: absolute;
+        bottom: 3em;
+    }
+    .dash-out:hover {
+        cursor: pointer;
     }
 
     .dashboard-wrap {

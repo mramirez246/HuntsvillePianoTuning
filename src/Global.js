@@ -21,7 +21,7 @@ export function getDayOfWeek_Word(num) {
             return "Friday";
         case 6:
             return "Saturday";
-        case 7:
+        case 0:
             return "Sunday";
         default:
             return "Sorry";
@@ -42,9 +42,9 @@ export function getDayOfWeek_Num(word) {
         case "Saturday":
             return 6;
         case "Sunday":
-            return 7;
-        default:
             return 0;
+        default:
+            return -1;
     }
 }
 export function getMonth_Word(num) {

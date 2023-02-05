@@ -105,6 +105,10 @@ body {
   color: #0f0fa2;
 }
 
+.green {
+  color: #0dc30d
+}
+
 /*  */
 
 .font1 {
@@ -151,6 +155,10 @@ body {
 
 .border-red {
   border: 1px solid red;
+}
+
+.border-green {
+  border: 1px solid #0dc30d;
 }
 
 /*  */

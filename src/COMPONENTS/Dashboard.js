@@ -8,6 +8,8 @@ import { dashGetContactEntries, dashGetPageViews, firebaseSignOut } from '../FIR
 import { VscEye } from 'react-icons/vsc'
 
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
+import DashNavigation from './UTILITIES/DashNavigation'
+import { RxHamburgerMenu } from 'react-icons/rx'
 
 export default function About() {
     const dashUser = useSelector((state) => state.dashUser.value)
@@ -16,6 +18,23 @@ export default function About() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    function openNav() {
+        if (window.innerWidth < 600) {
+            document.querySelector(".nav-body").style.width = "100vw";
+        } else if (window.innerWidth < 800) {
+            document.querySelector(".nav-body").style.width = "50vw";
+        } else if (window.innerWidth < 1000) {
+            document.querySelector(".nav-body").style.width = "40vw";
+        } else if (window.innerWidth < 1200) {
+            document.querySelector(".nav-body").style.width = "35vw";
+        } else {
+            document.querySelector(".nav-body").style.width = "20vw";
+        }
+    }
+    function closeNav() {
+        document.querySelector(".nav-body").style.width = "0";
+    }
 
     useEffect(() => {
         if (dashUser.Email == undefined) {
@@ -28,9 +47,12 @@ export default function About() {
     }, [])
     return (
         <div className='main font1'>
+            {/* NAVGIATION */}
+            <DashNavigation />
+
             <div className='top'>
-                <Link to="/"><img src={logo} /></Link>
-                <button onClick={() => { firebaseSignOut(dispatch); navigate('/login') }} className='dash-out no-border color2'>Sign Out</button>
+                <Link to="/login"><img src={logo} /></Link>
+                <RxHamburgerMenu className='top-icon' onClick={openNav} />
             </div>
             <div className='dashboard'>
                 <h1 className='page-title-sm dashboard-head'>Dashboard</h1>
