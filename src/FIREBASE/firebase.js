@@ -223,7 +223,7 @@ export const getScheduledEvents = async (dispatch, date, dateEnd) => {
             }
             events.push(event)
         });
-        const sorted = events.sort((a,b) => a.Start - b.Start);
+        const sorted = events.sort((a, b) => a.Start - b.Start);
         dispatch(setScheduledEventsState(sorted))
     });
 }
@@ -245,6 +245,16 @@ export const createScheduledEvent = async (args, params) => {
         }, function (error) {
             console.log('FAILED...', error);
         });
+}
+export const firebaseCreateAppointmentType = async (args) => {
+    await setDoc(doc(db, "EventTypes", randomString(15)), {
+        Type: args.Type,
+        StartHour: args.Start,
+        EndHour: args.End,
+        Desc: args.Desc,
+        DOW: args.DOW,
+        Duration: args.Duration
+    })
 }
 
 // LOGIN

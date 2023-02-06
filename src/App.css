@@ -172,7 +172,9 @@ body {
 .padding {
   padding: 1em;
 }
-
+.relative {
+  position: relative;
+}
 /*  */
 .black-out {
   position: absolute;

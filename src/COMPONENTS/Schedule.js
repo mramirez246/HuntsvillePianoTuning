@@ -16,6 +16,7 @@ import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
 import { setFailureState } from '../REDUX/SLICES/FailureSlice'
 import { c_businessName, emailjs_fromEmail, emailjs_schedule_message } from '../Constants'
+import { setEventTypesState } from '../REDUX/SLICES/EventTypesSlice'
 
 export default function Schedule() {
     const eventTypes = useSelector((state) => state.eventTypes.value)
@@ -39,9 +40,10 @@ export default function Schedule() {
         document.querySelector(".nav-body").style.width = "0";
     }
 
+    const [types, setTypes] = useState([])
     const [slots, setSlots] = useState([])
-    const [chosenDate, setChosenDate] = useState(new Date())
-    const [chosenService, setChosenService] = useState({})
+    const [chosenDate, setChosenDate] = useState("")
+    const [chosenService, setChosenService] = useState("")
     const [chosenSlotInfo, setChosenSlotInfo] = useState({})
     const [showDetails, setShowDetails] = useState(false)
     const [showModal, setShowModal] = useState(false)
@@ -54,70 +56,79 @@ export default function Schedule() {
         date = new Date(date.replace(/-/g, '\/'))
         setChosenDate(date)
         getScheduledEvents(dispatch, date, dateEnd)
+            .then(() => {
+                const dayOfWeek = new Date(date).getDay()
+                const dayOfWeekStr = getDayOfWeek_Word(dayOfWeek)
+                var temp = eventTypes.filter(x => x.DOW.includes(dayOfWeekStr))
+                setTypes(temp)
+            })
     }
     const getAvailableTimes = () => {
         const chosenDate = document.querySelector("#dpDay").value.replace(/-/g, '\/')
-
         if (chosenDate != "") {
             const type = document.querySelector('#ddType').value.split(" ~ ")[0]
             var chosenType = {}
             for (var i in eventTypes) {
+
                 if (type == eventTypes[i].Type) {
                     chosenType = eventTypes[i]
                     setChosenService(eventTypes[i])
                 }
             }
+
             // 
-            const duration = chosenType.Duration
-            // 
-            const open = new Date(chosenType.StartHour.seconds * 1000).getHours()
-            const close = new Date(chosenType.EndHour.seconds * 1000).getHours()
-            // 
-            const startOfDay = new Date(chosenDate).setHours(open, 0, 0, 0) / 1000
-            const endOfDay = new Date(chosenDate).setHours(close, 0, 0, 0) / 1000
+            if (chosenType.Type != undefined) {
+                const duration = chosenType.Duration
+                // 
+                const open = new Date(chosenType.StartHour.seconds * 1000).getHours()
+                const close = new Date(chosenType.EndHour.seconds * 1000).getHours()
+                // 
+                const startOfDay = new Date(chosenDate).setHours(open, 0, 0, 0) / 1000
+                const endOfDay = new Date(chosenDate).setHours(close, 0, 0, 0) / 1000
 
-            var tempSlots = []
-            // for (var i in scheduledEvents) {
-            //     console.log(new Date(scheduledEvents[i].Start.seconds * 1000))
-            //     console.log("---")
-            //     console.log(new Date(scheduledEvents[i].End.seconds * 1000))
-            //     console.log("-----------------")
-            // }
+                var tempSlots = []
+                // for (var i in scheduledEvents) {
+                //     console.log(new Date(scheduledEvents[i].Start.seconds * 1000))
+                //     console.log("---")
+                //     console.log(new Date(scheduledEvents[i].End.seconds * 1000))
+                //     console.log("-----------------")
+                // }
 
-            for (var i = startOfDay; i <= endOfDay - chosenType.Duration * 60; i += duration * 60) {
-                const full = new Date(i)
-                const tStart1 = full.getTime()
-                const tEnd1 = (full.getTime()) + (duration * 60)
+                for (var i = startOfDay; i <= endOfDay - chosenType.Duration * 60; i += duration * 60) {
+                    const full = new Date(i)
+                    const tStart1 = full.getTime()
+                    const tEnd1 = (full.getTime()) + (duration * 60)
 
 
-                if (scheduledEvents.length > 0) {
-                    var taken = false
-                    for (var j in scheduledEvents) {
-                        const eve = scheduledEvents[j]
-                        const tStart2 = eve.Start.seconds
-                        const tEnd2 = eve.End.seconds
+                    if (scheduledEvents.length > 0) {
+                        var taken = false
+                        for (var j in scheduledEvents) {
+                            const eve = scheduledEvents[j]
+                            const tStart2 = eve.Start.seconds
+                            const tEnd2 = eve.End.seconds
 
-                        const res1 = (tStart1 >= tStart2 && tStart1 < tEnd2)
-                        const res2 = (tEnd1 > tStart2 && tEnd1 < tEnd2)
+                            const res1 = (tStart1 >= tStart2 && tStart1 < tEnd2)
+                            const res2 = (tEnd1 > tStart2 && tEnd1 < tEnd2)
 
-                        if (res1 || res2) {
-                            taken = true
+                            if (res1 || res2) {
+                                taken = true
+                            }
+
                         }
-
-                    }
-                    if (!taken) {
+                        if (!taken) {
+                            const thing = new Date(tStart1 * 1000)
+                            const slot = `${thing.getHours()}:${thing.getMinutes() < 10 ? "0" : ""}${thing.getMinutes()}`
+                            tempSlots.push(slot)
+                        }
+                    } else {
                         const thing = new Date(tStart1 * 1000)
                         const slot = `${thing.getHours()}:${thing.getMinutes() < 10 ? "0" : ""}${thing.getMinutes()}`
                         tempSlots.push(slot)
                     }
-                } else {
-                    const thing = new Date(tStart1 * 1000)
-                    const slot = `${thing.getHours()}:${thing.getMinutes() < 10 ? "0" : ""}${thing.getMinutes()}`
-                    tempSlots.push(slot)
+                    console.log("------")
                 }
-                console.log("------")
+                setSlots(tempSlots)
             }
-            setSlots(tempSlots)
         }
     }
     const chooseSlot = (slot) => {
@@ -201,6 +212,7 @@ export default function Schedule() {
         window.scrollTo(0, 0)
         firebaseGetPageViews({ Name: "Schedule", Views: 0 })
         getEventTypes(dispatch)
+        console.log(chosenDate)
     }, [])
     return (
         <div className='main'>
@@ -252,18 +264,26 @@ export default function Schedule() {
                             <h2 className='schedule-pick'>Pick a day:</h2>
                             <input type="date" className="schedule-pick-date border2" id="dpDay" onChange={getDate} />
                         </div>
-                        <div>
-                            <h2 className='schedule-pick'>Pick a Service:</h2>
-                            <select id="ddType" className='schedule-pick-dd border2'>
-                                {
-                                    eventTypes.map((type, i) => {
-                                        return (
-                                            <option key={i}>{type.Type} ~ {type.Duration} min</option>
-                                        )
-                                    })
-                                }
-                            </select>
-                        </div>
+                        {
+                            chosenDate != "" ?
+                                <div>
+                                    <h2 className='schedule-pick'>Pick a Service:</h2>
+                                    <select id="ddType" className='schedule-pick-dd border2'>
+                                        <option>Select one</option>
+                                        {
+                                            types.map((type, i) => {
+                                                return (
+                                                    <option key={i}>{type.Type} ~ {type.Duration} min</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                </div> : <div></div>
+                        }
+                        {
+                            chosenService.Type != undefined ?
+                                <p className='type-desc bg3 color1'>{chosenService.Desc}</p> : <div></div>
+                        }
                         <button className='schedule-pick-btn bg1 color2 no-border' onClick={getAvailableTimes}>Get Available Times</button>
                     </div>
                     <div className='schedule-right'>
@@ -281,7 +301,7 @@ export default function Schedule() {
             </div>
 
             {/* FOOTER */}
-            <div className='bottom'>
+            <div className='bottom' style={chosenService.Type == undefined ? { position: "absolute", bottom: "0", right: "0", left: "0" } : {}}>
                 <Footer />
             </div>
         </div>

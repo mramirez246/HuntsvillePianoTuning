@@ -33,24 +33,29 @@
         padding: 1em;
         height: fit-content;
     }
+
     .schedule-admin-eve h4 {
         font-size: 1.5em;
     }
+
     .schedule-admin-wrap {
         display: grid;
         grid-template-columns: 1fr;
-       
+
     }
+
     .schedule-admin-times {
         display: grid;
         grid-template-columns: 1fr;
         gap: 0.4em;
         height: fit-content;
     }
+
     .schedule-clock {
         text-align: center;
         font-size: 2.4em;
     }
+
     .clock-wrap {
         display: flex;
         gap: 0.5em;
@@ -58,8 +63,80 @@
         border-bottom: 2px solid black;
         width: fit-content;
     }
+
     .clock-icon {
         font-size: 2em;
+    }
+
+    .schedule-admin-create {
+        margin-top: 2vh;
+        font-size: 1.2em;
+        text-decoration: underline;
+    }
+
+    .schedule-admin-create:hover {
+        cursor: pointer;
+    }
+
+    .schedule-admin-form {
+        position: fixed;
+        background-color: #111111b5;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 100;
+    }
+    .schedule-admin-form-wrap {
+        padding: 1em;
+        max-width: 450px;
+        margin: 2em auto
+    }
+    .schedule-admin-form-wrap h1 {
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 25px;
+    }
+    .schedule-admin-form-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.2em;
+    }
+    .schedule-admin-form-pair label {
+        font-size: 0.9em;
+    }
+    .schedule-admin-form-pair input {
+        padding: 0.8em;
+        margin-bottom: 0.6em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        width: 100%;
+    }
+    .schedule-admin-form-pair textarea {
+        padding: 0.8em;
+        margin-bottom: 0.6em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        min-height: 120px;
+    }
+    .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+    .big-split {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 1em;
+    }
+    .schedule-admin-form-btn {
+        width: 100%;
+        padding: 1em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+    }
+    .schedule-xmark {
+        font-size: 5em;
     }
 }
 
@@ -70,6 +147,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
     .schedule-clock {
         text-align: left;
     }
@@ -80,11 +158,13 @@
         width: 90vw;
         margin: 0 auto;
     }
+
     .schedule-admin-wrap {
         max-height: 60vh;
         overflow-y: scroll;
         min-height: 60vh;
     }
+
     .schedule-admin-times {
         grid-template-columns: 1fr 1fr;
     }
