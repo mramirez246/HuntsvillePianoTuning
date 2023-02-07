@@ -118,7 +118,7 @@ export default function Products() {
                         <p className='products-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.</p>
                         {
                             prod.id >= 0 ?
-                                <div id="productDesc" className=' product-desc-wrap border2'>
+                                <div id="productDesc" className=' product-desc-wrap border-top1'>
                                     <h1 className='product-desc-name'>{prod.Name}</h1>
                                     <p className='product-desc'>{prod.Desc}</p>
                                 </div> : <div></div>
@@ -128,7 +128,7 @@ export default function Products() {
                         {
                             products.map((product, i) => {
                                 return (
-                                    <div key={i} className="product-block border2">
+                                    <div key={i} className="product-block border3">
                                         <img src={product.Img} className="product-img" />
                                         <p className='product-name'>{product.Name}</p>
                                         <div className='separate'>

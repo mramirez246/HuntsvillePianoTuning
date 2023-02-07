@@ -1,0 +1,87 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .partners {
+        padding: 1em;
+    }
+
+    .partners-left {
+        font-size: 1.4em;
+        font-weight: 300;
+    }
+
+    .partners-right {
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .partner img {
+        width: 100%;
+        height: 225px;
+    }
+
+    .partner h1 {
+        font-size: 1.4em;
+        letter-spacing: -1px;
+        padding: 0.4em 0;
+    }
+
+    .partner p {
+        font-weight: 300;
+        font-size: 0.9em;
+    }
+
+    .partner-link {
+        display: block;
+        margin: 0.5em 0;
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .partners-right {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .partners-wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .partners-right {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5em;
+    }
+    .partners-left {
+        width: 80%;
+        padding: 1em;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .partners-right {
+        gap: 2em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .partners-right {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3em;
+    }
+}
