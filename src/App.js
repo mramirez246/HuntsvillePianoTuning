@@ -30,6 +30,7 @@ import Schedule from './COMPONENTS/Schedule';
 import Landing from './COMPONENTS/Landing';
 import ScheduleAdmin from './COMPONENTS/ScheduleAdmin';
 import Partners from './COMPONENTS/Partners';
+import Form from './COMPONENTS/Form';
 
 
 
@@ -72,6 +73,7 @@ function App() {
         <Route exact path="/shop" element={<Shop />} />
         <Route exact path="/schedule" element={<Schedule />} />
         <Route exact path="/partners" element={<Partners />} />
+        <Route exact path="/form" element={<Form />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/scheduleadmin" element={<ScheduleAdmin />} />

@@ -1,0 +1,138 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .form {
+        padding: 1em;
+    }
+    .form-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+    .col4 {
+        grid-column: span 2;
+    }
+    .col3 {
+        grid-column: span 2;
+    }
+    .col2 {
+        grid-column: span 2;
+    }
+    .col1 {
+        grid-column: span 1;
+    }
+    .form-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.4em;
+    }
+    .form-pair-h {
+        display: flex;
+        gap: 0.3em;
+        align-items: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    .form-pair input[type=text],input[type=email], input[type=date], input[type=time], input[type=password] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0.8em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+    }
+    .form-pair textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0.8em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        min-height: 170px;
+    }
+    .form-pair select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0.8em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+    }
+    .form-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 1em;
+        font-size: 1em;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .form-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 70vw;
+        margin: 0 auto;
+    }
+    .col4 {
+        grid-column: span 2;
+    }
+    .col3 {
+        grid-column: span 2;
+    }
+    .col2 {
+        grid-column: span 1;
+    }
+    .col1 {
+        grid-column: span 1;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {
+    .form-wrap {
+        width: 60vw;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .col4 {
+        grid-column: span 3;
+    }
+    .col3 {
+        grid-column: span 3;
+    }
+    .col2 {
+        grid-column: span 2;
+    }
+    .col1 {
+        grid-column: span 1;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .form-wrap {
+        width: 50vw;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .col4 {
+        grid-column: span 4;
+    }
+    .col3 {
+        grid-column: span 3;
+    }
+    .col2 {
+        grid-column: span 2;
+    }
+    .col1 {
+        grid-column: span 1;
+    }
+}
