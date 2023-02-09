@@ -45,7 +45,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
     }
-    .form-pair input[type=text],input[type=email], input[type=date], input[type=time], input[type=password] {
+    .form-pair input[type=text],input[type=email], input[type=date], input[type=time], input[type=password], input[type=file] {
         -webkit-appearance: none;
         -moz-appearance: none;
         padding: 0.8em;
@@ -73,6 +73,19 @@
         padding: 1em;
         font-size: 1em;
         font-weight: 400;
+    }
+    .form-uploads {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 0.4em;
+    }
+    .form-file img {
+        width: 100%;
+        max-width: 300px;
+    }
+    .form-file video {
+        max-height: 200px;
+        max-width: 200px;
     }
 }
 

@@ -8,7 +8,7 @@ import { randomString } from '../Global'
 // 
 import { doc, setDoc, collection, getDocs, updateDoc, getDoc, where } from "firebase/firestore";
 import { query, onSnapshot } from "firebase/firestore";
-import { ref, getDownloadURL } from "firebase/storage";
+import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { Timestamp } from "firebase/firestore";
 import emailjs from 'emailjs-com';
@@ -356,6 +356,20 @@ export const dashGetContactEntries = async (dispatch) => {
         });
         dispatch(setContactEntriesState(entries))
     });
+}
+
+// FORMS
+export const firebaseSendForm = async (files) => {
+    const formID = randomString(20)
+    for (var i in files) {
+        const file = files[i]
+        const storageRef = ref(storage, `Forms/${formID}/${file.Name}`);
+
+        uploadBytes(storageRef, file.File).then((_) => {
+            console.log('Uploaded a blob or file!');
+        });
+    }
+
 }
 
 // AUTH

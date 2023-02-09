@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx'
 // 
 import '../STYLESHEETS/Form.css'
@@ -6,9 +6,14 @@ import logo from '../PHOTOS/stock.png'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
-import { firebaseGetPageViews } from '../FIREBASE/firebase'
+import { firebaseGetPageViews, firebaseSendForm } from '../FIREBASE/firebase'
+import { useDispatch } from 'react-redux'
+import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
+import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
+import { setFailureState } from '../REDUX/SLICES/FailureSlice'
 
 export default function Form() {
+    const dispatch = useDispatch()
     function openNav() {
         if (window.innerWidth < 600) {
             document.querySelector(".nav-body").style.width = "100vw";
@@ -24,6 +29,47 @@ export default function Form() {
     }
     function closeNav() {
         document.querySelector(".nav-body").style.width = "0";
+    }
+
+    const [uploads, setUploads] = useState([])
+
+    const getFiles = () => {
+        const input = document.querySelector('#fu')
+        const files = input.files
+        var temp = []
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var fileUrl = URL.createObjectURL(file);
+            const fileObj = {
+                Name: file.name,
+                URL: fileUrl,
+                Type: file.type,
+                File: file
+            }
+            temp.push(fileObj)
+        }
+        setUploads(temp)
+
+    }
+    const submitForm = () => {
+        dispatch(setLoadingState(true))
+        firebaseSendForm(uploads)
+            .then(() => {
+                dispatch(setLoadingState(false))
+                dispatch(setSuccessState(true))
+                setTimeout(() => {
+                    dispatch(setSuccessState(false))
+                    window.location.reload(false);
+                }, 3000);
+            })
+            .catch((error) => {
+                console.log(error)
+                dispatch(setLoadingState(false))
+                dispatch(setFailureState(true))
+                setTimeout(() => {
+                    dispatch(setFailureState(false))
+                }, 3000);
+            })
     }
 
     useEffect(() => {
@@ -82,6 +128,34 @@ export default function Form() {
                         <input className='border2' type="radio" id="ra" name="" />
                     </span>
                     <span className='form-pair col4'>
+                        <label>Upload:</label>
+                        <div className='border2'>
+                            <input type="file" id="fu" multiple="multiple" onChange={() => { getFiles() }} />
+                            <div className='form-uploads padding'>
+                                {
+                                    uploads.map((file, i) => {
+                                        return (
+                                            <div className='form-file' key={i}>
+                                                {
+                                                    file.Type == "image/png" || file.Type == "image/jpeg" ?
+                                                        <img src={file.URL} />
+                                                        : file.Type == "application/pdf" ?
+                                                            <p>{file.Name}</p>
+                                                            : file.Type == "video/quicktime" ?
+                                                                <video src={file.URL} controls></video>
+                                                                : file.Type == "audio/wav" ?
+                                                                    <audio src={file.URL} controls></audio>
+                                                                    :
+                                                                    <div></div>
+                                                }
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </span>
+                    <span className='form-pair col4'>
                         <label>Textarea:</label>
                         <textarea className='border2' placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.' id="ta"></textarea>
                     </span>
@@ -95,7 +169,7 @@ export default function Form() {
                             <option>Everything 4</option>
                         </select>
                     </span>
-        <button className='form-btn col4 no-border bg1 color2'>Submit Form</button>
+                    <button onClick={submitForm} className='form-btn col4 no-border bg1 color2'>Submit Form</button>
 
                 </div>
             </div>
