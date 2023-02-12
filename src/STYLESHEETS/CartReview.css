@@ -17,6 +17,7 @@
         background-color: rgba(0, 0, 0, 0.7);
         width: 100vw;
         height: 100vh;
+        z-index: 1;
     }
 
     .modal-cart-review-wrap {
@@ -81,6 +82,7 @@
         width: 100%;
         border-radius: 20px;
         padding: 0.8em;
+        font-size: 1em;
     }
 }
 
@@ -95,3 +97,5 @@
 @media only screen and (min-width: 1000px) {}
 
 @media only screen and (min-width: 1200px) {}
+
+

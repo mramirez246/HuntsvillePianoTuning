@@ -1,0 +1,119 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .portfolio-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .portfolio-sub {
+        font-size: 1.2em;
+        font-weight: 300;
+        padding: 1em 0;
+    }
+
+    .portfolio-block {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        min-height: 50vh;
+    }
+
+    .portfolio-left1 {
+        padding: 0;
+        margin: 0;
+        background-image: url('../PHOTOS/portfolio1.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 40vh;
+    }
+
+    .portfolio-left2 {
+        padding: 0;
+        margin: 0;
+        background-image: url('../PHOTOS/portfolio2.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 40vh;
+    }
+
+    .portfolio-left3 {
+        padding: 0;
+        margin: 0;
+        background-image: url('../PHOTOS/portfolio1.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 40vh;
+    }
+
+    .portfolio-right {
+        padding: 1.5em;
+    }
+
+    .portfolio-right h1 {
+        font-size: 1.5em;
+    }
+
+    .portfolio-right p {
+        display: block;
+        font-size: 1em;
+        padding: 1em 0;
+        font-weight: 300;
+    }
+
+    .portfolio-link {
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        margin-top: 0.5em;
+        text-align: left;
+        padding: 0.6em;
+        border-radius: 20px;
+        font-size: 1.2em;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {
+    .portfolio-sub {
+        width: 80%;
+        margin: 1em auto;
+    }
+
+    .portfolio-block {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .portfolio-sub {
+        width: 70%;
+    }
+
+    .portfolio-block {
+        grid-template-columns: 5fr 2fr;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .portfolio-sub {
+        width: 60%;
+    }
+}

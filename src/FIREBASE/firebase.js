@@ -4,6 +4,8 @@ import { getAuth } from "firebase/auth";
 import { getFirestore, orderBy } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // 
+
+// 
 import { randomString } from '../Global'
 // 
 import { doc, setDoc, collection, getDocs, updateDoc, getDoc, where } from "firebase/firestore";
@@ -140,16 +142,20 @@ const updateProductQuantity = async (cartItems, products) => {
         }
     }
 }
-export const purchaseItems = (date, subTotal, tax, total, cartItems) => {
+export const purchaseItems = (date, subTotal, tax, total, cartItems, products) => {
     const orderID = randomString(10)
     createOrder(date, orderID, subTotal, tax, total)
         .then(() => {
             createOrderItems(orderID, cartItems)
+            .then(() => {
+                updateProductQuantity(cartItems, products)
+            })
         })
 }
 export const getProducts = async (dispatch, setProducts, setCategories) => {
     var products = []
     var count = 0
+    
     const querySnapshot = await getDocs(collection(db, "Products"), orderBy("Category"));
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots

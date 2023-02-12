@@ -32,6 +32,8 @@ import Landing from './COMPONENTS/Landing';
 import ScheduleAdmin from './COMPONENTS/ScheduleAdmin';
 import Partners from './COMPONENTS/Partners';
 import Form from './COMPONENTS/Form';
+import Features from './COMPONENTS/Features';
+import Portfolio from './COMPONENTS/Portfolio';
 
 
 
@@ -75,6 +77,8 @@ function App() {
         <Route exact path="/schedule" element={<Schedule />} />
         <Route exact path="/partners" element={<Partners />} />
         <Route exact path="/form" element={<Form />} />
+        <Route exact path="/features" element={<Features />} />
+        <Route exact path="/portfolio" element={<Portfolio />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/scheduleadmin" element={<ScheduleAdmin />} />

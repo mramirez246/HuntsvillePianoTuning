@@ -1,0 +1,93 @@
+    /* FONTS
+        font-family: 'Roboto', sans-serif;
+    */
+    /* COLORS
+        Light Blue - 57b4ee
+        Blue - 5783d6
+        Yellow - F4E04D
+        Lighter Blue - 54F2F2
+        Dark - #0A0A0A
+        Light - #FEFEFE
+    */
+
+    @media only screen and (min-width: 350px) {
+        .features {
+            padding: 1em;
+        }
+
+        .features-sub {
+            font-size: 1.4em;
+            font-weight: 300;
+            padding: 0.6em 0;
+        }
+
+        .features-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1em;
+        }
+
+        .feature-icon-wrap {
+            display: block;
+            width: 120px;
+            height: 80px;
+            padding: 0.5em;
+            z-index: 1;
+        }
+
+        .feature-icon {
+            /* transform: translate(-5px, -5px); */
+            color: black;
+            font-size: 2em;
+        }
+
+        .feature-name {
+            display: block;
+            letter-spacing: -1px;
+            font-weight: 600;
+            font-size: 1.5em;
+            margin-top: -30px;
+            z-index: 2;
+        }
+
+        .feature-desc {
+            font-size: 1em;
+            font-weight: 300;
+            padding: 0.4em 0;
+        }
+    }
+
+    @media only screen and (min-width: 600px) {
+        .features-wrap {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        .features-sub {
+            width: 75%;
+            margin: 0 auto;
+        }
+        .features-wrap {
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        .features-wrap {
+            width: 80%;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .features-sub {
+            width: 60%;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .features-wrap {
+            width: 95%;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }

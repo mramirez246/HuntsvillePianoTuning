@@ -26,7 +26,7 @@
     }
 
     .shop-item-price {
-        font-size: 1.1em;
+        font-size: 1.4em;
         font-weight: 600;
         letter-spacing: -1px;
     }
@@ -60,7 +60,7 @@
     .shop-item-show {
         font-size: 0.8em;
         text-align: right;
-        padding: 0.5em 0;
+        padding: 1em 0;
     }
 
     .shop-item-show:hover {
@@ -151,6 +151,8 @@
         padding: 0.6em;
         border-radius: 20px;
         margin-top: 1em;
+        font-size: 1em;
+        z-index: 0;
     }
 
     .cart-item-rem {

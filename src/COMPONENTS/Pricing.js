@@ -44,18 +44,8 @@ export default function Pricing() {
             {/* BODY */}
             <div className='pricing font1'>
                 <h1 className='page-title'>Pricing</h1>
+                <br/>
                 <div className='pricings'>
-                    <div className='pricing-block border2'>
-                        <h2 className='pricing-name'>Everything Bagel</h2>
-                        <h1 className='pricing-price'>$42.99</h1>
-                        <p className='pricing-desc'>Things are all over bagels, but there is more than you think.</p>
-                        <ul className='pricing-block-list'>
-                            <li><AiOutlineCheckCircle /><p>Here is something you should know about this.</p></li>
-                            <li><AiOutlineCheckCircle /><p>Here is something you should know about this.</p></li>
-                            <li><AiOutlineCheckCircle /><p>Here is something you should know about this.</p></li>
-                            <li><AiOutlineCheckCircle /><p>Here is something you should know about this.</p></li>
-                        </ul>
-                    </div>
                     <div className='pricing-block border2'>
                         <h2 className='pricing-name'>Everything Bagel</h2>
                         <h1 className='pricing-price'>$42.99</h1>

@@ -10,6 +10,8 @@ import logo from '../PHOTOS/stock.png'
 import '../STYLESHEETS/Shop.css'
 import '../STYLESHEETS/CartReview.css'
 // 
+
+// 
 import img2 from '../PHOTOS/STORE/img2.jpeg'
 import img3 from '../PHOTOS/STORE/img3.jpeg'
 import img1 from '../PHOTOS/STORE/img1.jpeg'
@@ -21,12 +23,15 @@ import img8 from '../PHOTOS/STORE/img8.jpeg'
 // 
 import { HiShoppingCart } from 'react-icons/hi'
 import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
-import { BsTrashFill } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
-import { firebaseGetPageViews, getProducts } from '../FIREBASE/firebase'
+import { firebaseGetPageViews, getProducts, purchaseItems } from '../FIREBASE/firebase'
 import Modal from './UTILITIES/Modal'
+import { square_appID, square_locationID } from '../Constants'
+// 
+
+
 
 export default function Shop() {
     const dispatch = useDispatch()
@@ -46,6 +51,7 @@ export default function Shop() {
     function closeNav() {
         document.querySelector(".nav-body").style.width = "0";
     }
+
 
     // const products = [
     //     {
@@ -210,6 +216,7 @@ export default function Shop() {
     const [showModal, setShowModal] = useState(false)
 
 
+
     const chooseCategory = () => {
         const categs = document.querySelectorAll('.cbCategory')
         var checked = []
@@ -339,13 +346,17 @@ export default function Shop() {
         setShowReview(true)
     }
     const payNow = () => {
-        setShowModal(true)
-        setShowReview(false)
-        setToggleCart(false)
-        setCartItems([])
-        setTimeout(() => {
-            setShowModal(false)
-        }, 4000);
+        // CHECKOUT HERE
+
+        // purchaseItems(new Date(), subTotal, tax, total, cartItems, products)
+        // setShowModal(true)
+        // setShowReview(false)
+        // setToggleCart(false)
+        // setCartItems([])
+        // setTimeout(() => {
+        //     setShowModal(false)
+        //     window.location.reload(false);
+        // }, 4000);
     }
     // 
     const calcTotal = () => {
@@ -366,6 +377,7 @@ export default function Shop() {
         console.log(tempTax)
         console.log(tempTot)
     }
+
 
     const tx = 0.08
 
@@ -426,6 +438,8 @@ export default function Shop() {
                                 </div>
                             </div>
                             <br />
+                            {/* ADD PAYMENT STUFF HERE */}
+
                             <button onClick={payNow} className='cart-rev-btn bg1 color2 no-border'>Pay Now</button>
                         </div>
                     </div> : <div></div>
@@ -532,7 +546,8 @@ export default function Shop() {
                                                     <p className='shop-item-desc'>{prod.Desc}</p> : <div></div>
                                             }
                                             <div className='separate'>
-                                                <p className='shop-item-qty color3'>Qty: {prod.Quantity}</p>
+                                                <p></p>
+                                                {/* <p className='shop-item-qty color3'>Qty: {prod.Quantity}</p> */}
                                                 <p className='shop-item-show' onClick={() => { prod.id == prodID ? setProdID(-1) : setProdID(prod.id) }}>{prod.id == prodID ? "Show Less" : "Show More"}</p>
                                             </div>
                                             <button onClick={() => { addToCart(prod) }} className='shop-item-btn border2 no-bg color1'>Add to Cart</button>
