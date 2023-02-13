@@ -5,6 +5,7 @@ import '../../STYLESHEETS/Navigation.css'
 // 
 import logo from '../../PHOTOS/stock.png'
 import { Link } from 'react-router-dom'
+import { c_businessName } from '../../Constants'
 
 export default function Navigation() {
     function openNav() {
@@ -42,7 +43,7 @@ export default function Navigation() {
                 <Link className='nav-link color1' to="/blog">Blog</Link>
                 <Link className='nav-link color1' to="/contact">Contact Us</Link>
             </div>
-            <p className='copy font1 color1'>&copy; Happy Code 2023. All Rights Reserved.</p>
+            <p className='copy font1 color1'>&copy; {c_businessName} 2023. All Rights Reserved.</p>
         </div>
     )
 }

@@ -23,22 +23,14 @@ import { setLoadingState } from "../REDUX/SLICES/LoadingSlice";
 import { setContactEntriesState } from '../REDUX/SLICES/ContactEntriesSlice'
 import { setEventTypesState } from '../REDUX/SLICES/EventTypesSlice'
 import { setScheduledEventsState } from '../REDUX/SLICES/ScheduledEventsSlice'
-import { emailjs_contact_templateID, emailjs_publicKey, emailjs_schedule_templateID, emailjs_serviceID } from "../Constants";
+import { emailjs_contact_templateID, emailjs_publicKey, emailjs_schedule_templateID, emailjs_serviceID, firebase_configObj } from "../Constants";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyBvFjW_wMjEFE-SESveqdk_U0328bAdFww",
-    authDomain: "happy-code-templates.firebaseapp.com",
-    projectId: "happy-code-templates",
-    storageBucket: "happy-code-templates.appspot.com",
-    messagingSenderId: "754511528809",
-    appId: "1:754511528809:web:65a693fa61dbb4a6ebf3f8",
-    measurementId: "G-R31943N4V6"
-};
+const firebaseConfig = firebase_configObj;
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

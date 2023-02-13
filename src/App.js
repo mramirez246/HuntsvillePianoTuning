@@ -34,6 +34,7 @@ import Partners from './COMPONENTS/Partners';
 import Form from './COMPONENTS/Form';
 import Features from './COMPONENTS/Features';
 import Portfolio from './COMPONENTS/Portfolio';
+import Menu from './COMPONENTS/Menu';
 
 
 
@@ -79,6 +80,7 @@ function App() {
         <Route exact path="/form" element={<Form />} />
         <Route exact path="/features" element={<Features />} />
         <Route exact path="/portfolio" element={<Portfolio />} />
+        <Route exact path="/menu" element={<Menu />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/scheduleadmin" element={<ScheduleAdmin />} />

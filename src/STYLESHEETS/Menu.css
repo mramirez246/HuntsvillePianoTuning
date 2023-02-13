@@ -1,0 +1,86 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .menu-category {
+        padding: 0.8em;
+        font-size: 1.4em;
+        height: fit-content;
+    }
+
+    .menu-icon {
+        font-size: 1.8em;
+        margin-right: 0.5em;
+    }
+
+    .menu-wrap {
+        padding: 0.8em;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: fit-content;
+        gap: 0.5em;
+    }
+
+    .menu-item-prices {
+        display: flex;
+        gap: 0.5em;
+    }
+
+    .menu-item-price h3 {
+        font-size: 1.3em;
+    }
+
+    .menu-item-price h4 {
+        font-size: 0.9em;
+    }
+
+    .menu-block p {
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+
+    .menu-item-name {
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+
+    .menu-block {
+        height: fit-content;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .menu {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {
+    .menu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .menu {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
