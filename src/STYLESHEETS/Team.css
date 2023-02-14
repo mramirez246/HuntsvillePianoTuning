@@ -1,0 +1,70 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .team-sub {
+        font-size: 1.3em;
+        font-weight: 300;
+        padding: 1em 0;
+    }
+    .team-members {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+    .team-member img {
+        border-radius: 50px;
+    }
+    .team-member h1 {
+        font-size: 1.6em;
+        text-align: center;
+    }
+    .team-member p {
+        font-size: 1.1em;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .team-members {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .team-members {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .team-members {
+        width: 80%;
+        gap: 3em
+    }
+    .team-sub {
+        width: 80%;
+        margin: 1em auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .team-members {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .team-sub {
+        font-size: 1.6em;
+        width: 70%;
+    }
+}
