@@ -1,0 +1,45 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .timecard-btns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+    .timecard-btns button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 1em;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+    }
+    .timecard-latest {
+        font-size: 1.3em;
+        font-weight: 300;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .timecard-wrap {
+        width: 550px;
+        margin: 0 auto;
+        padding: 1em;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}

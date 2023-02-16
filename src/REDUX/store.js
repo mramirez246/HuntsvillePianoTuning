@@ -11,6 +11,11 @@ import pageViewsReducer from './SLICES/PageViewsSlice'
 import contactEntriesReducer from './SLICES/ContactEntriesSlice'
 import eventTypesReducer from './SLICES/EventTypesSlice'
 import scheduledEventsReducer from './SLICES/ScheduledEventsSlice'
+import timecardEntryReducer from './SLICES/TimecardEntrySlice'
+import employeeReducer from './SLICES/EmployeeUserSlice'
+import employeesReducer from './SLICES/EmployeesSlice'
+import punchesReducer from './SLICES/PunchesSlice'
+import totalHoursReducer from './SLICES/TotalHoursSlice'
 
 export default configureStore({
   reducer: {
@@ -25,7 +30,12 @@ export default configureStore({
     pageViews: pageViewsReducer,
     contactEntries: contactEntriesReducer,
     eventTypes: eventTypesReducer,
-    scheduledEvents: scheduledEventsReducer
+    scheduledEvents: scheduledEventsReducer,
+    timecardEntry: timecardEntryReducer,
+    employee: employeeReducer,
+    employees: employeesReducer,
+    punches: punchesReducer,
+    totalHours: totalHoursReducer
   },
 })
 

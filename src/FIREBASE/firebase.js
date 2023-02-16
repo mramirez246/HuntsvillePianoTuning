@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, orderBy } from "firebase/firestore";
+import { getFirestore, limit, orderBy } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // 
 
@@ -23,7 +23,12 @@ import { setLoadingState } from "../REDUX/SLICES/LoadingSlice";
 import { setContactEntriesState } from '../REDUX/SLICES/ContactEntriesSlice'
 import { setEventTypesState } from '../REDUX/SLICES/EventTypesSlice'
 import { setScheduledEventsState } from '../REDUX/SLICES/ScheduledEventsSlice'
+import { setTimecardEntryState } from '../REDUX/SLICES/TimecardEntrySlice'
+import { setEmployeesState } from '../REDUX/SLICES/EmployeesSlice'
 import { emailjs_contact_templateID, emailjs_publicKey, emailjs_schedule_templateID, emailjs_serviceID, firebase_configObj } from "../Constants";
+import { setEmployeeState } from "../REDUX/SLICES/EmployeeUserSlice";
+import { setPunchesState } from "../REDUX/SLICES/PunchesSlice";
+import { setTotalHoursState } from '../REDUX/SLICES/TotalHoursSlice'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -139,15 +144,15 @@ export const purchaseItems = (date, subTotal, tax, total, cartItems, products) =
     createOrder(date, orderID, subTotal, tax, total)
         .then(() => {
             createOrderItems(orderID, cartItems)
-            .then(() => {
-                updateProductQuantity(cartItems, products)
-            })
+                .then(() => {
+                    updateProductQuantity(cartItems, products)
+                })
         })
 }
 export const getProducts = async (dispatch, setProducts, setCategories) => {
     var products = []
     var count = 0
-    
+
     const querySnapshot = await getDocs(collection(db, "Products"), orderBy("Category"));
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
@@ -355,6 +360,59 @@ export const dashGetContactEntries = async (dispatch) => {
         dispatch(setContactEntriesState(entries))
     });
 }
+// 
+export const dashGetEmployees = async (dispatch) => {
+    const q = query(collection(db, "Employees"), orderBy("Name", "asc"));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        const employees = [];
+        querySnapshot.forEach((doc) => {
+            const emp = {
+                id: doc.id,
+                Name: doc.data().Name,
+                Email: doc.data().Email
+            }
+            employees.push(emp)
+        });
+        dispatch(setEmployeesState(employees))
+    });
+}
+export const dashGetPunches = async (employee, from, to, dispatch) => {
+    const q = query(collection(db, "Employees", employee.id, "Timecard"), where("Date", ">=", from), where("Date", "<=", to), orderBy("Date", "desc"));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        const punches = [];
+        querySnapshot.forEach((doc) => {
+            const punch = {
+                id: doc.id,
+                Date: `${new Date(doc.data().Date.seconds * 1000).toLocaleString()}`,
+                Seconds: parseInt(doc.data().Date.seconds),
+                Punch: doc.data().Punch
+            }
+            punches.push(punch)
+        });
+        dispatch(setPunchesState(punches))
+        const temp = [...punches].reverse()
+        var punchInSec = 0
+        var punchOutSec = 0
+        var totalSec = 0
+        for (var i in temp) {
+            const punch = temp[i]
+            if (punch.Punch == "In") {
+                punchInSec = punch.Seconds
+            } else {
+                punchOutSec = punch.Seconds
+            }
+
+
+            if (punchInSec != 0 && punchOutSec != 0) {
+                totalSec += punchOutSec - punchInSec
+                punchInSec = 0
+                punchOutSec = 0
+            }
+        }
+        totalSec = (totalSec / 60 / 60).toFixed(2)
+        dispatch(setTotalHoursState(totalSec))
+    });
+}
 
 // FORMS
 export const firebaseSendForm = async (files) => {
@@ -369,6 +427,69 @@ export const firebaseSendForm = async (files) => {
     }
 
 }
+
+// TIMECARD
+export const getLatestTimecardEntry = async (employeeID, dispatch) => {
+    const q = query(collection(db, "Employees", employeeID, "Timecard"), orderBy('Date', "desc"), limit(1));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const d = doc.data()
+            const entry = {
+                id: doc.id,
+                Date: `${new Date(d.Date.seconds * 1000).toLocaleString()}`,
+                Punch: d.Punch
+            }
+            dispatch(setTimecardEntryState(entry))
+        });
+    });
+}
+export const getEmployeeUser = async (email, dispatch) => {
+    const querySnapshot = await getDocs(collection(db, "Employees"), where("Email", "==", email));
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        const emp = {
+            id: doc.id,
+            Name: doc.data().Name,
+            Email: doc.data().Email
+        }
+        dispatch(setEmployeeState(emp))
+    });
+}
+export const firebaseLogin_timecard = (email, password, setErrorMsg, setShowError, navigate, dispatch) => {
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const _ = userCredential.user;
+            // ...
+            getEmployeeUser(email, dispatch)
+            navigate('/employee-dashboard')
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+
+            if (errorCode == "auth/configuration-not-found") {
+                setErrorMsg("Email not found.")
+                setShowError(true)
+            } else if (errorCode == "auth/invalid-email") {
+                setErrorMsg("Email has incorrect format.")
+                setShowError(true)
+            }
+            else if (errorCode == "auth/wrong-password") {
+                setErrorMsg("Password is incorrect.")
+                setShowError(true)
+            }
+            dispatch(setLoadingState(false))
+        });
+}
+export const employeePunch = async (employeeID, timecard) => {
+    console.log(timecard)
+    await setDoc(doc(db, "Employees", employeeID, "Timecard", timecard.id), {
+        Date: Timestamp.fromDate(timecard.Date),
+        Punch: timecard.Punch
+    });
+}
+
+
 
 // AUTH
 /*

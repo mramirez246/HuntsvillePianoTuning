@@ -40,11 +40,10 @@ export default function DashNavigation() {
                 <TfiClose className='nav-icon color1' onClick={closeNav} />
             </div>
             <div className='nav-links font1'>
-                <Link className='nav-link color1' to="/dashboard">Dashboard</Link>
-                <Link className='nav-link color1' to="/scheduleadmin">Schedule</Link>
-                <Link className='nav-link color1' to="/timecardadmin">Timecards</Link>
+                {/* <Link className='nav-link color1' to="/dashboard">Dashboard</Link>
+                <Link className='nav-link color1' to="/scheduleadmin">Schedule</Link> */}
                 <br />
-                <button onClick={() => { firebaseSignOut(dispatch); navigate('/login') }} className='dash-out no-bg no-border red'>Sign Out</button>
+                <button onClick={() => { firebaseSignOut(dispatch); navigate('/employee-login') }} className='dash-out no-bg no-border red'>Sign Out</button>
             </div>
             <p className='copy font1 color1'>&copy; Happy Code 2023. All Rights Reserved.</p>
         </div>
