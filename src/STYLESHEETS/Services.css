@@ -55,10 +55,7 @@
     }
 
     .service-img {
-        background-image: url('../PHOTOS/shop.jpg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+        object-fit: cover;
         height: 200px;
         width: 100%;
         margin-bottom: 0.8em;

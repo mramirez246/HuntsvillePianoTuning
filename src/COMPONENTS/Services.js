@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import '../STYLESHEETS/Services.css'
 // 
 import logo from '../PHOTOS/stock.png'
+import img1 from '../PHOTOS/shop.jpg'
+//
 import Navigation from './UTILITIES/Navigation'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs'
@@ -17,55 +19,55 @@ export default function Services() {
     const services = [
         {
             id: 0,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 1,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 3,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 4,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 5,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 6,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 7,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 8,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         },
         {
             id: 9,
-            Name: "Everything Bagel",
+            Name: "Everything Bagel", Img: img1,
             Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
             Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a."
         }
@@ -111,7 +113,7 @@ export default function Services() {
                                 return (
                                     <div key={i} className="service-block">
                                         <h2>{service.Name}</h2>
-                                        <div className='service-img'></div>
+                                        <img src={service.Img} className="service-img" />
                                         <p className='service-block-desc'>{service.Desc}</p>
                                         {
                                             service.id == serviceID ?

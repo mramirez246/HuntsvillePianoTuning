@@ -3,6 +3,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 // 
 import '../STYLESHEETS/About.css'
 import logo from '../PHOTOS/stock.png'
+import img1 from '../PHOTOS/shop.jpg'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
@@ -46,7 +47,7 @@ export default function About() {
                     <div className='about-section'>
                         <div>
                             <h2 className='about-sub'>Everything Bagel</h2>
-                            <div className='about-img'></div>
+                            <img src={img1} className="about-img" />
                         </div>
                         <div className='about-text'>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
@@ -67,7 +68,7 @@ export default function About() {
                     <div className='about-section'>
                         <div>
                             <h2 className='about-sub'>Everything Bagel</h2>
-                            <div className='about-img'></div>
+                            <img src={img1} className="about-img" />
                         </div>
                         <div className='about-text'>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>

@@ -106,6 +106,8 @@
         font-size: 0.9em;
     }
     .schedule-admin-form-pair input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
         padding: 0.8em;
         margin-bottom: 0.6em;
         font-family: 'Roboto', sans-serif;
@@ -140,7 +142,11 @@
     }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .schedule-admin-form-wrap {
+        width: 450px;
+    }
+}
 
 @media only screen and (min-width: 800px) {
     .schedule-admin {

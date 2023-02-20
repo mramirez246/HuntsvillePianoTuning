@@ -27,37 +27,14 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 0;
-        min-height: 50vh;
     }
 
-    .portfolio-left1 {
+    .portfolio-left {
         padding: 0;
         margin: 0;
-        background-image: url('../PHOTOS/portfolio1.jpeg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height: 40vh;
-    }
-
-    .portfolio-left2 {
-        padding: 0;
-        margin: 0;
-        background-image: url('../PHOTOS/portfolio2.jpeg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height: 40vh;
-    }
-
-    .portfolio-left3 {
-        padding: 0;
-        margin: 0;
-        background-image: url('../PHOTOS/portfolio1.jpeg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height: 40vh;
+        height: 40vh;
+        object-fit: cover;
+        width: 100%;
     }
 
     .portfolio-right {
@@ -79,7 +56,6 @@
         display: flex;
         align-items: center;
         gap: 0.4em;
-        margin-top: 0.5em;
         text-align: left;
         padding: 0.6em;
         border-radius: 20px;
@@ -88,7 +64,9 @@
     }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+
+}
 
 @media only screen and (min-width: 800px) {
     .portfolio-sub {
@@ -100,6 +78,9 @@
         display: grid;
         grid-template-columns: 3fr 2fr;
     }
+    .portfolio-left {
+        height: 100%;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -108,12 +89,15 @@
     }
 
     .portfolio-block {
-        grid-template-columns: 5fr 2fr;
+        grid-template-columns: 5fr 3fr;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .portfolio-sub {
         width: 60%;
+    }
+    .portfolio-left {
+        height: 55vh;
     }
 }

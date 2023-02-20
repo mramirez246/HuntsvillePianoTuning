@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
 // 
 import img1 from '../PHOTOS/portfolio1.jpeg'
+import img2 from '../PHOTOS/portfolio2.jpeg'
 import { BsArrowRight } from 'react-icons/bs'
 
 export default function Portfolio() {
@@ -48,8 +49,7 @@ export default function Portfolio() {
                 <div className='portfolio-sub'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</div>
                 <div className='portfolio-wrap'>
                     <div className='portfolio-block'>
-                        <div className='portfolio-left1'>
-                        </div>
+                        <img src={img1} className="portfolio-left" />
                         <div className='portfolio-right bg1 color2'>
                             <h1>Project Name</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
@@ -57,8 +57,7 @@ export default function Portfolio() {
                         </div>
                     </div>
                     <div className='portfolio-block'>
-                        <div className='portfolio-left2'>
-                        </div>
+                        <img src={img2} className="portfolio-left" />
                         <div className='portfolio-right bg1 color2'>
                             <h1>Project Name</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
@@ -66,8 +65,7 @@ export default function Portfolio() {
                         </div>
                     </div>
                     <div className='portfolio-block'>
-                        <div className='portfolio-left3'>
-                        </div>
+                        <img src={img1} className="portfolio-left" />
                         <div className='portfolio-right bg1 color2'>
                             <h1>Project Name</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>

@@ -184,30 +184,30 @@ export default function ScheduleAdmin() {
                             <div className='split'>
                                 <div className='schedule-admin-form-pair'>
                                     <label>Start of Day:</label>
-                                    <input className={`${showMissing ? "border-red" : ""}`} id="tpStart" type="time" max="24" onChange={() => { console.log(document.querySelector("#tpStart").value) }} />
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tpStart" type="time" max="24" onChange={() => { console.log(document.querySelector("#tpStart").value) }} />
                                 </div>
                                 <div className='schedule-admin-form-pair'>
                                     <label>End of Day:</label>
-                                    <input className={`${showMissing ? "border-red" : ""}`} id="tpEnd" type="time" />
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tpEnd" type="time" />
                                 </div>
                             </div>
                             <div className='big-split'>
                                 <div className='schedule-admin-form-pair'>
                                     <label>Appointment Type Name:</label>
-                                    <input className={`${showMissing ? "border-red" : ""}`} id="tbType" placeholder="Men's Haircut" type="text" />
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tbType" placeholder="Men's Haircut" type="text" />
                                 </div>
                                 <div className='schedule-admin-form-pair'>
                                     <label>Duration:</label>
-                                    <input className={`${showMissing ? "border-red" : ""}`} id="tbDuration" placeholder="30" type="text" />
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tbDuration" placeholder="30" type="text" />
                                 </div>
                             </div>
                             <div className='schedule-admin-form-pair'>
                                 <label>Description:</label>
-                                <textarea className={`${showMissing ? "border-red" : ""}`} id="tbDesc" placeholder="30 minute haircut with shave and full shampoo service. Perfect for special occasions."></textarea>
+                                <textarea className={`${showMissing ? "border-red" : ""} border2`} id="tbDesc" placeholder="30 minute haircut with shave and full shampoo service. Perfect for special occasions."></textarea>
                             </div>
                             <div className='schedule-admin-form-pair'>
                                 <label>Days of Week:</label>
-                                <input className={`${showMissing ? "border-red" : ""}`} id="tbDOW" placeholder="Monday,Tuesday,Friday" type="text" />
+                                <input className={`${showMissing ? "border-red" : ""} border2`} id="tbDOW" placeholder="Monday,Tuesday,Friday" type="text" />
                             </div>
                             <button onClick={createApptType} className='bg1 color2 no-border schedule-admin-form-btn'>Create Appt. Type</button>
                         </div>

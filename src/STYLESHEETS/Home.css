@@ -21,20 +21,16 @@
         padding: 1em;
     }
     .home-panel1-img {
-        background-image: url('../PHOTOS/shop.jpg');
         height: 45vh;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         margin-top: 1em;
+        width: 100%;
+        object-fit: cover;
     }
     .home-panel1-img-right {
-        background-image: url('../PHOTOS/shop.jpg');
         height: 30vh;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+        width: 100%;
         margin-top: 1em;
+        object-fit: cover;
     }
     .home-panel1-right-info {
         padding: 1em;

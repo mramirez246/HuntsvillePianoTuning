@@ -18,9 +18,12 @@
         display: grid;
         grid-template-columns: 1fr;
         margin-top: 1em;
+        gap: 1em;
     }
     .gallery-img {
+        height: 50vh;
         width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -28,14 +31,24 @@
     .gallery-wrap {
         grid-template-columns: 1fr 1fr;
     }
+    .gallery-img {
+        height: 60vh;
+    }
 }
 
 @media only screen and (min-width: 800px) {}
 
 @media only screen and (min-width: 1000px) {
     .gallery-wrap {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .gallery-img {
+        height: 48vh;
     }
 }
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .gallery-wrap {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

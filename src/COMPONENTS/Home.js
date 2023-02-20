@@ -48,10 +48,10 @@ export default function Home() {
                 <div className='home-panel1'>
                     <div>
                         <h1>Everything is in a bagel, and a bagel is in everything.</h1>
-                        <div className='home-panel1-img'></div>
+                        <img src={img1} className="home-panel1-img" />
                     </div>
                     <div className='home-right'>
-                        <div className='home-panel1-img-right'></div>
+                        <img src={img1} className="home-panel1-img-right" />
                         <div className='home-panel1-right-info'>
                             <h2 className='home-panel1-sub'>Everything bagel, now.</h2>
                             <p className='home-panel1-text'>

@@ -15,19 +15,16 @@
     }
 
     .about-img {
-        background-image: url('../PHOTOS/shop.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 30vh;
+        height: 35vh;
+        object-fit: cover;
         width: 100%;
     }
 
     .about-sub {
-        font-size: 2.2em;
-        letter-spacing: -2px;
+        font-size: 1.8em;
+        letter-spacing: -1px;
         padding: 0.5em 0;
-        font-weight: 400;
+        font-weight: 500;
     }
 
     .about-section p {
@@ -39,7 +36,6 @@
 
 @media only screen and (min-width: 600px) {
     .about-section {
-        grid-template-columns: 40% 60%;
         gap: 1em;
     }
     .about-sub {
@@ -48,9 +44,15 @@
     .about-text {
         padding: 1em;
     }
+    .about-img {
+        height: 40vh;
+    }
 }
 
 @media only screen and (min-width: 800px) {
+    .about-section {
+        grid-template-columns: 1fr 1fr;
+    }
     .about-section p {
         font-size: 1em;
     }
@@ -65,7 +67,7 @@
         letter-spacing: -2px;
     } */
     .about-img {
-        height: 45vh;
+        height: 35vh;
     }
 }
 
@@ -77,12 +79,12 @@
     }
 
     .about-sub {
-        font-size: 3em;
-        letter-spacing: -4px;
+        font-size: 2em;
+        letter-spacing: -2px;
     }
 
     .about-img {
-        height: 55vh;
+        height: 45vh;
     }
     .about-section p {
         font-size: 1.2em;

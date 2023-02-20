@@ -3,12 +3,14 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 // 
 import '../STYLESHEETS/Home.css'
 import '../STYLESHEETS/Landing.css'
+import '../STYLESHEETS/Contact.css'
 // 
 import logo from '../PHOTOS/stock.png'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 // 
 import img1 from '../PHOTOS/landing1.jpeg'
+import img2 from '../PHOTOS/shop.jpg'
 // 
 import { Link } from 'react-router-dom'
 import { firebaseGetPageViews, sendContactForm } from '../FIREBASE/firebase'
@@ -110,10 +112,10 @@ export default function Landing() {
                     <div className='home-panel1'>
                         <div>
                             <h1>Everything is in a bagel, and a bagel is in everything.</h1>
-                            <div className='home-panel1-img'></div>
+                            <img src={img1} className="home-panel1-img" />
                         </div>
                         <div className='home-right'>
-                            <div className='home-panel1-img-right'></div>
+                            <img src={img2} className="home-panel1-img-right" />
                             <div className='home-panel1-right-info'>
                                 <h2 className='home-panel1-sub'>Everything bagel, now.</h2>
                                 <p className='home-panel1-text'>
@@ -128,9 +130,7 @@ export default function Landing() {
                     <div>
                         <h1 className='page-title-sm'>We are the best.</h1>
                         <p className='landing-about-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                        <br />
-                        <p className='landing-about-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                        <img src={img1} />
+                        <img src={img1} className="landing-img" />
                     </div>
                     <div className='landing-about-tiles'>
                         <div className='landing-about-tile1'>
