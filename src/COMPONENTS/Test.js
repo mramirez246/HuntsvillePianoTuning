@@ -1,17 +1,222 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { RxHamburgerMenu } from 'react-icons/rx'
 // 
-import '../STYLESHEETS/Home.css'
-// 
-import { RxArrowRight, RxHamburgerMenu } from 'react-icons/rx'
-// 
+import '../STYLESHEETS/Blog.css'
 import logo from '../PHOTOS/stock.png'
-import img1 from '../PHOTOS/shop.jpg'
-// 
-import { Link } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
+import { Link, useNavigate } from 'react-router-dom'
+import img1 from '../PHOTOS/blog.jpg'
+import img2 from '../PHOTOS/BLOG/blog1.jpg'
+import img3 from '../PHOTOS/BLOG/blog2.jpg'
+import img4 from '../PHOTOS/BLOG/blog3.jpg'
+// 
+import { setBlogPostState } from '../REDUX/SLICES/BlogPostSlice'
+import { useDispatch } from 'react-redux'
+import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
-export default function Home() {
+export default function Blog() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const testBlogs = [
+        {
+            id: 0,
+            Date: "January 21, 2023",
+            Title: "Everything Bagel is within the bagel. Dont you agree?",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+            ImgPath: img1,
+            Author: "Master Bagel Jr.",
+            Tags: "Everything,Plain,Poppy", HTML: <div className='blogpost-wrap'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <img src={img4} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+            </div>
+        },
+        {
+            id: 1,
+            Date: "January 21, 2023",
+            Title: "Everything Bagel is within the bagel. Dont you agree?",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+            ImgPath: img2,
+            Author: "Master Bagel Jr.",
+            Tags: "Everything,Plain,Poppy", HTML: <div className='blogpost-wrap'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img1} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <img src={img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+            </div>
+        },
+        {
+            id: 2,
+            Date: "January 21, 2023",
+            Title: "Everything Bagel is within the bagel. Dont you agree?",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+            ImgPath: img1,
+            Author: "Master Bagel Jr.",
+            Tags: "Everything,Plain,Poppy", HTML: <div className='blogpost-wrap'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img1} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <img src={img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+            </div>
+        },
+        {
+            id: 3,
+            Date: "January 21, 2023",
+            Title: "Everything Bagel is within the bagel. Dont you agree?",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+            ImgPath: img1,
+            Author: "Master Bagel Jr.",
+            Tags: "Everything,Plain,Poppy", HTML: <div className='blogpost-wrap'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img1} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <img src={img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+            </div>
+        },
+        {
+            id: 4,
+            Date: "January 21, 2023",
+            Title: "Everything Bagel is within the bagel. Dont you agree?",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+            ImgPath: img1,
+            Author: "Master Bagel Jr.",
+            Tags: "Everything,Plain,Poppy", HTML: <div className='blogpost-wrap'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img1} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <img src={img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+            </div>
+        },
+        {
+            id: 5,
+            Date: "January 21, 2023",
+            Title: "Everything Bagel is within the bagel. Dont you agree?",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+            ImgPath: img1,
+            Author: "Master Bagel Jr.",
+            Tags: "Everything,Plain,Poppy", HTML: <div className='blogpost-wrap'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img1} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <img src={img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+            </div>
+        },
+        {
+            id: 6,
+            Date: "January 21, 2023",
+            Title: "Everything Bagel is within the bagel. Dont you agree?",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+            ImgPath: img1,
+            Author: "Master Bagel Jr.",
+            Tags: "Everything,Plain,Poppy", HTML: <div className='blogpost-wrap'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img1} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+                <img src={img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.</h3>
+                <img src={img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
+                </p>
+            </div>
+        }
+    ]
     function openNav() {
         if (window.innerWidth < 600) {
             document.querySelector(".nav-body").style.width = "100vw";
@@ -28,11 +233,14 @@ export default function Home() {
     function closeNav() {
         document.querySelector(".nav-body").style.width = "0";
     }
+    const [firstBlog, setFirstBlog] = useState({})
 
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
-
+        setFirstBlog(testBlogs[0])
+        testBlogs.shift()
+        firebaseGetPageViews({ Name: "Blog", Views: 0 })
     }, [])
     return (
         <div className='main'>
@@ -43,21 +251,61 @@ export default function Home() {
                 <RxHamburgerMenu className='top-icon' onClick={openNav} />
             </div>
             {/* BODY */}
-            <div className="home font1">
-                <div className='home-panel1'>
-                    <div>
-                        <h1>Everything is in a bagel, and a bagel is in everything.</h1>
-                        <div className='home-panel1-img'></div>
-                    </div>
-                    <div className='home-right'>
-                        <div className='home-panel1-img-right'></div>
-                        <div className='home-panel1-right-info'>
-                            <h2 className='home-panel1-sub'>Everything bagel, now.</h2>
-                            <p className='home-panel1-text'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.
-                            </p>
-                            <button className='home-panel1-btn border2 color1 no-bg'>Order Now</button>
+            <div className="blog font1">
+                <h1 className='page-title'>Blog</h1>
+                <div className='blog-wrap'>
+                    <div className='blog-left'>
+                        <div className='first-blog-block' onClick={() => {
+                            dispatch(setBlogPostState(firstBlog));
+                            navigate('/blogpost')
+                        }}>
+                            <img src={firstBlog.ImgPath} className="first-blog-img" />
+                            <div className='first-blog-text'>
+                                <p className='first-blog-date'>{firstBlog.Date}</p>
+                                <h1 className='first-blog-title'>{firstBlog.Title}</h1>
+                                <p className='first-blog-desc'>{firstBlog.Desc}</p>
+                                <div className='first-blog-tags'>
+                                    {/* {
+                                        firstBlog.Tags.length > 0 ?
+                                            firstBlog.Tags.split(",").map((tag, j) => {
+                                                return (
+                                                    <p key={j} className='first-blog-tag border2'>{tag}</p>
+                                                )
+                                            }) : <div></div>
+                                    } */}
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div className='blog-right'>
+                        {
+                            testBlogs.map((blog, i) => {
+                                if (i > 0) {
+                                    return (
+                                        <div key={i} className='blog-block' onClick={() => {
+                                            dispatch(setBlogPostState(blog));
+                                            navigate('/blogpost')
+                                        }}>
+                                            <img src={blog.ImgPath} className="blog-img" />
+                                            <div className='blog-text'>
+                                                <p className='blog-date'>{blog.Date}</p>
+                                                <h1 className='blog-title'>{blog.Title}</h1>
+                                                <p className='blog-desc'>{blog.Desc}</p>
+                                                <div className='blog-tags'>
+                                                    {/* {
+                                                            blog.Tags.split(",").map((tag, j) => {
+                                                                return (
+                                                                    <p key={j} className='blog-tag border2'>{tag}</p>
+                                                                )
+                                                            })
+                                                        } */}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })
+                        }
                     </div>
                 </div>
             </div>

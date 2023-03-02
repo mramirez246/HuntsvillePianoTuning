@@ -54,6 +54,18 @@ body {
   padding: 0.5em;
 }
 
+.cover {
+  object-fit: cover;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+.fill {
+  object-fit: fill;
+}
+
 /* COLORS */
 
 .color1 {
@@ -172,9 +184,11 @@ body {
 .padding {
   padding: 1em;
 }
+
 .relative {
   position: relative;
 }
+
 /*  */
 .black-out {
   position: absolute;
@@ -212,6 +226,7 @@ body {
     font-size: 1.2em;
     font-weight: 300;
     letter-spacing: -1px;
+    padding: 0.5em
   }
 
   .page-title-sm {
@@ -238,6 +253,8 @@ body {
   .page-subtitle {
     text-align: center;
     font-size: 1.3em;
+    padding: 1.5em;
+    margin: 0 auto;
   }
 }
 
@@ -256,6 +273,7 @@ body {
 
   .page-subtitle {
     font-size: 1.4em;
+    width: 85%;
   }
 }
 
@@ -274,7 +292,8 @@ body {
   }
 
   .page-subtitle {
-    font-size: 1.7em;
+    font-size: 1.6em;
+    width: 80%;
   }
 }
 
@@ -290,6 +309,7 @@ body {
   .page-title {
     font-size: 5em;
   }
+  .page-subtitle {
+    width: 75%;
+  }
 }
-
-

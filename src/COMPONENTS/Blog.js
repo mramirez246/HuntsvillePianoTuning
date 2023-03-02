@@ -234,12 +234,14 @@ export default function Blog() {
         document.querySelector(".nav-body").style.width = "0";
     }
     const [firstBlog, setFirstBlog] = useState({})
+    const [tempBlogs, setTempBlogs] = useState([])
 
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        testBlogs.reverse()
         setFirstBlog(testBlogs[0])
-        testBlogs.shift()
+        setTempBlogs(testBlogs)
         firebaseGetPageViews({ Name: "Blog", Views: 0 })
     }, [])
     return (
@@ -279,7 +281,7 @@ export default function Blog() {
                     </div>
                     <div className='blog-right'>
                         {
-                            testBlogs.map((blog, i) => {
+                            tempBlogs.map((blog, i) => {
                                 if (i > 0) {
                                     return (
                                         <div key={i} className='blog-block' onClick={() => {
@@ -292,13 +294,13 @@ export default function Blog() {
                                                 <h1 className='blog-title'>{blog.Title}</h1>
                                                 <p className='blog-desc'>{blog.Desc}</p>
                                                 <div className='blog-tags'>
-                                                    {/* {
-                                                            blog.Tags.split(",").map((tag, j) => {
-                                                                return (
-                                                                    <p key={j} className='blog-tag border2'>{tag}</p>
-                                                                )
-                                                            })
-                                                        } */}
+                                                    {
+                                                        blog.Tags.split(",").map((tag, j) => {
+                                                            return (
+                                                                <p key={j} className='blog-tag border2'>{tag}</p>
+                                                            )
+                                                        })
+                                                    }
                                                 </div>
                                             </div>
                                         </div>

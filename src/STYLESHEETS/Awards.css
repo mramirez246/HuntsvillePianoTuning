@@ -1,0 +1,70 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .awards-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+    .award {
+        padding: 1em;
+    }
+
+    .award-icon {
+        font-size: 2.6em;
+    }
+
+    .award-year {
+        font-size: 1.8em;
+        letter-spacing: -1px;
+    }
+
+    .award-title {
+        padding: 1.5em 0;
+        font-size: 1.6em;
+        font-weight: 400;
+    }
+
+    .award-desc {
+        font-size: 0.9em;
+    }
+
+    .award-region {
+        font-size: 1.2em;
+        padding: 1em 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .awards-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media only screen and (min-width: 800px) {
+    .awards-wrap {
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .awards-wrap {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

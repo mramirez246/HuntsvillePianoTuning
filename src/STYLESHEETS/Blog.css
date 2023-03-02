@@ -24,6 +24,8 @@
     }
     .first-blog-img {
         width: 100%;
+        height: 50vh;
+        object-fit: cover;
     }
     .first-blog-text {
         padding: 1em 0;
@@ -53,6 +55,8 @@
     }
     .blog-img {
         width: 100%;
+        height: 50vh;
+        object-fit: cover;
     }
     .blog-text {
         padding: 1em 0;
@@ -91,6 +95,9 @@
         grid-template-columns: 1fr 1fr;
         gap: 1em;
     }
+    .blog-img {
+        height: 40vh;
+    }
 }
 
 @media only screen and (min-width: 800px) {
@@ -120,7 +127,11 @@
     }
 }
 
-@media only screen and (min-width: 1000px) {}
+@media only screen and (min-width: 1000px) {
+    .first-blog-img {
+        height: 60vh;
+    }
+}
 
 @media only screen and (min-width: 1200px) {
     .blog-wrap {
@@ -130,5 +141,8 @@
     .blog-right {
         grid-template-columns: 1fr 1fr;
         padding: 1em;
+    }
+    .blog-img {
+        height: 35vh;
     }
 }

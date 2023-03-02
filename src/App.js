@@ -36,10 +36,11 @@ import Features from './COMPONENTS/Features';
 import Portfolio from './COMPONENTS/Portfolio';
 import Menu from './COMPONENTS/Menu';
 import Team from './COMPONENTS/Team';
-import Timecard from './COMPONENTS/Timecard'
+// import Timecard from './COMPONENTS/Timecard'
 import EmployeeLogin from './COMPONENTS/EmployeeLogin'
 import EmployeeDashboard from './COMPONENTS/EmployeeDashboard'
 import TimecardAdmin from './COMPONENTS/TimecardAdmin';
+import Awards from './COMPONENTS/Awards';
 
 
 
@@ -87,6 +88,7 @@ function App() {
         <Route exact path="/portfolio" element={<Portfolio />} />
         <Route exact path="/menu" element={<Menu />} />
         <Route exact path="/team" element={<Team />} />
+        <Route exact path="/awards" element={<Awards />} />
         {/* <Route exact path="/timecard" element={<Timecard />} /> */}
         <Route exact path="/employee-login" element={<EmployeeLogin />} />
         <Route exact path="/employee-dashboard" element={<EmployeeDashboard />} />
