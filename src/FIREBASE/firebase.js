@@ -25,7 +25,7 @@ import { setEventTypesState } from '../REDUX/SLICES/EventTypesSlice'
 import { setScheduledEventsState } from '../REDUX/SLICES/ScheduledEventsSlice'
 import { setTimecardEntryState } from '../REDUX/SLICES/TimecardEntrySlice'
 import { setEmployeesState } from '../REDUX/SLICES/EmployeesSlice'
-import { emailjs_contact_templateID, emailjs_publicKey, emailjs_schedule_templateID, emailjs_serviceID, firebase_configObj } from "../Constants";
+import { emailjs_contact_templateID, emailjs_publicKey, emailjs_quotes_templateID, emailjs_schedule_templateID, emailjs_serviceID, firebase_configObj } from "../Constants";
 import { setEmployeeState } from "../REDUX/SLICES/EmployeeUserSlice";
 import { setPunchesState } from "../REDUX/SLICES/PunchesSlice";
 import { setTotalHoursState } from '../REDUX/SLICES/TotalHoursSlice'
@@ -55,6 +55,40 @@ export const sendContactForm = async (args, params) => {
     });
 
     emailjs.send(emailjs_serviceID, emailjs_contact_templateID, params, emailjs_publicKey)
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
+
+
+    // THIS WILL BE SENT TO BUSINESS
+    // const myParams = {
+    //     to_name: args.Name,
+    //     to_email: args.Email,
+    //     from_name: c_businessName,
+    //     from_email: emailjs_fromEmail,
+    //     message: args.Message,
+    //     reply_to: emailjs_fromEmail
+    // }
+
+    // emailjs.send(emailjs_serviceID, emailjs_myContact_templateID, myParams, emailjs_publicKey)
+    //     .then(function (response) {
+    //         console.log('SUCCESS!', response.status, response.text);
+    //     }, function (error) {
+    //         console.log('FAILED...', error);
+    //     });
+}
+// QUOTE
+export const sendQuoteForm = async (args, params) => {
+    await setDoc(doc(db, "QuoteEntries", randomString(30)), {
+        Service: args.Service,
+        Name: args.Name,
+        Email: args.Email,
+        Additional: args.Additional
+    });
+
+    emailjs.send(emailjs_serviceID, emailjs_quotes_templateID, params, emailjs_publicKey)
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
         }, function (error) {

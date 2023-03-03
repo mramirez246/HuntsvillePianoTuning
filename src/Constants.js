@@ -27,6 +27,10 @@ export const emailjs_contact_templateID = "template_6ez9gil"
 export const emailjs_myContact_templateID = ""
 export const emailjs_contact_message = `Your inquiry has been successfully received. A follow up email will be sent shortly.`
 // 
+export const emailjs_quotes_templateID = ""
+export const emailjs_myQuotes_templateID = ""
+export const emailjs_quotes_message = `Your inquiry has been successfully received. A follow up email will be sent shortly.`
+// 
 export const square_appID = "sandbox-sq0idb-en5EWhNy5BmN4JbNHzXBsw"
 export const square_locationID = "LVJYVW6F0ECCC"
 export const square_accessToken = "EAAAEBhC-J6P2ZMn9VbKW5vC6vHV-DrgUzb2kiCdQ_lics1OVNNWkfoD473D86iE"
