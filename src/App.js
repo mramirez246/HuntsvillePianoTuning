@@ -43,6 +43,7 @@ import TimecardAdmin from './COMPONENTS/TimecardAdmin';
 import Awards from './COMPONENTS/Awards';
 import Coupons from './COMPONENTS/Coupons';
 import Quote from './COMPONENTS/Quote';
+import Reviews from './COMPONENTS/Reviews';
 
 
 
@@ -93,6 +94,7 @@ function App() {
         <Route exact path="/awards" element={<Awards />} />
         <Route exact path="/coupons" element={<Coupons />} />
         <Route exact path="/quote" element={<Quote />} />
+        <Route exact path="/reviews" element={<Reviews />} />
         {/* <Route exact path="/timecard" element={<Timecard />} /> */}
         <Route exact path="/employee-login" element={<EmployeeLogin />} />
         <Route exact path="/employee-dashboard" element={<EmployeeDashboard />} />

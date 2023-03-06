@@ -55,9 +55,17 @@
     }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .faq {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
 @media only screen and (min-width: 800px) {
+    .faq {
+        width: 75%;
+    }
     .faq-block {
         padding: 1.2em;
     }
@@ -67,15 +75,25 @@
 }
 
 @media only screen and (min-width: 1000px) {
+    .faq {
+        width: 70%;
+    }
     .faq-block {
         padding: 1.5em;
     }
     .faq-block h1 {
-        font-size: 1.7em;
+        font-size: 1.6em;
     }
     .faq-block p {
         font-size: 1.2em;
     }
 }
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .faq {
+        width: 60%;
+    }
+    .faq-block h1 {
+        font-size: 1.4em;
+    }
+}
