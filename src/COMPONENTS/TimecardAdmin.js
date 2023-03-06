@@ -136,9 +136,9 @@ export default function TimecardAdmin() {
                 </div>
             </div>
             {/* FOOTER */}
-            <div className='bottom'>
+            {/* <div className='bottom'>
                 <Footer />
-            </div>
+            </div> */}
         </div >
     )
 }
