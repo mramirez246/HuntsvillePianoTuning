@@ -1,0 +1,75 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .modal-wrap {
+        position: fixed;
+        margin-top: 0px;
+        z-index: 100;
+        height: 100vh;
+        width: 100%;
+    }
+    .modal-block {
+        padding: 1em;
+        margin-top: 30vh;
+        text-align: left;
+    }
+    .modal-icon {
+        font-size: 30px;
+    }
+    .tutorials-videos-block {
+        padding: 1em;
+    }
+    .tutorials-videos-block h3 {
+        font-size: 1em;
+        font-weight: 400;
+        padding: 0.2em 0;
+    }
+    .tutorials-videos-block button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        display: block;
+        width: 100%;
+        padding: 0.5em;
+    }
+    .tutorial-thumb {
+        width: 100%;    
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .tutorials-videos-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .modal-block {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+    .tutorials {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {
+    .tutorials-videos-wrap {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1200px) {}
