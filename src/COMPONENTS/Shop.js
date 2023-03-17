@@ -176,36 +176,7 @@ export default function Shop() {
   //         Category: "Sports"
   //     },
   // ]
-  const tempCartItems = [
-    {
-      id: 0,
-      Name: "Everything Bagel",
-      Quantity: 1,
-      Price: 140,
-      Img: img1,
-    },
-    {
-      id: 1,
-      Name: "Everything Bagel",
-      Quantity: 1,
-      Price: 120,
-      Img: img2,
-    },
-    {
-      id: 2,
-      Name: "Everything Bagel",
-      Quantity: 1,
-      Price: 170,
-      Img: img3,
-    },
-    {
-      id: 3,
-      Name: "Everything Bagel",
-      Quantity: 1,
-      Price: 180,
-      Img: img4,
-    },
-  ];
+
   const products = useSelector((state) => state.products.value);
 
   const [categories, setCategories] = useState([]);
@@ -257,13 +228,14 @@ export default function Shop() {
         Quantity: 1,
         Price: item.Price,
         Img: item.Img,
+        Desc: item.Desc
       });
-
+     
       dispatch(setSuccessState(true));
       setCartItems(thing);
       setTimeout(() => {
         dispatch(setSuccessState(false));
-      }, 3000);
+      }, 1000);
 
       const tempSub = parseFloat(subTotal) + item.Price;
       const tempTax = tempSub * tx;
@@ -283,24 +255,27 @@ export default function Shop() {
         maxQty = tempProds[i].Quantity;
       }
     }
-    tempItem = {
-      ...item,
-      Quantity: item.Quantity <= maxQty - 1 ? item.Quantity + 1 : maxQty,
-    };
-    for (var i in tempArr) {
-      if (tempArr[i].id == item.id) {
-        tempArr[i] = tempItem;
-      }
-    }
-    setCartItems(tempArr);
-    // Totals
-    const tempSub = parseFloat(subTotal) + tempItem.Price;
-    const tempTax = tempSub * tx;
-    const tempTot = tempSub + tempTax;
 
-    setSubTotal(tempSub);
-    setTaxes(tempTax.toFixed(2));
-    setTotal(tempTot.toFixed(2));
+    if (item.Quantity + 1 <= 25) {
+      tempItem = {
+        ...item,
+        Quantity: item.Quantity <= maxQty - 1 ? item.Quantity + 1 : maxQty,
+      };
+      for (var i in tempArr) {
+        if (tempArr[i].id == item.id) {
+          tempArr[i] = tempItem;
+        }
+      }
+      setCartItems(tempArr);
+      // Totals
+      const tempSub = parseFloat(subTotal) + tempItem.Price;
+      const tempTax = tempSub * tx;
+      const tempTot = tempSub + tempTax;
+
+      setSubTotal(tempSub);
+      setTaxes(tempTax.toFixed(2));
+      setTotal(tempTot.toFixed(2));
+    }
   };
   const decreaseQty = (item) => {
     if (item.Quantity - 1 >= 1) {

@@ -45,6 +45,7 @@ import Coupons from './COMPONENTS/Coupons';
 import Quote from './COMPONENTS/Quote';
 import Reviews from './COMPONENTS/Reviews';
 import Tutorials from './COMPONENTS/Tutorials'
+import ShopAdmin from './COMPONENTS/ShopAdmin'
 
 
 
@@ -104,6 +105,7 @@ function App() {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/scheduleadmin" element={<ScheduleAdmin />} />
         <Route exact path="/timecardadmin" element={<TimecardAdmin />} />
+        <Route exact path="/shopadmin" element={<ShopAdmin />} />
         <Route exact path="/landing" element={<Landing />} />
       </Routes>
     </BrowserRouter>

@@ -16,6 +16,7 @@ import employeeReducer from './SLICES/EmployeeUserSlice'
 import employeesReducer from './SLICES/EmployeesSlice'
 import punchesReducer from './SLICES/PunchesSlice'
 import totalHoursReducer from './SLICES/TotalHoursSlice'
+import ordersReducer from './SLICES/OrdersSlice'
 
 export default configureStore({
   reducer: {
@@ -35,7 +36,8 @@ export default configureStore({
     employee: employeeReducer,
     employees: employeesReducer,
     punches: punchesReducer,
-    totalHours: totalHoursReducer
+    totalHours: totalHoursReducer,
+    orders: ordersReducer
   },
 })
 

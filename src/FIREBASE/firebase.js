@@ -187,6 +187,7 @@ const createOrder = async (date, orderID, subTotal, tax, total) => {
     SubTotal: subTotal,
     Tax: tax,
     Total: total,
+    Complete: false
   });
 };
 const createOrderItems = async (orderID, cartItems) => {
@@ -196,6 +197,7 @@ const createOrderItems = async (orderID, cartItems) => {
       Name: item.Name,
       Price: item.Price,
       Quantity: item.Quantity,
+      Desc: item.Desc
     });
   }
 };
@@ -214,8 +216,23 @@ const updateProductQuantity = async (cartItems, products) => {
     }
   }
 };
+const resetProductQuantity = async (cartItems, products) => {
+  // REVIEW
+  for (var i in cartItems) {
+    const item = cartItems[i];
+    const itemRef = doc(db, "Products", item.id);
 
-const creteCheckoutSession = async (
+    for (var j in products) {
+      if (products[j].id == item.id) {
+        await updateDoc(itemRef, {
+          Quantity: products[j].Quantity + item.Quantity,
+        });
+      }
+    }
+  }
+};
+
+const createCheckoutSession = async (
   orderID,
   subTotal,
   tax,
@@ -231,7 +248,7 @@ const creteCheckoutSession = async (
         currency: "usd",
         product_data: {
           name: item.Name,
-          description: "product description",
+          description: item.Desc,
         },
         tax_behavior: "exclusive",
       },
@@ -276,16 +293,13 @@ export const purchaseItems = async ({
   products,
   setResponse,
 }) => {
-  const orderID = randomString(10);
+  const orderID = randomString(8);
   createOrder(date, orderID, subTotal, tax, total)
-    .then(() => {
-      createOrderItems(orderID, cartItems);
-    })
     .then(() => {
       updateProductQuantity(cartItems, products);
     })
     .then(() => {
-      creteCheckoutSession(
+      createCheckoutSession(
         orderID,
         subTotal,
         tax,
@@ -295,11 +309,14 @@ export const purchaseItems = async ({
       ).then((res) => {
         console.log(res);
         setResponse(res);
-        // update the db/firebase with success response. Example: put an extra row to order as paid (true/false) and update it
+        createOrderItems(orderID, cartItems);
+        // SEND EMAIL WITH ORDER ID!!!!!
+
       });
     })
     .catch((error) => {
       // update the db/firebase with error response. Example: put an extra row to order as paid (true/false) and update it. release the bookings of the item quantity
+      resetProductQuantity(cartItems, products)
       console.log(error);
       return error;
     });
@@ -316,6 +333,7 @@ export const getProducts = async (dispatch, setProducts, setCategories) => {
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     const d = doc.data();
+    console.log(d.Quantity)
     const imgPath = d.Img;
     getDownloadURL(ref(storage, imgPath))
       .then((url) => {
@@ -329,7 +347,9 @@ export const getProducts = async (dispatch, setProducts, setCategories) => {
           Category: d.Category,
           Img: url,
         };
-        products.push(product);
+        if (product.Quantity > 0) {
+          products.push(product);
+        }
         if (count == querySnapshot.size) {
           dispatch(setProductsState(products));
           setProducts(products);
@@ -347,6 +367,66 @@ export const getProducts = async (dispatch, setProducts, setCategories) => {
       });
   });
 };
+export const getOrders = async (setOrders, setCompletedOrders) => {
+  const q = query(collection(db, "Orders"), orderBy("Date", "asc"));
+  const _ = onSnapshot(q, (querySnapshot) => {
+    const orders = [];
+    const completedOrders = []
+    querySnapshot.forEach((doc) => {
+      const d = doc.data()
+
+      const order = {
+        id: doc.id,
+        Date: new Date(d.Date.seconds * 1000).toLocaleString(),
+        Total: d.Total,
+        Complete: d.Complete
+      }
+      if (!order.Complete) {
+        orders.push(order)
+      } else {
+        completedOrders.push(order)
+      }
+    });
+    setOrders(orders)
+    setCompletedOrders(completedOrders)
+  });
+}
+export const getItemsbyOrder = async (orderID, setItems) => {
+  const querySnapshot = await getDocs(collection(db, "Orders", orderID, "Items"));
+  const items = []
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    const d = doc.data()
+    const item = {
+      id: doc.id,
+      Desc: d.Desc,
+      Name: d.Name,
+      Price: d.Price,
+      Quantity: d.Quantity
+    }
+    items.push(item)
+  });
+  setItems(items)
+}
+export const markOrderAsComplete = async (orderID, setOrders, orders, setCompletedOrders, completedOrders) => {
+  const ref = doc(db, "Orders", orderID);
+
+  // Set the "capital" field of the city 'DC'
+  await updateDoc(ref, {
+    Complete: true
+  });
+  var order = {}
+  for (var i in orders) {
+    if (orders[i].id == orderID) {
+      order = orders[i]
+    }
+  }
+  const temp = orders.filter(function (obj) {
+    return obj.id !== orderID;
+  });
+  setOrders(temp)
+  setCompletedOrders([order, ...completedOrders])
+}
 //
 // SCHEDULE
 export const getEventTypes = async (dispatch) => {
