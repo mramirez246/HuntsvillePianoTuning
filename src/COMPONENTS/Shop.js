@@ -345,12 +345,12 @@ export default function Shop() {
       order_id: orderID.toUpperCase()
     }
     const myParams = {
-      to_name: fullName,
-      to_email: email,
-      from_name: c_businessName,
-      from_email: emailjs_fromEmail,
+      to_name: c_businessName,
+      to_email: emailjs_fromEmail,
+      from_name: fullName,
+      from_email: email,
       message: message,
-      reply_to: emailjs_fromEmail,
+      reply_to: email,
       date: new Date().toLocaleString(),
       order_id: orderID.toUpperCase(),
       full_name: fullName

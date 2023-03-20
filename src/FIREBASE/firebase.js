@@ -34,7 +34,13 @@ import { setScheduledEventsState } from "../REDUX/SLICES/ScheduledEventsSlice";
 import { setTimecardEntryState } from "../REDUX/SLICES/TimecardEntrySlice";
 import { setEmployeesState } from "../REDUX/SLICES/EmployeesSlice";
 import {
+  c_businessDesc,
+  c_businessName,
   emailjs_contact_templateID,
+  emailjs_fromEmail,
+  emailjs_myContact_templateID,
+  emailjs_myQuotes_templateID,
+  emailjs_mySchedule_templateID,
   emailjs_myShop_templateID,
   emailjs_publicKey,
   emailjs_quotes_templateID,
@@ -98,24 +104,24 @@ export const sendContactForm = async (args, params) => {
     );
 
   // THIS WILL BE SENT TO BUSINESS
-  // const myParams = {
-  //     to_name: args.Name,
-  //     to_email: args.Email,
-  //     from_name: c_businessName,
-  //     from_email: emailjs_fromEmail,
-  //     message: args.Message,
-  //     reply_to: emailjs_fromEmail
-  // }
+  const myParams = {
+      to_name: args.Name,
+      to_email: emailjs_fromEmail,
+      from_name: args.Name,
+      from_email: args.Email,
+      message: args.Message,
+      reply_to: args.Email
+  }
 
-  // emailjs.send(emailjs_serviceID, emailjs_myContact_templateID, myParams, emailjs_publicKey)
-  //     .then(function (response) {
-  //         console.log('SUCCESS!', response.status, response.text);
-  //     }, function (error) {
-  //         console.log('FAILED...', error);
-  //     });
+  emailjs.send(emailjs_serviceID, emailjs_myContact_templateID, myParams, emailjs_publicKey)
+      .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+      }, function (error) {
+          console.log('FAILED...', error);
+      });
 };
 // QUOTE
-export const sendQuoteForm = async (args, params) => {
+export const sendQuoteForm = async (args, params, myParams) => {
   await setDoc(doc(db, "QuoteEntries", randomString(30)), {
     Service: args.Service,
     Name: args.Name,
@@ -149,12 +155,12 @@ export const sendQuoteForm = async (args, params) => {
   //     reply_to: emailjs_fromEmail
   // }
 
-  // emailjs.send(emailjs_serviceID, emailjs_myContact_templateID, myParams, emailjs_publicKey)
-  //     .then(function (response) {
-  //         console.log('SUCCESS!', response.status, response.text);
-  //     }, function (error) {
-  //         console.log('FAILED...', error);
-  //     });
+  emailjs.send(emailjs_serviceID, emailjs_myQuotes_templateID, myParams, emailjs_publicKey)
+      .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+      }, function (error) {
+          console.log('FAILED...', error);
+      });
 };
 // BLOG
 export const getBlogs = async (dispatch) => {
@@ -508,7 +514,7 @@ export const getScheduledEvents = async (dispatch, date, dateEnd) => {
     dispatch(setScheduledEventsState(sorted));
   });
 };
-export const createScheduledEvent = async (args, params) => {
+export const createScheduledEvent = async (args, params, myParams) => {
   const fStart = Timestamp.fromDate(new Date(args.Start * 1000));
   const fEnd = Timestamp.fromDate(new Date(args.End * 1000));
 
@@ -525,6 +531,22 @@ export const createScheduledEvent = async (args, params) => {
       emailjs_serviceID,
       emailjs_schedule_templateID,
       params,
+      emailjs_publicKey
+    )
+    .then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      function (error) {
+        console.log("FAILED...", error);
+      }
+    );
+
+    emailjs
+    .send(
+      emailjs_serviceID,
+      emailjs_mySchedule_templateID,
+      myParams,
       emailjs_publicKey
     )
     .then(

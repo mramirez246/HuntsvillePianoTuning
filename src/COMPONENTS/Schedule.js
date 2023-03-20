@@ -176,10 +176,20 @@ export default function Schedule() {
                 date_string: `${chosenSlotInfo.DayOfWeek}, ${chosenSlotInfo.Month} ${chosenSlotInfo.Day} ${chosenSlotInfo.Year} @ ${chosenSlotInfo.Slot}`,
                 to_email: email,
                 message: emailjs_schedule_message,
-                from_email: emailjs_fromEmail
+                from_email: emailjs_fromEmail,
+                reply_to: emailjs_fromEmail
             };
+            const myParams = {
+                from_name: c_businessName,
+                to_name: name,
+                date_string: `${chosenSlotInfo.DayOfWeek}, ${chosenSlotInfo.Month} ${chosenSlotInfo.Day} ${chosenSlotInfo.Year} @ ${chosenSlotInfo.Slot}`,
+                to_email: emailjs_fromEmail,
+                message: "Confirmation has been sent to the customer.",
+                from_email: email,
+                reply_to: email
+            }
 
-            createScheduledEvent(args, templateParams)
+            createScheduledEvent(args, templateParams, myParams)
                 .then(() => {
                     dispatch(setLoadingState(false))
                     dispatch(setSuccessState(true))

@@ -54,8 +54,16 @@ export default function Quote() {
                 to_email: email,
                 from_name: c_businessName,
                 from_email: emailjs_fromEmail,
-                message: emailjs_quotes_message,
+                message: `A request has been made to receive a quote for ${service}. ${additional}.`,
                 reply_to: emailjs_fromEmail
+            }
+            const myParams = {
+                to_name: fullName,
+                to_email: emailjs_fromEmail,
+                from_name: c_businessName,
+                from_email: email,
+                message: `A request has been made to receive a quote for ${service}. ${additional}.`,
+                reply_to: email
             }
             const args = {
                 Service: service,
@@ -64,7 +72,7 @@ export default function Quote() {
                 Additional: additional
             }
 
-            sendQuoteForm(args, params)
+            sendQuoteForm(args, params, myParams)
                 .then(() => {
                     dispatch(setLoadingState(false))
                     dispatch(setSuccessState(true))
