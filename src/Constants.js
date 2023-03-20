@@ -30,6 +30,9 @@ export const emailjs_contact_message = `Your inquiry has been successfully recei
 export const emailjs_quotes_templateID = ""
 export const emailjs_myQuotes_templateID = ""
 export const emailjs_quotes_message = `Your inquiry has been successfully received. A follow up email will be sent shortly.`
+//
+export const emailjs_shop_templateID = "template_xkveshb"
+export const emailjs_myShop_templateID = "template_whvwdyo"
 // 
 export const square_appID = "sandbox-sq0idb-en5EWhNy5BmN4JbNHzXBsw"
 export const square_locationID = "LVJYVW6F0ECCC"

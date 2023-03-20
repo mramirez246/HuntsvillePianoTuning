@@ -170,6 +170,22 @@
         font-weight: 300;
         padding: 1em;
     }
+    .customer-details {
+        padding: 1em 0;
+    }
+    .customer-details label {
+        font-size: 0.9em;
+    }
+    .customer-details p {
+        font-size: 0.8em;
+    }
+    .customer-details-tb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0.8em;
+        width: 100%;
+        margin: 0.8em 0;
+    }
 }
 
 @media only screen and (min-width: 600px) {

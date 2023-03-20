@@ -13,22 +13,20 @@
 @media only screen and (min-width: 350px) {
     .modal-cart-review {
         position: fixed;
-        padding: 3em 1em;
         background-color: rgba(0, 0, 0, 0.7);
         width: 100vw;
         height: 100vh;
-        z-index: 1;
+        z-index: 3;
+        overflow-y: scroll;
     }
 
     .modal-cart-review-wrap {
         padding: 1em;
-        max-height: 85vh;
         display: block;
-        margin: 0 auto;
     }
 
     .modal-cart-review-wrap h1 {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .modal-icon {
@@ -39,8 +37,6 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 0.5em;
-        overflow-y: scroll;
-        max-height: 55vh;
     }
 
     .rev-item {

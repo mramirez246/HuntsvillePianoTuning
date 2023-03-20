@@ -35,10 +35,12 @@ import { setTimecardEntryState } from "../REDUX/SLICES/TimecardEntrySlice";
 import { setEmployeesState } from "../REDUX/SLICES/EmployeesSlice";
 import {
   emailjs_contact_templateID,
+  emailjs_myShop_templateID,
   emailjs_publicKey,
   emailjs_quotes_templateID,
   emailjs_schedule_templateID,
   emailjs_serviceID,
+  emailjs_shop_templateID,
   firebase_configObj,
 } from "../Constants";
 import { setEmployeeState } from "../REDUX/SLICES/EmployeeUserSlice";
@@ -179,7 +181,7 @@ export const getBlogs = async (dispatch) => {
 // STORE
 // Create a function that pulls products from DB
 // Create function that updates the quantity
-const createOrder = async (date, orderID, subTotal, tax, total) => {
+const createOrder = async (date, orderID, subTotal, tax, total, email, fullName) => {
   // Email Customer
 
   await setDoc(doc(db, "Orders", orderID), {
@@ -187,7 +189,9 @@ const createOrder = async (date, orderID, subTotal, tax, total) => {
     SubTotal: subTotal,
     Tax: tax,
     Total: total,
-    Complete: false
+    Complete: false,
+    FullName: fullName,
+    Email: email
   });
 };
 const createOrderItems = async (orderID, cartItems) => {
@@ -274,7 +278,7 @@ const createCheckoutSession = async (
       payment_intent_data: { setup_future_usage: "off_session" },
       mode: "payment",
       success_url: `${CALLBACK}?s={CHECKOUT_SESSION_ID}&orderid=${orderID}`,
-      cancel_url: `${CANCEL_CHECKOUT}/${orderID}`,
+      cancel_url: `${CANCEL_CHECKOUT}`,
     });
     console.log(session);
     return { sessionId: session.id, orderID: orderID };
@@ -292,9 +296,8 @@ export const purchaseItems = async ({
   cartItems,
   products,
   setResponse,
-}) => {
-  const orderID = randomString(8);
-  createOrder(date, orderID, subTotal, tax, total)
+}, orderID, email, fullName, params, myParams) => {
+  createOrder(date, orderID, subTotal, tax, total, email, fullName)
     .then(() => {
       updateProductQuantity(cartItems, products);
     })
@@ -311,6 +314,36 @@ export const purchaseItems = async ({
         setResponse(res);
         createOrderItems(orderID, cartItems);
         // SEND EMAIL WITH ORDER ID!!!!!
+        emailjs
+          .send(
+            emailjs_serviceID,
+            emailjs_shop_templateID,
+            params,
+            emailjs_publicKey
+          )
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+        emailjs
+          .send(
+            emailjs_serviceID,
+            emailjs_myShop_templateID,
+            myParams,
+            emailjs_publicKey
+          )
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
 
       });
     })
@@ -379,8 +412,10 @@ export const getOrders = async (setOrders, setCompletedOrders) => {
         id: doc.id,
         Date: new Date(d.Date.seconds * 1000).toLocaleString(),
         Total: d.Total,
-        Complete: d.Complete
+        Complete: d.Complete,
+        FullName: d.FullName
       }
+      console.log(order)
       if (!order.Complete) {
         orders.push(order)
       } else {

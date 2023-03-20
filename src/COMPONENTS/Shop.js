@@ -32,8 +32,9 @@ import {
   purchaseItems,
 } from "../FIREBASE/firebase";
 import Modal from "./UTILITIES/Modal";
-import { square_appID, square_locationID } from "../Constants";
+import { c_businessName, emailjs_fromEmail, square_appID, square_locationID } from "../Constants";
 import { useStripe } from "./UTILITIES/use-stripe";
+import { randomString } from "../Global";
 
 //
 
@@ -190,6 +191,7 @@ export default function Shop() {
   const [showReview, setShowReview] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [response, setResponse] = useState();
+  const [payBtn, setPayBtn] = useState(false);
 
   const chooseCategory = () => {
     const categs = document.querySelectorAll(".cbCategory");
@@ -230,7 +232,7 @@ export default function Shop() {
         Img: item.Img,
         Desc: item.Desc
       });
-     
+
       dispatch(setSuccessState(true));
       setCartItems(thing);
       setTimeout(() => {
@@ -323,6 +325,37 @@ export default function Shop() {
   };
   const payNow = async () => {
     // CHECKOUT HERE
+    const email = document.querySelector('#tbEmail').value
+    const fullName = document.querySelector("#tbFullName").value
+    const orderID = randomString(8)
+    var message = ""
+    for (var i in cartItems) {
+      const item = cartItems[i]
+      const itemHTML = `<b>${item.Name} - x${item.Quantity}</b><br/><p>${item.Desc}</p><br/><br/>`
+      message += itemHTML
+    }
+
+    const params = {
+      to_name: fullName,
+      to_email: email,
+      from_name: c_businessName,
+      from_email: emailjs_fromEmail,
+      message: message,
+      reply_to: emailjs_fromEmail,
+      order_id: orderID.toUpperCase()
+    }
+    const myParams = {
+      to_name: fullName,
+      to_email: email,
+      from_name: c_businessName,
+      from_email: emailjs_fromEmail,
+      message: message,
+      reply_to: emailjs_fromEmail,
+      date: new Date().toLocaleString(),
+      order_id: orderID.toUpperCase(),
+      full_name: fullName
+    }
+
     try {
       purchaseItems({
         date: new Date(),
@@ -332,11 +365,21 @@ export default function Shop() {
         cartItems,
         products,
         setResponse,
-      });
+      }, orderID, email, fullName, params, myParams);
     } catch (error) {
       console.log(error);
     }
   };
+  const onChangeThing = () => {
+    const email = document.querySelector("#tbEmail").value
+    const name = document.querySelector("#tbFullName").value
+    if (name != "" && email.includes("@") && email.includes(".com")) {
+      setPayBtn(true)
+    } else {
+      setPayBtn(false)
+    }
+  }
+
 
   useEffect(() => {
     if (response?.sessionId && response.orderID) {
@@ -430,13 +473,23 @@ export default function Shop() {
             </div>
             <br />
             {/* ADD PAYMENT STUFF HERE */}
-
-            <button
-              onClick={payNow}
-              className="cart-rev-btn bg1 color2 no-border"
-            >
-              Pay Now
-            </button>
+            <hr />
+            <div className="customer-details">
+              <label>Full Name</label>
+              <input type="text" className="customer-details-tb border2" id="tbFullName" placeholder="John Doe" onChange={onChangeThing} />
+              <label>Email:</label>
+              <p className="color3">Please enter your email to get an electronic copy of your receipt. Use this receipt for confirming order upon pick up.</p>
+              <input type="text" className="customer-details-tb border2" id="tbEmail" placeholder="jdoe@happycode.com" onChange={onChangeThing} />
+            </div>
+            {
+              payBtn ? <button
+                id="btn-pay"
+                onClick={payNow}
+                className="cart-rev-btn bg1 color2 no-border"
+              >
+                Pay Now
+              </button> : <div></div>
+            }
           </div>
         </div>
       ) : (

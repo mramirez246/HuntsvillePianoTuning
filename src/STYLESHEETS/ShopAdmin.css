@@ -24,9 +24,13 @@
     .order h1 {
         font-size: 1.4em;
     }
+    .order h2 {
+        font-size: 0.9em;
+        font-weight: 400;
+    }
 
     .order p {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .items {
@@ -42,9 +46,8 @@
     .item h1 {
         font-size: 1.2em;
     }
-
     .item h3 {
-        font-size: 1em;
+        font-size: 1.4em;
         padding-left: 0.4em;
     }
 
@@ -95,6 +98,7 @@
         width: 400px;
         margin: 0 auto;
     }
+
     .orders {
         width: 700px;
         margin: 0 auto;

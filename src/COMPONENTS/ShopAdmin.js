@@ -110,7 +110,8 @@ export default function ScheduleAdmin() {
                                             }} className='border2 padding order' key={i}>
                                                 <div className='separate'>
                                                     <div>
-                                                        <h1>{order.id.toUpperCase()}</h1>
+                                                        <h1>{order.id.toUpperCase()} - {order.FullName}</h1>
+
                                                         <p className='color3'>{order.Date}</p>
                                                     </div>
                                                     {
@@ -153,6 +154,7 @@ export default function ScheduleAdmin() {
                                                 <div className='separate'>
                                                     <div>
                                                         <h1>{order.id.toUpperCase()}</h1>
+                                                        <h2>{order.FullName}</h2>
                                                         <p className='color3'>{order.Date}</p>
                                                     </div>
                                                     {
@@ -170,6 +172,7 @@ export default function ScheduleAdmin() {
                                                                                 <h1>{item.Name}</h1>
                                                                                 <h3>x{item.Quantity}</h3>
                                                                             </div>
+
                                                                             <p className='color3'>{item.Desc}</p>
                                                                         </div>
                                                                     )
