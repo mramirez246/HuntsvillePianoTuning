@@ -1,0 +1,115 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .home3 {
+        background-image: url('../PHOTOS/shop.jpg');
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    .home3 h1 {
+        font-size: 2.8em;
+        letter-spacing: -1px;
+        line-height: 98%;
+    }
+
+    .home3-cap {
+        border-radius: 6px;
+        margin: 1em;
+        padding: 2em;
+    }
+
+    .home3-cap h3 {
+        font-size: 1.8em;
+        letter-spacing: -1px;
+    }
+
+    .home3-cap p {
+        display: block;
+        font-size: 1.2em;
+        font-weight: 200;
+        padding: 0.8em 0;
+    }
+
+    .home3-btn {
+        display: block;
+        width: 100%;
+        padding: 0.6em;
+        border-radius: 30px;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .home3 h1 {
+        font-size: 3.4em;
+        width: 80vw;
+    }
+
+    .home3-cap {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .home3 h1 {
+        font-size: 4.2em;
+        margin: 0 auto;
+        margin-bottom: 0.8em;
+        text-align: center;
+    }
+
+    .home3-cap {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .home3-cap h3 {
+        font-size: 1.7em;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .home3 h1 {
+        width: 55%;
+        font-size: 4.5em;
+    }
+
+    .home3-cap {
+        width: 36%;
+    }
+
+    .home3-btn {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .home3 p {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .home3 h1 {
+        font-size: 5.7em;
+        line-height: 95%;
+    }
+
+    .home3-cap {
+        width: 32%;
+    }
+}

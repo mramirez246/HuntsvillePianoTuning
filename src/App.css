@@ -97,9 +97,12 @@ body {
 .bg4 {
   background-color: #F6F6F8;
 }
+.bg5 {
+  background-color: rgba(0, 0, 0, 0.762);
+}
 
 .no-bg {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .dark {

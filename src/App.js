@@ -14,6 +14,8 @@ import Contact from './COMPONENTS/Contact';
 import History from './COMPONENTS/History';
 import Locations from './COMPONENTS/Locations'
 import Home from './COMPONENTS/Home.js'
+import Home2 from './COMPONENTS/Home2.js'
+import Home3 from './COMPONENTS/Home3.js'
 import Pricing from './COMPONENTS/Pricing';
 import Products from './COMPONENTS/Products';
 import Services from './COMPONENTS/Services';
@@ -70,6 +72,8 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/home2" element={<Home2 />} />
+        <Route exact path="/home3" element={<Home3 />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/services" element={<Services />} />
         <Route exact path="/products" element={<Products />} />
