@@ -22,7 +22,7 @@
     }
 
     .home3 h1 {
-        font-size: 2.8em;
+        font-size:8vh;
         letter-spacing: -1px;
         line-height: 98%;
     }
@@ -34,13 +34,13 @@
     }
 
     .home3-cap h3 {
-        font-size: 1.8em;
+        font-size: 4.5vh;
         letter-spacing: -1px;
     }
 
     .home3-cap p {
         display: block;
-        font-size: 1.2em;
+        font-size: 2.8vh;
         font-weight: 200;
         padding: 0.8em 0;
     }
