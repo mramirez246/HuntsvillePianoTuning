@@ -91,7 +91,7 @@ export default function FAQ() {
         firebaseGetPageViews({ Name: "FAQ", Views: 0 })
     }, [])
     return (
-        <div>
+        <div className='main'>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

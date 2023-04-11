@@ -103,7 +103,7 @@ export default function Products() {
         firebaseGetPageViews({ Name: "Products", Views: 0 })
     }, [])
     return (
-        <div>
+        <div className='main'>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

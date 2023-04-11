@@ -96,7 +96,7 @@ export default function Services() {
         firebaseGetPageViews({ Name: "Services", Views: 0 })
     }, [])
     return (
-        <div>
+        <div className='main'>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

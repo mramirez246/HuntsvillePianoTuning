@@ -35,7 +35,7 @@ export default function Bio() {
         firebaseGetPageViews({ Name: "Bio", Views: 0 })
     }, [])
     return (
-        <div>
+        <div className='main'>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

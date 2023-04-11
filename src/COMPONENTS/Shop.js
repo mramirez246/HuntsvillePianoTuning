@@ -424,7 +424,7 @@ export default function Shop() {
     firebaseGetPageViews({ Name: "Shop", Views: 0 });
   }, []);
   return (
-    <div>
+    <div className="main">
       {/* Cart Review */}
       {showReview ? (
         <div className="modal-cart-review font1">
