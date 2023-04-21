@@ -14,45 +14,27 @@
     .menu {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1em;
-    }
-
-    .menu-category {
-        padding: 0.8em;
-        font-size: 1.4em;
-        height: fit-content;
-    }
-
-    .menu-icon {
-        font-size: 1.8em;
-        margin-right: 0.5em;
+        gap: 0.6em;
     }
 
     .menu-wrap {
-        padding: 0.8em;
-        display: grid;
-        grid-template-columns: 1fr;
-        height: fit-content;
-        gap: 0.8em;
+        padding: 1em 0.2em;
     }
 
-    .menu-item-prices {
+    .menu-cat {
+        padding: 0.5em;
+        font-size: 1.4em;
+        font-weight: 700;
+        border-radius: 5px;
+    }
+
+    .menu-item {
+        padding: 0.6em;
+    }
+
+    .menu-item-top {
         display: flex;
-        gap: 0.5em;
-        padding: 0em 0.6em;
-    }
-
-    .menu-item-price h3 {
-        font-size: 1.2em;
-    }
-
-    .menu-item-price h4 {
-        font-size: 0.8em;
-    }
-
-    .menu-block p {
-        font-size: 0.8em;
-        font-weight: 400;
+        justify-content: space-between;
     }
 
     .menu-item-name {
@@ -60,28 +42,63 @@
         font-weight: 600;
     }
 
-    .menu-block {
+    .menu-item-prices {
+        display: flex;
+        gap: 0.5em;
         height: fit-content;
+    }
+
+    .menu-item-price-block {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item-price {
+        font-size: 1.2em;
+    }
+
+    .menu-item-size {
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+
+    .menu-item-desc {
+        font-size: 0.9em;
+        font-weight: 400;
     }
 }
 
 @media only screen and (min-width: 600px) {
-    .menu {
+    .menu-wrap {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0;
     }
 }
 
-@media only screen and (min-width: 800px) {}
+@media only screen and (min-width: 800px) {
+    .menu {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
 @media only screen and (min-width: 1000px) {
     .menu {
-        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+    }
+
+    .menu-cat {
+        font-size: 1.6em;
+        padding: 0.8em;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .menu {
-        grid-template-columns: repeat(4, 1fr);
+        width: 72%;
+    }
+
+    .menu-item {
+        padding: 1em;
     }
 }

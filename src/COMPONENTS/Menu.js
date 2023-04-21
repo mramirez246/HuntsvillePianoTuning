@@ -185,43 +185,38 @@ export default function Menu() {
                     {
                         categories.map((cat, i) => {
                             return (
-                                <div key={i} className="border2">
-                                    <div onClick={() => { chosenCat == cat ? setChosenCat("") : setChosenCat(cat) }} className={`separate ${chosenCat == cat ? "border-bottom1" : ""}`}>
-                                        <h1 className='menu-category'>{cat}</h1>
-                                        {chosenCat == cat ? <BiChevronUp className='menu-icon' /> : <BiChevronDown className='menu-icon' />}
-                                    </div>
-                                    {chosenCat == cat ?
-                                        <div className='menu-wrap'>
-                                            {
-                                                menu.map((item, j) => {
-                                                    if (item.Category == cat) {
-                                                        return (
-                                                            <div key={j} className="menu-block">
-                                                                <div className='separate'>
-                                                                    <div className=''>
-                                                                        <h3 className='menu-item-name'>{item.Name}</h3>
-                                                                        <p className='color3'>{item.Desc}</p>
-                                                                    </div>
-                                                                    <div className='menu-item-prices'>
-                                                                        {
-                                                                            item.Prices.map((price, k) => {
-                                                                                return (
-                                                                                    <div key={k} className='menu-item-price'>
-                                                                                        <h4 className='color3'>{price.Size}</h4>
-                                                                                        <h3>{price.Price}</h3>
-                                                                                    </div>
-                                                                                )
-                                                                            })
-                                                                        }
-                                                                    </div>
+                                <div key={i} className="">
+                                    <h1 className='menu-cat bg4'>{cat}</h1>
+                                    <div className='menu-wrap'>
+                                        {
+                                            menu.map((item, j) => {
+                                                if (item.Category == cat) {
+                                                    return (
+                                                        <div key={j} className='menu-item'>
+                                                            <div className='menu-item-top'>
+                                                                <div>
+                                                                    <h2 className='menu-item-name'>{item.Name}</h2>
+                                                                    <p className='menu-item-desc'>{item.Desc}</p>
                                                                 </div>
-
+                                                                <div className='menu-item-prices'>
+                                                                    {
+                                                                        item.Prices.map((price, p) => {
+                                                                            return (
+                                                                                <div key={p} className='menu-item-price-block'>
+                                                                                    <h2 className='menu-item-price'>{price.Price}</h2>
+                                                                                    <h2 className='menu-item-size'>{price.Size}</h2>
+                                                                                </div>
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                </div>
                                                             </div>
-                                                        )
-                                                    }
-                                                })
-                                            }
-                                        </div> : <div></div>}
+                                                        </div>
+                                                    )
+                                                }
+                                            })
+                                        }
+                                    </div>
                                 </div>
                             )
                         })
@@ -230,7 +225,7 @@ export default function Menu() {
             </div>
 
             {/* FOOTER */}
-            <div className='bottom' style={chosenCat == "" ? { position: "absolute", bottom: "0", right: "0", left: "0" } : {}}>
+            <div className='bottom'>
                 <Footer />
             </div>
         </div>
