@@ -32,9 +32,10 @@ import {
   purchaseItems,
 } from "../FIREBASE/firebase";
 import Modal from "./UTILITIES/Modal";
-import { c_businessName, emailjs_fromEmail, square_appID, square_locationID } from "../Constants";
+import { c_businessName, c_mainURL, emailjs_fromEmail, square_appID, square_locationID } from "../Constants";
 import { useStripe } from "./UTILITIES/use-stripe";
 import { randomString } from "../Global";
+import { Helmet } from "react-helmet";
 
 //
 
@@ -425,6 +426,17 @@ export default function Shop() {
   }, []);
   return (
     <div className="main">
+      <Helmet>
+                <title>Shop | Happy Code Template</title>
+                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`${c_mainURL}`} />
+                <meta property="og:title" content="Shop | Happy Code Template" />
+                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta property="og:url" content={`${c_mainURL}`} />
+                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
+            </Helmet>
       {/* Cart Review */}
       {showReview ? (
         <div className="modal-cart-review font1">

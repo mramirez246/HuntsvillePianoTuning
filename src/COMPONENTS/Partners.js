@@ -16,6 +16,8 @@ import img5 from '../PHOTOS/PARTNERS/partner5.png'
 import img6 from '../PHOTOS/PARTNERS/partner6.png'
 import img7 from '../PHOTOS/PARTNERS/partner7.png'
 import img8 from '../PHOTOS/PARTNERS/partner8.png'
+import { c_mainURL } from '../Constants'
+import { Helmet } from 'react-helmet'
 
 
 export default function Partners() {
@@ -102,6 +104,17 @@ export default function Partners() {
     }, [])
     return (
         <div className='main'>
+            <Helmet>
+                <title>Partners | Happy Code Template</title>
+                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`${c_mainURL}`} />
+                <meta property="og:title" content="Partners | Happy Code Template" />
+                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta property="og:url" content={`${c_mainURL}`} />
+                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
+            </Helmet>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

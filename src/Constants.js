@@ -5,6 +5,7 @@ export const c_facebook = ""
 export const c_yelp = ""
 export const c_twitter = ""
 export const c_logoName = "stock.png"
+export const c_mainURL = "https://happy-code-templates.web.app"
 // 
 export const firebase_configObj = {
     apiKey: "AIzaSyBvFjW_wMjEFE-SESveqdk_U0328bAdFww",
