@@ -33,13 +33,16 @@
 
     .shop-item img {
         width: 100%;
-        height: 50%;
         margin-bottom: 0.5em;
+        border-radius: 10px;
+        object-fit: cover;
+        height: 300px;
+        object-position: center;
     }
 
     .shop-item-name {
         font-size: 1.1em;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .shop-item-desc {
@@ -48,19 +51,50 @@
         padding: 0.5em 0;
     }
 
+    .shop-item-img {
+        position: relative;
+    }
+
     .shop-item-btn {
         display: block;
-        width: 100%;
-        padding: 0.8em 0;
-        border-radius: 20px;
-        font: 800;
+        position: absolute;
+        right: 0.8em;
+        top: 0.8em;
+        border-radius: 30px;
+        width: 40px;
+        height: 40px;
+        align-items: center;
         margin-left: auto;
+        margin-right: auto;
+    }
+
+    .shop-item-btn-icon {
+        font-size: 1.7em;
+    }
+
+    .shop-item-img-arrow-left {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 2.2em;
+        position: absolute;
+        left: -10px;
+        margin-top: 50%;
+    }
+
+    .shop-item-img-arrow-right {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 2.2em;
+        position: absolute;
+        right: -10px;
+        margin-top: 50%;
     }
 
     .shop-item-show {
+        display: block;
         font-size: 0.8em;
-        text-align: right;
         padding: 1em 0;
+        text-align: center;
     }
 
     .shop-item-show:hover {
@@ -106,6 +140,9 @@
         grid-template-columns: 1fr 4fr;
         height: fit-content;
         align-items: center;
+        border-radius: 10px;
+        padding: 0.4em;
+        box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.1);
     }
 
     .cart-item-name {
@@ -120,7 +157,7 @@
 
     .cart-item-qty-block {
         display: flex;
-        gap: 0.3em;
+        gap: 0.5em;
         align-items: center;
     }
 
@@ -170,15 +207,19 @@
         font-weight: 300;
         padding: 1em;
     }
+
     .customer-details {
         padding: 1em 0;
     }
+
     .customer-details label {
         font-size: 0.9em;
     }
+
     .customer-details p {
         font-size: 0.8em;
     }
+
     .customer-details-tb {
         -webkit-appearance: none;
         -moz-appearance: none;

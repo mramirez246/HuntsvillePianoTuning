@@ -10,22 +10,14 @@ import logo from "../PHOTOS/stock.png";
 import "../STYLESHEETS/Shop.css";
 import "../STYLESHEETS/CartReview.css";
 //
-
-//
-import img2 from "../PHOTOS/STORE/img2.jpeg";
-import img3 from "../PHOTOS/STORE/img3.jpeg";
-import img1 from "../PHOTOS/STORE/img1.jpeg";
-import img4 from "../PHOTOS/STORE/img4.jpeg";
-import img5 from "../PHOTOS/STORE/img5.jpeg";
-import img6 from "../PHOTOS/STORE/img6.jpeg";
-import img7 from "../PHOTOS/STORE/img7.jpeg";
-import img8 from "../PHOTOS/STORE/img8.jpeg";
 //
 import { HiShoppingCart } from "react-icons/hi";
-import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
+import { IoChevronForwardCircleSharp } from 'react-icons/io5'
+import { IoChevronBackCircleSharp } from 'react-icons/io5'
 import { useDispatch, useSelector } from "react-redux";
 import { setSuccessState } from "../REDUX/SLICES/SuccessSlice";
 import { setLoadingState } from "../REDUX/SLICES/LoadingSlice";
+import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import {
   firebaseGetPageViews,
   getProducts,
@@ -36,6 +28,7 @@ import { c_businessName, c_mainURL, emailjs_fromEmail, square_appID, square_loca
 import { useStripe } from "./UTILITIES/use-stripe";
 import { randomString } from "../Global";
 import { Helmet } from "react-helmet";
+import { BsFillArrowDownCircleFill, BsFillArrowUpCircleFill } from "react-icons/bs";
 
 //
 
@@ -230,7 +223,7 @@ export default function Shop() {
         Name: item.Name,
         Quantity: 1,
         Price: item.Price,
-        Img: item.Img,
+        Img: item.Images[0],
         Desc: item.Desc
       });
 
@@ -427,16 +420,16 @@ export default function Shop() {
   return (
     <div className="main">
       <Helmet>
-                <title>Shop | Happy Code Template</title>
-                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
-                <meta name="robots" content="index, follow" />
-                <link rel="canonical" href={`${c_mainURL}`} />
-                <meta property="og:title" content="Shop | Happy Code Template" />
-                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta property="og:url" content={`${c_mainURL}`} />
-                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
-            </Helmet>
+        <title>Shop | Happy Code Template</title>
+        <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+        <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`${c_mainURL}`} />
+        <meta property="og:title" content="Shop | Happy Code Template" />
+        <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+        <meta property="og:url" content={`${c_mainURL}`} />
+        <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
+      </Helmet>
       {/* Cart Review */}
       {showReview ? (
         <div className="modal-cart-review font1">
@@ -540,14 +533,14 @@ export default function Shop() {
         </div>
         {toggleCart ? (
           <div id="cart" className="cart">
-            <h1> Cart</h1>
+            <h1>Cart</h1>
             <div className="border3">
               {cartItems.length > 0 ? (
                 <div className="cart-wrap">
                   <div className="cart-prods">
                     {cartItems.map((item, i) => {
                       return (
-                        <div key={i} className="cart-item bg4">
+                        <div key={i} className="cart-item no-bg color1">
                           <img src={item.Img} className="cart-item-img" />
                           <div className="cart-item-block">
                             <h4 className="cart-item-name">{item.Name}</h4>
@@ -567,22 +560,24 @@ export default function Shop() {
                                 </button>
                               </div>
                               <div className="cart-item-qty-block">
-                                <button
-                                  className="no-bg no-border"
-                                  onClick={() => {
-                                    decreaseQty(item);
-                                  }}
-                                >
-                                  <AiFillMinusCircle />
-                                </button>
+                                {
+                                  item.Quantity > 1 ? <button
+                                    className="no-bg color1 no-border"
+                                    onClick={() => {
+                                      decreaseQty(item);
+                                    }}
+                                  >
+                                    <BsFillArrowDownCircleFill />
+                                  </button> : <div></div>
+                                }
                                 <p className="">{item.Quantity}</p>
                                 <button
-                                  className="no-bg no-border"
+                                  className="no-bg color1 no-border"
                                   onClick={() => {
                                     increaseQty(item);
                                   }}
                                 >
-                                  <AiFillPlusCircle />
+                                  <BsFillArrowUpCircleFill />
                                 </button>
                               </div>
                             </div>
@@ -645,7 +640,49 @@ export default function Shop() {
               {tempProds.map((prod, i) => {
                 return (
                   <div key={i} className="shop-item">
-                    <img src={prod.Img} />
+                    <div className="shop-item-img">
+                      <button
+                        onClick={() => {
+                          addToCart(prod);
+                        }}
+                        className="shop-item-btn no-border bg2"
+                      >
+                        <HiShoppingCart className="shop-item-btn-icon color1" />
+                      </button>
+                      <img src={prod.Images[prod.CurrentCount]} />
+
+                      <button onClick={() => { 
+                        const temp = { ...prod };
+                        if (temp.CurrentCount - 1 > 0) {
+                          temp.CurrentCount = temp.CurrentCount - 1
+                        } else {
+                          temp.CurrentCount = temp.TempCount - 1
+                        }
+                        const tempArr = [...tempProds]
+                        for (var i = 0; i < tempArr.length; i = i + 1) {
+                          if (tempArr[i].id == prod.id) {
+                            tempArr[i] = temp
+                          }
+                        }
+                        setTempProds(tempArr)
+                      }} className="shop-item-img-arrow-left no-border no-bg"><IoChevronBackCircleSharp /></button>
+                      <button onClick={() => {
+                        const temp = { ...prod };
+                        if (temp.CurrentCount + 1 < temp.TempCount) {
+                          temp.CurrentCount = temp.CurrentCount + 1
+                        } else {
+                          temp.CurrentCount = 0
+                        }
+                        const tempArr = [...tempProds]
+                        for (var i = 0; i < tempArr.length; i = i + 1) {
+                          if (tempArr[i].id == prod.id) {
+                            tempArr[i] = temp
+                          }
+                        }
+                        setTempProds(tempArr)
+                      }} className="shop-item-img-arrow-right no-border no-bg"><IoChevronForwardCircleSharp /></button>
+                    </div>
+
                     <div className="separate">
                       <h2 className="shop-item-name">{prod.Name}</h2>
                       <h3 className="shop-item-price">${prod.Price}</h3>
@@ -655,9 +692,7 @@ export default function Shop() {
                     ) : (
                       <div></div>
                     )}
-                    <div className="separate">
-                      <p></p>
-                      {/* <p className='shop-item-qty color3'>Qty: {prod.Quantity}</p> */}
+                    <div>
                       <p
                         className="shop-item-show"
                         onClick={() => {
@@ -669,14 +704,6 @@ export default function Shop() {
                         {prod.id == prodID ? "Show Less" : "Show More"}
                       </p>
                     </div>
-                    <button
-                      onClick={() => {
-                        addToCart(prod);
-                      }}
-                      className="shop-item-btn border2 no-bg color1"
-                    >
-                      Add to Cart
-                    </button>
                   </div>
                 );
               })}

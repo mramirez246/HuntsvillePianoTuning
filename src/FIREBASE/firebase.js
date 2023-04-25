@@ -105,20 +105,20 @@ export const sendContactForm = async (args, params) => {
 
   // THIS WILL BE SENT TO BUSINESS
   const myParams = {
-      to_name: args.Name,
-      to_email: emailjs_fromEmail,
-      from_name: args.Name,
-      from_email: args.Email,
-      message: args.Message,
-      reply_to: args.Email
+    to_name: args.Name,
+    to_email: emailjs_fromEmail,
+    from_name: args.Name,
+    from_email: args.Email,
+    message: args.Message,
+    reply_to: args.Email
   }
 
   emailjs.send(emailjs_serviceID, emailjs_myContact_templateID, myParams, emailjs_publicKey)
-      .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-      }, function (error) {
-          console.log('FAILED...', error);
-      });
+    .then(function (response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function (error) {
+      console.log('FAILED...', error);
+    });
 };
 // QUOTE
 export const sendQuoteForm = async (args, params, myParams) => {
@@ -156,11 +156,11 @@ export const sendQuoteForm = async (args, params, myParams) => {
   // }
 
   emailjs.send(emailjs_serviceID, emailjs_myQuotes_templateID, myParams, emailjs_publicKey)
-      .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-      }, function (error) {
-          console.log('FAILED...', error);
-      });
+    .then(function (response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function (error) {
+      console.log('FAILED...', error);
+    });
 };
 // BLOG
 export const getBlogs = async (dispatch) => {
@@ -372,38 +372,47 @@ export const getProducts = async (dispatch, setProducts, setCategories) => {
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     const d = doc.data();
-    console.log(d.Quantity)
-    const imgPath = d.Img;
-    getDownloadURL(ref(storage, imgPath))
-      .then((url) => {
-        count += 1;
-        const product = {
-          id: doc.id,
-          Name: d.Name,
-          Desc: d.Desc,
-          Price: d.Price,
-          Quantity: d.Quantity,
-          Category: d.Category,
-          Img: url,
-        };
-        if (product.Quantity > 0) {
-          products.push(product);
-        }
-        if (count == querySnapshot.size) {
-          dispatch(setProductsState(products));
-          setProducts(products);
-          var tempCategs = [];
-          for (var i in products) {
-            tempCategs.push(products[i].Category);
+    var imgUrls = []
+    for (var i = 0; i < d.Images.length; i += 1) {
+      const imgPath = d.Images[i]
+      getDownloadURL(ref(storage, imgPath))
+        .then((url) => {
+          imgUrls.push(url)
+          if (imgUrls.length == d.Images.length) {
+            count += 1;
+            const product = {
+              id: doc.id,
+              Name: d.Name,
+              Desc: d.Desc,
+              Price: d.Price,
+              Quantity: d.Quantity,
+              Category: d.Category,
+              Images: imgUrls,
+              TempCount: d.Images.length,
+              CurrentCount: 0
+            };
+            if (product.Quantity > 0) {
+              products.push(product);
+            }
+            if (count == querySnapshot.size) {
+              dispatch(setProductsState(products));
+              setProducts(products);
+              var tempCategs = [];
+              for (var i in products) {
+                tempCategs.push(products[i].Category);
+              }
+              const temp = [...new Set(tempCategs)];
+              setCategories(temp);
+            }
+            imgUrls = []
           }
-          const temp = [...new Set(tempCategs)];
-          setCategories(temp);
-        }
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.log(error);
-      });
+        })
+        .catch((error) => {
+          // Handle any errors
+          console.log(error);
+        });
+    }
+
   });
 };
 export const getOrders = async (setOrders, setCompletedOrders) => {
@@ -542,7 +551,7 @@ export const createScheduledEvent = async (args, params, myParams) => {
       }
     );
 
-    emailjs
+  emailjs
     .send(
       emailjs_serviceID,
       emailjs_mySchedule_templateID,
