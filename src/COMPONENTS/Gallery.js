@@ -5,7 +5,7 @@ import '../STYLESHEETS/Gallery.css'
 import logo from '../PHOTOS/stock.png'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // 
 import img1 from '../PHOTOS/car.jpg'
 import img2 from '../PHOTOS/city.jpg'
@@ -13,8 +13,12 @@ import img3 from '../PHOTOS/van.jpg'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
 import { Helmet } from 'react-helmet'
 import { c_mainURL } from '../Constants'
+import { useDispatch } from 'react-redux'
+import { setPhotoState } from '../REDUX/SLICES/PhotoSlice'
 
 export default function Gallery() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     function openNav() {
         if (window.innerWidth < 600) {
             document.querySelector(".nav-body").style.width = "100vw";
@@ -33,19 +37,92 @@ export default function Gallery() {
     }
 
     const images = [
-        [img1,"This is the information inside the alt attribute."],
-        [img1,"This is the information inside the alt attribute."],
-        [img1,"This is the information inside the alt attribute."],
-        [img1,"This is the information inside the alt attribute."],
-        [img2,"This is the information inside the alt attribute."],
-        [img2,"This is the information inside the alt attribute."],
-        [img2,"This is the information inside the alt attribute."],
-        [img2,"This is the information inside the alt attribute."],
-        [img3,"This is the information inside the alt attribute."],
-        [img3,"This is the information inside the alt attribute."],
-        [img3,"This is the information inside the alt attribute."],
-        [img3,"This is the information inside the alt attribute."],
+        {
+            Img: img1,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img1,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img1,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img1,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img2,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img2,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img2,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img2,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img3,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img3,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img3,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img3,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
     ]
+
 
     useEffect(() => {
         closeNav()
@@ -78,7 +155,10 @@ export default function Gallery() {
                     {
                         images.map((img, i) => {
                             return (
-                                <img key={i} src={img[0]} alt={`${img[1]}`} className="gallery-img" />
+                                <img key={i} src={img.Img} alt={`${img.Alt}`} className="gallery-img" onClick={() => {
+                                    dispatch(setPhotoState(img));
+                                    navigate('/gallery-photo')
+                                }} />
                             )
                         })
                     }

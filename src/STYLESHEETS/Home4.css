@@ -1,0 +1,119 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .home4-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    .home4-img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .home4-head {
+        font-size: 3.8em;
+        line-height: 0.8em;
+        letter-spacing: -2px;
+        padding-top: 0.5em;
+    }
+
+    .home4-cap {
+        font-size: 1em;
+        padding: 0.5em;
+        font-weight: 300;
+    }
+
+    .home4-split {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.6em;
+        padding: 0.5em 0;
+    }
+
+    .home4-split button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 1.4em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+    }
+
+    .home4-split button p {
+        font-size: 0.9em;
+    }
+
+    .home4-icon {
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .home4-cap {
+        padding: 1.4em;
+    }
+    .home4-left-text {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .home4-split {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .home4-left-text {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .home4-wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+    .home4-left-text {
+        width: 100%;
+    }
+    .img-right {
+        display: block;
+        height: 100vh;
+    }
+    .img-left {
+        height: 50vh;
+    }
+    .home4-head {
+        font-size: 2.8em;
+    }
+    .home4-cap {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .home4-left-text {
+        padding: 1.5em 0;
+        width: 86%;
+    }
+    .home4-head {
+        font-size: 3.6em;
+        letter-spacing: -3px;
+    }
+}

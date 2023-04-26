@@ -1,0 +1,69 @@
+/* FONTS
+    font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+    Light Blue - 57b4ee
+    Blue - 5783d6
+    Yellow - F4E04D
+    Lighter Blue - 54F2F2
+    Dark - #0A0A0A
+    Light - #FEFEFE
+*/
+
+@media only screen and (min-width: 350px) {
+    .photo-img {
+        max-height: 84vh;
+        display: block;
+        margin: 0 auto;
+        padding: 1em;
+    }
+
+    .back {
+        position: absolute;
+        font-size: 2em;
+        top: 18vw;
+        left: 1em;
+    }
+    .photo-desc {
+        padding: 1em;
+    }
+    .photo-desc-title {
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    .photo-desc-desc {
+        font-size: 0.8em;
+        font-weight: 200;
+    }
+    .photo-desc-lens {
+        font-size: 1.6em;
+        font-weight: 600;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .back {
+        top: 12vw;
+    }
+    .photo-desc {
+        width: 375px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .back {
+        top: 8vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .back {
+        top: 7vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .back {
+        top: 5vw;
+    }
+}

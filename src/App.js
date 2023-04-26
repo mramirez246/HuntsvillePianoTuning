@@ -16,10 +16,12 @@ import Locations from './COMPONENTS/Locations'
 import Home from './COMPONENTS/Home.js'
 import Home2 from './COMPONENTS/Home2.js'
 import Home3 from './COMPONENTS/Home3.js'
+import Home4 from './COMPONENTS/Home4.js'
 import Pricing from './COMPONENTS/Pricing';
 import Products from './COMPONENTS/Products';
 import Services from './COMPONENTS/Services';
 import Gallery from './COMPONENTS/Gallery';
+import GalleryPhoto from './COMPONENTS/GalleryPhoto'
 import MailingList from './COMPONENTS/MailingList';
 import Blog from './COMPONENTS/Blog';
 import BlogPost from './COMPONENTS/BlogPost';
@@ -74,6 +76,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/home2" element={<Home2 />} />
         <Route exact path="/home3" element={<Home3 />} />
+        <Route exact path="/home4" element={<Home4 />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/services" element={<Services />} />
         <Route exact path="/products" element={<Products />} />
@@ -83,6 +86,7 @@ function App() {
         <Route exact path="/history" element={<History />} />
         <Route exact path="/locations" element={<Locations />} />
         <Route exact path="/gallery" element={<Gallery />} />
+        <Route exact path="/gallery-photo" element={<GalleryPhoto />} />
         <Route exact path="/mailinglist" element={<MailingList />} />
         <Route exact path="/blog" element={<Blog />} />
         <Route exact path="/blogpost" element={<BlogPost />} />
