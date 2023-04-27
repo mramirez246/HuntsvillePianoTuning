@@ -6,6 +6,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 // 
 import logo from '../PHOTOS/stock.png'
 import img1 from '../PHOTOS/shop.jpg'
+import img2 from '../PHOTOS/shop2.jpg'
 // 
 import { Link } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
@@ -63,13 +64,13 @@ export default function Home() {
                 </div>
                 <div className='home2-left'>
                     <h1>Everything is in the bagel company.</h1>
-                    <img className='home2-img2' src={img1} />
+                    <img className='home2-img2' src={img2} />
                     <div className='home2-cap'>
                         <h3>Bagel is in everything.</h3>
                         <p className='font1'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan.
                         </p>
-                        <button className='home2-btn no-bg border2'>Learn More</button>
+                        <button className='home2-btn no-bg border2 color1'>Learn More</button>
                     </div>
                 </div>
             </div>

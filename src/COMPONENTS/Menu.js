@@ -4,6 +4,7 @@ import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 // 
 import '../STYLESHEETS/Menu.css'
 import logo from '../PHOTOS/stock.png'
+import img1 from '../PHOTOS/landing3.jpeg'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
@@ -195,45 +196,50 @@ export default function Menu() {
                 <h1 className='page-title'>Our Menu</h1>
                 <br />
                 <div className='menu'>
-                    {
-                        categories.map((cat, i) => {
-                            return (
-                                <div key={i} className="">
-                                    <h1 className='menu-cat bg4'>{cat}</h1>
-                                    <div className='menu-wrap'>
-                                        {
-                                            menu.map((item, j) => {
-                                                if (item.Category == cat) {
-                                                    return (
-                                                        <div key={j} className='menu-item'>
-                                                            <div className='menu-item-top'>
-                                                                <div>
-                                                                    <h2 className='menu-item-name'>{item.Name}</h2>
-                                                                    <p className='menu-item-desc'>{item.Desc}</p>
-                                                                </div>
-                                                                <div className='menu-item-prices'>
-                                                                    {
-                                                                        item.Prices.map((price, p) => {
-                                                                            return (
-                                                                                <div key={p} className='menu-item-price-block'>
-                                                                                    <h2 className='menu-item-price'>{price.Price}</h2>
-                                                                                    <h2 className='menu-item-size'>{price.Size}</h2>
-                                                                                </div>
-                                                                            )
-                                                                        })
-                                                                    }
+                    <div className="menu-left">
+                        <img src={img1} className='menu-img' />
+                    </div>
+                    <div className='menu-right'>
+                        {
+                            categories.map((cat, i) => {
+                                return (
+                                    <div key={i} className="">
+                                        <h1 className='menu-cat bg6'>{cat}</h1>
+                                        <div className='menu-wrap'>
+                                            {
+                                                menu.map((item, j) => {
+                                                    if (item.Category == cat) {
+                                                        return (
+                                                            <div key={j} className='menu-item'>
+                                                                <div className='menu-item-top'>
+                                                                    <div>
+                                                                        <h2 className='menu-item-name'>{item.Name}</h2>
+                                                                        <p className='menu-item-desc'>{item.Desc}</p>
+                                                                    </div>
+                                                                    <div className='menu-item-prices'>
+                                                                        {
+                                                                            item.Prices.map((price, p) => {
+                                                                                return (
+                                                                                    <div key={p} className='menu-item-price-block'>
+                                                                                        <h2 className='menu-item-price'>{price.Price}</h2>
+                                                                                        <h2 className='menu-item-size'>{price.Size}</h2>
+                                                                                    </div>
+                                                                                )
+                                                                            })
+                                                                        }
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    )
-                                                }
-                                            })
-                                        }
+                                                        )
+                                                    }
+                                                })
+                                            }
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
 
