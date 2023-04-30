@@ -43,8 +43,10 @@ export default function Schedule() {
 
     const [types, setTypes] = useState([])
     const [slots, setSlots] = useState([])
+    const [workers, setWorkers] = useState([])
     const [chosenDate, setChosenDate] = useState("")
     const [chosenService, setChosenService] = useState("")
+    const [chosenWorker, setChosenWorker] = useState("")
     const [chosenSlotInfo, setChosenSlotInfo] = useState({})
     const [showDetails, setShowDetails] = useState(false)
     const [showModal, setShowModal] = useState(false)
@@ -68,6 +70,7 @@ export default function Schedule() {
         const chosenDate = document.querySelector("#dpDay").value.replace(/-/g, '\/')
         if (chosenDate != "") {
             const type = document.querySelector('#ddType').value.split(" ~ ")[0]
+
             var chosenType = {}
             for (var i in eventTypes) {
 
@@ -100,21 +103,21 @@ export default function Schedule() {
                     const tStart1 = full.getTime()
                     const tEnd1 = (full.getTime()) + (duration * 60)
 
-
                     if (scheduledEvents.length > 0) {
                         var taken = false
                         for (var j in scheduledEvents) {
-                            const eve = scheduledEvents[j]
-                            const tStart2 = eve.Start.seconds
-                            const tEnd2 = eve.End.seconds
+                            if (scheduledEvents[j].Worker == chosenWorker) {
+                                const eve = scheduledEvents[j]
+                                const tStart2 = eve.Start.seconds
+                                const tEnd2 = eve.End.seconds
 
-                            const res1 = (tStart1 >= tStart2 && tStart1 < tEnd2)
-                            const res2 = (tEnd1 > tStart2 && tEnd1 < tEnd2)
+                                const res1 = (tStart1 >= tStart2 && tStart1 < tEnd2)
+                                const res2 = (tEnd1 > tStart2 && tEnd1 < tEnd2)
 
-                            if (res1 || res2) {
-                                taken = true
+                                if (res1 || res2) {
+                                    taken = true
+                                }
                             }
-
                         }
                         if (!taken) {
                             const thing = new Date(tStart1 * 1000)
@@ -149,11 +152,11 @@ export default function Schedule() {
             Duration: chosenService.Duration,
             Month: month,
             Day: day,
-            Year: year
+            Year: year,
+            Worker: chosenWorker
         }
         setChosenSlotInfo(slotInfo)
         setShowDetails(true)
-        console.log(slotInfo)
     }
     const sendConfirmation = () => {
         dispatch(setLoadingState(true))
@@ -169,7 +172,7 @@ export default function Schedule() {
                 Start: start,
                 Email: email,
                 Type: chosenSlotInfo.Service,
-
+                Worker: chosenWorker
             }
             var templateParams = {
                 from_name: c_businessName,
@@ -217,13 +220,28 @@ export default function Schedule() {
         }
 
     }
+    const selectWorkers = () => {
+        const thing = document.querySelector('#ddType').value
+        for (var i = 0; i < types.length; i = i + 1) {
+            if (types[i].Type == thing.split(' ~ ')[0]) {
+                console.log(types[i].Workers.split(','))
+                const workers = types[i].Workers.split(',')
+                setWorkers(workers)
+            }
+        }
+        setChosenService(thing)
+    }
+    const selectWorker = () => {
+        const worker = document.querySelector('#ddWorker').value
+        setChosenWorker(worker)
+        setSlots([])
+    }
 
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
         firebaseGetPageViews({ Name: "Schedule", Views: 0 })
         getEventTypes(dispatch)
-        console.log(chosenDate)
     }, [])
     return (
         <div className='main'>
@@ -286,11 +304,12 @@ export default function Schedule() {
                             <h2 className='schedule-pick'>Pick a day:</h2>
                             <input type="date" className="schedule-pick-date border2" id="dpDay" onChange={getDate} />
                         </div>
+
                         {
                             chosenDate != "" ?
                                 <div>
                                     <h2 className='schedule-pick'>Pick a Service:</h2>
-                                    <select id="ddType" className='schedule-pick-dd border2'>
+                                    <select id="ddType" className='schedule-pick-dd border2' onChange={selectWorkers}>
                                         <option>Select one</option>
                                         {
                                             types.map((type, i) => {
@@ -303,19 +322,40 @@ export default function Schedule() {
                                 </div> : <div></div>
                         }
                         {
-                            chosenService.Type != undefined ?
+                            workers.length > 0 != "" ?
+                                <div>
+                                    <h2 className='schedule-pick'>Workers:</h2>
+                                    <select id="ddWorker" className='schedule-pick-dd border2' onChange={selectWorker}>
+                                        <option>Select one</option>
+                                        {
+                                            workers.map((worker, i) => {
+                                                return (
+                                                    <option key={i}>{worker}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                </div> : <div></div>
+                        }
+                        {
+                            chosenService.Type != undefined && chosenWorker != 'Select one' && chosenWorker != "" ?
                                 <p className='type-desc bg3 color1'>{chosenService.Desc}</p> : <div></div>
                         }
-                        <button className='schedule-pick-btn bg1 color2 no-border' onClick={getAvailableTimes}>Get Available Times</button>
+                        {
+                            chosenWorker != "Select one" && chosenWorker != "" ?
+                                <button className='schedule-pick-btn bg1 color2 no-border' onClick={getAvailableTimes}>Get Available Times</button> : <div></div>
+                        }
                     </div>
                     <div className='schedule-right'>
                         {
                             slots.map((slot, i) => {
-                                return (
-                                    <div className='schedule-slot' key={i}>
-                                        <button onClick={() => { chooseSlot(slot) }} className='border2 no-bg color3'>{slot}</button>
-                                    </div>
-                                )
+                                if (chosenWorker != 'Select one' && chosenWorker != "") {
+                                    return (
+                                        <div className='schedule-slot' key={i}>
+                                            <button onClick={() => { chooseSlot(slot) }} className='border2 no-bg color3'>{slot}</button>
+                                        </div>
+                                    )
+                                }
                             })
                         }
                     </div>
@@ -323,7 +363,7 @@ export default function Schedule() {
             </div>
 
             {/* FOOTER */}
-            <div className='bottom' style={chosenService.Type == undefined ? { position: "absolute", bottom: "0", right: "0", left: "0" } : {}}>
+            <div className='bottom'>
                 <Footer />
             </div>
         </div>

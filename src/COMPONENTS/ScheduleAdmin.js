@@ -6,7 +6,7 @@ import logo from '../PHOTOS/stock.png'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link, useNavigate } from 'react-router-dom'
-import { firebaseCreateAppointmentType, firebaseGetPageViews, getEventTypes } from '../FIREBASE/firebase'
+import { firebaseCreateAppointmentType, firebaseGetPageViews, firebaseUpdateAppointmentType, getEventTypes } from '../FIREBASE/firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { getScheduledEvents } from '../FIREBASE/firebase'
 import { setScheduledEventsState } from '../REDUX/SLICES/ScheduledEventsSlice'
@@ -23,6 +23,7 @@ import { Helmet } from 'react-helmet'
 export default function ScheduleAdmin() {
     const dashUser = useSelector((state) => state.dashUser.value)
     const scheduledEvents = useSelector((state) => state.scheduledEvents.value)
+    const types = useSelector((state) => state.eventTypes.value)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -31,6 +32,9 @@ export default function ScheduleAdmin() {
     const [current, setCurrent] = useState(new Date())
     const [showForm, setShowForm] = useState(false)
     const [showMissing, setShowMissing] = useState(false)
+    const [showTypes, setShowTypes] = useState(false)
+    const [showEdit, setShowEdit] = useState(false)
+    const [chosenID, setChosenID] = useState("")
 
     function openNav() {
         if (window.innerWidth < 600) {
@@ -109,12 +113,14 @@ export default function ScheduleAdmin() {
         const duration = document.querySelector("#tbDuration").value
         const desc = document.querySelector("#tbDesc").value
         const dow = document.querySelector("#tbDOW").value.replaceAll(" ", "")
+        const workers = document.querySelector('#tbWorkers').value
+
         var newStart = new Date().setHours(start.split(":")[0], start.split(":")[1], 0, 0) / 1000
         newStart = new Date(newStart * 1000)
         var newEnd = new Date().setHours(end.split(":")[0], end.split(":")[1], 0, 0) / 1000
         newEnd = new Date(newEnd * 1000)
 
-        if (start != "" && end != "" && type != "" && duration != "" && desc != "" && dow != "") {
+        if (start != "" && end != "" && type != "" && duration != "" && desc != "" && dow != "" && workers != "") {
             setShowMissing(false)
             const args = {
                 Start: newStart,
@@ -122,9 +128,9 @@ export default function ScheduleAdmin() {
                 Type: type,
                 Duration: duration,
                 Desc: desc,
-                DOW: dow
+                DOW: dow,
+                Workers: workers
             }
-            console.log(args)
             firebaseCreateAppointmentType(args)
                 .then(() => {
                     dispatch(setLoadingState(false))
@@ -136,7 +142,83 @@ export default function ScheduleAdmin() {
                     document.querySelector("#tbDuration").value = ""
                     document.querySelector("#tbDesc").value = ""
                     document.querySelector("#tbDOW").value = ""
+                    document.querySelector('#tbWorkers').value = ""
                     setShowForm(false)
+                    setTimeout(() => {
+                        dispatch(setSuccessState(false))
+                    }, 3000);
+                })
+                .catch((error) => {
+                    console.log(error)
+                    dispatch(setLoadingState(false))
+                    dispatch(setFailureState(true))
+                    setTimeout(() => {
+                        dispatch(setFailureState(false))
+                    }, 3000);
+                })
+        } else {
+            setShowMissing(true)
+            dispatch(setLoadingState(false))
+        }
+    }
+    const setEditDetails = (chosenType) => {
+        setChosenID(chosenType.id)
+        dispatch(setLoadingState(true))
+        const start = `${new Date(chosenType.StartHour.seconds * 1000).getHours() >= 10 ? '' : '0'}${new Date(chosenType.StartHour.seconds * 1000).getHours()}:${new Date(chosenType.StartHour.seconds * 1000).getMinutes()}${new Date(chosenType.StartHour.seconds * 1000).getMinutes() >= 10 ? '' : '0'}`
+        const end = `${new Date(chosenType.EndHour.seconds * 1000).getHours() >= 10 ? '' : '0'}${new Date(chosenType.EndHour.seconds * 1000).getHours()}:${new Date(chosenType.EndHour.seconds * 1000).getMinutes()}${new Date(chosenType.EndHour.seconds * 1000).getMinutes() >= 10 ? '' : '0'}`
+
+        document.querySelector("#tpEditStart").value = start
+        document.querySelector("#tpEditEnd").value = end
+        document.querySelector("#tbEditType").value = chosenType.Type
+        document.querySelector("#tbEditDuration").value = chosenType.Duration
+        document.querySelector("#tbEditDesc").value = chosenType.Desc
+        document.querySelector("#tbEditDOW").value = chosenType.DOW
+        document.querySelector('#tbEditWorkers').value = chosenType.Workers
+        dispatch(setLoadingState(false))
+        setShowTypes(false)
+    }
+    const updateApptType = () => {
+        dispatch(setLoadingState(true))
+
+        const start = document.querySelector("#tpEditStart").value
+        const end = document.querySelector("#tpEditEnd").value
+        const type = document.querySelector("#tbEditType").value
+        const duration = document.querySelector("#tbEditDuration").value
+        const desc = document.querySelector("#tbEditDesc").value
+        const dow = document.querySelector("#tbEditDOW").value.replaceAll(" ", "")
+        const workers = document.querySelector('#tbEditWorkers').value
+
+
+        var newStart = new Date().setHours(start.split(":")[0], start.split(":")[1], 0, 0) / 1000
+        newStart = new Date(newStart * 1000)
+        var newEnd = new Date().setHours(end.split(":")[0], end.split(":")[1], 0, 0) / 1000
+        newEnd = new Date(newEnd * 1000)
+
+        if (start != "" && end != "" && type != "" && duration != "" && desc != "" && dow != "" && workers != "") {
+            setShowMissing(false)
+            const args = {
+                id: chosenID,
+                Start: newStart,
+                End: newEnd,
+                Type: type,
+                Duration: duration,
+                Desc: desc,
+                DOW: dow,
+                Workers: workers
+            }
+            firebaseUpdateAppointmentType(args)
+                .then(() => {
+                    dispatch(setLoadingState(false))
+                    dispatch(setSuccessState(true))
+                    getEventTypes(dispatch)
+                    document.querySelector("#tpEditStart").value = ""
+                    document.querySelector("#tpEditEnd").value = ""
+                    document.querySelector("#tbEditType").value = ""
+                    document.querySelector("#tbEditDuration").value = ""
+                    document.querySelector("#tbEditDesc").value = ""
+                    document.querySelector("#tbEditDOW").value = ""
+                    document.querySelector('#tbEditWorkers').value = ""
+                    setShowEdit(false)
                     setTimeout(() => {
                         dispatch(setSuccessState(false))
                     }, 3000);
@@ -222,7 +304,80 @@ export default function ScheduleAdmin() {
                                 <label>Days of Week:</label>
                                 <input className={`${showMissing ? "border-red" : ""} border2`} id="tbDOW" placeholder="Monday,Tuesday,Friday" type="text" />
                             </div>
+                            <div className='schedule-admin-form-pair'>
+                                <label>Workers:</label>
+                                <input className={`${showMissing ? "border-red" : ""} border2`} id="tbWorkers" placeholder="Joshua,Megan,Ben" type="text" />
+                            </div>
+
                             <button onClick={createApptType} className='bg1 color2 no-border schedule-admin-form-btn'>Create Appt. Type</button>
+                        </div>
+                    </div> : <div></div>
+            }
+            {
+                showTypes ?
+                    <div className='appt-types-wrap border2 font1'>
+                        <div className='appt-types-top'>
+                            <h1>Appointment Types</h1>
+                            <HiXMark className='appt-types-x' onClick={() => { setShowTypes(false); setShowEdit(false) }} />
+                        </div>
+                        <p>Click on any appointment type to edit details.</p>
+                        <div className='appt-types font1'>
+                            {
+                                types.map((type, i) => {
+                                    return (
+                                        <div key={i}>
+                                            <button onClick={() => { setEditDetails(type) }} className='border2 no-bg'>{type.Type}</button>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                    : <div></div>
+            }
+            {
+                showEdit ?
+                    <div className='schedule-admin-form font1'>
+                        <div className='schedule-admin-form-wrap bg2 color1'>
+                            <div className='separate'>
+                                <h1>Please enter all information to create an appointment type.</h1>
+                                <HiXMark className='schedule-xmark' onClick={() => { setShowEdit(false) }} />
+                            </div>
+                            <br />
+                            <div className='split'>
+                                <div className='schedule-admin-form-pair'>
+                                    <label>Start of Day:</label>
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tpEditStart" type="time" max="24" onChange={() => { console.log(document.querySelector("#tpStart").value) }} />
+                                </div>
+                                <div className='schedule-admin-form-pair'>
+                                    <label>End of Day:</label>
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tpEditEnd" type="time" />
+                                </div>
+                            </div>
+                            <div className='big-split'>
+                                <div className='schedule-admin-form-pair'>
+                                    <label>Appointment Type Name:</label>
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tbEditType" placeholder="Men's Haircut" type="text" />
+                                </div>
+                                <div className='schedule-admin-form-pair'>
+                                    <label>Duration:</label>
+                                    <input className={`${showMissing ? "border-red" : ""} border2`} id="tbEditDuration" placeholder="30" type="text" />
+                                </div>
+                            </div>
+                            <div className='schedule-admin-form-pair'>
+                                <label>Description:</label>
+                                <textarea className={`${showMissing ? "border-red" : ""} border2`} id="tbEditDesc" placeholder="30 minute haircut with shave and full shampoo service. Perfect for special occasions."></textarea>
+                            </div>
+                            <div className='schedule-admin-form-pair'>
+                                <label>Days of Week:</label>
+                                <input className={`${showMissing ? "border-red" : ""} border2`} id="tbEditDOW" placeholder="Monday,Tuesday,Friday" type="text" />
+                            </div>
+                            <div className='schedule-admin-form-pair'>
+                                <label>Workers:</label>
+                                <input className={`${showMissing ? "border-red" : ""} border2`} id="tbEditWorkers" placeholder="Joshua,Megan,Ben" type="text" />
+                            </div>
+
+                            <button onClick={updateApptType} className='bg1 color2 no-border schedule-admin-form-btn'>Update</button>
                         </div>
                     </div> : <div></div>
             }
@@ -240,8 +395,12 @@ export default function ScheduleAdmin() {
                     <br />
                     <button onClick={getDate} className='schedule-admin-btn bg1 color2 no-border'>Get Scheduled Appointments</button>
                     <br />
-                    <br />
-                    <button onClick={() => { setShowForm(true) }} className='no-border no-bg schedule-admin-create'>Create New Appointment Type</button>
+                    <div className='divider'></div>
+                    <div className='schedule-admin-btns'>
+                        <button onClick={() => { setShowForm(true) }} className='bg3 no-border schedule-admin-create'>Create New Appointment Type</button>
+                        <br />
+                        <button onClick={() => { setShowTypes(true); setShowEdit(true); getEventTypes(dispatch); }} className='bg4 no-border schedule-admin-create'>View Appointment Types</button>
+                    </div>
                 </div>
                 <div className='schedule-admin-wrap'>
                     <div className='schedule-admin-times'>

@@ -486,12 +486,14 @@ export const getEventTypes = async (dispatch) => {
     querySnapshot.forEach((doc) => {
       const d = doc.data();
       const type = {
+        id: doc.id,
         Type: d.Type,
         DOW: d.DOW,
         Duration: d.Duration,
         Desc: d.Desc,
         StartHour: d.StartHour,
         EndHour: d.EndHour,
+        Workers: d.Workers
       };
       types.push(type);
     });
@@ -516,6 +518,7 @@ export const getScheduledEvents = async (dispatch, date, dateEnd) => {
         Start: d.Start,
         End: d.End,
         Type: d.Type,
+        Worker: d.Worker
       };
       events.push(event);
     });
@@ -533,6 +536,7 @@ export const createScheduledEvent = async (args, params, myParams) => {
     Start: fStart,
     Email: args.Email,
     Type: args.Type,
+    Worker: args.Worker
   });
 
   emailjs
@@ -575,6 +579,21 @@ export const firebaseCreateAppointmentType = async (args) => {
     Desc: args.Desc,
     DOW: args.DOW,
     Duration: args.Duration,
+    Workers: args.Workers
+  });
+};
+export const firebaseUpdateAppointmentType = async (args) => {
+  const washingtonRef = doc(db, "EventTypes", args.id);
+
+  // Set the "capital" field of the city 'DC'
+  await updateDoc(washingtonRef, {
+    Type: args.Type,
+    StartHour: args.Start,
+    EndHour: args.End,
+    Desc: args.Desc,
+    DOW: args.DOW,
+    Duration: args.Duration,
+    Workers: args.Workers
   });
 };
 
