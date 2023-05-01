@@ -84,6 +84,10 @@ body {
   color: #585757;
 }
 
+.color4 {
+  color: #ED2B29;
+}
+
 
 .bg1 {
   background-color: #0A0A0A;
@@ -100,9 +104,11 @@ body {
 .bg4 {
   background-color: #f6f6f8;
 }
+
 .bg5 {
   background-color: rgba(0, 0, 0, 0.762);
 }
+
 .bg6 {
   background-color: #e0e2e46b;
 }
@@ -134,9 +140,9 @@ body {
 /*  */
 
 .font1 {
-  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Poppins', sans-serif;
   /* font-family: 'Raleway', sans-serif; */
-  font-family: 'Rubik', sans-serif;
+  /* font-family: 'Rubik', sans-serif; */
 }
 
 .font2 {}
@@ -210,6 +216,18 @@ body {
   top: 0;
   left: 0;
   z-index: 0;
+}
+
+.link {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+}
+
+.all-caps {
+  text-transform: uppercase;
 }
 
 
@@ -321,6 +339,7 @@ body {
   .page-title {
     font-size: 5em;
   }
+
   .page-subtitle {
     width: 75%;
   }
