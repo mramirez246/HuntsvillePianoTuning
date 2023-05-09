@@ -5,22 +5,17 @@ import '../../STYLESHEETS/Footer.css'
 import { BsFacebook, BsLinkedin } from 'react-icons/bs'
 import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { FaYelp } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import { c_businessDesc, c_businessName, c_facebook, c_instagram, c_twitter, c_yelp } from '../../Constants'
+import { c_businessDesc, c_businessName, c_facebook, c_footerLinks, c_instagram, c_twitter, c_yelp } from '../../Constants'
+import { useNavigate } from 'react-router'
 
 export default function Footer() {
+  const navigate = useNavigate()
   return (
     <footer className=' bg1 color2 font1'>
-      <h1>{c_businessName}</h1>
+      <h1 onClick={() => { navigate('/') }}>{c_businessName}</h1>
       <p className='footer-desc'>{c_businessDesc}
       </p>
-      <div className='footer-links'>
-        <Link className='footer-link color2' to="/">Home</Link>
-        <Link className='footer-link color2' to="/">About</Link>
-        <Link className='footer-link color2' to="/">Menu</Link>
-        <Link className='footer-link color2' to="/">Products</Link>
-        <Link className='footer-link color2' to="/">Contact Us</Link>
-      </div>
+      {c_footerLinks()}
       <div className='footer-divider'></div>
       <div className='footer-bottom'>
         <p className='footer-copy color3'>

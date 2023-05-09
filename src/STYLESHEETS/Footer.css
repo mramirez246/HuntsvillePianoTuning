@@ -58,7 +58,7 @@
 
 @media only screen and (min-width: 600px) {
     .footer-desc {
-        width: 60vw;
+        width: 90vw;
     }
     .footer-bottom {
         display: flex;
@@ -84,7 +84,7 @@
 
 @media only screen and (min-width: 800px) {
     .footer-desc {
-        width: 40vw;
+        width: 70vw;
     }
     .footer-links {
         display: flex;
@@ -97,6 +97,6 @@
 
 @media only screen and (min-width: 1200px) {
     .footer-desc {
-        width: 30vw;
+        width: 60vw;
     }
 }

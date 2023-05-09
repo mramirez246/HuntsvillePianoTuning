@@ -4,10 +4,11 @@ import { TfiClose } from 'react-icons/tfi'
 import '../../STYLESHEETS/Navigation.css'
 // 
 import logo from '../../PHOTOS/stock.png'
-import { Link } from 'react-router-dom'
-import { c_businessName } from '../../Constants'
+import { c_businessName, c_nav } from '../../Constants'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navigation() {
+    const navigate = useNavigate()
     function openNav() {
         if (window.innerWidth < 600) {
             document.querySelector(".nav-body").style.width = "100vw";
@@ -32,17 +33,10 @@ export default function Navigation() {
     return (
         <div className='nav-body bg2'>
             <div className='nav-top'>
-                <img src={logo} />
-                <TfiClose className='nav-icon color1'  onClick={closeNav} />
+                <img src={logo} onClick={() => { navigate('/') }} />
+                <TfiClose className='nav-icon color1' onClick={closeNav} />
             </div>
-            <div className='nav-links font1'>
-                <Link className='nav-link color1' to="/">Home</Link>
-                <Link className='nav-link color1' to="/about">About</Link>
-                <Link className='nav-link color1' to="/gallery">Gallery</Link>
-                <Link className='nav-link color1' to="/events">Events</Link>
-                <Link className='nav-link color1' to="/blog">Blog</Link>
-                <Link className='nav-link color1' to="/contact">Contact Us</Link>
-            </div>
+            {c_nav()}
             <p className='copy font1 color1'>&copy; {c_businessName} 2023. All Rights Reserved.</p>
         </div>
     )
