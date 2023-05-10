@@ -91,29 +91,53 @@ export const c_footerLinks = () => {
         </div>
     )
 }
+
 export const c_routes = 
 {
-    "home6": "Transforming ideas into innovative web and mobile applications with a user-centric approach, powered by cutting-edge technology - Welcome to our web and app development company!",
-
-    "about": "We build innovative and reliable custom web and mobile applications with a user-centric approach to help businesses achieve their goals.",
-
-    "gallery": "Explore our gallery of custom web and mobile applications we've developed, showcasing our ability to deliver innovative solutions for businesses of all sizes.",
-
-    "gallery-photo": "Explore our gallery of custom web and mobile applications we've developed, showcasing our ability to deliver innovative solutions for businesses of all sizes.",
-
-    "events": "Stay up-to-date with our latest industry events, webinars, and conferences, and connect with our team of experienced developers, designers, and project managers.",
-
-    "blog": "Explore our blog for insights into the latest web and app development trends, best practices, and industry news, written by our team of experienced developers and designers.",
-
-    "blog-post": "Explore our blog for insights into the latest web and app development trends, best practices, and industry news, written by our team of experienced developers and designers.",
-
-    "contact": "Get in touch with our team to discuss your custom web and mobile application needs, and start turning your ideas into reality.",
-
-    "menu": "Explore our range of web and app development services, including custom software development, UX/UI design, and project management, to find the solution that's right for your business.",
-
-    "products": "Discover our portfolio of innovative web and mobile applications we've developed for businesses of all sizes and industries, showcasing our ability to create custom solutions that exceed expectations.",
-
-    "bio" : ""
+    // "route" : "SEO meta desc"
+    "home":"",
+    "home2":"",
+    "home3":"",
+    "home4":"",
+    "home5":"",
+    "home6":"",
+    "about":"",
+    "services":"",
+    "products":"",
+    "pricing":"",
+    "bio":"",
+    "contact":"",
+    "history":"",
+    "locations":"",
+    "gallery":"",
+    "galleryphoto":"",
+    "mailinglist":"",
+    "blog":"",
+    "blogpost":"",
+    "events":"",
+    "faq":"",
+    "careers":"",
+    "shop":"",
+    "schedule":"",
+    "scheduleadmin":"",
+    "partners":"",
+    "form":"",
+    "features":"",
+    "portfolio":"",
+    "menu":"",
+    "team":"",
+    "awards":"",
+    "coupons":"",
+    "quote":"",
+    "reviews":"",
+    "tutorials":"",
+    "employeelogin":"",
+    "employeedashboard":"",
+    "timecardadmin":"",
+    "login":"",
+    "dashboard":"",
+    "shopadmin":"",
+    "landing":"",
 }
 
 
