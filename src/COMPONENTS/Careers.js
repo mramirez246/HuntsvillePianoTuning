@@ -7,7 +7,7 @@ import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
-import { c_mainURL } from '../Constants'
+import { c_helmet, c_mainURL, c_routes } from '../Constants'
 import { Helmet } from 'react-helmet'
 
 export default function Careers() {
@@ -104,17 +104,7 @@ export default function Careers() {
     }, [])
     return (
         <div className='main'>
-            <Helmet>
-                <title>Careers | Happy Code Template</title>
-                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
-                <meta name="robots" content="index, follow" />
-                <link rel="canonical" href={`${c_mainURL}`} />
-                <meta property="og:title" content="Careers | Happy Code Template" />
-                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta property="og:url" content={`${c_mainURL}`} />
-                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
-            </Helmet>
+            {c_helmet("Careers",c_routes.careers)}
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

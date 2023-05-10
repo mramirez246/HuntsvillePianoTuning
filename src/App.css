@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 * {
   margin: 0;
@@ -23,6 +24,8 @@ body {
   width: 100%;
   color: #0A0A0A;
 }
+
+/* ----------------------------------LAYOUT-------------------------------------- */
 
 .flex {
   display: flex;
@@ -47,8 +50,12 @@ body {
   justify-content: space-evenly;
 }
 
-.break {
-  height: 1em;
+.padding {
+  padding: 1em;
+}
+
+.relative {
+  position: relative;
 }
 
 .left {
@@ -58,19 +65,7 @@ body {
   padding: 0.5em;
 }
 
-.cover {
-  object-fit: cover;
-}
-
-.contain {
-  object-fit: contain;
-}
-
-.fill {
-  object-fit: fill;
-}
-
-/* COLORS */
+/* ----------------------------------COLORS-------------------------------------- */
 
 .color1 {
   color: #0A0A0A
@@ -88,6 +83,27 @@ body {
   color: #ED2B29;
 }
 
+.dark {
+  color: #0A0A0A;
+}
+
+.light {
+  color: #FEFEFE;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: #0f0fa2;
+}
+
+.green {
+  color: #0dc30d
+}
+
+/* ----------------------------------BACKGROUNDS-------------------------------------- */
 
 .bg1 {
   background-color: #0A0A0A;
@@ -117,39 +133,39 @@ body {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-.dark {
-  color: #0A0A0A;
+/* ----------------------------------OBJECT-------------------------------------- */
+
+.cover {
+  object-fit: cover;
 }
 
-.light {
-  color: #FEFEFE;
+.contain {
+  object-fit: contain;
 }
 
-.red {
-  color: red;
+.fill {
+  object-fit: fill;
 }
 
-.blue {
-  color: #0f0fa2;
-}
 
-.green {
-  color: #0dc30d
-}
-
-/*  */
+/* ----------------------------------FONTS-------------------------------------- */
 
 .font1 {
   font-family: 'Poppins', sans-serif;
   /* font-family: 'Raleway', sans-serif; */
   /* font-family: 'Rubik', sans-serif; */
+  
 }
 
 .font2 {}
 
 .font3 {}
 
-/*  */
+.all-caps {
+  text-transform: uppercase;
+}
+
+/* ----------------------------------BORDERS-------------------------------------- */
 
 .border1 {
   border: 1px solid #FEFEFE;
@@ -191,7 +207,7 @@ body {
   border: 1px solid #0dc30d;
 }
 
-/*  */
+/* ----------------------------------COMPONENTS-------------------------------------- */
 .divider {
   border: 0;
   border-bottom: 1px solid #b0b0b0;
@@ -199,15 +215,10 @@ body {
   margin: 1em 0;
 }
 
-.padding {
-  padding: 1em;
+.break {
+  height: 1em;
 }
 
-.relative {
-  position: relative;
-}
-
-/*  */
 .black-out {
   position: absolute;
   background-color: #0a0a0aa6;
@@ -226,9 +237,7 @@ body {
   border: 0;
 }
 
-.all-caps {
-  text-transform: uppercase;
-}
+
 
 
 @media only screen and (min-width: 350px) {
@@ -250,6 +259,8 @@ body {
     font-weight: 600;
     font-size: 3.4em;
     letter-spacing: -3px;
+    text-transform: uppercase;
+    
   }
 
   .page-subtitle {

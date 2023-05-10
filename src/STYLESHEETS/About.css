@@ -2,11 +2,13 @@
     .about {
         padding: 1em;
     }
+
     .about-wrap {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1em;
     }
+
     .about-section {
         display: grid;
         grid-template-columns: 1fr;
@@ -14,17 +16,23 @@
         margin-top: 1em;
     }
 
+    .about-top {
+        position: relative;
+    }
+
     .about-img {
         height: 35vh;
         object-fit: cover;
         width: 100%;
+        margin-top: 1.4em;
     }
 
     .about-sub {
-        font-size: 1.8em;
+        position: absolute;
+        top: 0;
+        font-size: 2.2em;
         letter-spacing: -1px;
-        padding: 0.5em 0;
-        font-weight: 500;
+        font-weight: 800;
     }
 
     .about-section p {
@@ -38,36 +46,44 @@
     .about-section {
         gap: 1em;
     }
+
     .about-sub {
-        font-size: 1.6em;
+        font-size: 2.6em;
     }
+
     .about-text {
         padding: 1em;
     }
+
     .about-img {
         height: 40vh;
     }
 }
 
 @media only screen and (min-width: 800px) {
-    .about-section {
-        grid-template-columns: 1fr 1fr;
+    .about-text {
+        column-count: 2;
     }
+
     .about-section p {
         font-size: 1em;
     }
+
     .about-img {
         height: 40vh;
+        margin-top: 2em;
     }
 
 }
 
 @media only screen and (min-width: 1000px) {
-    /* .about-sub {
-        letter-spacing: -2px;
-    } */
+
+    .about-sub {
+       font-size: 3em;
+    }
     .about-img {
-        height: 35vh;
+        height: 60vh;
+        margin-top: 3em;
     }
 }
 
@@ -75,19 +91,22 @@
     .about-section {
         width: 80vw;
         margin: 0 auto;
-        grid-template-columns: 1fr 1fr;
     }
 
     .about-sub {
-        font-size: 2em;
+        font-size: 3.6em;
         letter-spacing: -2px;
     }
 
     .about-img {
-        height: 45vh;
+        height: 65vh;
     }
+
     .about-section p {
         font-size: 1.2em;
         padding: 0.6em 0;
+    }
+    .about-text {
+        column-count: 3;
     }
 }

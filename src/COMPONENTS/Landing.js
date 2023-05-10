@@ -17,7 +17,7 @@ import { firebaseGetPageViews, sendContactForm } from '../FIREBASE/firebase'
 import { useDispatch } from 'react-redux'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
-import { c_businessName, c_mainURL, emailjs_contact_message, emailjs_fromEmail } from '../Constants'
+import { c_businessName, c_helmet, c_mainURL, c_routes, emailjs_contact_message, emailjs_fromEmail } from '../Constants'
 import { setFailureState } from '../REDUX/SLICES/FailureSlice'
 import { AiFillMail, AiTwotonePhone } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
@@ -101,17 +101,7 @@ export default function Landing() {
     }, [])
     return (
         <div className='main'>
-            <Helmet>
-                <title>Landing | Happy Code Template</title>
-                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
-                <meta name="robots" content="index, follow" />
-                <link rel="canonical" href={`${c_mainURL}`} />
-                <meta property="og:title" content="Landing | Happy Code Template" />
-                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta property="og:url" content={`${c_mainURL}`} />
-                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
-            </Helmet>
+            {c_helmet("Landing", c_routes.landing)}
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

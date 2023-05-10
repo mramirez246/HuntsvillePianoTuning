@@ -52,6 +52,7 @@ import Quote from './COMPONENTS/Quote';
 import Reviews from './COMPONENTS/Reviews';
 import Tutorials from './COMPONENTS/Tutorials'
 import ShopAdmin from './COMPONENTS/ShopAdmin'
+import { c_routes } from './Constants';
 
 
 
@@ -75,50 +76,139 @@ function App() {
       }
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/home2" element={<Home2 />} />
-        <Route exact path="/home3" element={<Home3 />} />
-        <Route exact path="/home4" element={<Home4 />} />
-        <Route exact path="/home5" element={<Home5 />} />
-        <Route exact path="/home6" element={<Home6 />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/services" element={<Services />} />
-        <Route exact path="/products" element={<Products />} />
-        <Route exact path="/pricing" element={<Pricing />} />
-        <Route exact path="/bio" element={<Bio />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/history" element={<History />} />
-        <Route exact path="/locations" element={<Locations />} />
-        <Route exact path="/gallery" element={<Gallery />} />
-        <Route exact path="/gallery-photo" element={<GalleryPhoto />} />
-        <Route exact path="/mailinglist" element={<MailingList />} />
-        <Route exact path="/blog" element={<Blog />} />
-        <Route exact path="/blogpost" element={<BlogPost />} />
-        <Route exact path="/events" element={<Events />} />
-        <Route exact path="/faq" element={<FAQ />} />
-        <Route exact path="/careers" element={<Careers />} />
-        <Route exact path="/shop" element={<Shop />} />
-        <Route exact path="/schedule" element={<Schedule />} />
-        <Route exact path="/partners" element={<Partners />} />
-        <Route exact path="/form" element={<Form />} />
-        <Route exact path="/features" element={<Features />} />
-        <Route exact path="/portfolio" element={<Portfolio />} />
-        <Route exact path="/menu" element={<Menu />} />
-        <Route exact path="/team" element={<Team />} />
-        <Route exact path="/awards" element={<Awards />} />
-        <Route exact path="/coupons" element={<Coupons />} />
-        <Route exact path="/quote" element={<Quote />} />
-        <Route exact path="/reviews" element={<Reviews />} />
-        <Route exact path="/tutorials" element={<Tutorials />} />
+        {
+          c_routes.home != undefined ? <Route exact path="/" element={<Home />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.hometwo != undefined ? <Route exact path="/" element={<Home2 />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.homethree != undefined ? <Route exact path="/" element={<Home3 />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.homefour != undefined ? <Route exact path="/" element={<Home4 />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.homefive != undefined ? <Route exact path="/" element={<Home5 />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.homesix != undefined ? <Route exact path="/" element={<Home6 />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.about != undefined ? <Route exact path="/about" element={<About />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.services != undefined ? <Route exact path="/services" element={<Services />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.products != undefined ? <Route exact path="/products" element={<Products />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.pricing != undefined ? <Route exact path="/pricing" element={<Pricing />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.bio != undefined ? <Route exact path="/bio" element={<Bio />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.contact != undefined ? <Route exact path="/contact" element={<Contact />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.history != undefined ? <Route exact path="/history" element={<History />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.locations != undefined ? <Route exact path="/locations" element={<Locations />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.gallery != undefined ? <Route exact path="/gallery" element={<Gallery />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.galleryphoto != undefined ? <Route exact path="/galleryphoto" element={<GalleryPhoto />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.mailinglist != undefined ? <Route exact path="/mailinglist" element={<MailingList />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.blog != undefined ? <Route exact path="/blog" element={<Blog />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.blogpost != undefined ? <Route exact path="/blogpost" element={<BlogPost />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.events != undefined ? <Route exact path="/events" element={<Events />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.faq != undefined ? <Route exact path="/faq" element={<FAQ />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.careers != undefined ? <Route exact path="/careers" element={<Careers />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.shop != undefined ? <Route exact path="/shop" element={<Shop />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.schedule != undefined ? <Route exact path="/schedule" element={<Schedule />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.scheduleadmin != undefined ? <Route exact path="/scheduleadmin" element={<ScheduleAdmin />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.partners != undefined ? <Route exact path="/partners" element={<Partners />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.form != undefined ? <Route exact path="/form" element={<Form />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.features != undefined ? <Route exact path="/features" element={<Features />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.portfolio != undefined ? <Route exact path="/portfolio" element={<Portfolio />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.menu != undefined ? <Route exact path="/menu" element={<Menu />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.team != undefined ? <Route exact path="/team" element={<Team />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.awards != undefined ? <Route exact path="/awards" element={<Awards />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.coupons != undefined ? <Route exact path="/coupons" element={<Coupons />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.quote != undefined ? <Route exact path="/quote" element={<Quote />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.reviews != undefined ? <Route exact path="/reviews" element={<Reviews />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.tutorials != undefined ? <Route exact path="/tutorials" element={<Tutorials />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.employeelogin != undefined ? <Route exact path="/employeelogin" element={<EmployeeLogin />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.employeedashboard != undefined ? <Route exact path="/employeedashboard" element={<EmployeeDashboard />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.timecardadmin != undefined ? <Route exact path="/timecardadmin" element={<TimecardAdmin />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.login != undefined ? <Route exact path="/login" element={<Login />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.dashboard != undefined ? <Route exact path="/dashboard" element={<Dashboard />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.shopadmin != undefined ? <Route exact path="/shopadmin" element={<ShopAdmin />} /> : <Route exact path="/" element={<Home />} />
+        }
+        {
+          c_routes.landing != undefined ? <Route exact path="/landing" element={<Landing />} /> : <Route exact path="/" element={<Home />} />
+        }
+        
+        
+
         {/* <Route exact path="/timecard" element={<Timecard />} /> */}
-        <Route exact path="/employee-login" element={<EmployeeLogin />} />
-        <Route exact path="/employee-dashboard" element={<EmployeeDashboard />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
-        <Route exact path="/scheduleadmin" element={<ScheduleAdmin />} />
-        <Route exact path="/timecardadmin" element={<TimecardAdmin />} />
-        <Route exact path="/shopadmin" element={<ShopAdmin />} />
-        <Route exact path="/landing" element={<Landing />} />
       </Routes>
     </BrowserRouter>
   );

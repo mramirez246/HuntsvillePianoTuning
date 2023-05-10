@@ -8,17 +8,17 @@ export const c_businessCityState = "San Diego, CA"
 export const c_businessDesc = `${c_businessType == "Happy Code" ?
     "Happy Code is a web development company that creates beautiful and fully functional websites using the latest technologies and tools. Our experienced team focuses on user experience design and works closely with clients to deliver fast, reliable, and scalable websites. From simple brochure websites to complex e-commerce platforms, Happy Code has the expertise to exceed expectations." :
     c_businessType == "Barber Shop" ?
-        `Bagel Barbershop is your go-to destination for a top-notch haircut and grooming experience. Our skilled barbers provide a variety of services, including haircuts, beard trims, shaves, and more. With a welcoming atmosphere and friendly staff, we strive to make your visit to Bagel Barbershop an enjoyable one. Our shop is conveniently located and easily accessible, so you can always fit in a quick trim or full grooming session into your busy schedule. Trust us to leave you looking and feeling your best. Visit Bagel Barbershop today for an exceptional grooming experience that will leave you looking sharp and feeling confident.` :
+        `${c_businessName} is your go-to destination for a top-notch haircut and grooming experience. Our skilled barbers provide a variety of services, including haircuts, beard trims, shaves, and more. With a welcoming atmosphere and friendly staff, we strive to make your visit to ${c_businessName} an enjoyable one. Our shop is conveniently located and easily accessible, so you can always fit in a quick trim or full grooming session into your busy schedule. Trust us to leave you looking and feeling your best. Visit ${c_businessName} today for an exceptional grooming experience that will leave you looking sharp and feeling confident.` :
         c_businessType == "Hair Salon" ?
-            `Bagel Hair Salon is your ultimate destination for exceptional hair care services. Our experienced stylists are committed to delivering the latest hair trends, personalized advice, and top-notch haircuts, colors, and styling. Using only the highest quality products, we strive to achieve the perfect look for you while providing a relaxing and welcoming environment. Conveniently located and easily accessible, our salon is the perfect choice for anyone looking for a professional and enjoyable hair care experience.` :
+            `${c_businessName} is your ultimate destination for exceptional hair care services. Our experienced stylists are committed to delivering the latest hair trends, personalized advice, and top-notch haircuts, colors, and styling. Using only the highest quality products, we strive to achieve the perfect look for you while providing a relaxing and welcoming environment. Conveniently located and easily accessible, our salon is the perfect choice for anyone looking for a professional and enjoyable hair care experience.` :
             c_businessType == "Nail Salon" ?
-                `Welcome to Bagel Nail Salon, your go-to destination for exceptional nail care services. Our experienced and talented technicians offer a variety of services, including manicures, pedicures, acrylics, gels, and more. Using only the highest quality products and tools, we strive to provide a relaxing and enjoyable experience while achieving the perfect look for you. Conveniently located and easily accessible, Bagel Nail Salon is the ultimate choice for anyone looking for top-notch nail care services.` :
+                `Welcome to ${c_businessName}, your go-to destination for exceptional nail care services. Our experienced and talented technicians offer a variety of services, including manicures, pedicures, acrylics, gels, and more. Using only the highest quality products and tools, we strive to provide a relaxing and enjoyable experience while achieving the perfect look for you. Conveniently located and easily accessible, ${c_businessName} is the ultimate choice for anyone looking for top-notch nail care services.` :
                 c_businessType == "Massage Parlor" ?
-                    `Welcome to Bagel Massage Parlor, where we provide exceptional massage services that will leave you feeling relaxed and rejuvenated. Our experienced and certified massage therapists offer a variety of services, including Swedish, deep tissue, hot stone, and more. Using only the highest quality oils and lotions, we strive to provide a personalized and enjoyable experience that meets your individual needs. Conveniently located and easily accessible, Bagel Massage Parlor is the perfect choice for anyone looking for a top-notch massage experience.` :
+                    `Welcome to ${c_businessName}, where we provide exceptional massage services that will leave you feeling relaxed and rejuvenated. Our experienced and certified massage therapists offer a variety of services, including Swedish, deep tissue, hot stone, and more. Using only the highest quality oils and lotions, we strive to provide a personalized and enjoyable experience that meets your individual needs. Conveniently located and easily accessible, ${c_businessName} is the perfect choice for anyone looking for a top-notch massage experience.` :
                     c_businessType == "Tattoo Parlor" ?
-                        `Welcome to Bagel Tattoo Parlor, where we provide exceptional tattoo services that will leave you with a work of art that you can be proud of. Our skilled and experienced artists offer a wide range of tattoo styles, including traditional, new school, realism, and more. Using only the highest quality ink and equipment, we strive to provide a clean, safe, and welcoming environment for your tattoo experience. Conveniently located and easily accessible, Bagel Tattoo Parlor is the ultimate choice for anyone looking for a professional and enjoyable tattoo experience.` :
+                        `Welcome to ${c_businessName}, where we provide exceptional tattoo services that will leave you with a work of art that you can be proud of. Our skilled and experienced artists offer a wide range of tattoo styles, including traditional, new school, realism, and more. Using only the highest quality ink and equipment, we strive to provide a clean, safe, and welcoming environment for your tattoo experience. Conveniently located and easily accessible, ${c_businessName} is the ultimate choice for anyone looking for a professional and enjoyable tattoo experience.` :
                         c_businessType == "Coffee Shop" ?
-                            `Welcome to Bagel Coffee Shop, where we offer exceptional coffee and baked goods that will satisfy your cravings. Our premium coffee beans are carefully selected and roasted to perfection, creating a delicious and aromatic coffee experience. In addition to our coffee, we offer a variety of fresh baked goods, sandwiches, and salads to suit any taste. Conveniently located and easily accessible, Bagel Coffee Shop is the perfect destination for anyone looking for a cozy and welcoming place to enjoy their coffee and treats.` :
+                            `Welcome to ${c_businessName}, where we offer exceptional coffee and baked goods that will satisfy your cravings. Our premium coffee beans are carefully selected and roasted to perfection, creating a delicious and aromatic coffee experience. In addition to our coffee, we offer a variety of fresh baked goods, sandwiches, and salads to suit any taste. Conveniently located and easily accessible, ${c_businessName} is the perfect destination for anyone looking for a cozy and welcoming place to enjoy their coffee and treats.` :
                             ""
     }`
 // 
@@ -41,7 +41,7 @@ export const c_meta_title = `${c_businessType == "Happy Code" ?
 export const c_meta_desc = `${c_businessType == "Happy Code" ?
     "Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." :
     c_businessType == "Barber Shop" ?
-        `Looking for a professional and reliable barbershop in ${c_businessCityState}? Look no further than our expert team at Bagel Barbershop! Our skilled barbers offer a wide range of grooming services, including haircuts, shaves, and beard trims. Book your appointment today for a great experience!` :
+        `Looking for a professional and reliable barbershop in ${c_businessCityState}? Look no further than our expert team at ${c_businessName}! Our skilled barbers offer a wide range of grooming services, including haircuts, shaves, and beard trims. Book your appointment today for a great experience!` :
         c_businessType == "Hair Salon" ?
             `Get the perfect haircut and style at our hair salon in ${c_businessCityState}. Our expert hairstylists are trained in the latest techniques and trends, ensuring that you leave our salon looking and feeling your best. Whether you need a trim or a complete makeover, we've got you covered. Book your appointment today!` :
             c_businessType == "Nail Salon" ?
@@ -56,11 +56,11 @@ export const c_meta_desc = `${c_businessType == "Happy Code" ?
     }`
 
 // 
-export const c_helmet = (page) => {
+export const c_helmet = (page, routeDesc) => {
     return (
         <Helmet>
             <title>{page} | {c_meta_title}</title>
-            <meta name="description" content={c_meta_desc} />
+            <meta name="description" content={routeDesc} />
             <meta name="robots" content="index, follow" />
             <link rel="canonical" href={`${c_mainURL}`} />
             <meta property="og:title" content={`${page} | ${c_meta_title}`} />
@@ -91,6 +91,32 @@ export const c_footerLinks = () => {
         </div>
     )
 }
+export const c_routes =
+{
+    "home": "Transforming ideas into innovative web and mobile applications with a user-centric approach, powered by cutting-edge technology - Welcome to our web and app development company!",
+
+    "about": "We build innovative and reliable custom web and mobile applications with a user-centric approach to help businesses achieve their goals.",
+
+    "gallery": "Explore our gallery of custom web and mobile applications we've developed, showcasing our ability to deliver innovative solutions for businesses of all sizes.",
+
+    "gallery-photo": "Explore our gallery of custom web and mobile applications we've developed, showcasing our ability to deliver innovative solutions for businesses of all sizes.",
+
+    "events": "Stay up-to-date with our latest industry events, webinars, and conferences, and connect with our team of experienced developers, designers, and project managers.",
+
+    "blog": "Explore our blog for insights into the latest web and app development trends, best practices, and industry news, written by our team of experienced developers and designers.",
+
+    "blog-post": "Explore our blog for insights into the latest web and app development trends, best practices, and industry news, written by our team of experienced developers and designers.",
+
+    "contact": "Get in touch with our team to discuss your custom web and mobile application needs, and start turning your ideas into reality.",
+
+    "menu": "Explore our range of web and app development services, including custom software development, UX/UI design, and project management, to find the solution that's right for your business.",
+
+    "products": "Discover our portfolio of innovative web and mobile applications we've developed for businesses of all sizes and industries, showcasing our ability to create custom solutions that exceed expectations.",
+
+    "schedule" : ""
+}
+
+
 // 
 
 export const c_instagram = ""

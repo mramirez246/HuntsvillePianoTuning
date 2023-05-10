@@ -8,8 +8,7 @@ import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
-import { Helmet } from 'react-helmet'
-import { c_helmet, c_mainURL } from '../Constants'
+import { c_helmet, c_routes } from '../Constants'
 
 export default function About() {
     function openNav() {
@@ -36,7 +35,7 @@ export default function About() {
     }, [])
     return (
         <div className='main'>
-            {c_helmet("About")}
+            {c_helmet("About", c_routes.about)}
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>
@@ -48,35 +47,18 @@ export default function About() {
                 <h1 className='page-title'>About Us</h1>
                 <div className='about-wrap'>
                     <div className='about-section'>
-                        <div>
-                            <h2 className='about-sub'>Everything Bagel</h2>
+                        <div className='about-top'>
+                            <h2 className='about-sub all-caps'>Everything<br/> Bagel</h2>
                             <img src={img1} className="about-img" />
                         </div>
                         <div className='about-text'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                        </div>
-                    </div>
-                    <div className='about-section'>
-                        <div>
-                            <h2 className='about-sub'>Everything Bagel</h2>
-                        </div>
-                        <div className='about-text'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                        </div>
-                    </div>
-                    <div className='about-section'>
-                        <div>
-                            <h2 className='about-sub'>Everything Bagel</h2>
-                            <img src={img1} className="about-img" />
-                        </div>
-                        <div className='about-text'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod. Etiam ut ornare mauris, ut luctus nisl.<br /><br />
+
+                            Integer turpis felis, venenatis a dui eu, pulvinar ultricies mi. Sed quis faucibus est, nec ullamcorper velit. Praesent scelerisque dolor erat, sed gravida tortor semper nec. Integer id orci in nisi fermentum fringilla. Sed vitae risus libero. Quisque diam nulla, posuere et convallis aliquet, congue eget nisi. Nulla facilisi. Aenean sit amet dui felis. Aliquam finibus elit in nibh gravida dapibus.<br /><br />
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod. Etiam ut ornare mauris, ut luctus nisl.<br /><br />
+
+                            Integer turpis felis, venenatis a dui eu, pulvinar ultricies mi. Sed quis faucibus est, nec ullamcorper velit. Praesent scelerisque dolor erat, sed gravida tortor semper nec. Integer id orci in nisi fermentum fringilla. Sed vitae risus libero. Quisque diam nulla, posuere et convallis aliquet, congue eget nisi. Nulla facilisi. Aenean sit amet dui felis. Aliquam finibus elit in nibh gravida dapibus.<br /><br />
                         </div>
                     </div>
                 </div>

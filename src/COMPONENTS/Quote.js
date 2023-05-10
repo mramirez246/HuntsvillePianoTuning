@@ -15,7 +15,7 @@ import {
     TbSquareRoundedNumber3Filled,
     TbSquareRoundedNumber4Filled
 } from 'react-icons/tb'
-import { c_businessName, c_mainURL, emailjs_fromEmail, emailjs_quotes_message } from '../Constants'
+import { c_businessName, c_helmet, c_mainURL, c_routes, emailjs_fromEmail, emailjs_quotes_message } from '../Constants'
 import { useDispatch } from 'react-redux'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
@@ -99,17 +99,7 @@ export default function Quote() {
     }, [])
     return (
         <div className='main'>
-            <Helmet>
-                <title>Quote | Happy Code Template</title>
-                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
-                <meta name="robots" content="index, follow" />
-                <link rel="canonical" href={`${c_mainURL}`} />
-                <meta property="og:title" content="Quote | Happy Code Template" />
-                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-                <meta property="og:url" content={`${c_mainURL}`} />
-                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
-            </Helmet>
+            {c_helmet("Quote", c_routes.quote)}
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

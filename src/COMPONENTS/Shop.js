@@ -24,7 +24,7 @@ import {
   purchaseItems,
 } from "../FIREBASE/firebase";
 import Modal from "./UTILITIES/Modal";
-import { c_businessName, c_mainURL, emailjs_fromEmail, square_appID, square_locationID } from "../Constants";
+import { c_businessName, c_helmet, c_mainURL, c_routes, emailjs_fromEmail, square_appID, square_locationID } from "../Constants";
 import { useStripe } from "./UTILITIES/use-stripe";
 import { randomString } from "../Global";
 import { Helmet } from "react-helmet";
@@ -52,125 +52,7 @@ export default function Shop() {
     document.querySelector(".nav-body").style.width = "0";
   }
 
-  // const products = [
-  //     {
-  //         id: 0,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img1],
-  //         Category: "Tech"
-  //     },
-  //     {
-  //         id: 1,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 150,
-  //         Quantity: 14,
-  //         Img: [img2],
-  //         Category: "Tech"
-  //     },
-  //     {
-  //         id: 2,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img3],
-  //         Category: "Tech"
-  //     },
-  //     {
-  //         id: 3,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img4],
-  //         Category: "Food"
-  //     },
-  //     {
-  //         id: 4,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img5],
-  //         Category: "Food"
-  //     },
-  //     {
-  //         id: 5,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img6],
-  //         Category: "Food"
-  //     },
-  //     {
-  //         id: 6,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img7],
-  //         Category: "Beauty"
-  //     },
-  //     {
-  //         id: 7,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img8],
-  //         Category: "Beauty"
-  //     },
-  //     {
-  //         id: 8,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img4],
-  //         Category: "Beauty"
-  //     },
-  //     {
-  //         id: 9,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 170,
-  //         Quantity: 14,
-  //         Img: [img5],
-  //         Category: "Sports"
-  //     },
-  //     {
-  //         id: 10,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 140,
-  //         Quantity: 14,
-  //         Img: [img1],
-  //         Category: "Sports"
-  //     },
-  //     {
-  //         id: 11,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 120,
-  //         Quantity: 14,
-  //         Img: [img2],
-  //         Category: "Sports"
-  //     },
-  //     {
-  //         id: 12,
-  //         Name: "Everything Bagel",
-  //         Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.",
-  //         Price: 190,
-  //         Quantity: 14,
-  //         Img: [img3],
-  //         Category: "Sports"
-  //     },
-  // ]
+
 
   const products = useSelector((state) => state.products.value);
 
@@ -419,17 +301,7 @@ export default function Shop() {
   }, []);
   return (
     <div className="main">
-      <Helmet>
-        <title>Shop | Happy Code Template</title>
-        <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-        <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${c_mainURL}`} />
-        <meta property="og:title" content="Shop | Happy Code Template" />
-        <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
-        <meta property="og:url" content={`${c_mainURL}`} />
-        <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
-      </Helmet>
+      {c_helmet("Shop", c_routes.shop)}
       {/* Cart Review */}
       {showReview ? (
         <div className="modal-cart-review font1">
