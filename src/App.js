@@ -206,7 +206,11 @@ function App() {
           c_routes.landing != undefined ? <Route exact path="/landing" element={<Landing />} /> : null
         }
         
-        
+        <Route exact path="/home2" element={<Home2 />} />
+        <Route exact path="/home3" element={<Home3 />} />
+        <Route exact path="/home4" element={<Home4 />} />
+        <Route exact path="/home5" element={<Home5 />} />
+        <Route exact path="/home6" element={<Home6 />} />
 
         {/* <Route exact path="/timecard" element={<Timecard />} /> */}
       </Routes>
