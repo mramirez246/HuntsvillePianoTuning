@@ -21,7 +21,6 @@
     .bio-option h1 {
         font-size: 1.2em;
         letter-spacing: -1px;
-        font-weight: 500;
     }
     .bio-option p {
         font-size: 0.8em;
@@ -87,7 +86,10 @@
     .bio-left-wrap {
         width: 30%;
     }
+    .bio-textblock p {
+        column-count: 2;
+    }
     .bio-textblock {
-        width: 80%;
+        width: 90%;
     }
 }

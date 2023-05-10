@@ -39,7 +39,7 @@ export default function Home() {
     }, [])
     return (
         <div className='main'>
-            {c_helmet("Home", c_routes.threehome)}
+            {c_helmet("Home", c_routes.home3)}
             {/* NAGIVATION */}
             <Navigation />
 

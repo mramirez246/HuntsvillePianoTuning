@@ -50,68 +50,97 @@ export default function Awards() {
                 <h1 className='page-title'>Awards</h1>
                 <p className='page-subtitle'>Every year, we strive to be the best in any way we can. We want our customers to have the best experience with our products and services. Doing so, brings us joy and satisfaction knowing that we have done our best to serve our communities.</p>
                 <div className='awards-wrap'>
-                    <div className='award bg4'>
+                    {/* AWARDS */}
+                    <div className='award bg5 color2'>
                         <div className='separate'>
                             <FaAward color="F8D704" className='award-icon' />
                             <h4 className='award-year'>2013</h4>
                         </div>
-                        <h1 className='award-title'>Business of the year award.</h1>
-                        <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
-                        <h3 className='award-region'>California, USA</h3>
-                    </div>
-                    <div className='award bg4'>
-                        <div className='separate'>
-                            <FaTrophy color="F8D704" className='award-icon' />
-                            <h4 className='award-year'>2013</h4>
+                        <div className='award-vert-split'>
+                            <h1 className='award-title'>Business of the year award.</h1>
+                            <div className='fit-content-height'>
+                                <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
+                                <h3 className='award-region'>California, USA</h3>
+                            </div>
                         </div>
-                        <h1 className='award-title'>Business of the year award.</h1>
-                        <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
-                        <h3 className='award-region'>California, USA</h3>
                     </div>
                     <div className='award bg4'>
                         <div className='separate'>
                             <FaAward color="F8D704" className='award-icon' />
                             <h4 className='award-year'>2013</h4>
                         </div>
-                        <h1 className='award-title'>Business of the year award.</h1>
-                        <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
-                        <h3 className='award-region'>California, USA</h3>
-                    </div>
-                    <div className='award bg4'>
-                        <div className='separate'>
-                            <FaTrophy color="F8D704" className='award-icon' />
-                            <h4 className='award-year'>2013</h4>
+                        <div className='award-vert-split'>
+                            <h1 className='award-title'>Business of the year award.</h1>
+                            <div className='fit-content-height'>
+                                <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
+                                <h3 className='award-region'>California, USA</h3>
+                            </div>
                         </div>
-                        <h1 className='award-title'>Business of the year award.</h1>
-                        <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
-                        <h3 className='award-region'>California, USA</h3>
                     </div>
                     <div className='award bg4'>
                         <div className='separate'>
                             <FaAward color="F8D704" className='award-icon' />
                             <h4 className='award-year'>2013</h4>
                         </div>
-                        <h1 className='award-title'>Business of the year award.</h1>
-                        <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
-                        <h3 className='award-region'>California, USA</h3>
-                    </div>
-                    <div className='award bg4'>
-                        <div className='separate'>
-                            <FaTrophy color="F8D704" className='award-icon' />
-                            <h4 className='award-year'>2013</h4>
+                        <div className='award-vert-split'>
+                            <h1 className='award-title'>Business of the year award.</h1>
+                            <div className='fit-content-height'>
+                                <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
+                                <h3 className='award-region'>California, USA</h3>
+                            </div>
                         </div>
-                        <h1 className='award-title'>Business of the year award.</h1>
-                        <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
-                        <h3 className='award-region'>California, USA</h3>
                     </div>
                     <div className='award bg4'>
                         <div className='separate'>
                             <FaAward color="F8D704" className='award-icon' />
                             <h4 className='award-year'>2013</h4>
                         </div>
-                        <h1 className='award-title'>Business of the year award.</h1>
-                        <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
-                        <h3 className='award-region'>California, USA</h3>
+                        <div className='award-vert-split'>
+                            <h1 className='award-title'>Business of the year award.</h1>
+                            <div className='fit-content-height'>
+                                <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
+                                <h3 className='award-region'>California, USA</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='award bg4'>
+                        <div className='separate'>
+                            <FaAward color="F8D704" className='award-icon' />
+                            <h4 className='award-year'>2013</h4>
+                        </div>
+                        <div className='award-vert-split'>
+                            <h1 className='award-title'>Business of the year award.</h1>
+                            <div className='fit-content-height'>
+                                <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
+                                <h3 className='award-region'>California, USA</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='award bg4'>
+                        <div className='separate'>
+                            <FaAward color="F8D704" className='award-icon' />
+                            <h4 className='award-year'>2013</h4>
+                        </div>
+                        <div className='award-vert-split'>
+                            <h1 className='award-title'>Business of the year award.</h1>
+                            <div className='fit-content-height'>
+                                <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
+                                <h3 className='award-region'>California, USA</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='award bg4'>
+                        <div className='separate'>
+                            <FaAward color="F8D704" className='award-icon' />
+                            <h4 className='award-year'>2013</h4>
+                        </div>
+                        <div className='award-vert-split'>
+                            <h1 className='award-title'>Business of the year award.</h1>
+                            <div className='fit-content-height'>
+                                <p className='award-desc'>Award is granted to the achievement of receiving the highest score in customer satisfaction within the state.</p>
+                                <h3 className='award-region'>California, USA</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -91,9 +91,9 @@ export const c_footerLinks = () => {
         </div>
     )
 }
-export const c_routes =
+export const c_routes = 
 {
-    "home": "Transforming ideas into innovative web and mobile applications with a user-centric approach, powered by cutting-edge technology - Welcome to our web and app development company!",
+    "home6": "Transforming ideas into innovative web and mobile applications with a user-centric approach, powered by cutting-edge technology - Welcome to our web and app development company!",
 
     "about": "We build innovative and reliable custom web and mobile applications with a user-centric approach to help businesses achieve their goals.",
 
@@ -113,7 +113,7 @@ export const c_routes =
 
     "products": "Discover our portfolio of innovative web and mobile applications we've developed for businesses of all sizes and industries, showcasing our ability to create custom solutions that exceed expectations.",
 
-    "schedule" : ""
+    "bio" : ""
 }
 
 

@@ -52,7 +52,7 @@ export default function Home() {
             </div>
             {/* BODY */}
             <div className="font1">
-                <div className='home6-panel1 border-bottom1'>
+                <div className='home6-panel1'>
                     <div className='home6-split'>
                         <div className='home6-panel-text'>
                             <h1>Bagel Law and Associates<br />Everything is in the bagel, agreed.</h1>
@@ -84,7 +84,7 @@ export default function Home() {
                     <div className='divider'></div>
                     <div className='home6-panel2'>
                         <h1>We are in the business of bagels, and more.</h1>
-                        <br/>
+                        <br />
                         <div className='home6-panel2-blocks'>
                             <div className='home6-panel2-block bg3'>
                                 <div className=''>
@@ -118,7 +118,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-<br/><br/>
+            <br /><br />
             {/* FOOTER */}
             <div className='bottom'>
                 <Footer />

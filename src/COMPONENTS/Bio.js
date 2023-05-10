@@ -48,36 +48,36 @@ export default function Bio() {
             {/* BODY */}
             <div className="bio font1">
                 <div className='padding'>
-                    <h1 className='page-title'>Bio</h1>
+                    <h1 className='page-title'>Biography</h1>
                 </div>
                 <div className='bio-split'>
                     <div>
                         <div className='bio-left-wrap'>
                         <div className='bio-option border-vert1'>
                             <div>
-                                <h1>1. Everything Bagel 1</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p>
+                                <h1 className='all-caps bold'>Everything Bagel 1</h1>
+                                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p> */}
                             </div>
                             <a className='bio-option-arrow color1' href="#bio1"><BsArrowRightCircle /></a>
                         </div>
                         <div className='bio-option border-bottom1'>
                             <div>
-                                <h1>2. Everything Bagel 2</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p>
+                                <h1 className='all-caps bold'>Everything Bagel 2</h1>
+                                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p> */}
                             </div>
                             <a className='bio-option-arrow color1' href="#bio2"><BsArrowRightCircle /></a>
                         </div>
                         <div className='bio-option border-bottom1'>
                             <div>
-                                <h1>3. Everything Bagel 3</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p>
+                                <h1 className='all-caps bold'>Everything Bagel 3</h1>
+                                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p> */}
                             </div>
                             <a className='bio-option-arrow color1' href="#bio3"><BsArrowRightCircle /></a>
                         </div>
                         <div className='bio-option border-bottom1'>
                             <div>
-                                <h1>4. Everything Bagel 4</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p>
+                                <h1 className='all-caps bold'>Everything Bagel 4</h1>
+                                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. </p> */}
                             </div>
                             <a className='bio-option-arrow color1' href="#bio4"><BsArrowRightCircle /></a>
                         </div>
@@ -86,16 +86,14 @@ export default function Bio() {
 
                     <div className='bio-text'>
                         <div id="bio1" className="bio-textblock">
-                            <h2>Everything Bagel 1</h2>
+                            <h2 className='all-caps'>Everything Bagel 1</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
-                                <br /><br />
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
                             </p>
                             <img src={img1} />
                         </div>
                         <div id="bio2" className="bio-textblock">
-                            <h2>Everything Bagel 2</h2>
+                            <h2 className='all-caps'>Everything Bagel 2</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
                                 <br /><br />
@@ -103,7 +101,7 @@ export default function Bio() {
                             </p>
                         </div>
                         <div id="bio3" className="bio-textblock">
-                            <h2>Everything Bagel 3</h2>
+                            <h2 className='all-caps'>Everything Bagel 3</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
                                 <br /><br />
@@ -111,7 +109,7 @@ export default function Bio() {
                             </p>
                         </div>
                         <div id="bio4" className="bio-textblock">
-                            <h2>Everything Bagel 4</h2>
+                            <h2 className='all-caps'>Everything Bagel 4</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod.
                                 <br /><br />
