@@ -1,12 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, limit, orderBy } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { deleteDoc, getFirestore, limit, orderBy } from "firebase/firestore";
+import { deleteObject, getStorage } from "firebase/storage";
 //
 
 //
-import { randomString } from "../Global";
+import { randomString, removeDupes, removeDuplicates } from "../Global";
 //
 import {
   doc,
@@ -184,6 +184,131 @@ export const getBlogs = async (dispatch) => {
   dispatch(setBlogsState(blogs));
 };
 //
+// ORDER ONLINE
+export const newProduct = async (args) => {
+
+  if (args.ImgPath != "") {
+    const storageRef = ref(storage, args.ImgPath);
+
+    // 'file' comes from the Blob or File API
+    uploadBytes(storageRef, args.Img).then((snapshot) => {
+      newOrderProductDoc(args)
+    })
+      .catch((error) => {
+        console.log(error)
+      })
+  } else {
+    newOrderProductDoc(args)
+  }
+}
+export const newOrderProductDoc = async (args) => {
+  await setDoc(doc(db, "OrderProducts", args.id), {
+    Name: args.Name,
+    Category: args.Category,
+    Price: args.Price,
+    Qty: args.Qty,
+    Desc: args.Desc,
+    ImgPath: args.ImgPath,
+    Dupe: args.Dupe
+  });
+}
+export const getOrderProducts = async (products, setProducts, setCategories, setAllProds) => {
+
+  const querySnapshot = await getDocs(collection(db, "OrderProducts"),orderBy("Category",'asc'));
+  const size = querySnapshot.size
+  const prods = []
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    const id = doc.id
+    const prod = doc.data()
+    if (prod.ImgPath != "") {
+      getDownloadURL(ref(storage, prod.ImgPath))
+        .then((url) => {
+          const product = {
+            id: id,
+            Name: prod.Name,
+            Price: prod.Price,
+            Category: prod.Category,
+            Qty: prod.Qty,
+            Desc: prod.Desc,
+            Img: url,
+            ImgPath: prod.ImgPath,
+            Dupe: prod.Dupe
+          }
+          console.log(product)
+          prods.push(product)
+          if (prods.length == size) {
+            setProducts(removeDuplicates(prods))
+            const categs = []
+            for (var i = 0; i < prods.length; i = i + 1) {
+              categs.push(prods[i].Category)
+            }
+            const thing = removeDupes(categs).sort()
+            setCategories(thing)
+            setAllProds(prods)
+          }
+        })
+        .catch((error) => {
+          // Handle any errors
+        });
+    } else {
+      const product = {
+        id: id,
+        Name: prod.Name,
+        Price: prod.Price,
+        Category: prod.Category,
+        Qty: prod.Qty,
+        Desc: prod.Desc,
+        Img: null,
+        ImgPath: "",
+        Dupe: prod.Dupe
+      }
+      prods.push(product)
+      if (prods.length == size) {
+        setProducts(removeDuplicates(prods))
+      }
+    }
+  });
+
+
+
+}
+export const updateProduct = async (args, file) => {
+  const refer = doc(db, "OrderProducts", args.id);
+  // Set the "capital" field of the city 'DC'
+  await updateDoc(refer, {
+    Name: args.Name,
+    Desc: args.Desc,
+    Price: args.Price,
+    Qty: args.Qty,
+    ImgPath: args.ImgPath,
+    Category: args.Category
+  });
+
+  if (file != "") {
+    const storageRef = ref(storage, args.ImgPath);
+
+    // 'file' comes from the Blob or File API
+    uploadBytes(storageRef, file).then((snapshot) => {
+      console.log('Uploaded a blob or file!');
+    });
+  }
+
+}
+export const deleteOldPhoto = (imgPath) => {
+  const refer = ref(storage, imgPath);
+
+  // Delete the file
+  deleteObject(refer).then(() => {
+    // File deleted successfully
+  }).catch((error) => {
+    // Uh-oh, an error occurred!
+  });
+}
+export const removeProduct = async (args) => {
+  await deleteDoc(doc(db, "OrderProducts", args.id));
+}
+
 // STORE
 // Create a function that pulls products from DB
 // Create function that updates the quantity

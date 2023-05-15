@@ -43,7 +43,8 @@ export default function DashNavigation() {
                 <Link className='nav-link color1' to="/dashboard">Dashboard</Link>
                 <Link className='nav-link color1' to="/scheduleadmin">Schedule</Link>
                 <Link className='nav-link color1' to="/timecardadmin">Timecards</Link>
-                <Link className='nav-link color1' to="/shopadmin">Orders</Link>
+                <Link className='nav-link color1' to="/orderonlineadmin">Online Orders</Link>
+                {/* <Link className='nav-link color1' to="/shopadmin">Orders</Link> */}
                 <br />
                 <button onClick={() => { firebaseSignOut(dispatch); navigate('/login') }} className='dash-out no-bg no-border red'>Sign Out</button>
             </div>

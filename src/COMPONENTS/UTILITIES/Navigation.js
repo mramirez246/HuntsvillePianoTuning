@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TfiClose } from 'react-icons/tfi'
 // 
 import '../../STYLESHEETS/Navigation.css'
@@ -26,6 +26,8 @@ export default function Navigation() {
         document.querySelector(".nav-body").style.width = "0";
     }
 
+    const [showOptions, setShowOptions] = useState(false)
+
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
@@ -36,7 +38,7 @@ export default function Navigation() {
                 <img src={logo} onClick={() => { navigate('/') }} />
                 <TfiClose className='nav-icon color1' onClick={closeNav} />
             </div>
-            {c_nav()}
+            {c_nav(showOptions, setShowOptions)}
             <p className='copy font1 color1'>&copy; {c_businessName} 2023. All Rights Reserved.</p>
         </div>
     )

@@ -7,6 +7,15 @@ export function randomString(length) {
     }
     return result;
 }
+export function removeDuplicates(array) {
+    return array.filter((item, index, self) => {
+      return index === self.findIndex((t) => t.id === item.id);
+    });
+  }
+  export function removeDupes(array) {
+    const uniqueArray = Array.from(new Set(array));
+    return uniqueArray
+  }
 export function getDayOfWeek_Word(num) {
     switch (num) {
         case 1:

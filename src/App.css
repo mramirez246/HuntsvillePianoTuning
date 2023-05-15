@@ -45,6 +45,12 @@ body {
   gap: 0.5em;
 }
 
+.separate-v {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .spread-evenly {
   display: flex;
   justify-content: space-evenly;
@@ -64,9 +70,11 @@ body {
   gap: 0.5em;
   padding: 0.5em;
 }
+
 .fit-content-height {
   height: fit-content;
 }
+
 .fit-content-width {
   width: fit-content;
 }
@@ -135,6 +143,10 @@ body {
   background-color: #e0e2e46b;
 }
 
+.bg-red {
+  background-color: red;
+}
+
 .no-bg {
   background-color: rgba(0, 0, 0, 0) !important;
 }
@@ -160,7 +172,7 @@ body {
   font-family: 'Poppins', sans-serif;
   /* font-family: 'Raleway', sans-serif; */
   /* font-family: 'Rubik', sans-serif; */
-  
+
 }
 
 .font2 {}
@@ -170,6 +182,7 @@ body {
 .all-caps {
   text-transform: uppercase;
 }
+
 .bold {
   font-weight: bold;
 }
@@ -269,7 +282,7 @@ body {
     font-size: 3.4em;
     letter-spacing: -3px;
     text-transform: uppercase;
-    
+
   }
 
   .page-subtitle {

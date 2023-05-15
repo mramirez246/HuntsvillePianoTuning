@@ -42,7 +42,6 @@ import Features from './COMPONENTS/Features';
 import Portfolio from './COMPONENTS/Portfolio';
 import Menu from './COMPONENTS/Menu';
 import Team from './COMPONENTS/Team';
-// import Timecard from './COMPONENTS/Timecard'
 import EmployeeLogin from './COMPONENTS/EmployeeLogin'
 import EmployeeDashboard from './COMPONENTS/EmployeeDashboard'
 import TimecardAdmin from './COMPONENTS/TimecardAdmin';
@@ -52,6 +51,11 @@ import Quote from './COMPONENTS/Quote';
 import Reviews from './COMPONENTS/Reviews';
 import Tutorials from './COMPONENTS/Tutorials'
 import ShopAdmin from './COMPONENTS/ShopAdmin'
+import OrderOnline from './COMPONENTS/OrderOnline'
+import OrderOnlineAdmin from './COMPONENTS/OnlineOrderAdmin'
+
+// import Timecard from './COMPONENTS/Timecard'
+
 import { c_routes } from './Constants';
 
 
@@ -204,6 +208,12 @@ function App() {
         }
         {
           c_routes.landing != undefined ? <Route exact path="/landing" element={<Landing />} /> : null
+        }
+        {
+          c_routes.orderonline != undefined ? <Route exact path="/orderonline" element={<OrderOnline />} /> : null
+        }
+        {
+          c_routes.orderonlineadmin != undefined ? <Route exact path="/orderonlineadmin" element={<OrderOnlineAdmin />} /> : null
         }
         
         <Route exact path="/home2" element={<Home2 />} />

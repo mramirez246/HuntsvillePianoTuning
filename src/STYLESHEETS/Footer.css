@@ -44,10 +44,11 @@
         font-size: 2.5em;
     }
     .footer-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1em;
         padding: 0.8em;
+        font-weight: bold;
     }
     .footer-link {
         text-decoration: none;
@@ -79,7 +80,11 @@
         width: 100%;
         text-align: left;
     }
-    
+    .footer-links {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
 }
 
 @media only screen and (min-width: 800px) {

@@ -1,5 +1,8 @@
 import { Helmet } from "react-helmet"
 import { Link } from "react-router-dom"
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
+
+// 
 
 const c_businessType = "Happy Code"
 // 
@@ -23,19 +26,19 @@ export const c_businessDesc = `${c_businessType == "Happy Code" ?
     }`
 // 
 export const c_meta_title = `${c_businessType == "Happy Code" ?
-    `${c_businessCityState} | Happy Code Template` :
+    `${c_businessName} | ${c_businessCityState} | Happy Code Template` :
     c_businessType == "Barber Shop" ?
-        `${c_businessCityState} | Top-Notch Haircuts and Grooming Services` :
+        `${c_businessName} | ${c_businessCityState} | Top-Notch Haircuts and Grooming Services` :
         c_businessType == "Hair Salon" ?
-            `${c_businessCityState} | Beautiful Haircuts, Styling and Coloring Services` :
+            `${c_businessName} | ${c_businessCityState} | Beautiful Haircuts, Styling and Coloring Services` :
             c_businessType == "Nail Salon" ?
-                `${c_businessCityState} | High-Quality Nail Care and Styling Services` :
+                `${c_businessName} | ${c_businessCityState} | High-Quality Nail Care and Styling Services` :
                 c_businessType == "Massage Parlor" ?
-                    `${c_businessCityState} | Relaxing and Rejuvenating Massage Services` :
+                    `${c_businessName} | ${c_businessCityState} | Relaxing and Rejuvenating Massage Services` :
                     c_businessType == "Tattoo Parlor" ?
-                        `${c_businessCityState} | Custom Tattoos and Piercings by Expert Artists` :
+                        `${c_businessName} | ${c_businessCityState} | Custom Tattoos and Piercings by Expert Artists` :
                         c_businessType == "Coffee Shop" ?
-                            `${c_businessCityState} | Best Coffee and Pastries in Town` :
+                            `${c_businessName} | ${c_businessCityState} | Best Coffee and Pastries in Town` :
                             ""
     }`
 export const c_meta_desc = `${c_businessType == "Happy Code" ?
@@ -70,10 +73,27 @@ export const c_helmet = (page, routeDesc) => {
         </Helmet>
     )
 }
-export const c_nav = () => {
+export const c_nav = (showOptions, setShowOptions) => {
     return (
         <div className='nav-links font1'>
-            <Link className='nav-link color1' to="/about">About</Link>
+            <div className="separate">
+                <Link className='nav-link color1' to="/about">About</Link>
+                {
+                    showOptions ?
+                    <FiChevronUp className="nav-icon" onClick={() => {setShowOptions(false)}} /> :
+                    <FiChevronDown className="nav-icon" onClick={() => {setShowOptions(true)}} />
+                }
+            </div>
+
+            {
+                showOptions ?
+                    <div className="nav-link-opts">
+                        <Link className='nav-link-opt color1' to="/">Bagel Option 1</Link>
+                        <Link className='nav-link-opt color1' to="/">Bagel Option 2</Link>
+                        <Link className='nav-link-opt color1' to="/">Bagel Option 3</Link>
+                        <Link className='nav-link-opt color1' to="/">Bagel Option 4</Link>
+                    </div> : <div></div>
+            }
             <Link className='nav-link color1' to="/gallery">Gallery</Link>
             <Link className='nav-link color1' to="/events">Events</Link>
             <Link className='nav-link color1' to="/blog">Blog</Link>
@@ -87,57 +107,61 @@ export const c_footerLinks = () => {
             <Link className='footer-link color2' to="/">About</Link>
             <Link className='footer-link color2' to="/">Menu</Link>
             <Link className='footer-link color2' to="/">Products</Link>
+            <Link className='footer-link color2' to="/">Products</Link>
+            <Link className='footer-link color2' to="/">Products</Link>
             <Link className='footer-link color2' to="/">Contact Us</Link>
         </div>
     )
 }
 
-export const c_routes = 
+export const c_routes =
 {
     // "route" : "SEO meta desc"
-    "home":"",
-    "home2":"",
-    "home3":"",
-    "home4":"",
-    "home5":"",
-    "home6":"",
-    "about":"",
-    "services":"",
-    "products":"",
-    "pricing":"",
-    "bio":"",
-    "contact":"",
-    "history":"",
-    "locations":"",
-    "gallery":"",
-    "galleryphoto":"",
-    "mailinglist":"",
-    "blog":"",
-    "blogpost":"",
-    "events":"",
-    "faq":"",
-    "careers":"",
-    "shop":"",
-    "schedule":"",
-    "scheduleadmin":"",
-    "partners":"",
-    "form":"",
-    "features":"",
-    "portfolio":"",
-    "menu":"",
-    "team":"",
-    "awards":"",
-    "coupons":"",
-    "quote":"",
-    "reviews":"",
-    "tutorials":"",
-    "employeelogin":"",
-    "employeedashboard":"",
-    "timecardadmin":"",
-    "login":"",
-    "dashboard":"",
-    "shopadmin":"",
-    "landing":"",
+    "home": "",
+    "home2": "",
+    "home3": "",
+    "home4": "",
+    "home5": "",
+    "home6": "",
+    "about": "",
+    "services": "",
+    "products": "",
+    "pricing": "",
+    "bio": "",
+    "contact": "",
+    "history": "",
+    "locations": "",
+    "gallery": "",
+    "galleryphoto": "",
+    "mailinglist": "",
+    "blog": "",
+    "blogpost": "",
+    "events": "",
+    "faq": "",
+    "careers": "",
+    "shop": "",
+    "schedule": "",
+    "scheduleadmin": "",
+    "partners": "",
+    "form": "",
+    "features": "",
+    "portfolio": "",
+    "menu": "",
+    "team": "",
+    "awards": "",
+    "coupons": "",
+    "quote": "",
+    "reviews": "",
+    "tutorials": "",
+    "employeelogin": "",
+    "employeedashboard": "",
+    "timecardadmin": "",
+    "login": "",
+    "dashboard": "",
+    "shopadmin": "",
+    "landing": "",
+    "orderonline":"",
+    "orderonlineadmin" : ""
 }
 
 
