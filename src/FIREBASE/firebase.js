@@ -214,7 +214,7 @@ export const newOrderProductDoc = async (args) => {
 }
 export const getOrderProducts = async (products, setProducts, setCategories, setAllProds) => {
 
-  const querySnapshot = await getDocs(collection(db, "OrderProducts"),orderBy("Category",'asc'));
+  const querySnapshot = await getDocs(collection(db, "OrderProducts"), orderBy("Category", 'asc'));
   const size = querySnapshot.size
   const prods = []
   querySnapshot.forEach((doc) => {
@@ -233,19 +233,22 @@ export const getOrderProducts = async (products, setProducts, setCategories, set
             Desc: prod.Desc,
             Img: url,
             ImgPath: prod.ImgPath,
-            Dupe: prod.Dupe
+            Dupe: prod.Dupe,
+            CartQty: 0
           }
           console.log(product)
           prods.push(product)
           if (prods.length == size) {
-            setProducts(removeDuplicates(prods))
+            const sortedProds = prods.sort((a, b) => a.Category.localeCompare(b.Category));
+
+            setProducts(removeDuplicates(sortedProds))
             const categs = []
             for (var i = 0; i < prods.length; i = i + 1) {
-              categs.push(prods[i].Category)
+              categs.push(sortedProds[i].Category)
             }
             const thing = removeDupes(categs).sort()
             setCategories(thing)
-            setAllProds(prods)
+            setAllProds(sortedProds)
           }
         })
         .catch((error) => {
@@ -261,7 +264,8 @@ export const getOrderProducts = async (products, setProducts, setCategories, set
         Desc: prod.Desc,
         Img: null,
         ImgPath: "",
-        Dupe: prod.Dupe
+        Dupe: prod.Dupe,
+        CartQty: 0
       }
       prods.push(product)
       if (prods.length == size) {

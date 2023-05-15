@@ -57,19 +57,27 @@ export default function OrderOnlineAdmin() {
     const [products, setProducts] = useState([])
     // 
     const [chosenProd, setChosenProd] = useState({})
+    const [chosenCateg, setChosenCateg] = useState("All")
 
     const onChangeImg = () => {
         const img = document.querySelector('#file-upload')
         var file = img.files[0];
-        setNewProdFile(file)
-        setFileType(file.type)
-        var reader = new FileReader();
-        reader.onload = function (event) {
-            // Get the file content as a data URL
-            var dataUrl = event.target.result;
-            setNewProdImg(dataUrl)
-        };
-        reader.readAsDataURL(file);
+        if (!isValidImageFile(file)) {
+            alert('Only JPG, JPEG, PNG, and GIF files are allowed.');
+            img.value = ''; // Clear the file input field
+        } else {
+            // Proceed with file upload or other operations
+            setNewProdFile(file)
+            setFileType(file.type)
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                // Get the file content as a data URL
+                var dataUrl = event.target.result;
+                setNewProdImg(dataUrl)
+            };
+            reader.readAsDataURL(file);
+        }
+
     }
     const onEditChangeImg = () => {
         const img = document.querySelector('#file-edit-upload')
@@ -125,6 +133,24 @@ export default function OrderOnlineAdmin() {
                         ImgPath: newProdImg != "" ? `OrderProducts/${randomString(12)}.${fileType == "image/png" ? "png" : "jpg"}` : "",
                     }]
                     setProducts(thing)
+                    const categs = []
+                    categs.push(args.Category)
+                    for (var i = 0; i < products.length; i = i + 1) {
+                        categs.push(products[i].Category)
+                    }
+                    const otherThing = removeDupes(categs).sort()
+                    setCategories(otherThing)
+                    setAllProds([...allProds, {
+                        id: args.id,
+                        Name: args.Name,
+                        Price: args.Price,
+                        Category: args.Category,
+                        Qty: args.Qty,
+                        Desc: args.Desc,
+                        Img: newProdImg != "" ? img : null,
+                        Dupe: false,
+                        ImgPath: newProdImg != "" ? `OrderProducts/${randomString(12)}.${fileType == "image/png" ? "png" : "jpg"}` : "",
+                    }])
                     setNewProdImg("")
                     setNewProdFile("")
                     document.querySelector('#tbName').value = ""
@@ -148,12 +174,12 @@ export default function OrderOnlineAdmin() {
                 })
 
         } else {
+            dispatch(setLoadingState(false))
             setMissing(true)
         }
     }
     const m_EditProduct = () => {
         const oldPath = chosenProd.ImgPath
-        console.log(`THIS IS IT: ${editProdFile}`)
         if (editProdFile != "") {
             if (oldPath != "") {
                 deleteOldPhoto(oldPath)
@@ -229,13 +255,14 @@ export default function OrderOnlineAdmin() {
     }
     const m_GetOrderProducts = () => {
         getOrderProducts(products, setProducts, setCategories, setAllProds)
-            
+
     }
     const pickProduct = (prod) => {
         setShowEditProduct(true)
         setChosenProd(prod)
         setEditProdImg(prod.Img)
         setEditProdFile("")
+        console.log(prod)
     }
     const m_DuplicateProduct = () => {
         dispatch(setLoadingState(true))
@@ -245,7 +272,6 @@ export default function OrderOnlineAdmin() {
         const qty = document.querySelector('#tbEditQty').value
         const desc = document.querySelector('#taEditDesc').value
 
-        console.log(chosenProd)
 
         if (name != "" && price != "" && desc != "" && category != "") {
             setMissing(false)
@@ -305,8 +331,11 @@ export default function OrderOnlineAdmin() {
         }
     }
     const m_RemoveProduct = () => {
+        const temp = { ...chosenProd }
         if (!chosenProd.Dupe) {
-            deleteOldPhoto(chosenProd.ImgPath)
+            if (temp.ImgPath != "") {
+                deleteOldPhoto(temp.ImgPath)
+            }
         }
         const tempID = chosenProd.id
         removeProduct(chosenProd)
@@ -318,6 +347,10 @@ export default function OrderOnlineAdmin() {
                 if (index !== -1) { // check if the object was found
                     products.splice(index, 1); // remove the object at the index
                 }
+                const allIndex = allProds.findIndex(item => item.id === tempID); // find the index of the object with the specified ID
+                if (allIndex !== -1) { // check if the object was found
+                    allProds.splice(allIndex, 1); // remove the object at the index
+                }
                 setEditProdImg("")
                 document.querySelector('#tbEditName').value = ""
                 document.querySelector('#tbEditCate').value = ""
@@ -326,6 +359,7 @@ export default function OrderOnlineAdmin() {
                 document.querySelector('#taEditDesc').value = ""
                 document.querySelector('#file-edit-upload').file = null
                 setShowEditProduct(false)
+                doCategThing()
                 setTimeout(() => {
                     dispatch(setSuccessState(false))
                 }, 2000);
@@ -340,6 +374,7 @@ export default function OrderOnlineAdmin() {
             })
     }
     const filterProds = (categ) => {
+        setChosenCateg(categ)
         if (categ == "All") {
             setProducts(allProds)
         } else {
@@ -347,6 +382,21 @@ export default function OrderOnlineAdmin() {
             const filteredArray = allProds.filter(obj => obj.Category === categ);
             setProducts(filteredArray)
         }
+    }
+    const doCategThing = () => {
+        const categs = []
+        for (var i = 0; i < products.length; i = i + 1) {
+            categs.push(products[i].Category)
+        }
+        const thing = removeDupes(categs).sort()
+        setCategories(thing)
+    }
+    function isValidImageFile(file) {
+        const allowedExtensions = ['jpg', 'jpeg', 'png']; // Add other allowed extensions if needed
+        const fileName = file.name;
+        const fileExtension = fileName.split('.').pop().toLowerCase();
+
+        return allowedExtensions.includes(fileExtension);
     }
 
     useEffect(() => {
@@ -393,11 +443,11 @@ export default function OrderOnlineAdmin() {
                             </div>
                             <br />
                             <div className='categ-btns'>
-                                <button onClick={() => { filterProds("All") }} className='bg2 color1 border2'>All</button>
+                                <button onClick={() => { filterProds("All") }} className={`${chosenCateg == "All" ? "bg1 color2 no-border" : "bg2 color1 border2"}`}>All</button>
                                 {
                                     categories.map((cate, i) => {
                                         return (
-                                            <button onClick={() => { filterProds(cate) }} className='bg2 color1 border2' key={i}>{cate}</button>
+                                            <button onClick={() => { filterProds(cate) }} className={`${cate == chosenCateg ? "bg1 color2 no-border" : "bg2 color1 border2"}`} key={i}>{cate}</button>
                                         )
                                     })
                                 }
