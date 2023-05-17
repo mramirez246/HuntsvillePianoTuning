@@ -43,6 +43,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 0.5em;
+  width: 100%;
 }
 
 .separate-v {
@@ -77,6 +78,10 @@ body {
 
 .fit-content-width {
   width: fit-content;
+}
+.text-center {
+  display: block;
+  text-align: center;
 }
 
 /* ----------------------------------COLORS-------------------------------------- */
@@ -186,6 +191,9 @@ body {
 .bold {
   font-weight: bold;
 }
+.thin {
+  font-weight: 300;
+}
 
 /* ----------------------------------BORDERS-------------------------------------- */
 
@@ -227,6 +235,10 @@ body {
 
 .border-green {
   border: 1px solid #0dc30d;
+}
+
+.border-left1 {
+  border-left: 1px solid #111;
 }
 
 /* ----------------------------------COMPONENTS-------------------------------------- */
