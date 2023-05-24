@@ -47,6 +47,7 @@ export default function OrderOnline() {
     const [cartItems, setCartitems] = useState([])
     const [subTotal, setSubTotal] = useState(0)
     const [cartItemID, setCartItemID] = useState("")
+    const [chosenItemID, setChosenItemID] = useState("")
 
     const m_GetProducts = () => {
         dispatch(setLoadingState(true))
@@ -124,17 +125,21 @@ export default function OrderOnline() {
         const cartIndex = cartItems.findIndex(it => it.id === item.id); // find the index of the object with the specified ID
         if (cartIndex !== -1) { // check if the object was found
             cartItems.splice(cartIndex, 1, thing); // replace the object at the index with a new object
-          }
+        }
         const index = products.findIndex(it => it.id === item.id); // find the index of the object with the specified ID
         if (index !== -1) { // check if the object was found
             products.splice(index, 1, thing); // replace the object at the index with a new object
-          }
+        }
         const allIndex = allProds.findIndex(it => it.id === item.id); // find the index of the object with the specified ID
         if (allIndex !== -1) { // check if the object was found
             allProds.splice(allIndex, 1, thing); // replace the object at the index with a new object
-          }
+        }
 
-          console.log(cartItems)
+        console.log(cartItems)
+    }
+    // 
+    const checkOut = () => {
+
     }
 
     useEffect(() => {
@@ -159,12 +164,12 @@ export default function OrderOnline() {
                     <div className='padding'><HiShoppingCart onClick={() => { setShowCart(true) }} className='cart-icon' /></div>
                 </div>
 
-                <div className='cate-btns'>
-                    <button onClick={() => { filterProds("All") }} className={`${chosenCategory == "All" ? "bg1 color2 no-border" : "bg2 color1 border2"}`}>All</button>
+                <div className='cate-btns bg3'>
+                    <button onClick={() => { filterProds("All") }} className={`${chosenCategory == "All" ? "bg1 color2" : "bg2 color1"} no-border`}>All</button>
                     {
                         categories.map((cate, i) => {
                             return (
-                                <button onClick={() => { filterProds(cate) }} className={`${chosenCategory == cate ? "bg1 color2 no-border" : "bg2 color1 border2"}`} key={i}>{cate}</button>
+                                <button onClick={() => { filterProds(cate) }} className={`${chosenCategory == cate ? "bg1 color2 no-border" : "bg2 color1 no-border"}`} key={i}>{cate}</button>
                             )
                         })
                     }
@@ -173,20 +178,51 @@ export default function OrderOnline() {
                 <div className='bg3 prod-blocks padding'>
                     {
                         products.map((prod, i) => {
-                            return (
-                                <div key={i} className='padding prod-block bg2'>
-                                    <img src={prod.Img} />
-                                    <h1>{prod.Name}</h1>
-                                    <div className='separate'>
-                                        <h4 className='prod-price'>${prod.Price}</h4>
-                                        <div className='prod-qty-btns'>
-                                            <button onClick={() => { decreaseCartQty(prod) }} className='no-bg no-border'><TbSquareRoundedMinus className='prod-qty-icon' /></button>
-                                            <p className='prod-qty'>{prod.CartQty}</p>
-                                            <button onClick={() => { increaseCartQty(prod) }} className='no-bg no-border'><TbSquareRoundedPlus className='prod-qty-icon' /></button>
+                            if (prod.Img != null) {
+                                return (
+                                    <div key={i} className='padding prod-block bg2'>
+                                        <img src={prod.Img} onClick={() => { chosenItemID != prod.id ? setChosenItemID(prod.id) : setChosenItemID("") }} />
+                                        <h1>{prod.Name}</h1>
+                                        <div className='separate'>
+                                            <h4 className='prod-price'>${prod.Price}</h4>
+                                            <div className='prod-qty-btns'>
+                                                <button onClick={() => { decreaseCartQty(prod) }} className='no-bg no-border'><TbSquareRoundedMinus className='prod-qty-icon' /></button>
+                                                <p className='prod-qty'>{prod.CartQty}</p>
+                                                <button onClick={() => { increaseCartQty(prod) }} className='no-bg no-border'><TbSquareRoundedPlus className='prod-qty-icon' /></button>
+                                            </div>
                                         </div>
+                                        {
+                                            chosenItemID == prod.id ?
+                                                <p className='prod-desc'>{prod.Desc}</p> : <p></p>
+                                        }
                                     </div>
-                                </div>
-                            )
+                                )
+                            }
+                        })
+                    }
+                </div>
+                <div className='bg3 prod-blocks padding'>
+                    {
+                        products.map((prod, i) => {
+                            if (prod.Img == null) {
+                                return (
+                                    <div key={i} className='padding prod-block bg2'>
+                                        <h1 onClick={() => { chosenItemID != prod.id ? setChosenItemID(prod.id) : setChosenItemID("") }}>{prod.Name}</h1>
+                                        <div className='separate'>
+                                            <h4 className='prod-price'>${prod.Price}</h4>
+                                            <div className='prod-qty-btns'>
+                                                <button onClick={() => { decreaseCartQty(prod) }} className='no-bg no-border'><TbSquareRoundedMinus className='prod-qty-icon' /></button>
+                                                <p className='prod-qty'>{prod.CartQty}</p>
+                                                <button onClick={() => { increaseCartQty(prod) }} className='no-bg no-border'><TbSquareRoundedPlus className='prod-qty-icon' /></button>
+                                            </div>
+                                        </div>
+                                        {
+                                            chosenItemID == prod.id ?
+                                                <p className='prod-desc'>{prod.Desc}</p> : <p></p>
+                                        }
+                                    </div>
+                                )
+                            }
                         })
                     }
                 </div>
@@ -212,16 +248,16 @@ export default function OrderOnline() {
                                                     <div key={i} className='cart-block bg4'>
                                                         <div className='separate'>
                                                             <div className=''>
-                                                            <h1>{item.Name}&nbsp;&nbsp; <span className='color3 thin'>x{item.CartQty}</span></h1>
-                                                            <p className='cart-note color3'>{item.Note}</p>
-                                                                </div>
+                                                                <h1>{item.Name}&nbsp;&nbsp; <span className='color3 thin'>x{item.CartQty}</span></h1>
+                                                                <p className='cart-note color3'>{item.Note}</p>
+                                                            </div>
                                                             <p className='cart-price'>${item.Price}</p>
                                                         </div>
                                                         <button onClick={() => { cartItemID != item.id ? setCartItemID(item.id) : setCartItemID("") }} className='no-bg underline no-border'>{cartItemID == item.id ? "Save Note" : "Add Note"}</button>
                                                         {
                                                             cartItemID == item.id ?
                                                                 <div className='cart-details'>
-                                                                    <input defaultValue={item.Note} onChange={() => {updateCartDesc(item)}} id="tbCartDesc" type="text" className='cart-desc' />
+                                                                    <input defaultValue={item.Note} onChange={() => { updateCartDesc(item) }} id="tbCartDesc" type="text" className='cart-desc' />
                                                                 </div> : <div></div>
                                                         }
                                                     </div>
@@ -235,7 +271,7 @@ export default function OrderOnline() {
                                     <h3>Subtotal</h3>
                                     <p>${subTotal}</p>
                                 </div>
-                                <button className='bg1 color2 no-border'>Place Order</button>
+                                <button onClick={() => { checkOut() }} className='bg1 color2 no-border'>Place Order</button>
                             </div>
                         </div>
                     </div> : <div></div>

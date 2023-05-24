@@ -35,6 +35,7 @@
 
     .prod-block {
         border-radius: 10px;
+        height: fit-content;
     }
 
     .prod-block h1 {
@@ -53,6 +54,11 @@
     .prod-price {
         font-size: 1.4em;
         font-weight: 300;
+    }
+    .prod-desc {
+        font-size: 1em;
+        font-weight: 300;
+        padding: 0.5em 0;
     }
 
     .prod-qty-btns {
