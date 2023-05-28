@@ -18,6 +18,7 @@ import punchesReducer from './SLICES/PunchesSlice'
 import totalHoursReducer from './SLICES/TotalHoursSlice'
 import ordersReducer from './SLICES/OrdersSlice'
 import photoReducer from './SLICES/PhotoSlice'
+import orderTotalReducer from './SLICES/OrderTotal'
 
 export default configureStore({
   reducer: {
@@ -39,7 +40,8 @@ export default configureStore({
     punches: punchesReducer,
     totalHours: totalHoursReducer,
     orders: ordersReducer,
-    photo: photoReducer
+    photo: photoReducer,
+    orderTotal: orderTotalReducer
   },
 })
 

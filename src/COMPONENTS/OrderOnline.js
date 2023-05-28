@@ -10,7 +10,7 @@ import logo from '../PHOTOS/stock.png'
 import { Link } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
-import { firebaseGetPageViews, getOrderProducts } from '../FIREBASE/firebase'
+import { firebaseGetPageViews, getOrderProducts, saveOrderDetails } from '../FIREBASE/firebase'
 import { c_helmet, c_mainURL, c_routes } from '../Constants';
 import { TbSquareRoundedMinus, TbSquareRoundedPlus } from 'react-icons/tb'
 // 
@@ -18,6 +18,8 @@ import { HiShoppingCart } from 'react-icons/hi'
 import { HiXMark } from 'react-icons/hi2'
 import { useDispatch } from 'react-redux'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
+import { setOrderTotalState } from '../REDUX/SLICES/OrderTotal'
+import PaymentForm from './UTILITIES/PaymentForm'
 
 export default function OrderOnline() {
     const dispatch = useDispatch()
@@ -43,6 +45,7 @@ export default function OrderOnline() {
     const [categories, setCategories] = useState([])
     const [chosenCategory, setChosenCategory] = useState("All")
     const [showCart, setShowCart] = useState(false)
+    const [showCustomerForm, setShowCustomerForm] = useState(true)
     // 
     const [cartItems, setCartitems] = useState([])
     const [subTotal, setSubTotal] = useState(0)
@@ -112,7 +115,7 @@ export default function OrderOnline() {
             }
         }
         setSubTotal(thingSub)
-        console.log(thingSub)
+        dispatch(setOrderTotalState(thingSub))
     }
     const updateCartDesc = (item) => {
         const desc = document.querySelector('#tbCartDesc').value
@@ -139,7 +142,7 @@ export default function OrderOnline() {
     }
     // 
     const checkOut = () => {
-
+        // saveOrderDetails(cartItems)
     }
 
     useEffect(() => {
@@ -164,7 +167,7 @@ export default function OrderOnline() {
                     <div className='padding'><HiShoppingCart onClick={() => { setShowCart(true) }} className='cart-icon' /></div>
                 </div>
 
-                <div className='cate-btns bg3'>
+                <div className='cate-btns'>
                     <button onClick={() => { filterProds("All") }} className={`${chosenCategory == "All" ? "bg1 color2" : "bg2 color1"} no-border`}>All</button>
                     {
                         categories.map((cate, i) => {
@@ -175,7 +178,7 @@ export default function OrderOnline() {
                     }
                 </div>
                 {/* <div className='divider'></div> */}
-                <div className='bg3 prod-blocks padding'>
+                <div className='prod-blocks padding'>
                     {
                         products.map((prod, i) => {
                             if (prod.Img != null) {
@@ -201,7 +204,7 @@ export default function OrderOnline() {
                         })
                     }
                 </div>
-                <div className='bg3 prod-blocks padding'>
+                <div className='prod-blocks padding'>
                     {
                         products.map((prod, i) => {
                             if (prod.Img == null) {
@@ -230,7 +233,7 @@ export default function OrderOnline() {
 
             {
                 showCart ?
-                    <div className='cart border-left1 bg2 font1 border2'>
+                    <div className='cart bg2 font1 border2'>
                         <div className='cart-top'>
                             <h2>Your cart</h2>
                             <HiXMark onClick={() => { setShowCart(false) }} className='cart-close' />
@@ -271,8 +274,39 @@ export default function OrderOnline() {
                                     <h3>Subtotal</h3>
                                     <p>${subTotal}</p>
                                 </div>
-                                <button onClick={() => { checkOut() }} className='bg1 color2 no-border'>Place Order</button>
+                                <button onClick={() => { checkOut() }} className='bg1 color2 no-border'>Continue</button>
                             </div>
+                        </div>
+                    </div> : <div></div>
+            }
+            {
+                showCustomerForm ?
+                    <div className='cust-form-wrap'>
+                        <div className='padding cust-form-block bg2 font1'>
+                            <div className='separate'>
+                                <div>
+                                    <h1 className='cust-form-title'>Your Details</h1>
+                                    <p className='cust-form-sub color3'>Enter your details accurately for to send a digital receipt.</p>
+                                </div>
+                                <HiXMark onClick={() => { setShowCustomerForm(false) }} className='cart-close' />
+                            </div>
+                            <br />
+                            <div className='cust-form'>
+                                <div className='cust-form-pair'>
+                                    <label className='color3'>Full Name</label>
+                                    <input type="text" id="tbName" placeholder='Full Name' className='cust-form-tb no-border bg6' />
+                                </div>
+                                <div className='cust-form-pair'>
+                                    <label className='color3'>Phone</label>
+                                    <input type="email" id="tbPhone" placeholder='Phone' className='cust-form-tb no-border bg6' />
+                                </div>
+                                <div className='cust-form-pair'>
+                                    <label className='color3'>Email</label>
+                                    <input type="email" id="tbEmail" placeholder='Email' className='cust-form-tb no-border bg6' />
+                                </div>
+                            </div>
+                            <div className='divider'></div>
+                            <PaymentForm />
                         </div>
                     </div> : <div></div>
             }

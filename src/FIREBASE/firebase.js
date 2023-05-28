@@ -184,7 +184,7 @@ export const getBlogs = async (dispatch) => {
   dispatch(setBlogsState(blogs));
 };
 //
-// ORDER ONLINE
+// ORDER ONLINE ADMIN
 export const newProduct = async (args) => {
 
   if (args.ImgPath != "") {
@@ -236,7 +236,6 @@ export const getOrderProducts = async (products, setProducts, setCategories, set
             Dupe: prod.Dupe,
             CartQty: 0
           }
-          console.log(product)
           prods.push(product)
           if (prods.length == size) {
             const sortedProds = prods.sort((a, b) => a.Category.localeCompare(b.Category));
@@ -312,6 +311,11 @@ export const deleteOldPhoto = (imgPath) => {
 export const removeProduct = async (args) => {
   await deleteDoc(doc(db, "OrderProducts", args.id));
 }
+// ORDER ONLINE
+export const saveOrderDetails = async (items) => {
+  
+}
+
 
 // STORE
 // Create a function that pulls products from DB

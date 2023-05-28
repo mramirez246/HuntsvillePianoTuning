@@ -208,3 +208,5 @@ export const square_accessToken = "EAAAEBhC-J6P2ZMn9VbKW5vC6vHV-DrgUzb2kiCdQ_lic
 
 export const stripe_publishableKey = "pk_test_51MajXbKx2glJRMlwXbLVRs6jolz58bvODFBxDGs3QycWHealravrW7E9mszvrw4N85DviRctPEEwGtnFTmlQCTTs00aR6DMzzS"
 export const stripe_secretKey = "sk_test_51MajXbKx2glJRMlw9H0xIW3l5STyygi6EuK6oIR7FgO5AnM37cxV4Ve24akw4c4cefORoIzdc48ZoCEVo2cuA6sa00lLrKUEix"
+export const stripe_redirectSuccess = "https://happy-code-templates.web.app/success"
+export const stripe_redirectFailure = "https://happy-code-templates.web.app/failure"
