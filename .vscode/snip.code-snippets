@@ -153,15 +153,41 @@
 	"Meta Component": {
 		"prefix": "meta",
 		"body": [
-		  "<Meta route={c_routes.reduce((found, route) => {",
-		  "    if (route.Route === currentPath) {",
-		  "        return route;",
-		  "    }",
-		  "    return found;",
-		  "}, null)} />"
+			"<Meta route={c_routes.reduce((found, route) => {",
+			"    if (route.Route === currentPath) {",
+			"        return route;",
+			"    }",
+			"    return found;",
+			"}, null)} />"
 		],
 		"description": "Create a <Meta> component with dynamic route"
-	  }
+	},
+	"Radio Buttons Component": {
+		"prefix": "radio",
+		"body": [
+			"<RadioButtons",
+			"  options={${1:}}",
+			"  groupName=\"${2:}\"",
+			"  classes=\"${3:}\"",
+			"/>"
+		],
+		"description": "Creates a Radio Buttons component"
+	},
+	"Text Area Component": {
+		"prefix": "textarea",
+		"body": [
+			"<TextArea",
+			"  placeholder=\"${1:}\"",
+			"  fontSize=\"${2:}\"",
+			"  radius=\"${3:}\"",
+			"  padding=\"${4:}\"",
+			"  id=\"${5:}\"",
+			"  minHeight=\"${6:}\"",
+			"  classes=\"${7:}\"",
+			"/>"
+		],
+		"description": "Creates a Text Area component"
+	}
 }
 // Place your happy-template workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 

@@ -38,6 +38,12 @@ export const TextField = ({ placeholder, fontSize, radius, padding, id, classes 
     )
 }
 
+export const TextArea = ({ placeholder, fontSize, radius, padding, id, minHeight, classes }) => {
+    return (
+        <textarea className={`${classes}`} placeholder={placeholder} id={id} style={{ fontSize: `${fontSize}`, borderRadius: `${radius}`, padding: `${padding}`, minheight: `${minHeight}` }}></textarea>
+    )
+}
+
 export const Checkbox = ({ label, fontSize, id }) => {
     const [checked, setChecked] = useState(false);
 
@@ -71,6 +77,24 @@ export const DropDown = ({ options, fontSize, padding, radius, classes, id }) =>
                 })
             }
         </select>
+    )
+}
+
+export const RadioButtons = ({ options, groupName, classes }) => {
+    return (
+        <div className={`${classes}`}>
+            {
+                options.map((opt, i) => {
+                    return (
+                        <label key={i} class="radio-container">
+                            <input type="radio" name={groupName} value={opt} />
+                            <span class="dot"></span>
+                            {opt}
+                        </label>
+                    )
+                })
+            }
+        </div>
     )
 }
 
