@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "react-stripe-checkout": "^2.6.3",
     "stripe": "^11.18.0",
+    "url": "^0.11.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

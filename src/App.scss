@@ -22,6 +22,11 @@ $padding: 1em;
     color: $color;
 }
 
+@mixin grid($grid-template: column, $count: 1) {
+    display: grid;
+    grid-template-columns: repeat($count, 1fr);
+}
+
 // CONSTANTS
 .remove-app {
     -webkit-appearance: none;
@@ -133,8 +138,14 @@ $padding: 1em;
     position: relative;
 }
 
-.vertical-center {
+.h-center {
     align-items: center;
+}
+
+.v-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .fit-height {
@@ -143,6 +154,74 @@ $padding: 1em;
 
 .fit-weight {
     width: fit-content;
+}
+
+.grid-c-1 {
+    @include grid(column, 1)
+}
+
+.grid-c-2 {
+    @include grid(column, 2)
+}
+
+.grid-c-3 {
+    @include grid(column, 3)
+}
+
+.grid-c-4 {
+    @include grid(column, 4)
+}
+
+.grid-c-5 {
+    @include grid(column, 5)
+}
+
+.grid-c-6 {
+    @include grid(column, 6)
+}
+
+.grid-r-1 {
+    @include grid(row, 1)
+}
+
+.grid-r-2 {
+    @include grid(row, 2)
+}
+
+.grid-r-3 {
+    @include grid(row, 3)
+}
+
+.grid-r-4 {
+    @include grid(row, 4)
+}
+
+.grid-r-5 {
+    @include grid(row, 5)
+}
+
+.grid-r-6 {
+    @include grid(row, 6)
+}
+
+.fill {
+    object-fit: cover;
+}
+
+.fit {
+    object-fit: contain;
+}
+
+.image-top {
+    object-position: top;
+}
+
+.image-center {
+    object-position: center;
+}
+
+.image-bottom {
+    object-position: bottom;
 }
 
 // #endregion

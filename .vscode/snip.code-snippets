@@ -1,57 +1,122 @@
 {
+	"Starter Component Snippet": {
+		"prefix": "starter",
+		"body": [
+			"import React, { useEffect } from 'react'",
+			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveElements, Text, TextArea, TextField, Underline } from '../../Elements'",
+			"import { FiMenu } from 'react-icons/fi'",
+			"import { c_businessName, c_routes } from '../../../Constants'",
+			"import { useLocation, useNavigate } from 'react-router'",
+			"",
+			"export default function ${1:Component}() {",
+			"    const navigate = useNavigate()",
+			"    const location = useLocation()",
+			"    const currentLocation = location.pathname",
+			"",
+			"    function openNav() {",
+			"        if (window.innerWidth < 600) {",
+			"            document.querySelector(\".nav-body\").style.width = \"100vw\";",
+			"        } else if (window.innerWidth < 800) {",
+			"            document.querySelector(\".nav-body\").style.width = \"50vw\";",
+			"        } else if (window.innerWidth < 1000) {",
+			"            document.querySelector(\".nav-body\").style.width = \"40vw\";",
+			"        } else if (window.innerWidth < 1200) {",
+			"            document.querySelector(\".nav-body\").style.width = \"35vw\";",
+			"        } else {",
+			"            document.querySelector(\".nav-body\").style.width = \"20vw\";",
+			"        }",
+			"    }",
+			"",
+			"    function closeNav() {",
+			"        document.querySelector(\".nav-body\").style.width = \"0\";",
+			"    }",
+			"",
+			"    useEffect(() => {",
+			"        closeNav()",
+			"    }, [])",
+			"",
+			"    return (",
+			"        <div className='roboto'>",
+			"            $0",
+			"        </div>",
+			"    )",
+			"}"
+		],
+		"description": "Starter Component"
+	},
 	"Box Component": {
 		"prefix": "box",
-		"body": ["<Box comp={${1:}} width=\"${2:}\" height=\"${3:}\" radius=\"${4:}\" paddingV=\"${5:}\" paddingH=\"${6:}\" classes=\"${7:}\"/>"],
+		"body": [
+			"<Box comp={${1:}} width=\"${2:}\" height=\"${3:}\" radius=\"${4:}\" paddingV=\"${5:}\" paddingH=\"${6:}\" classes=\"${7:}\"/>"
+		],
 		"description": "Create a <Box> component with customizable props"
 	},
 	"Image Component": {
 		"prefix": "image",
-		"body": ["<Image src={${1:}} alt=\"${2:}\" radius=\"${3:}\" classes=\"${4:}\"/>"],
+		"body": [
+			"<Image src={${1:}} alt=\"${2:}\" radius=\"${3:}\" classes=\"${4:}\"/>"
+		],
 		"description": "Create an <Image> component with customizable props"
 	},
 	"Button Component": {
 		"prefix": "button",
-		"body": ["<Button comp={${1:}} color=\"${2:}\" backgroundColor=\"${3:}\" radius=\"${4:}\" func={() => {${5:}}} classes=\"${6:}\"/>"],
+		"body": [
+			"<Button comp={${1:}} color=\"${2:}\" backgroundColor=\"${3:}\" radius=\"${4:}\" func={() => {${5:}}} classes=\"${6:}\"/>"
+		],
 		"description": "Create a <Button> component with customizable props"
 	},
 	"Text Component": {
 		"prefix": "text",
-		"body": ["<Text text=\"${1:}\" fontSize=\"${2:}\" weight=\"${3:}\" color=\"${4:}\" spacing=\"${5:}\" lineHeight=\"${6:}\" classes=\"${7:}\"/>"],
+		"body": [
+			"<Text text=\"${1:}\" fontSize=\"${2:}\" weight=\"${3:}\" color=\"${4:}\" spacing=\"${5:}\" lineHeight=\"${6:}\" classes=\"${7:}\"/>"
+		],
 		"description": "Create a <Text> component with customizable props"
 	},
 	"TextField Component": {
 		"prefix": "textfield",
-		"body": ["<TextField placeholder=\"${1:}\" fontSize=\"${2:}\" radius=\"${3:}\" padding=\"${4:}\" id=\"${5:}\" classes=\"${6:}\"/>"],
+		"body": [
+			"<TextField placeholder=\"${1:}\" fontSize=\"${2:}\" radius=\"${3:}\" padding=\"${4:}\" id=\"${5:}\" classes=\"${6:}\"/>"
+		],
 		"description": "Create a <TextField> component with customizable props"
 	},
 	"Checkbox Component": {
 		"prefix": "checkbox",
-		"body": ["<Checkbox label=\"${1:}\" fontSize=\"${2:}\" id=\"${3:}\"/>"],
+		"body": [
+			"<Checkbox label=\"${1:}\" fontSize=\"${2:}\" id=\"${3:}\"/>"
+		],
 		"description": "Create a <Checkbox> component with customizable props"
 	},
 	"DropDown Component": {
 		"prefix": "dropdown",
-		"body": ["<DropDown options={[\"${1:}\"]} fontSize=\"${2:}\" padding=\"${3:}\" radius=\"${4:}\" classes=\"${5:}\" id=\"${6:}\"/>"],
+		"body": [
+			"<DropDown options={[\"${1:}\"]} fontSize=\"${2:}\" padding=\"${3:}\" radius=\"${4:}\" classes=\"${5:}\" id=\"${6:}\"/>"
+		],
 		"description": "Create a <DropDown> component with customizable props"
 	},
-	"Grid Component": {
-		"prefix": "grid",
-		"body": ["<Grid comps={[${1:}]} orientation=\"${2:column/row}\" count=\"${3:}\" gap=\"${4:}\" />"],
-		"description": "Create a <Grid> component with customizable props"
-	},
+	// "Grid Component": {
+	// 	"prefix": "grid",
+	// 	"body": ["<Grid comps={[${1:}]} orientation=\"${2:column/row}\" count=\"${3:}\" gap=\"${4:}\" />"],
+	// 	"description": "Create a <Grid> component with customizable props"
+	// },
 	"Accordion Component": {
 		"prefix": "accordion",
-		"body": ["<Accordion dictionary={[{ Key: \"${1:}\", Value: \"${2:}\" }]} keyFontSize=\"${3:}\" valueFontSize=\"${4:}\" padding=\"${5:}\" keyClasses=\"${6:}\" valueClasses=\"${7:}\" classes=\"${8:}\"/>"],
+		"body": [
+			"<Accordion dictionary={[{ Key: \"${1:}\", Value: \"${2:}\" }]} keyFontSize=\"${3:}\" valueFontSize=\"${4:}\" padding=\"${5:}\" keyClasses=\"${6:}\" valueClasses=\"${7:}\" classes=\"${8:}\"/>"
+		],
 		"description": "Create an <Accordion> component with customizable props"
 	},
 	"Border Component": {
 		"prefix": "border",
-		"body": ["<Border comp={${1:}} size=\"${2:}\" color=\"${3:}\" radius=\"${4:}\"/>"],
+		"body": [
+			"<Border comp={${1:}} size=\"${2:}\" color=\"${3:}\" radius=\"${4:}\"/>"
+		],
 		"description": "Create a <Border> component with customizable props"
 	},
 	"Icon Component": {
 		"prefix": "icon",
-		"body": ["<Icon comp={${1:}} size=\"${2:}\" color=\"${3:}\"/>"],
+		"body": [
+			"<Icon comp={${1:}} size=\"${2:}\" color=\"${3:}\"/>"
+		],
 		"description": "Create an <Icon> component with customizable props"
 	},
 	"Underline Component": {
@@ -61,26 +126,40 @@
 	},
 	"ResponsiveElements Component": {
 		"prefix": "responsive",
-		"body": ["<ResponsiveElements one={${1:}} two={${2:}} three={${3:}} four={${4:}} five={${5:}}/>"],
+		"body": [
+			"<ResponsiveElements one={${1:}} two={${2:}} three={${3:}} four={${4:}} five={${5:}}/>"
+		],
 		"description": "Create a <ResponsiveElements> component with customizable props"
 	},
 	"Meta Component": {
 		"prefix": "meta",
-		"body": ["<Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath) { return route; } return found; }, null)} />"],
+		"body": [
+			"<Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath) { return route; } return found; }, null)} />"
+		],
 		"description": "Create a <Meta> component with dynamic route"
 	},
 	"Radio Buttons Component": {
 		"prefix": "radio",
-		"body": ["<RadioButtons options={${1:}} groupName=\"${2:}\" classes=\"${3:}\"/>"],
+		"body": [
+			"<RadioButtons options={${1:}} groupName=\"${2:}\" classes=\"${3:}\"/>"
+		],
 		"description": "Creates a Radio Buttons component"
 	},
 	"Text Area Component": {
 		"prefix": "textarea",
-		"body": ["<TextArea placeholder=\"${1:}\" fontSize=\"${2:}\" radius=\"${3:}\" padding=\"${4:}\" id=\"${5:}\" minHeight=\"${6:}\" classes=\"${7:}\"/>"],
+		"body": [
+			"<TextArea placeholder=\"${1:}\" fontSize=\"${2:}\" radius=\"${3:}\" padding=\"${4:}\" id=\"${5:}\" minHeight=\"${6:}\" classes=\"${7:}\"/>"
+		],
 		"description": "Creates a Text Area component"
-	}
+	},
+	"Layer Component": {
+		"prefix": "layer",
+		"body": [
+		  "<Layer comp={$1} position=\"$2\" top=\"$3\" left=\"$4\" bottom=\"$5\" right=\"$6\" classes=\"$7\" />"
+		],
+		"description": "Create a Layer component"
+	  }
 }
-
 // Place your happy-template workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
 // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 

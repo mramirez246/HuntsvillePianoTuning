@@ -14,7 +14,7 @@ export const Box = ({ comp, width, height, radius, paddingV, paddingH, classes }
 
 export const Image = ({ src, alt, radius, classes }) => {
     return (
-        <img src={src} className={`${classes}`} alt={alt} style={{ borderRadius: `${radius}` }} />
+        <img src={src} className={`${classes}`} alt={alt} style={{ borderRadius: `${radius}`, width: "100%", height: "100%" }} />
     );
 };
 
@@ -98,33 +98,33 @@ export const RadioButtons = ({ options, groupName, classes }) => {
     )
 }
 
-export const Grid = ({ comps, orientation, gap, count }) => {
-    if (orientation == "column") {
-        return (
-            <div style={{ display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
-                {
-                    comps.map((comp, i) => {
-                        return (
-                            <div key={i}>{comp}</div>
-                        )
-                    })
-                }
-            </div>
-        )
-    } else {
-        return (
-            <div style={{ display: "grid", gridTemplateRows: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
-                {
-                    comps.map((comp, i) => {
-                        return (
-                            <div key={i}>{comp}</div>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
-}
+// export const Grid = ({ comps, orientation, gap, count }) => {
+//     if (orientation == "column") {
+//         return (
+//             <div style={{ display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
+//                 {
+//                     comps.map((comp, i) => {
+//                         return (
+//                             <div key={i}>{comp}</div>
+//                         )
+//                     })
+//                 }
+//             </div>
+//         )
+//     } else {
+//         return (
+//             <div style={{ display: "grid", gridTemplateRows: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
+//                 {
+//                     comps.map((comp, i) => {
+//                         return (
+//                             <div key={i}>{comp}</div>
+//                         )
+//                     })
+//                 }
+//             </div>
+//         )
+//     }
+// }
 
 export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, keyClasses, valueClasses, classes }) => {
     const [chosenID, setChosenID] = useState(-1)
@@ -233,4 +233,12 @@ export const ResponsiveFunctions = () => {
     } else if (window.innerWidth < 1400) {
 
     }
+}
+
+export const Layer = ({comp, position, top, left, bottom, right, classes}) => {
+    return (
+        <div className={`${classes}`} style={{position: `${position}`, top: `${top}`, left: `${left}`, bottom: `${bottom}`, right: `${right}`}}>
+            {comp}
+        </div>
+    )
 }
