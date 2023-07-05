@@ -4,9 +4,9 @@ import { BsChevronDown } from 'react-icons/bs'
 import { c_mainURL } from "../Constants";
 
 
-export const Box = ({ comp, width, height, radius, paddingV, paddingH }) => {
+export const Box = ({ comp, width, height, radius, paddingV, paddingH, classes }) => {
     return (
-        <div style={{ display: "block", width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}` }}>
+        <div className={`${classes}`} style={{ display: "block", width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}` }}>
             {comp}
         </div>
     )
@@ -20,7 +20,7 @@ export const Image = ({ src, alt, radius, classes }) => {
 
 export const Button = ({ comp, color, backgroundColor, radius, func, classes }) => {
     return (
-        <button className={`${classes} remove-app`} style={{ color: `${color}`, backgroundColor: `${backgroundColor}`, borderRadius: `${radius}` }} onClick={func}>{comp}</button>
+        <div className={`${classes} remove-app`} style={{ cursor: "pointer", color: `${color}`, backgroundColor: `${backgroundColor}`, borderRadius: `${radius}` }} onClick={func}>{comp}</div>
     );
 };
 
@@ -98,10 +98,10 @@ export const RadioButtons = ({ options, groupName, classes }) => {
     )
 }
 
-export const Grid = ({ comps, orientation, count }) => {
+export const Grid = ({ comps, orientation, gap, count }) => {
     if (orientation == "column") {
         return (
-            <div style={{ display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)` }}>
+            <div style={{ display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
                 {
                     comps.map((comp, i) => {
                         return (
@@ -113,7 +113,7 @@ export const Grid = ({ comps, orientation, count }) => {
         )
     } else {
         return (
-            <div style={{ display: "grid", gridTemplateRows: `repeat(${count}, 1fr)` }}>
+            <div style={{ display: "grid", gridTemplateRows: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
                 {
                     comps.map((comp, i) => {
                         return (
@@ -152,7 +152,7 @@ export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, key
 
 export const Border = ({ comp, size, color, radius }) => {
     return (
-        <div style={{ border: `${size}px solid ${color}`, borderRadius: `${radius}` }}>
+        <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: "fit-content", width: "fit-content" }}>
             {comp}
         </div>
     )
@@ -161,6 +161,14 @@ export const Border = ({ comp, size, color, radius }) => {
 export const Icon = ({ comp, size, color }) => {
     return (
         <div style={{ fontSize: `${size}`, color: `${color}` }}>
+            {comp}
+        </div>
+    )
+}
+
+export const Underline = ({ comp, size, color }) => {
+    return (
+        <div style={{ borderBottom: `${size} solid ${color}` }}>
             {comp}
         </div>
     )

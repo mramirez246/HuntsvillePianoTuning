@@ -26,8 +26,8 @@ $padding: 1em;
 .remove-app {
     -webkit-appearance: none;
     -moz-appearance: none;
-    border: 0;
-    background-color: rgba(0, 0, 0, 0);
+    // border: 0;
+    // background-color: rgba(0, 0, 0, 0);
 }
 
 .no-padding {
@@ -36,6 +36,18 @@ $padding: 1em;
 
 .no-margin {
     margin: 0 !important;
+}
+
+.no-border {
+    border: 0;
+}
+
+.no-bg {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.all-caps {
+    text-transform: uppercase;
 }
 
 .light {
@@ -125,6 +137,14 @@ $padding: 1em;
     align-items: center;
 }
 
+.fit-height {
+    height: fit-content;
+}
+
+.fit-weight {
+    width: fit-content;
+}
+
 // #endregion
 // #region FONTS
 .roboto {
@@ -147,3 +167,13 @@ $padding: 1em;
 // #region MISC
 
 // #endregion
+
+@media only screen and (min-width: 350px) {}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}
