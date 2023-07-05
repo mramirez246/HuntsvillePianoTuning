@@ -12,10 +12,22 @@ $padding: 1em;
     justify-content: $align; // Updated property from align-content to justify-content
 }
 
+@mixin light($back: #ffffff, $color: #000000) {
+    background-color: $back;
+    color: $color;
+}
+
+@mixin dark($back: #000000, $color: #ffffff) {
+    background-color: $back;
+    color: $color;
+}
+
 // CONSTANTS
 .remove-app {
     -webkit-appearance: none;
     -moz-appearance: none;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .no-padding {
@@ -24,6 +36,14 @@ $padding: 1em;
 
 .no-margin {
     margin: 0 !important;
+}
+
+.light {
+    @include light();
+}
+
+.dark {
+    @include dark();
 }
 
 // #region LAYOUT
@@ -101,6 +121,10 @@ $padding: 1em;
     position: relative;
 }
 
+.vertical-center {
+    align-items: center;
+}
+
 // #endregion
 // #region FONTS
 .roboto {
@@ -120,13 +144,6 @@ $padding: 1em;
 }
 
 // #endregion
+// #region MISC
 
-@media only screen and (min-width: 350px) {}
-
-@media only screen and (min-width: 600px) {}
-
-@media only screen and (min-width: 800px) {}
-
-@media only screen and (min-width: 1000px) {}
-
-@media only screen and (min-width: 1200px) {}
+// #endregion

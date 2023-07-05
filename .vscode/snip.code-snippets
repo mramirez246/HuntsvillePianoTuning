@@ -1,0 +1,181 @@
+{
+	"Box Component": {
+		"prefix": "box",
+		"body": [
+			"<Box comp={${1:}}",
+			"     width=\"${2:}\"",
+			"     height=\"${3:}\"",
+			"     radius=\"${4:}\"",
+			"     paddingV=\"${5:}\"",
+			"     paddingH=\"${6:}\"",
+			"/>"
+		],
+		"description": "Create a <Box> component with customizable props"
+	},
+	"Image Component": {
+		"prefix": "image",
+		"body": [
+			"<Image src={${1:}}",
+			"     alt=\"${2:}\"",
+			"     radius=\"${3:}\"",
+			"     classes=\"${4:}\"",
+			"/>"
+		],
+		"description": "Create an <Image> component with customizable props"
+	},
+	"Button Component": {
+		"prefix": "button",
+		"body": [
+			"<Button comp={${1:}}",
+			"     color=\"${2:}\"",
+			"     backgroundColor=\"${3:}\"",
+			"     radius=\"${4:}\"",
+			"     func={${() => {5:}}}",
+			"     classes=\"${6:}\"",
+			"/>"
+		],
+		"description": "Create a <Button> component with customizable props"
+	},
+	"Text Component": {
+		"prefix": "text",
+		"body": [
+			"<Text text=\"${1:}\"",
+			"     fontSize=\"${2:}\"",
+			"     weight=\"${3:}\"",
+			"     color=\"${4:}\"",
+			"     spacing=\"${5:}\"",
+			"     lineHeight=\"${6:}\"",
+			"     classes=\"${7:}\"",
+			"/>"
+		],
+		"description": "Create a <Text> component with customizable props"
+	},
+	"TextField Component": {
+		"prefix": "textfield",
+		"body": [
+			"<TextField placeholder=\"${1:}\"",
+			"     fontSize=\"${2:}\"",
+			"     radius=\"${3:}\"",
+			"     padding=\"${4:}\"",
+			"     id=\"${5:}\"",
+			"     classes=\"${6:}\"",
+			"/>"
+		],
+		"description": "Create a <TextField> component with customizable props"
+	},
+	"Checkbox Component": {
+		"prefix": "checkbox",
+		"body": [
+			"<Checkbox label=\"${1:}\"",
+			"     fontSize=\"${2:}\"",
+			"     id=\"${3:}\"",
+			"/>"
+		],
+		"description": "Create a <Checkbox> component with customizable props"
+	},
+	"DropDown Component": {
+		"prefix": "dropdown",
+		"body": [
+			"<DropDown options={[",
+			"    \"${1:}\"",
+			"]}",
+			"   fontSize=\"${2:}\"",
+			"   padding=\"${3:}\"",
+			"   radius=\"${4:}\"",
+			"   classes=\"${5:}\"",
+			"   id=\"${6:}\"",
+			"/>"
+		],
+		"description": "Create a <DropDown> component with customizable props"
+	},
+	"Grid Component": {
+		"prefix": "grid",
+		"body": [
+			"<Grid comps={${1:comps}}",
+			"   orientation=\"${2:column/row}\"",
+			"   count={${3:count}}",
+			"/>"
+		],
+		"description": "Create a <Grid> component with customizable props"
+	},
+	"Accordion Component": {
+		"prefix": "accordion",
+		"body": [
+			"<Accordion dictionary={[",
+			"    {",
+			"        Key: \"${1:}\",",
+			"        Value: \"${2:}\"",
+			"    }",
+			"]}",
+			"   keyFontSize=\"${3:}\"",
+			"   valueFontSize=\"${4:}\"",
+			"   padding=\"${5:}\"",
+			"   keyClasses=\"${6:}\"",
+			"   valueClasses=\"${7:}\"",
+			"   classes=\"${8:}\"",
+			"/>"
+		],
+		"description": "Create an <Accordion> component with customizable props"
+	},
+	"Border Component": {
+		"prefix": "border",
+		"body": [
+			"<Border comp={${1:}}",
+			"   size=\"${2:}\"",
+			"   color=\"${3:}\"",
+			"   radius=\"${4:}\"",
+			"/>"
+		],
+		"description": "Create a <Border> component with customizable props"
+	},
+	"Icon Component": {
+		"prefix": "icon",
+		"body": [
+			"<Icon comp={${1:}}",
+			"   size=\"${2:}\"",
+			"   color=\"${3:}\"",
+			"/>"
+		],
+		"description": "Create an <Icon> component with customizable props"
+	},
+	"ResponsiveElements Component": {
+		"prefix": "responsive",
+		"body": [
+			"<ResponsiveElements one={${1:one}}",
+			"   two={${2:two}}",
+			"   three={${3:three}}",
+			"   four={${4:four}}",
+			"   five={${5:five}}",
+			"/>"
+		],
+		"description": "Create a <ResponsiveElements> component with customizable props"
+	},
+	"Meta Component": {
+		"prefix": "meta",
+		"body": [
+		  "<Meta route={c_routes.reduce((found, route) => {",
+		  "    if (route.Route === currentPath) {",
+		  "        return route;",
+		  "    }",
+		  "    return found;",
+		  "}, null)} />"
+		],
+		"description": "Create a <Meta> component with dynamic route"
+	  }
+}
+// Place your happy-template workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+// Placeholders with the same ids are connected.
+// Example:
+// "Print to console": {
+// 	"scope": "javascript,typescript",
+// 	"prefix": "log",
+// 	"body": [
+// 		"console.log('$1');",
+// 		"$2"
+// 	],
+// 	"description": "Log output to console"
+// }

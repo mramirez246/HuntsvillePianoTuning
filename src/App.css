@@ -18,6 +18,11 @@ body {
   max-width: 100% !important;
 }
 
+.main {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
 
 .checkbox-container {
   display: flex;
@@ -40,7 +45,7 @@ body {
   position: relative;
 }
 
-.checkbox-container input[type="checkbox"]:checked ~ .checkmark {
+.checkbox-container input[type="checkbox"]:checked~.checkmark {
   background-color: #2196F3;
 }
 
@@ -50,12 +55,12 @@ body {
   display: none;
 }
 
-.checkbox-container input[type="checkbox"]:checked ~ .checkmark::after {
+.checkbox-container input[type="checkbox"]:checked~.checkmark::after {
   display: block;
 }
 
 .checkbox-container .checkmark::after {
-  left:6px;
+  left: 6px;
   top: 2px;
   width: 4px;
   height: 9px;

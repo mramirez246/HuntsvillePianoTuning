@@ -18,7 +18,6 @@ function App() {
       {/* THOSE THAT WILL RUN NO MATTER WHAT */}
 
       <Routes>
-
         {
           c_routes.map((page, i) => {
             return(
@@ -26,7 +25,6 @@ function App() {
             )
           })
         }
-
       </Routes>
     </BrowserRouter>
   );
