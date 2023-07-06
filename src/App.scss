@@ -17,7 +17,7 @@ $padding: 1em;
     color: $color;
 }
 
-@mixin dark($back: #000000, $color: #ffffff) {
+@mixin dark($back: #1c1c1c, $color: #e6e5e5) {
     background-color: $back;
     color: $color;
 }
@@ -93,6 +93,14 @@ $padding: 1em;
 .align-bottom {
     @include flex($align: flex-end)
 }
+.h-space-around {
+    align-content: space-around;
+}
+.v-space-around {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 .gap {
     gap: 1em;
@@ -142,7 +150,7 @@ $padding: 1em;
     align-items: center;
 }
 
-.v-center {
+.v-separate {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

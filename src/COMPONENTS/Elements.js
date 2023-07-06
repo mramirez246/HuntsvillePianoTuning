@@ -40,7 +40,7 @@ export const TextField = ({ placeholder, fontSize, radius, padding, id, classes 
 
 export const TextArea = ({ placeholder, fontSize, radius, padding, id, minHeight, classes }) => {
     return (
-        <textarea className={`${classes}`} placeholder={placeholder} id={id} style={{ fontSize: `${fontSize}`, borderRadius: `${radius}`, padding: `${padding}`, minheight: `${minHeight}` }}></textarea>
+        <textarea className={`${classes}`} placeholder={placeholder} id={id} style={{ fontSize: `${fontSize}`, borderRadius: `${radius}`, padding: `${padding}`, minHeight: `${minHeight}`, width: "100%" }}></textarea>
     )
 }
 
