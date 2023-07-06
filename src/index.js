@@ -11,15 +11,3 @@ root.render(
   </Provider>
 );
 
-const { resolve } = require('path');
-const { createRequire } = require('module');
-
-const requireFallback = createRequire(resolve('./resolve.fallback'));
-
-try {
-  const util = requireFallback('util');
-  // Use the 'util' module here
-  console.log(util);
-} catch (error) {
-  console.error('Failed to load the fallback util module:', error);
-}
