@@ -11,7 +11,7 @@ import { BsInstagram } from 'react-icons/bs'
 export default function Home1() {
     return (
         <div className='main roboto'>
-         
+         <Footer1 />
 
         </div>
     )
