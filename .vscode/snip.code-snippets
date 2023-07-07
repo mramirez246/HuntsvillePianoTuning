@@ -95,7 +95,9 @@
 	},
 	"Grid Component": {
 		"prefix": "grid",
-		"body": ["<Grid comps={[${1:}]} orientation=\"${2:column/row}\" count=\"${3:}\" gap=\"${4:}\" classes=\"${5:}\" />"],
+		"body": [
+			"<Grid comps={[${1:}]} orientation=\"${2:column/row}\" count=\"${3:}\" gap=\"${4:}\" classes=\"${5:}\" />"
+		],
 		"description": "Create a <Grid> component with customizable props"
 	},
 	"Accordion Component": {
@@ -127,7 +129,17 @@
 	"ResponsiveElements Component": {
 		"prefix": "responsive",
 		"body": [
-			"<ResponsiveElements phone={<div>${1:}</div>} smalltablet={<div>${2:}</div>} tablet={<div>${3:}</div>} smalllaptop={<div>${4:}</div>} desktop={<div>${5:}</div>}/>"
+			"<ResponsiveElements phone={",
+			"<div>${1:}</div>",
+			"} smalltablet={",
+			"<div>${2:}</div>",
+			"} tablet={",
+			"<div>${3:}</div>",
+			"} smalllaptop={",
+			"<div>${4:}</div>",
+			"} desktop={",
+			"<div>${5:}</div>",
+			"}/>"
 		],
 		"description": "Create a <ResponsiveElements> component with customizable props"
 	},
@@ -155,10 +167,10 @@
 	"Layer Component": {
 		"prefix": "layer",
 		"body": [
-		  "<Layer comp={$1} position=\"$2\" top=\"$3\" left=\"$4\" bottom=\"$5\" right=\"$6\" classes=\"$7\" />"
+			"<Layer comp={$1} position=\"$2\" top=\"$3\" left=\"$4\" bottom=\"$5\" right=\"$6\" classes=\"$7\" />"
 		],
 		"description": "Create a Layer component"
-	  }
+	}
 }
 // Place your happy-template workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
