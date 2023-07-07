@@ -252,7 +252,9 @@ $padding: 1em;
 
 // #endregion
 // #region MISC
-
+.underline {
+    border-bottom: 1px solid black;
+}
 // #endregion
 
 @media only screen and (min-width: 350px) {}

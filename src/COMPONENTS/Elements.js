@@ -174,20 +174,20 @@ export const Underline = ({ comp, size, color }) => {
     )
 }
 
-export const ResponsiveElements = ({ one, two, three, four, five }) => {
+export const ResponsiveElements = ({ phone, smalltablet, tablet, smalllaptop, desktop }) => {
     const [element, setElement] = useState(null);
 
     const handleResize = () => {
         if (window.innerWidth < 600) {
-            setElement(one);
+            setElement(phone);
         } else if (window.innerWidth < 800) {
-            setElement(two);
+            setElement(smalltablet);
         } else if (window.innerWidth < 1000) {
-            setElement(three);
+            setElement(tablet);
         } else if (window.innerWidth < 1200) {
-            setElement(four);
+            setElement(smalllaptop);
         } else {
-            setElement(five);
+            setElement(desktop);
         }
     };
 
@@ -205,6 +205,34 @@ export const ResponsiveElements = ({ one, two, three, four, five }) => {
 
     return <div>{element}</div>;
 };
+
+export const Grid = ({ comps, count, orientation, gap, classes }) => {
+    if (orientation == "column") {
+        return (
+            <div className={`${classes}`} style={{display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)`, gap: `${gap}`}}>
+                {comps.map((comp, i) => {
+                    return (
+                        <div key={i}>
+                            {comp}
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    } else {
+        return (
+            <div className={`${classes}`} style={{display: "grid", gridTemplateRows: `repeat(${count}, 1fr)`, gap: `${gap}`}}>
+                {comps.map((comp, i) => {
+                    return (
+                        <div key={i}>
+                            {comp}
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
+}
 
 export const Meta = ({ route }) => {
     return (
@@ -235,9 +263,9 @@ export const ResponsiveFunctions = () => {
     }
 }
 
-export const Layer = ({comp, position, top, left, bottom, right, classes}) => {
+export const Layer = ({ comp, position, top, left, bottom, right, classes }) => {
     return (
-        <div className={`${classes}`} style={{position: `${position}`, top: `${top}`, left: `${left}`, bottom: `${bottom}`, right: `${right}`}}>
+        <div className={`${classes}`} style={{ position: `${position}`, top: `${top}`, left: `${left}`, bottom: `${bottom}`, right: `${right}`, width: `fit-content`, height: "fit-content" }}>
             {comp}
         </div>
     )

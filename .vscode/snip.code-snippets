@@ -93,11 +93,11 @@
 		],
 		"description": "Create a <DropDown> component with customizable props"
 	},
-	// "Grid Component": {
-	// 	"prefix": "grid",
-	// 	"body": ["<Grid comps={[${1:}]} orientation=\"${2:column/row}\" count=\"${3:}\" gap=\"${4:}\" />"],
-	// 	"description": "Create a <Grid> component with customizable props"
-	// },
+	"Grid Component": {
+		"prefix": "grid",
+		"body": ["<Grid comps={[${1:}]} orientation=\"${2:column/row}\" count=\"${3:}\" gap=\"${4:}\" classes=\"${5:}\" />"],
+		"description": "Create a <Grid> component with customizable props"
+	},
 	"Accordion Component": {
 		"prefix": "accordion",
 		"body": [
@@ -127,7 +127,7 @@
 	"ResponsiveElements Component": {
 		"prefix": "responsive",
 		"body": [
-			"<ResponsiveElements one={${1:}} two={${2:}} three={${3:}} four={${4:}} five={${5:}}/>"
+			"<ResponsiveElements phone={<div>${1:}</div>} smalltablet={<div>${2:}</div>} tablet={<div>${3:}</div>} smalllaptop={<div>${4:}</div>} desktop={<div>${5:}</div>}/>"
 		],
 		"description": "Create a <ResponsiveElements> component with customizable props"
 	},

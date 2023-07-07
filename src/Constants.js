@@ -8,6 +8,7 @@ export const c_businessName = "Happy Code Dev"
 export const c_businessAddress = "1024 E 4th St, San Diego CA 91950"
 export const c_businessPhone = "123-456-7890"
 export const c_businessEmail = "bagel@happycodewebsites.com"
+export const c_businessDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. "
 
 // META
 export const c_metaTitleSuffix = "| The Best Websites in the World!"
