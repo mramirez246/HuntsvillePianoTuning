@@ -366,7 +366,8 @@ export default function Footer1() {
 
                 </div>
             } desktop={
-                <div className='vertical gap'>
+                <Box comp={
+                    <div className='vertical gap'>
                     <div className='horizontal gap'>
                         <Box comp={
                             <Text text={`${c_businessDesc}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
@@ -458,6 +459,7 @@ export default function Footer1() {
                     } width="" height="" radius="" paddingV="" paddingH="" classes="" />
 
                 </div>
+                } width="" height="" radius="" paddingV="1em" paddingH="1em" classes=""/>
             } />
 
         </div>

@@ -40,293 +40,311 @@ export default function Component() {
       <Navigation1 />
       <ResponsiveElements phone={
         <div className='padding'>
-          <Text text="About Me" fontSize="8vh" weight="600" color="" spacing="-2px" lineHeight="" classes="text-center all-caps" />
+          <Text text="About Me" fontSize="8vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center" />
           <Box comp={
             <Image src={img1} alt="" radius="" classes="" />
           } width="" height="40vh" radius="" paddingV="1em" paddingH="0" classes="fit" />
           {/* Heading */}
-          <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
           <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+            <div>
+              <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
 
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
 
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+            </div>
+          } width="" height="" radius="" paddingV="" paddingH="1em" classes="" />
         </div>
       } smalltablet={
         <div className='padding'>
-          <Text text="About Me" fontSize="8vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center all-caps" />
+          <Text text="About Me" fontSize="6vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center" />
           <Box comp={
             <Image src={img1} alt="" radius="" classes="" />
           } width="" height="60vh" radius="" paddingV="1em" paddingH="0" classes="fit" />
           {/* Heading */}
-          <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
           <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+            <div>
+              <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
 
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
 
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
 
-          <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-          <Box comp={
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-          } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+              <Box comp={
+                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+            </div>
+          } width="" height="" radius="" paddingV="" paddingH="1em" classes="" />
         </div>
       } tablet={
         <div className='padding'>
-          <Text text="About Me" fontSize="10vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center all-caps" />
+          <Text text="About Me" fontSize="7vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center" />
           <Box comp={
             <Image src={img1} alt="" radius="" classes="" />
           } width="" height="70vh" radius="" paddingV="1em" paddingH="0" classes="fit" />
           {/* Heading */}
 
-          <div className='horizontal gap padding-v'>
-            <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
-            <Box comp={
-              <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-            } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
-          </div>
-
           <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-
-          <div className='horizontal'>
-            <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
             <div>
+              <div className='horizontal gap padding-v'>
+                <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
+                <Box comp={
+                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
+              </div>
+
               <Box comp={
-                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+
+              <div className='horizontal'>
+                <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                <div>
+                  <Box comp={
+                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                  <Box comp={
+                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                </div>
+              </div>
+
               <Box comp={
-                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+
+              <div className='horizontal'>
+                <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                <div>
+                  <Box comp={
+                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                  <Box comp={
+                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                </div>
+              </div>
+
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+
+              <div className='horizontal'>
+                <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                <div>
+                  <Box comp={
+                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                  <Box comp={
+                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                </div>
+              </div>
             </div>
-          </div>
-
-
-
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-
-          <div className='horizontal'>
-            <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-            <div>
-              <Box comp={
-                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-              <Box comp={
-                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-            </div>
-          </div>
-
-          <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-
-          <div className='horizontal'>
-            <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="" />
-            <div>
-              <Box comp={
-                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-              <Box comp={
-                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-              } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-            </div>
-          </div>
+          } width="" height="" radius="" paddingV="" paddingH="1em" classes="" />
         </div>
       } smalllaptop={
         <div className='padding'>
-          <Text text="About Me" fontSize="10vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center all-caps" />
+          <Text text="About Me" fontSize="10vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center" />
           <Box comp={
             <Image src={img1} alt="" radius="" classes="" />
           } width="" height="80vh" radius="" paddingV="1em" paddingH="0" classes="fit" />
           {/* Heading */}
 
-          <div className='horizontal gap padding-v'>
-            <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
-            <Box comp={
-              <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-            } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
-          </div>
-
           <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-
-          <Grid comps={[
             <div>
-
-              <div className='vertical gap'>
+              <div className='horizontal gap padding-v'>
+                <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
                 <Box comp={
-                  <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
+                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
                 } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
-                <div>
-                  <Box comp={
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                  <Box comp={
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                  <Box comp={
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                  <Box comp={
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                </div>
               </div>
-            </div>,
-            <div>
 
-              <div className='vertical gap'>
-                <Box comp={
-                  <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
-                } width="" height="" radius="" paddingV="0" paddingH="1em" classes="" />
+              <Box comp={
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+
+              <Grid comps={[
                 <div>
-                  <Box comp={
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                  <Box comp={
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                  <Box comp={
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                  } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+
+                  <div className='vertical gap'>
+                    <Box comp={
+                      <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
+                    } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
+                    <div>
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                    </div>
+                  </div>
+                </div>,
+                <div>
+
+                  <div className='vertical gap'>
+                    <Box comp={
+                      <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
+                    } width="" height="" radius="" paddingV="0" paddingH="1em" classes="" />
+                    <div>
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                    </div>
+                  </div>
                 </div>
-              </div>
+
+              ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
+
             </div>
-
-          ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
-
+          } width="" height="" radius="" paddingV="" paddingH="1em" classes="" />
 
         </div>
       } desktop={
         <div className='padding'>
-          <Text text="About Me" fontSize="10vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center all-caps" />
+          <Text text="About Me" fontSize="10vh" weight="400" color="" spacing="-2px" lineHeight="" classes="text-center" />
           <Box comp={
             <Image src={img1} alt="" radius="" classes="" />
           } width="" height="80vh" radius="" paddingV="1em" paddingH="0" classes="fit" />
           {/* Heading */}
 
-          <div className='horizontal gap padding-v'>
-            <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
-            <Box comp={
-              <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-            } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
-          </div>
-
           <Box comp={
-            <hr />
-          } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-
-          <Grid comps={[
-            <Box comp={
-              <div className='vertical gap'>
-              <Box comp={
-                <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
-              } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
-              <div>
+            <div>
+              <div className='horizontal gap padding-v'>
+                <Text text="My Story" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
                 <Box comp={
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                <Box comp={
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                <Box comp={
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                <Box comp={
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod." fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
               </div>
-            </div>
-            } width="" height="" radius="" paddingV="0" paddingH="2vw" classes=""/>,
-            <Box comp={
-              <div className='vertical gap'>
+
               <Box comp={
-                <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
-              } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
-              <div>
+                <hr />
+              } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+
+              <Grid comps={[
                 <Box comp={
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                  <div className='vertical gap'>
+                    <Box comp={
+                      <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
+                    } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
+                    <div>
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                    </div>
+                  </div>
+                } width="" height="" radius="" paddingV="0" paddingH="2vw" classes="" />,
                 <Box comp={
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
-                <Box comp={
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                } width="" height="" radius="" paddingV="0.5em" paddingH="" classes="" />
-              </div>
+                  <div className='vertical gap'>
+                    <Box comp={
+                      <Text text="Everything is bagel" fontSize="1.3em" weight="300" color="" spacing="" lineHeight="" classes="no-wrap" />
+                    } width="" height="" radius="" paddingV="0" paddingH="0" classes="" />
+                    <div>
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="0" classes="" />
+                      <Box comp={
+                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. " fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                      } width="" height="" radius="" paddingV="0.5em" paddingH="" classes="" />
+                    </div>
+                  </div>
+                } width="" height="" radius="" paddingV="0" paddingH="2vw" classes="" />
+
+              ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
+
             </div>
-            } width="" height="" radius="" paddingV="0" paddingH="2vw" classes=""/>
-
-          ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
-
+          } width="" height="" radius="" paddingV="" paddingH="1em" classes="" />
 
         </div>
       } />
