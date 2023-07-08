@@ -6,7 +6,7 @@ import { c_mainURL } from "../Constants";
 
 export const Box = ({ comp, width, height, radius, paddingV, paddingH, classes }) => {
     return (
-        <div className={`${classes}`} style={{ display: "block", width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}` }}>
+        <div className={`${classes}`} style={{ width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}` }}>
             {comp}
         </div>
     )
@@ -34,13 +34,13 @@ export const Text = ({ text, fontSize, weight, color, spacing, lineHeight, class
 
 export const TextField = ({ placeholder, fontSize, radius, padding, id, classes }) => {
     return (
-        <input className={`remove-app ${classes}`} id={id} placeholder={placeholder} style={{ fontSize: `${fontSize}`, borderRadius: `${radius}`, padding: `${padding}`, width: "100%" }} />
+        <input className={`remove-app ${classes}`} id={id} placeholder={placeholder} style={{ fontSize: `${fontSize}`, borderRadius: `${radius}`, padding: `${padding}`, width: "100%", border: "0" }} />
     )
 }
 
 export const TextArea = ({ placeholder, fontSize, radius, padding, id, minHeight, classes }) => {
     return (
-        <textarea className={`${classes}`} placeholder={placeholder} id={id} style={{ fontSize: `${fontSize}`, borderRadius: `${radius}`, padding: `${padding}`, minHeight: `${minHeight}`, width: "100%" }}></textarea>
+        <textarea className={`${classes}`} placeholder={placeholder} id={id} style={{ fontSize: `${fontSize}`, borderRadius: `${radius}`, padding: `${padding}`, minHeight: `${minHeight}`, width: "100%", border: "0" }}></textarea>
     )
 }
 
@@ -67,7 +67,7 @@ export const Checkbox = ({ label, fontSize, id }) => {
 
 export const DropDown = ({ options, fontSize, padding, radius, classes, id }) => {
     return (
-        <select className={`${classes}`} style={{ width: "100%", fontSize: `${fontSize}`, padding: `${padding}`, borderRadius: `${radius}` }} id={id}>
+        <select className={`${classes}`} style={{ width: "100%", fontSize: `${fontSize}`, padding: `${padding}`, borderRadius: `${radius}`, border: "0" }} id={id}>
             <option>Select One</option>
             {
                 options.map((opt, i) => {
@@ -152,7 +152,7 @@ export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, key
 
 export const Border = ({ comp, size, color, radius }) => {
     return (
-        <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: "fit-content", width: "fit-content" }}>
+        <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: 'fit-content' }}>
             {comp}
         </div>
     )
@@ -206,10 +206,10 @@ export const ResponsiveElements = ({ phone, smalltablet, tablet, smalllaptop, de
     return <div>{element}</div>;
 };
 
-export const Grid = ({ comps, count, orientation, gap, classes }) => {
+export const Grid = ({ comps, template, orientation, gap, classes }) => {
     if (orientation == "column") {
         return (
-            <div className={`${classes}`} style={{display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)`, gap: `${gap}`}}>
+            <div className={`${classes}`} style={{ display: "grid", gridTemplateColumns: `${template}`, gap: `${gap}` }}>
                 {comps.map((comp, i) => {
                     return (
                         <div key={i}>
@@ -221,7 +221,7 @@ export const Grid = ({ comps, count, orientation, gap, classes }) => {
         )
     } else {
         return (
-            <div className={`${classes}`} style={{display: "grid", gridTemplateRows: `repeat(${count}, 1fr)`, gap: `${gap}`}}>
+            <div className={`${classes}`} style={{ display: "grid", gridTemplateRows: `${template}`, gap: `${gap}` }}>
                 {comps.map((comp, i) => {
                     return (
                         <div key={i}>
@@ -270,3 +270,15 @@ export const Layer = ({ comp, position, top, left, bottom, right, classes }) => 
         </div>
     )
 }
+
+export const Recursive = ({ comp, count, classes }) => {
+    const elements = [];
+    for (let i = 0; i < count; i++) {
+        elements.push(
+            <div key={i} className={classes}>
+                {comp}
+            </div>
+        );
+    }
+    return elements;
+};

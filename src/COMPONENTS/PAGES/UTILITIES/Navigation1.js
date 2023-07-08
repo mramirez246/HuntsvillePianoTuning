@@ -36,7 +36,7 @@ export default function Navigation1() {
 
     return (
         <div className='roboto'>
-            <ResponsiveElements one={
+            <ResponsiveElements phone={
                 <Box comp={
                     <div className='separate'>
                         <Button comp={
@@ -51,34 +51,38 @@ export default function Navigation1() {
                         } color="" backgroundColor="" radius="" func={() => {openNav()}} classes=""/>
                     </div>
                 } width="" height="" radius="" paddingV="0.5em" paddingH="0.5em" />
-            } two={
+            } smalltablet={
                 <Button comp={
                     <Box comp={
                         <div className='separate'>
-                            <Box comp={
-                                <Image src={logo} alt="" radius="" classes="" />
-                            } width="9vh" height="" radius="" paddingV="0" paddingH="0" />
+                            <Button comp={
+                                <Box comp={
+                                    <Image src={logo} alt="" radius="" classes="" />
+                                } width="9vh" height="" radius="" paddingV="0" paddingH="0" />
+                            } color="" backgroundColor="" radius="" func={() => {navigate('/')}} classes=""/>
                             <Box comp={
                                 <Icon comp={<FiMenu />} size="30px" color="" />
                             } width="" height="" radius="" paddingV="0" paddingH="0" />
                         </div>
                     } width="" height="" radius="" paddingV="0.5em" paddingH="0.5em" />
                 } color="" backgroundColor="" radius="" func={() => { openNav() }} classes="" />
-            } three={
+            } tablet={
                 <div className='separate padding'>
-                    <Box comp={
-                        <Image src={logo} alt="" radius="" classes="" />
-                    } width="9vh" height="" radius="" paddingV="" paddingH="" />
+                    <Button comp={
+                        <Box comp={
+                            <Image src={logo} alt="" radius="" classes="" />
+                        } width="9vh" height="" radius="" paddingV="" paddingH="" />
+                    } color="" backgroundColor="" radius="" func={() => {navigate('/')}} classes=""/>
                     <Box comp={
                         <div className='horizontal gap'>
                             <Button comp={
-                                <Text text="About" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="About" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                             <Button comp={
-                                <Text text="Services" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="Services" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                             <Button comp={
-                                <Text text="Gallery" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="Gallery" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                         </div>
                     } width="" height="" radius="" paddingV="" paddingH="" classes="" />
@@ -86,25 +90,27 @@ export default function Navigation1() {
                         <Button comp={
                             <Box comp={
                                 <Text text="Contact" fontSize="16px" weight="400" color="" spacing="" lineHeight="" classes="fit-height" />
-                            } width="" height="" radius="" paddingV="0.8em" paddingH="1em" classes="" />
+                            } width="" height="" radius="" paddingV="0.5em" paddingH="1.2em" classes="" />
                         } color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes="fit-height" />
                     } size="1px" color="black" radius="30px" />
                 </div>
-            } four={
+            } smalllaptop={
                 <div className='separate padding'>
-                    <Box comp={
-                        <Image src={logo} alt="" radius="" classes="" />
-                    } width="9vh" height="" radius="" paddingV="" paddingH="" />
+                    <Button comp={
+                        <Box comp={
+                            <Image src={logo} alt="" radius="" classes="" />
+                        } width="9vh" height="" radius="" paddingV="" paddingH="" />
+                    } color="" backgroundColor="" radius="" func={() => {navigate('/')}} classes=""/>
                     <Box comp={
                         <div className='horizontal gap'>
                             <Button comp={
-                                <Text text="About" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="About" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                             <Button comp={
-                                <Text text="Services" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="Services" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                             <Button comp={
-                                <Text text="Gallery" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="Gallery" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                         </div>
                     } width="" height="" radius="" paddingV="" paddingH="" classes="" />
@@ -112,25 +118,27 @@ export default function Navigation1() {
                         <Button comp={
                             <Box comp={
                                 <Text text="Contact" fontSize="16px" weight="400" color="" spacing="" lineHeight="" classes="fit-height" />
-                            } width="" height="" radius="" paddingV="0.8em" paddingH="1em" classes="" />
+                            } width="" height="" radius="" paddingV="0.5em" paddingH="1.2em" classes="" />
                         } color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes="fit-height" />
                     } size="1px" color="black" radius="30px" />
                 </div>
-            } five={
+            } desktop={
                 <div className='separate padding'>
-                    <Box comp={
-                        <Image src={logo} alt="" radius="" classes="" />
-                    } width="9vh" height="" radius="" paddingV="" paddingH="" />
+                    <Button comp={
+                        <Box comp={
+                            <Image src={logo} alt="" radius="" classes="" />
+                        } width="9vh" height="" radius="" paddingV="" paddingH="" />
+                    } color="" backgroundColor="" radius="" func={() => {navigate('/')}} classes=""/>
                     <Box comp={
                         <div className='horizontal gap'>
                             <Button comp={
-                                <Text text="About" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="About" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                             <Button comp={
-                                <Text text="Services" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="Services" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                             <Button comp={
-                                <Text text="Gallery" fontSize="18px" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Text text="Gallery" fontSize="22px" weight="300" color="" spacing="" lineHeight="" classes="" />
                             } color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="" />
                         </div>
                     } width="" height="" radius="" paddingV="" paddingH="" classes="" />
@@ -138,7 +146,7 @@ export default function Navigation1() {
                         <Button comp={
                             <Box comp={
                                 <Text text="Contact" fontSize="16px" weight="400" color="" spacing="" lineHeight="" classes="fit-height" />
-                            } width="" height="" radius="" paddingV="0.8em" paddingH="1em" classes="" />
+                            } width="" height="" radius="" paddingV="0.5em" paddingH="1.2em" classes="" />
                         } color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes="fit-height" />
                     } size="1px" color="black" radius="30px" />
                 </div>

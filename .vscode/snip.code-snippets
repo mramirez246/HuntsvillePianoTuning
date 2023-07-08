@@ -3,9 +3,9 @@
 		"prefix": "starter",
 		"body": [
 			"import React, { useEffect } from 'react'",
-			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveElements, Text, TextArea, TextField, Underline } from '../../Elements'",
+			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveElements, Text, TextArea, TextField, Underline } from '../Elements'",
 			"import { FiMenu } from 'react-icons/fi'",
-			"import { c_businessName, c_routes } from '../../../Constants'",
+			"import { c_businessName, c_routes } from '../../Constants'",
 			"import { useLocation, useNavigate } from 'react-router'",
 			"",
 			"export default function ${1:Component}() {",
@@ -96,7 +96,7 @@
 	"Grid Component": {
 		"prefix": "grid",
 		"body": [
-			"<Grid comps={[${1:}]} orientation=\"${2:column/row}\" count=\"${3:}\" gap=\"${4:}\" classes=\"${5:}\" />"
+			"<Grid comps={[${1:}]} orientation=\"${2:column/row}\" template=\"${3:}\" gap=\"${4:}\" classes=\"${5:}\" />"
 		],
 		"description": "Create a <Grid> component with customizable props"
 	},
@@ -170,7 +170,18 @@
 			"<Layer comp={$1} position=\"$2\" top=\"$3\" left=\"$4\" bottom=\"$5\" right=\"$6\" classes=\"$7\" />"
 		],
 		"description": "Create a Layer component"
-	}
+	},
+	"React Recursive Component": {
+		"prefix": "recursive",
+		"body": [
+		  "<Recursive",
+		  "  comp={$1}",
+		  "  count=\"$2\"",
+		  "  classes=\"$3\"",
+		  "/>"
+		],
+		"description": "Create a Recursive component in React"
+	  }
 }
 // Place your happy-template workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 

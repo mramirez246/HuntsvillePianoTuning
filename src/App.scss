@@ -22,10 +22,7 @@ $padding: 1em;
     color: $color;
 }
 
-@mixin grid($grid-template: column, $count: 1) {
-    display: grid;
-    grid-template-columns: repeat($count, 1fr);
-}
+
 
 // CONSTANTS
 .remove-app {
@@ -73,6 +70,16 @@ $padding: 1em;
     padding: $padding;
 }
 
+.padding-v {
+    padding-bottom: $padding;
+    padding-top: $padding;
+}
+
+.padding-h {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
 .horizontal {
     @include flex;
 }
@@ -93,9 +100,11 @@ $padding: 1em;
 .align-bottom {
     @include flex($align: flex-end)
 }
+
 .h-space-around {
     align-content: space-around;
 }
+
 .v-space-around {
     display: flex;
     flex-direction: column;
@@ -154,6 +163,7 @@ $padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .fit-height {
@@ -162,54 +172,6 @@ $padding: 1em;
 
 .fit-weight {
     width: fit-content;
-}
-
-.grid-c-1 {
-    @include grid(column, 1)
-}
-
-.grid-c-2 {
-    @include grid(column, 2)
-}
-
-.grid-c-3 {
-    @include grid(column, 3)
-}
-
-.grid-c-4 {
-    @include grid(column, 4)
-}
-
-.grid-c-5 {
-    @include grid(column, 5)
-}
-
-.grid-c-6 {
-    @include grid(column, 6)
-}
-
-.grid-r-1 {
-    @include grid(row, 1)
-}
-
-.grid-r-2 {
-    @include grid(row, 2)
-}
-
-.grid-r-3 {
-    @include grid(row, 3)
-}
-
-.grid-r-4 {
-    @include grid(row, 4)
-}
-
-.grid-r-5 {
-    @include grid(row, 5)
-}
-
-.grid-r-6 {
-    @include grid(row, 6)
 }
 
 .fill {
@@ -231,6 +193,11 @@ $padding: 1em;
 .image-bottom {
     object-position: bottom;
 }
+
+.no-wrap {
+    white-space: nowrap;
+}
+
 
 // #endregion
 // #region FONTS
@@ -255,6 +222,7 @@ $padding: 1em;
 .underline {
     border-bottom: 1px solid black;
 }
+
 // #endregion
 
 @media only screen and (min-width: 350px) {}

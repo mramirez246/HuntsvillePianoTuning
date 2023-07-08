@@ -2,6 +2,10 @@
 import React from 'react'
 import { useNavigate } from "react-router"
 import Home1 from "./COMPONENTS/PAGES/Home1"
+import About1 from './COMPONENTS/PAGES/About1'
+import Contact1 from './COMPONENTS/PAGES/Contact1'
+import History1 from './COMPONENTS/PAGES/History1'
+import Services1 from './COMPONENTS/PAGES/Services1'
 
 // BUSINESS INFO
 export const c_businessName = "Happy Code Dev"
@@ -17,9 +21,33 @@ export const c_metaTitleSuffix = "| The Best Websites in the World!"
 // {"route" : "description"}
 export const c_routes = [
     {
-        Route: "home1",
+        Route: "",
         Title: `Home ${c_metaTitleSuffix}`,
         Element: <Home1 />,
+        Desc: ""
+    },
+    {
+        Route: "about",
+        Title: `About ${c_metaTitleSuffix}`,
+        Element: <About1 />,
+        Desc: ""
+    },
+    {
+        Route: "contact",
+        Title: `Contact Us ${c_metaTitleSuffix}`,
+        Element: <Contact1 />,
+        Desc: ""
+    },
+    {
+        Route: "history",
+        Title: `History ${c_metaTitleSuffix}`,
+        Element: <History1 />,
+        Desc: ""
+    },
+    {
+        Route: "services",
+        Title: `Services ${c_metaTitleSuffix}`,
+        Element: <Services1 />,
         Desc: ""
     }
 ]
