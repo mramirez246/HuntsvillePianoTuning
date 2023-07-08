@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveElements, Text, TextArea, TextField, Underline } from '../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'
+import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
 import { c_businessAddress, c_businessEmail, c_businessName, c_businessPhone, c_routes } from '../../Constants'
 import { useLocation, useNavigate } from 'react-router'
@@ -31,19 +32,10 @@ export default function Contact1() {
     // }
 
     const sendContactForm = () => {
-        const name = document.querySelector('#tbName').value
-        const email = document.querySelector('#tbEmail').value
-        const subject = document.querySelector('#ddSubject').value
-        const message = document.querySelector('#taMessage').value
 
-        const args = {
-            Name: name,
-            Email: email,
-            Subject: subject,
-            Message: message
-        }
     }
 
+    const thing1 = "If you want to let us know about the bagel, start here using our form. Thanks!"
 
     useEffect(() => {
         // closeNav()
@@ -52,379 +44,300 @@ export default function Contact1() {
     return (
         <div className='roboto'>
             <Navigation1 />
-            <ResponsiveElements phone={
-                <div className='padding'>
-                    <Text text="Keep in touch!" fontSize="3em" weight="" color="" spacing="" lineHeight="" classes="" />
-                    <Box comp={
-                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. " fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                    } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    <Box comp={
-                        <div>
-                            <Text text={`${c_businessEmail}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                            <Text text={`${c_businessPhone}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                        </div>
-                    } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    <Box comp={
-                        <div className='vertical'>
-                            <Text text={`${c_businessAddress}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
+            <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
+                <Box width="fit-content" height="" radius="" paddingV="" paddingH="" classes="center">
+                    <Heading1 text={`Keep in touch!`} />
+                </Box>
 
-                            <Box comp={
-                                <div className='horizontal gap'>
-                                    <Icon comp={<BsInstagram />} size="1.4em" color="" />
-                                    <Icon comp={<BsFacebook />} size="1.4em" color="" />
-                                    <Icon comp={<BsTwitter />} size="1.4em" color="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="0.4em" paddingH="0" classes="" />
+                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                    <Text text={`${thing1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="text-center" />
+                </Box>
 
-                        </div>
-                    } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+                <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
+                </Box>
 
-                    {/* FORM */}
-                    <div className='vertical gap'>
-                        <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                        <Text text="Contact us at any time" fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Name" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
-                                } size="1px" color="black" radius="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Email" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
-                                } size="1px" color="black" radius="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
-                                } size="1px" color="black" radius="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="150px" classes="roboto" />
-                                } size="1px" color="black" radius="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                        <Button comp={
-                            <Box comp={
-                                <Text text="Submit" fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
-                            } width="" height="" radius="" paddingV="0.8em" paddingH="0" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark" />
-                    </div>
+                <ResponsiveWrapper>
+                    <PhoneScreen>
+                        <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+                            <Text text={`${c_businessPhone}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
 
-                </div>
-            } smalltablet={
-                <div className='padding'>
-                    <Text text="Keep in touch!" fontSize="3em" weight="" color="" spacing="" lineHeight="" classes="" />
-                    <Box comp={
-                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. " fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                    } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    <Box comp={
-                        <div>
-                            <Text text={`${c_businessEmail}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                            <Text text={`${c_businessPhone}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                        </div>
-                    } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    <Box comp={
-                        <div className='vertical'>
-                            <Text text={`${c_businessAddress}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
+                            <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
+                            </Box>
 
-                            <Box comp={
-                                <div className='horizontal gap'>
-                                    <Icon comp={<BsInstagram />} size="1.4em" color="" />
-                                    <Icon comp={<BsFacebook />} size="1.4em" color="" />
-                                    <Icon comp={<BsTwitter />} size="1.4em" color="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="0.4em" paddingH="0" classes="" />
+                            <Text text={`${c_businessAddress}`} fontSize="1.4em" weight="500" color="" spacing="-1px" lineHeight="" classes="" />
+                            <Box width="" height="2vh" radius="" paddingV="" paddingH="" classes="">
 
-                        </div>
-                    } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-
-                    {/* FORM */}
-                    <div className='vertical gap'>
-                        <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                        <Text text="Contact us at any time" fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Name" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
-                                } size="1px" color="black" radius="" />
+                            </Box>
+                            {/* Socials */}
+                            <div className='horizontal gap'>
+                                <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                    <Icon size="1.8em" color="#D0407B">
+                                        <BsInstagram />
+                                    </Icon>
+                                </Button>
+                                <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                    <Icon size="1.8em" color="#1082E5">
+                                        <BsFacebook />
+                                    </Icon>
+                                </Button>
+                                <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                    <Icon size="1.8em" color="#1D99E5">
+                                        <BsTwitter />
+                                    </Icon>
+                                </Button>
                             </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Email" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
-                                } size="1px" color="black" radius="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
-                                } size="1px" color="black" radius="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Border comp={
-                                    <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="150px" classes="roboto" />
-                                } size="1px" color="black" radius="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                        <Button comp={
-                            <Box comp={
-                                <Text text="Submit" fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
-                            } width="" height="" radius="" paddingV="0.8em" paddingH="0" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark" />
-                    </div>
-
-                </div>
-            } tablet={
-                <Box comp={
-                    <div className='padding'>
-                        <Text text="Keep in touch!" fontSize="3em" weight="" color="" spacing="" lineHeight="" classes="" />
-                        <Box comp={
-                            <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. " fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                        <Box comp={
-                            <div>
-                                <Text text={`${c_businessEmail}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                                <Text text={`${c_businessPhone}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                            </div>
-                        } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                        <Box comp={
-                            <div className='vertical'>
-                                <Text text={`${c_businessAddress}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-
-                                <Box comp={
-                                    <div className='horizontal gap'>
-                                        <Icon comp={<BsInstagram />} size="1.4em" color="" />
-                                        <Icon comp={<BsFacebook />} size="1.4em" color="" />
-                                        <Icon comp={<BsTwitter />} size="1.4em" color="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="0.4em" paddingH="0" classes="" />
-
-                            </div>
-                        } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+                        </Box>
 
                         {/* FORM */}
-                        <div className='vertical gap'>
-                            <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                            <Text text="Contact us at any time" fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                            <Box comp={
-                                <div>
-                                    <Text text="Name" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                    <Border comp={
+                        <Box width="" height="" radius="" paddingV="1em" paddingH="0" classes="vertical gap">
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                </Border>
+                            </Box>
+                            <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
+                                <Box width="100%" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
+                                    <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
+                                </Box>
+                            </Button>
+                        </Box>
+                    </PhoneScreen>
+                    <TabletScreen>
+                        <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+                            <Text text={`${c_businessPhone}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+
+                            <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
+                            </Box>
+
+                            <Text text={`${c_businessAddress}`} fontSize="1.4em" weight="500" color="" spacing="-1px" lineHeight="" classes="" />
+                            <Box width="" height="2vh" radius="" paddingV="" paddingH="" classes="">
+
+                            </Box>
+                            {/* Socials */}
+                            <div className='horizontal gap'>
+                                <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                    <Icon size="1.8em" color="#D0407B">
+                                        <BsInstagram />
+                                    </Icon>
+                                </Button>
+                                <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                    <Icon size="1.8em" color="#1082E5">
+                                        <BsFacebook />
+                                    </Icon>
+                                </Button>
+                                <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                    <Icon size="1.8em" color="#1D99E5">
+                                        <BsTwitter />
+                                    </Icon>
+                                </Button>
+                            </div>
+                        </Box>
+
+                        {/* FORM */}
+                        <Box width="" height="" radius="" paddingV="1em" paddingH="0" classes="vertical gap">
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                </Border>
+                            </Box>
+                            <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
+                                <Box width="100%" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
+                                    <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
+                                </Box>
+                            </Button>
+                        </Box>
+                    </TabletScreen>
+                    <LaptopScreen>
+                        <Grid orientation="column" template="1fr 1fr" gap="1em" classes="padding">
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${c_businessPhone}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+
+                                <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
+                                </Box>
+
+                                <Text text={`${c_businessAddress}`} fontSize="1.4em" weight="500" color="" spacing="-1px" lineHeight="" classes="" />
+                                <Box width="" height="2vh" radius="" paddingV="" paddingH="" classes="">
+
+                                </Box>
+                                {/* Socials */}
+                                <div className='horizontal gap'>
+                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Icon size="1.8em" color="#D0407B">
+                                            <BsInstagram />
+                                        </Icon>
+                                    </Button>
+                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Icon size="1.8em" color="#1082E5">
+                                            <BsFacebook />
+                                        </Icon>
+                                    </Button>
+                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Icon size="1.8em" color="#1D99E5">
+                                            <BsTwitter />
+                                        </Icon>
+                                    </Button>
+                                </div>
+                            </Box>
+
+                            {/* FORM */}
+                            <Box width="" height="" radius="" paddingV="1em" paddingH="0" classes="vertical gap">
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
                                         <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
-                                    } size="1px" color="black" radius="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Box comp={
-                                <div>
-                                    <Text text="Email" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                    <Border comp={
+                                    </Border>
+                                </Box>
+
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
                                         <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
-                                    } size="1px" color="black" radius="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Box comp={
-                                <div>
-                                    <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                    <Border comp={
+                                    </Border>
+                                </Box>
+
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
                                         <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
-                                    } size="1px" color="black" radius="" />
+                                    </Border>
+                                </Box>
+
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
+                                        <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                    </Border>
+                                </Box>
+                                <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
+                                    <Box width="100%" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
+                                        <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
+                                    </Box>
+                                </Button>
+                            </Box>
+                        </Grid>
+                    </LaptopScreen>
+                    <DesktopScreen>
+                        <Box width="80vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr 1fr" gap="1em" classes="padding">
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${c_businessPhone}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+
+                                <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
+                                </Box>
+
+                                <Text text={`${c_businessAddress}`} fontSize="1.4em" weight="500" color="" spacing="-1px" lineHeight="" classes="" />
+                                <Box width="" height="2vh" radius="" paddingV="" paddingH="" classes="">
+
+                                </Box>
+                                {/* Socials */}
+                                <div className='horizontal gap'>
+                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Icon size="1.8em" color="#D0407B">
+                                            <BsInstagram />
+                                        </Icon>
+                                    </Button>
+                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Icon size="1.8em" color="#1082E5">
+                                            <BsFacebook />
+                                        </Icon>
+                                    </Button>
+                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Icon size="1.8em" color="#1D99E5">
+                                            <BsTwitter />
+                                        </Icon>
+                                    </Button>
                                 </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Box comp={
-                                <div>
-                                    <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                    <Border comp={
-                                        <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="150px" classes="roboto" />
-                                    } size="1px" color="black" radius="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                            <Button comp={
-                                <Box comp={
-                                    <Text text="Submit" fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
-                                } width="" height="" radius="" paddingV="0.8em" paddingH="0" classes="" />
-                            } color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark" />
-                        </div>
+                            </Box>
 
-                    </div>
-                } width="450px" height="" radius="" paddingV="" paddingH="" classes="center" />
-            } smalllaptop={
-                <Box comp={
-                    <div className='padding'>
-                        <Grid comps={[
-                            <div>
-                                <Text text="Keep in touch!" fontSize="3em" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Box comp={
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. " fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text={`${c_businessEmail}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                                        <Text text={`${c_businessPhone}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                                <Box comp={
-                                    <div className='vertical'>
-                                        <Text text={`${c_businessAddress}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
+                            {/* FORM */}
+                            <Box width="" height="" radius="" paddingV="1em" paddingH="0" classes="vertical gap">
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
+                                        <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                    </Border>
+                                </Box>
 
-                                        <Box comp={
-                                            <div className='horizontal gap'>
-                                                <Icon comp={<BsInstagram />} size="1.4em" color="" />
-                                                <Icon comp={<BsFacebook />} size="1.4em" color="" />
-                                                <Icon comp={<BsTwitter />} size="1.4em" color="" />
-                                            </div>
-                                        } width="" height="" radius="" paddingV="0.4em" paddingH="0" classes="" />
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
+                                        <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                    </Border>
+                                </Box>
 
-                                    </div>
-                                } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
+                                        <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                    </Border>
+                                </Box>
 
-                            </div>,
-                            <div className='vertical gap'>
-                                <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                                <Text text="Contact us at any time" fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Name" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Email" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="150px" classes="roboto" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                                <Button comp={
-                                    <Box comp={
-                                        <Text text="Submit" fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
-                                    } width="" height="" radius="" paddingV="0.8em" paddingH="0" classes="" />
-                                } color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark" />
-                            </div>
-                        ]} orientation="column" template="1fr 1fr" gap="2em" classes="" />
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Border size="1px" color="" radius="">
+                                        <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                    </Border>
+                                </Box>
+                                <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
+                                    <Box width="100%" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
+                                        <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
+                                    </Box>
+                                </Button>
+                            </Box>
+                        </Grid>
+                        </Box>
+                    </DesktopScreen>
+                </ResponsiveWrapper>
 
-                    </div>
-                } width="" height="" radius="" paddingV="" paddingH="1em" classes="center" />
-            } desktop={
-                <Box comp={
-                    <div className='padding'>
-                        <Grid comps={[
-                            <div>
-                                <Text text="Keep in touch!" fontSize="3em" weight="" color="" spacing="" lineHeight="" classes="" />
-                                <Box comp={
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. " fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text={`${c_businessEmail}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                                        <Text text={`${c_businessPhone}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                                <Box comp={
-                                    <div className='vertical'>
-                                        <Text text={`${c_businessAddress}`} fontSize="1.2em" weight="500" color="" spacing="" lineHeight="" classes="" />
-
-                                        <Box comp={
-                                            <div className='horizontal gap'>
-                                                <Icon comp={<BsInstagram />} size="1.4em" color="" />
-                                                <Icon comp={<BsFacebook />} size="1.4em" color="" />
-                                                <Icon comp={<BsTwitter />} size="1.4em" color="" />
-                                            </div>
-                                        } width="" height="" radius="" paddingV="0.4em" paddingH="0" classes="" />
-
-                                    </div>
-                                } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-
-                            </div>,
-                            <div className='vertical gap'>
-                                <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                                <Text text="Contact us at any time" fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Name" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Email" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={
-                                    <div>
-                                        <Text text="Subject" fontSize="" weight="" color="" spacing="" lineHeight="" classes="" />
-                                        <Border comp={
-                                            <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="150px" classes="roboto" />
-                                        } size="1px" color="black" radius="" />
-                                    </div>
-                                } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                                <Box comp={<div></div>} width="" height="2vh" radius="" paddingV="" paddingH="" classes="" />
-                                <Button comp={
-                                    <Box comp={
-                                        <Text text="Submit" fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
-                                    } width="" height="" radius="" paddingV="0.8em" paddingH="0" classes="" />
-                                } color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark" />
-                            </div>
-                        ]} orientation="column" template="1fr 1fr" gap="2em" classes="" />
-
-                    </div>
-                } width="" height="" radius="" paddingV="" paddingH="2em" classes="center" />
-            } />
+            </Box>
 
             <Footer1 />
         </div>

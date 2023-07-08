@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, RadioButtons, ResponsiveElements, Text, TextArea, TextField, Underline } from '../../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../../Elements'
+import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../../Components'
 import { FiMenu } from 'react-icons/fi'
-import { HiXMark } from 'react-icons/hi2'
 import { c_businessName, c_routes } from '../../../Constants'
 import { useLocation, useNavigate } from 'react-router'
+// 
 import logo from '../../../PHOTOS/logo.png'
+import { HiXMark } from 'react-icons/hi2'
 
 export default function Navigation2() {
     const navigate = useNavigate()
@@ -35,48 +37,100 @@ export default function Navigation2() {
 
     return (
         <div className='roboto'>
-            <Box comp={
-                    <div className='separate'>
-                        <Button comp={
-                            <Box comp={
+            <ResponsiveWrapper>
+                <PhoneScreen>
+                    <div className='separate padding'>
+                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
                                 <Image src={logo} alt="" radius="" classes="" />
-                            } width="8vh" height="" radius="" paddingV="0" paddingH="0" />
-                        } color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="" />
-                        <Button comp={
-                            <Box comp={
-                                <Icon comp={<FiMenu />} size="30px" color="" />
-                            } width="" height="" radius="" paddingV="0" paddingH="0" />
-                        } color="" backgroundColor="" radius="" func={() => { openNav() }} classes="" />
+                            </Button>
+                        </Box>
+                        <Button color="" backgroundColor="" radius="" func={() => { openNav() }} classes="">
+                            <Icon size="2.2em" color="">
+                                <FiMenu />
+                            </Icon>
+                        </Button>
                     </div>
-                } width="" height="" radius="" paddingV="0.5em" paddingH="0.5em" />
-            <div className='nav-body light v-center'>
+                </PhoneScreen>
+                <TabletScreen>
                     <div className='separate padding'>
-                        <Box comp={
+                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
+                                <Image src={logo} alt="" radius="" classes="" />
+                            </Button>
+                        </Box>
+                        <Button color="" backgroundColor="" radius="" func={() => { openNav() }} classes="">
+                            <Icon size="2.2em" color="">
+                                <FiMenu />
+                            </Icon>
+                        </Button>
+                    </div>
+                </TabletScreen>
+                <LaptopScreen>
+                <div className='separate padding'>
+                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
+                                <Image src={logo} alt="" radius="" classes="" />
+                            </Button>
+                        </Box>
+                        <Button color="" backgroundColor="" radius="" func={() => { openNav() }} classes="">
+                            <Icon size="2.2em" color="">
+                                <FiMenu />
+                            </Icon>
+                        </Button>
+                    </div>
+                </LaptopScreen>
+                <DesktopScreen>
+                <div className='separate padding'>
+                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
+                                <Image src={logo} alt="" radius="" classes="" />
+                            </Button>
+                        </Box>
+                        <Button color="" backgroundColor="" radius="" func={() => { openNav() }} classes="">
+                            <Icon size="2.2em" color="">
+                                <FiMenu />
+                            </Icon>
+                        </Button>
+                    </div>
+                </DesktopScreen>
+            </ResponsiveWrapper>
+
+            <div className='nav-body v-separate light'>
+                <div className='separate padding'>
+                    <Box width="18vh" height="" radius="" paddingV="" paddingH="" classes="">
+                        <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
                             <Image src={logo} alt="" radius="" classes="" />
-                        } width="12vh" height="" radius="" paddingV="" paddingH="" classes="" />
-                        <Button comp={
-                            <Icon comp={<HiXMark />} size="2em" color="" />
-                        } color="" backgroundColor="" radius="" func={() => { closeNav() }} classes="" />
-                    </div>
-                    <div className='padding'>
-                        <Button comp={
-                            <Text text="About" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="" />
-                        <Button comp={
-                            <Text text="Services" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="" />
-                        <Button comp={
-                            <Text text="Gallery" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="" />
-                        <Button comp={
-                            <Text text="Contact Us" fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="" />
-                    </div>
-                    <Box comp={<div></div>} width="" height="100px" radius="" paddingV="" paddingH="" classes="" />
-                    <div className='separate padding'>
-                        <Text text={`${c_businessName} 2023. All Rights Reserved.`} fontSize="12px" weight="400" color="gray" spacing="" lineHeight="" classes="text-center" />
-                    </div>
+                        </Button>
+                    </Box>
+                    <Button color="" backgroundColor="" radius="" func={() => { closeNav() }} classes="">
+                        <Icon size="2.4em" color="">
+                            <HiXMark />
+                        </Icon>
+                    </Button>
                 </div>
+
+                <Grid orientation="column" template="1fr" gap="0.2em" classes="padding">
+                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="">
+                        <Text text={`About`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                    </Button>
+                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/services') }} classes="">
+                        <Text text={`Services`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                    </Button>
+                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/gallery') }} classes="">
+                        <Text text={`Gallery`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                    </Button>
+                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes="">
+                        <Text text={`Contact Us`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                    </Button>
+                </Grid>
+
+                <Box width="" height="5vh" radius="" paddingV="" paddingH="" classes="">
+
+                </Box>
+
+                <Text text={`${c_businessName} 2023. All Rights Reserved.`} fontSize="0.8em" weight="300" color="gray" spacing="" lineHeight="" classes="text-center padding" />
+            </div>
         </div>
     )
 }

@@ -4,10 +4,10 @@ import { BsChevronDown } from 'react-icons/bs'
 import { c_mainURL } from "../Constants";
 
 
-export const Box = ({ comp, width, height, radius, paddingV, paddingH, classes }) => {
+export const Box = ({ width, height, radius, paddingV, paddingH, classes, children }) => {
     return (
         <div className={`${classes}`} style={{ width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}` }}>
-            {comp}
+            {children}
         </div>
     )
 }
@@ -18,16 +18,18 @@ export const Image = ({ src, alt, radius, classes }) => {
     );
 };
 
-export const Button = ({ comp, color, backgroundColor, radius, func, classes }) => {
+export const Button = ({ color, backgroundColor, radius, func, classes, children }) => {
     return (
-        <div className={`${classes} remove-app`} style={{ cursor: "pointer", color: `${color}`, backgroundColor: `${backgroundColor}`, borderRadius: `${radius}` }} onClick={func}>{comp}</div>
+        <div className={`${classes}`} style={{ cursor: "pointer", color: `${color}`, backgroundColor: `${backgroundColor}`, borderRadius: `${radius}` }} onClick={func}>{children}</div>
     );
 };
 
 export const Text = ({ text, fontSize, weight, color, spacing, lineHeight, classes }) => {
     return (
         <p className={`${classes}`} style={{ fontSize: `${fontSize}`, fontWeight: `${weight}`, width: "100%", letterSpacing: `${spacing}`, lineHeight: `${lineHeight}`, color: `${color}` }}>
-            {text}
+            {text.split("\n").map((line, index) => (
+                <p key={index}>{line}</p>
+            ))}
         </p>
     )
 }
@@ -98,34 +100,6 @@ export const RadioButtons = ({ options, groupName, classes }) => {
     )
 }
 
-// export const Grid = ({ comps, orientation, gap, count }) => {
-//     if (orientation == "column") {
-//         return (
-//             <div style={{ display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
-//                 {
-//                     comps.map((comp, i) => {
-//                         return (
-//                             <div key={i}>{comp}</div>
-//                         )
-//                     })
-//                 }
-//             </div>
-//         )
-//     } else {
-//         return (
-//             <div style={{ display: "grid", gridTemplateRows: `repeat(${count}, 1fr)`, gap: `${gap}` }}>
-//                 {
-//                     comps.map((comp, i) => {
-//                         return (
-//                             <div key={i}>{comp}</div>
-//                         )
-//                     })
-//                 }
-//             </div>
-//         )
-//     }
-// }
-
 export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, keyClasses, valueClasses, classes }) => {
     const [chosenID, setChosenID] = useState(-1)
     return (
@@ -150,54 +124,58 @@ export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, key
     )
 }
 
-export const Border = ({ comp, size, color, radius }) => {
+export const Border = ({ size, color, radius, children }) => {
     return (
         <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: 'fit-content' }}>
-            {comp}
+            {children}
         </div>
     )
 }
 
-export const Icon = ({ comp, size, color }) => {
+export const Icon = ({ size, color, children }) => {
     return (
         <div style={{ fontSize: `${size}`, color: `${color}` }}>
-            {comp}
+            {children}
         </div>
     )
 }
 
-export const Underline = ({ comp, size, color }) => {
+export const Underline = ({ size, color, children }) => {
     return (
         <div style={{ borderBottom: `${size} solid ${color}` }}>
-            {comp}
+            {children}
         </div>
     )
 }
 
-export const ResponsiveElements = ({ phone, smalltablet, tablet, smalllaptop, desktop }) => {
+export const ResponsiveWrapper = ({ children }) => {
     const [element, setElement] = useState(null);
 
     const handleResize = () => {
-        if (window.innerWidth < 600) {
-            setElement(phone);
-        } else if (window.innerWidth < 800) {
-            setElement(smalltablet);
-        } else if (window.innerWidth < 1000) {
-            setElement(tablet);
-        } else if (window.innerWidth < 1200) {
-            setElement(smalllaptop);
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth < 600) {
+            console.log("Phone")
+            setElement(children.find(child => child.type === PhoneScreen));
+            console.log(children.find(child => child.type === PhoneScreen))
+        } else if (screenWidth < 800) {
+            console.log("Tablet")
+            setElement(children.find(child => child.type === TabletScreen));
+        } else if (screenWidth < 1000) {
+            console.log("Laptop")
+            setElement(children.find(child => child.type === LaptopScreen));
+        } else if (screenWidth < 1200) {
+            console.log("Desktop")
+            setElement(children.find(child => child.type === DesktopScreen));
         } else {
-            setElement(desktop);
+            console.log("Desktop")
+            setElement(children.find(child => child.type === DesktopScreen));
         }
     };
 
     useEffect(() => {
-        // Add event listener on component mount
         window.addEventListener('resize', handleResize);
-        // Call handleResize initially to set the element based on the current screen size
         handleResize();
-
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -206,29 +184,46 @@ export const ResponsiveElements = ({ phone, smalltablet, tablet, smalllaptop, de
     return <div>{element}</div>;
 };
 
-export const Grid = ({ comps, template, orientation, gap, classes }) => {
+export const PhoneScreen = ({ children }) => {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+export const TabletScreen = ({ children }) => {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+export const LaptopScreen = ({ children }) => {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+export const DesktopScreen = ({ children }) => {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+
+export const Grid = ({ children, template, orientation, gap, classes }) => {
     if (orientation == "column") {
         return (
             <div className={`${classes}`} style={{ display: "grid", gridTemplateColumns: `${template}`, gap: `${gap}` }}>
-                {comps.map((comp, i) => {
-                    return (
-                        <div key={i}>
-                            {comp}
-                        </div>
-                    )
-                })}
+                {children}
             </div>
         )
     } else {
         return (
             <div className={`${classes}`} style={{ display: "grid", gridTemplateRows: `${template}`, gap: `${gap}` }}>
-                {comps.map((comp, i) => {
-                    return (
-                        <div key={i}>
-                            {comp}
-                        </div>
-                    )
-                })}
+                {children}
             </div>
         )
     }
@@ -249,36 +244,10 @@ export const Meta = ({ route }) => {
     )
 }
 
-export const ResponsiveFunctions = () => {
-    if (window.innerWidth < 600) {
-
-    } else if (window.innerWidth < 800) {
-
-    } else if (window.innerWidth < 1000) {
-
-    } else if (window.innerWidth < 1200) {
-
-    } else if (window.innerWidth < 1400) {
-
-    }
-}
-
-export const Layer = ({ comp, position, top, left, bottom, right, classes }) => {
+export const Layer = ({ children, position, top, left, bottom, right, classes }) => {
     return (
         <div className={`${classes}`} style={{ position: `${position}`, top: `${top}`, left: `${left}`, bottom: `${bottom}`, right: `${right}`, width: `fit-content`, height: "fit-content" }}>
-            {comp}
+            {children}
         </div>
     )
 }
-
-export const Recursive = ({ comp, count, classes }) => {
-    const elements = [];
-    for (let i = 0; i < count; i++) {
-        elements.push(
-            <div key={i} className={classes}>
-                {comp}
-            </div>
-        );
-    }
-    return elements;
-};

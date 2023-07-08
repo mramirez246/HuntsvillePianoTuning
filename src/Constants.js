@@ -1,16 +1,11 @@
 // 
 import React from 'react'
 import { useNavigate } from "react-router"
-import Home1 from "./COMPONENTS/PAGES/Home1"
+import Test from './COMPONENTS/PAGES/Test'
+import Home1 from './COMPONENTS/PAGES/Home1'
 import About1 from './COMPONENTS/PAGES/About1'
-import Contact1 from './COMPONENTS/PAGES/Contact1'
-import History1 from './COMPONENTS/PAGES/History1'
 import Services1 from './COMPONENTS/PAGES/Services1'
-import Products1 from './COMPONENTS/PAGES/Products1'
-import Careers1 from './COMPONENTS/PAGES/Careers1'
-import Partners1 from './COMPONENTS/PAGES/Partners1'
-import Bio1 from './COMPONENTS/PAGES/Bio1'
-import Pricing1 from './COMPONENTS/PAGES/Pricing1'
+import Contact1 from './COMPONENTS/PAGES/Contact1'
 import Gallery1 from './COMPONENTS/PAGES/Gallery1'
 
 // BUSINESS INFO
@@ -27,6 +22,12 @@ export const c_metaTitleSuffix = "| The Best Websites in the World!"
 // {"route" : "description"}
 export const c_routes = [
     {
+        Route: "test",
+        Title: `Test ${c_metaTitleSuffix}`,
+        Element: <Test />,
+        Desc: ""
+    },
+    {
         Route: "",
         Title: `Home ${c_metaTitleSuffix}`,
         Element: <Home1 />,
@@ -39,51 +40,15 @@ export const c_routes = [
         Desc: ""
     },
     {
-        Route: "contact",
-        Title: `Contact Us ${c_metaTitleSuffix}`,
-        Element: <Contact1 />,
-        Desc: ""
-    },
-    {
-        Route: "history",
-        Title: `History ${c_metaTitleSuffix}`,
-        Element: <History1 />,
-        Desc: ""
-    },
-    {
         Route: "services",
         Title: `Services ${c_metaTitleSuffix}`,
         Element: <Services1 />,
         Desc: ""
     },
     {
-        Route: "products",
-        Title: `Products ${c_metaTitleSuffix}`,
-        Element: <Products1 />,
-        Desc: ""
-    },
-    {
-        Route: "careers",
-        Title: `Careers ${c_metaTitleSuffix}`,
-        Element: <Careers1 />,
-        Desc: ""
-    },
-    {
-        Route: "partners",
-        Title: `Partners ${c_metaTitleSuffix}`,
-        Element: <Partners1 />,
-        Desc: ""
-    },
-    {
-        Route: "bio",
-        Title: `Bio ${c_metaTitleSuffix}`,
-        Element: <Bio1 />,
-        Desc: ""
-    },
-    {
-        Route: "pricing",
-        Title: `Pricing ${c_metaTitleSuffix}`,
-        Element: <Pricing1 />,
+        Route: "contact",
+        Title: `Contact Us ${c_metaTitleSuffix}`,
+        Element: <Contact1 />,
         Desc: ""
     },
     {

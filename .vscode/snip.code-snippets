@@ -3,7 +3,8 @@
 		"prefix": "starter",
 		"body": [
 			"import React, { useEffect } from 'react'",
-			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveElements, Text, TextArea, TextField, Underline } from '../Elements'",
+			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'",
+			"import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'",
 			"import { FiMenu } from 'react-icons/fi'",
 			"import { c_businessName, c_routes } from '../../Constants'",
 			"import { useLocation, useNavigate } from 'react-router'",
@@ -47,7 +48,9 @@
 	"Box Component": {
 		"prefix": "box",
 		"body": [
-			"<Box comp={${1:}} width=\"${2:}\" height=\"${3:}\" radius=\"${4:}\" paddingV=\"${5:}\" paddingH=\"${6:}\" classes=\"${7:}\"/>"
+			"<Box width=\"${2:}\" height=\"${3:}\" radius=\"${4:}\" paddingV=\"${5:}\" paddingH=\"${6:}\" classes=\"${7:}\">",
+			"${1:}",
+			"</Box>"
 		],
 		"description": "Create a <Box> component with customizable props"
 	},
@@ -61,14 +64,16 @@
 	"Button Component": {
 		"prefix": "button",
 		"body": [
-			"<Button comp={${1:}} color=\"${2:}\" backgroundColor=\"${3:}\" radius=\"${4:}\" func={() => {${5:}}} classes=\"${6:}\"/>"
+			"<Button color=\"${2:}\" backgroundColor=\"${3:}\" radius=\"${4:}\" func={() => {${5:}}} classes=\"${6:}\">",
+			"${1:}",
+			"</Button>"
 		],
 		"description": "Create a <Button> component with customizable props"
 	},
 	"Text Component": {
 		"prefix": "text",
 		"body": [
-			"<Text text=\"${1:}\" fontSize=\"${2:}\" weight=\"${3:}\" color=\"${4:}\" spacing=\"${5:}\" lineHeight=\"${6:}\" classes=\"${7:}\"/>"
+			"<Text text={`${1:}`} fontSize=\"${2:}\" weight=\"${3:}\" color=\"${4:}\" spacing=\"${5:}\" lineHeight=\"${6:}\" classes=\"${7:}\"/>"
 		],
 		"description": "Create a <Text> component with customizable props"
 	},
@@ -96,7 +101,9 @@
 	"Grid Component": {
 		"prefix": "grid",
 		"body": [
-			"<Grid comps={[${1:}]} orientation=\"${2:column/row}\" template=\"${3:}\" gap=\"${4:}\" classes=\"${5:}\" />"
+			"<Grid orientation=\"${2:column/row}\" template=\"${3:}\" gap=\"${4:}\" classes=\"${5:}\">",
+			"${1:}",
+			"</Grid>"
 		],
 		"description": "Create a <Grid> component with customizable props"
 	},
@@ -110,38 +117,49 @@
 	"Border Component": {
 		"prefix": "border",
 		"body": [
-			"<Border comp={${1:}} size=\"${2:}\" color=\"${3:}\" radius=\"${4:}\"/>"
+			"<Border size=\"${2:}\" color=\"${3:}\" radius=\"${4:}\">",
+			"${1:}",
+			"</Border>"
 		],
 		"description": "Create a <Border> component with customizable props"
 	},
 	"Icon Component": {
 		"prefix": "icon",
 		"body": [
-			"<Icon comp={${1:}} size=\"${2:}\" color=\"${3:}\"/>"
+			"<Icon size=\"${2:}\" color=\"${3:}\">",
+			"${1:}",
+			"</Icon>"
 		],
 		"description": "Create an <Icon> component with customizable props"
 	},
 	"Underline Component": {
 		"prefix": "underline",
-		"body": "<Underline comp={${1:}} size=\"${2:}\" color=\"${3:}\" />",
+		"body": [
+			"<Underline size=\"${2:}\" color=\"${3:}\" >",
+			"${1:}",
+			"</Underline>"
+		],
 		"description": "Underline component"
 	},
-	"ResponsiveElements Component": {
+	"ResponsiveWrapper Component": {
 		"prefix": "responsive",
 		"body": [
-			"<ResponsiveElements phone={",
-			"<div>${1:}</div>",
-			"} smalltablet={",
-			"<div>${2:}</div>",
-			"} tablet={",
-			"<div>${3:}</div>",
-			"} smalllaptop={",
-			"<div>${4:}</div>",
-			"} desktop={",
-			"<div>${5:}</div>",
-			"}/>"
+			"<ResponsiveWrapper>",
+			"<PhoneScreen>",
+			"${1:}",
+			"</PhoneScreen>",
+			"<TabletScreen>",
+			"${2:}",
+			"</TabletScreen>",
+			"<LaptopScreen>",
+			"${3:}",
+			"</LaptopScreen>",
+			"<DesktopScreen>",
+			"${4:}",
+			"</DesktopScreen>",
+			"</ResponsiveWrapper>"
 		],
-		"description": "Create a <ResponsiveElements> component with customizable props"
+		"description": "Create a <ResponsiveWrapper> component with customizable props"
 	},
 	"Meta Component": {
 		"prefix": "meta",
@@ -167,21 +185,63 @@
 	"Layer Component": {
 		"prefix": "layer",
 		"body": [
-			"<Layer comp={$1} position=\"$2\" top=\"$3\" left=\"$4\" bottom=\"$5\" right=\"$6\" classes=\"$7\" />"
+			"<Layer position=\"$2\" top=\"$3\" left=\"$4\" bottom=\"$5\" right=\"$6\" classes=\"$7\">",
+			"${1:}",
+			"</Layer>"
 		],
 		"description": "Create a Layer component"
 	},
 	"React Recursive Component": {
 		"prefix": "recursive",
 		"body": [
-		  "<Recursive",
-		  "  comp={$1}",
-		  "  count=\"$2\"",
-		  "  classes=\"$3\"",
-		  "/>"
+			"for (var i = 0; i < ${1:count}; i = i + 1) {",
+			"${2:}",
+			"}"
 		],
 		"description": "Create a Recursive component in React"
-	  }
+	},
+	"Heading 1": {
+		"prefix": "heading1",
+		"body": [
+			"<Heading1 text={`${1}`} />"
+		],
+		"description": "Heading 1 component"
+	},
+	"Heading 2": {
+		"prefix": "heading2",
+		"body": [
+			"<Heading2 text={`${1}`} />"
+		],
+		"description": "Heading 2 component"
+	},
+	"Heading 3": {
+		"prefix": "heading3",
+		"body": [
+			"<Heading3 text={`${1}`} />"
+		],
+		"description": "Heading 3 component"
+	},
+	"Heading 4": {
+		"prefix": "heading4",
+		"body": [
+			"<Heading4 text={`${1}`} />"
+		],
+		"description": "Heading 4 component"
+	},
+	"Heading 5": {
+		"prefix": "heading5",
+		"body": [
+			"<Heading5 text={`${1}`} />"
+		],
+		"description": "Heading 5 component"
+	},
+	"Heading 6": {
+		"prefix": "heading6",
+		"body": [
+			"<Heading6 text={`${1}`} />"
+		],
+		"description": "Heading 6 component"
+	}
 }
 // Place your happy-template workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 

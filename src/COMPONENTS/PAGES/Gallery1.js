@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveElements, Text, TextArea, TextField, Underline } from '../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'
+import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
 import { c_businessName, c_routes } from '../../Constants'
 import { useLocation, useNavigate } from 'react-router'
@@ -17,13 +18,6 @@ export default function Gallery1() {
     const navigate = useNavigate()
     const location = useLocation()
     const currentLocation = location.pathname
-
-    const [chosenPhoto, setChosenPhoto] = useState("")
-    const [showPhoto, setShowPhoto] = useState(false)
-
-    const changePhoto = (setShowPhoto) => {
-        setShowPhoto(true)
-    }
 
     // function openNav() {
     //     if (window.innerWidth < 600) {
@@ -43,329 +37,110 @@ export default function Gallery1() {
     //     document.querySelector(".nav-body").style.width = "0";
     // }
 
+    const [chosenPhoto, setChosenPhoto] = useState("")
+
+    const images = [
+        img1, img2, img3, img4, img5
+    ]
+
     useEffect(() => {
         // closeNav()
-        console.log(showPhoto)
-    }, [showPhoto])
+    }, [])
 
     return (
         <div className='roboto'>
             <Navigation1 />
-            <ResponsiveElements phone={
-                <div className='padding'>
-                    <Text text="Take a closer look..." fontSize="6vh" weight="400" color="" spacing="-2px" lineHeight="1em" classes="" />
-                    <Box comp={<div></div>} width="" height="6vh" radius="" paddingV="" paddingH="" classes="" />
 
-                    <Grid comps={[
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />
-                    ]} orientation="column" template="1fr" gap="1em" classes="" />
-                </div>
-            } smalltablet={
-                <div className='padding'>
-                    <Text text="Take a closer look..." fontSize="6vh" weight="400" color="" spacing="-2px" lineHeight="1em" classes="" />
-                    <Box comp={<div></div>} width="" height="6vh" radius="" paddingV="" paddingH="" classes="" />
+            <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
+                <Heading1 text={`Take a closer look..`} />
 
-                    <Grid comps={[
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="70vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1) }} classes="" />
-                    ]} orientation="column" template="1fr" gap="1em" classes="" />
-                </div>
-            } tablet={
-                <div className='padding'>
-                    <Text text="Take a closer look..." fontSize="6vh" weight="400" color="" spacing="-2px" lineHeight="1em" classes="" />
-                    <Box comp={<div></div>} width="" height="6vh" radius="" paddingV="" paddingH="" classes="" />
+                <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
+                </Box>
 
-                    <Grid comps={[
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img2); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img3); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img4); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img5); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img2); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img3); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img4); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img5); setShowPhoto(true) }} classes="" />
-                    ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
+                <ResponsiveWrapper>
+                    <PhoneScreen>
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
 
+                            {
+                                images.map((img, i) => {
+                                    return (
+                                        <Button color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img) }} classes="">
+                                            <Image src={img} alt="" radius="" classes="" />
+                                        </Button>
+                                    )
+                                })
+                            }
 
-                </div>
-            } smalllaptop={
-                <div className='padding'>
-                    <Text text="Take a closer look..." fontSize="6vh" weight="400" color="" spacing="-2px" lineHeight="1em" classes="" />
-                    <Box comp={<div></div>} width="" height="6vh" radius="" paddingV="" paddingH="" classes="" />
+                        </Grid>
+                    </PhoneScreen>
+                    <TabletScreen>
+                        <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
+                            {
+                                images.map((img, i) => {
+                                    return (
+                                        <Button color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img) }} classes="">
+                                            <Box width="" height="40vh" radius="" paddingV="" paddingH="" classes="">
+                                                <Image src={img} alt="" radius="" classes="fill" />
+                                            </Box>
+                                        </Button>
+                                    )
+                                })
+                            }
+                        </Grid>
+                    </TabletScreen>
+                    <LaptopScreen>
+                        <Grid orientation="column" template="1fr 1fr 1fr" gap="1em" classes="">
+                            {
+                                images.map((img, i) => {
+                                    return (
+                                        <Button color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img) }} classes="">
+                                            <Box width="" height="35vh" radius="" paddingV="" paddingH="" classes="">
+                                                <Image src={img} alt="" radius="" classes="fill" />
+                                            </Box>
+                                        </Button>
+                                    )
+                                })
+                            }
+                        </Grid>
+                    </LaptopScreen>
+                    <DesktopScreen>
+                        <Grid orientation="column" template="repeat(4, 1fr)" gap="1em" classes="">
+                            {
+                                images.map((img, i) => {
+                                    return (
+                                        <Button color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img) }} classes="">
+                                            <Box width="" height="40vh" radius="" paddingV="" paddingH="" classes="">
+                                                <Image src={img} alt="" radius="" classes="fill" />
+                                            </Box>
+                                        </Button>
+                                    )
+                                })
+                            }
+                        </Grid>
+                    </DesktopScreen>
+                </ResponsiveWrapper>
 
-                    <Grid comps={[
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img2); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img3); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img4); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img5); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img2); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img3); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img4); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="40vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img5); setShowPhoto(true) }} classes="" />
-                    ]} orientation="column" template="1fr 1fr 1fr" gap="1em" classes="" />
+            </Box>
 
-
-                </div>
-            } desktop={
-                <div className='padding'>
-                    <Text text="Take a closer look..." fontSize="6vh" weight="400" color="" spacing="-2px" lineHeight="1em" classes="" />
-                    <Box comp={<div></div>} width="" height="6vh" radius="" paddingV="" paddingH="" classes="" />
-
-                    <Grid comps={[
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img2); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img3); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img4); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img5); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img1} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img1); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img2} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img2); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img3} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img3); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img4} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img4); setShowPhoto(true) }} classes="" />,
-                        <Button comp={
-                            <Box comp={
-                                <Image src={img5} alt="" radius="" classes="fill" />
-                            } width="" height="50vh" radius="" paddingV="" paddingH="" classes="" />
-                        } color="" backgroundColor="" radius="" func={() => { setChosenPhoto(img5); setShowPhoto(true) }} classes="" />
-                    ]} orientation="column" template="1fr 1fr 1fr" gap="1em" classes="" />
-
-
-                </div>
-            } />
-
+            {/* PHOTO */}
             {
-                showPhoto ?
-                    <Layer comp={
-                        <div>
-                            <Layer comp={
-                                <Button comp={
-                                    <Icon comp={<HiXMark />} size="2em" color="white"/>
-                                } color="" backgroundColor="" radius="" func={() => {setShowPhoto(false)}} classes=""/>
-                            } position="fixed" top="1em" left="" bottom="" right="1em" classes="" />
-                            <Box comp={<div></div>} width="" height="8vh" radius="" paddingV="" paddingH="" classes=""/>
-                            <Box comp={
-                                <Box comp={
-                                    <Image src={chosenPhoto} alt="" radius="" classes="fit" />
-                                } width="fit-content" height="80vh" radius="" paddingV="0" paddingH="0" classes="v-center center" />
-                            } width="100vw" height="100vh" radius="" paddingV="" paddingH="" classes="" />
-                        </div>
-                    } position="fixed" top="0" left="0" bottom="0" right="0" classes="bg-transparent" /> : <div>hi</div>
+                chosenPhoto != "" ?
+                    <Layer position="fixed" top="0" left="0" bottom="0" right="0" classes="bg-transparent">
+                        <Layer position="absolute" top="1em" left="" bottom="" right="1em" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => {setChosenPhoto("")}} classes="">
+                            <Icon size="2.5em" color="white">
+                                <HiXMark />
+                            </Icon>
+                            </Button>
+                        </Layer>
+                        <Box width="100vw" height="100vh" radius="" paddingV="" paddingH="" classes="">
+                            <Box width="" height="5vh" radius="" paddingV="" paddingH="" classes="">
+                            </Box>
+                            <Box width="%" height="90vh" radius="" paddingV="2em" paddingH="2em" classes="">
+                                <Image src={chosenPhoto} alt="" radius="" classes="fit" />
+                            </Box>
+                        </Box>
+                    </Layer> : <div>hi</div>
             }
             <Footer1 />
         </div>

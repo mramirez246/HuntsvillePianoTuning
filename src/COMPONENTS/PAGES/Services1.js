@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, Recursive, ResponsiveElements, Text, TextArea, TextField, Underline } from '../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'
+import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
 import { c_businessName, c_routes } from '../../Constants'
 import { useLocation, useNavigate } from 'react-router'
 import Navigation1 from './UTILITIES/Navigation1'
 import Footer1 from './UTILITIES/Footer1'
 // 
-import img1 from '../../PHOTOS/stock5.jpg'
+import img1 from '../../PHOTOS/stock3.jpg'
 
 export default function Services1() {
     const navigate = useNavigate()
@@ -31,6 +32,41 @@ export default function Services1() {
     //     document.querySelector(".nav-body").style.width = "0";
     // }
 
+    const thing1 = "The services we offer revolve around the bagel. Without it, there is everything in nothing."
+
+    const services = [
+        {
+            Name: "Bagel Service",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. ",
+            Image: img1
+        },
+        {
+            Name: "Bagel Service",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. ",
+            Image: img1
+        },
+        {
+            Name: "Bagel Service",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. ",
+            Image: img1
+        },
+        {
+            Name: "Bagel Service",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. ",
+            Image: img1
+        },
+        {
+            Name: "Bagel Service",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. ",
+            Image: img1
+        },
+        {
+            Name: "Bagel Service",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. ",
+            Image: img1
+        },
+    ]
+
     useEffect(() => {
         // closeNav()
     }, [])
@@ -38,393 +74,89 @@ export default function Services1() {
     return (
         <div className='roboto'>
             <Navigation1 />
-            <ResponsiveElements phone={
-                <div>
-                    <div className='padding'>
-                        <Text text="Services" fontSize="8vh" weight="500" color="" spacing="" lineHeight="" classes="" />
-                        <Image src={img1} alt="" radius="" classes="" />
-                        <Box comp={
-                            <Text text="Here's what we can do..." fontSize="1.6em" weight="500" color="" spacing="" lineHeight="0.8em" classes="text-right" />
-                        } width="" height="" radius="" paddingV="1em" paddingH="1em" classes="" />
-                        <Box comp={<hr />} width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    </div>
 
-                    <Grid comps={[
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>
-                    ]} orientation="column" template="1fr" gap="1em" classes="" />
+            <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
+                <Heading1 text={`Services`} />
+                <Text text={`${thing1}`} fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
 
-                </div>
-            } smalltablet={
-                <div>
-                    <div className='padding'>
-                        <Text text="Services" fontSize="8vh" weight="500" color="" spacing="" lineHeight="" classes="" />
-                        <Image src={img1} alt="" radius="" classes="" />
-                        <Box comp={
-                            <Text text="Here's what we can do..." fontSize="2em" weight="500" color="" spacing="" lineHeight="0.8em" classes="text-right" />
-                        } width="" height="" radius="" paddingV="1em" paddingH="1em" classes="" />
-                        <Box comp={<hr />} width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    </div>
-                    <Grid comps={[
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>
-                    ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
+                <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
 
-                </div>
-            } tablet={
-                <div>
-                    <div className='padding'>
-                        <Text text="Services" fontSize="8vh" weight="500" color="" spacing="" lineHeight="" classes="" />
-                        <Image src={img1} alt="" radius="" classes="" />
-                        <Box comp={
-                            <Text text="Here's what we can do..." fontSize="2em" weight="500" color="" spacing="" lineHeight="1em" classes="text-right" />
-                        } width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                        <Box comp={<hr />} width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    </div>
+                </Box>
 
-                    <Grid comps={[
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>
-                    ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
-                </div>
-            } smalllaptop={
-                <div>
-                    <div className='padding'>
-                        <Text text="Services" fontSize="8vh" weight="500" color="" spacing="" lineHeight="" classes="" />
-                        <Image src={img1} alt="" radius="" classes="" />
-                        <Box comp={
-                            <Text text="Here's what we can do..." fontSize="2.5em" weight="500" color="" spacing="" lineHeight="0.8em" classes="text-right" />
-                        } width="" height="" radius="" paddingV="1em" paddingH="0" classes=""/>
-                        <Box comp={<hr />} width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    </div>
-                    <Grid comps={[
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>
-                    ]} orientation="column" template="1fr 1fr" gap="1em" classes="" />
+                <ResponsiveWrapper>
+                <PhoneScreen>
+                <Grid orientation="column" template="1fr" gap="1.2em" classes="">
+                    {
+                        services.map((service, i) => {
+                            return (
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                        <Image src={service.Image} alt="" radius="" classes="" />
+                                    </Box>
+                                    <Text text={`${service.Name}`} fontSize="1.6em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Text text={`${service.Desc}`} fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                </Box>
+                            )
+                        })
+                    }
+                </Grid>
+                </PhoneScreen>
+                <TabletScreen>
+                <Grid orientation="column" template="1fr 1fr" gap="1.2em" classes="">
+                    {
+                        services.map((service, i) => {
+                            return (
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                        <Image src={service.Image} alt="" radius="" classes="" />
+                                    </Box>
+                                    <Text text={`${service.Name}`} fontSize="1.6em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Text text={`${service.Desc}`} fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                </Box>
+                            )
+                        })
+                    }
+                </Grid>
+                </TabletScreen>
+                <LaptopScreen>
+                <Grid orientation="column" template="1fr 1fr" gap="1.2em" classes="">
+                    {
+                        services.map((service, i) => {
+                            return (
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                        <Image src={service.Image} alt="" radius="" classes="" />
+                                    </Box>
+                                    <Text text={`${service.Name}`} fontSize="1.6em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Text text={`${service.Desc}`} fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                </Box>
+                            )
+                        })
+                    }
+                </Grid>
+                </LaptopScreen>
+                <DesktopScreen>
+                <Box width="85vw" height="" radius="" paddingV="4vh" paddingH="0" classes="center">
+                <Grid orientation="column" template="1fr 1fr 1fr" gap="1.5em" classes="">
+                    {
+                        services.map((service, i) => {
+                            return (
+                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                    <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                        <Image src={service.Image} alt="" radius="" classes="" />
+                                    </Box>
+                                    <Text text={`${service.Name}`} fontSize="1.6em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    <Text text={`${service.Desc}`} fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                </Box>
+                            )
+                        })
+                    }
+                </Grid>
+                </Box>
+                </DesktopScreen>
+                </ResponsiveWrapper>
+            </Box>
 
-                </div>
-            } desktop={
-                <div>
-                    <div className='padding'>
-                        <Text text="Services" fontSize="8vh" weight="500" color="" spacing="" lineHeight="" classes="" />
-                        <Image src={img1} alt="" radius="" classes="" />
-                        <Box comp={
-                            <Text text="Here's what we can do..." fontSize="2.8em" weight="500" color="" spacing="" lineHeight="0.8em" classes="text-right" />
-                        } width="" height="" radius="" paddingV="1.5em" paddingH="0" classes=""/>
-                        <Box comp={<hr />} width="" height="" radius="" paddingV="1em" paddingH="0" classes="" />
-                    </div>
-                    <Grid comps={[
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>,
-                        <div className='vertical gap padding'>
-                            <Box comp={
-                                <div className='vertical gap'>
-                                    <Text text="Everything Bagel Service" fontSize="1.5em" weight="600" color="" spacing="" lineHeight="" classes="" />
-                                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra." fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </div>
-                            } width="" height="" radius="" paddingV="" paddingH="" classes="" />
-                            <Image src={img1} alt="" radius="" classes="" />
-                        </div>
-                    ]} orientation="column" template="1fr 1fr 1fr" gap="1em" classes="" />
-
-                </div>
-            } />
             <Footer1 />
         </div>
     )
