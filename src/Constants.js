@@ -17,6 +17,8 @@ import Portfolio1 from './COMPONENTS/PAGES/Portfolio1'
 import Awards1 from './COMPONENTS/PAGES/Awards1'
 import Coupons1 from './COMPONENTS/PAGES/Coupons1'
 import MailingList1 from './COMPONENTS/PAGES/MailingList1'
+import Team1 from './COMPONENTS/PAGES/Team1'
+import Locations1 from './COMPONENTS/PAGES/Locations1'
 
 // BUSINESS INFO
 export const c_businessName = "Happy Code Dev"
@@ -125,6 +127,18 @@ export const c_routes = [
         Route: "mailinglist",
         Title: `Mailing List ${c_metaTitleSuffix}`,
         Element: <MailingList1 />,
+        Desc: ""
+    },
+    {
+        Route: "team",
+        Title: `Team ${c_metaTitleSuffix}`,
+        Element: <Team1 />,
+        Desc: ""
+    },
+    {
+        Route: "locations",
+        Title: `Locations ${c_metaTitleSuffix}`,
+        Element: <Locations1 />,
         Desc: ""
     }
 ]

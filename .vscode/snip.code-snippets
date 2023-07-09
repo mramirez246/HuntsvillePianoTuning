@@ -3,7 +3,7 @@
 		"prefix": "starter",
 		"body": [
 			"import React, { useEffect } from 'react'",
-			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'",
+			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Spacer, Text, TextArea, TextField, Underline } from '../Elements'",
 			"import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'",
 			"import { FiMenu } from 'react-icons/fi'",
 			"import { c_businessName, c_routes } from '../../Constants'",
@@ -241,6 +241,20 @@
 			"<Heading6 text={`${1}`} />"
 		],
 		"description": "Heading 6 component"
+	},
+	"Spacer Component": {
+		"prefix": "spacer",
+		"body": [
+			"<Spacer height={`${1}`} />"
+		],
+		"description": "Spacer component"
+	},
+	"Map Component": {
+		"prefix": "map",
+		"body": [
+			"<Map search={`${1}`} />"
+		],
+		"description": "Map component"
 	}
 }
 // Place your happy-template workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 

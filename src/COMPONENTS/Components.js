@@ -109,3 +109,10 @@ export const Heading6 = ({ text }) => {
         </ResponsiveWrapper>
     )
 }
+
+export const Map = ({ search }) => {
+    return (
+        <iframe style={{ height: "100%", width: "100%" }} id="gmap_canvas" src={`https://maps.google.com/maps?q=${search.replaceAll(" ","%20")}&t=&z=15&ie=UTF8&iwloc=&output=embed`} frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+    </iframe>
+    )
+}

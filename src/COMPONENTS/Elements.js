@@ -252,3 +252,9 @@ export const Layer = ({ children, position, top, left, bottom, right, classes })
     )
 }
 
+export const Spacer = ({ height }) => {
+    return (
+        <div style={{ height: `${height}` }}></div>
+    )
+}
+

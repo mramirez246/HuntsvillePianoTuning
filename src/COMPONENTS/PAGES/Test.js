@@ -7,7 +7,7 @@ export default function Test() {
     const bio = "Here is a thing of a thing \n and abother thing that bothers me."
     return (
         <div className='roboto'>
-            <Heading1 text={`This is a thing`} />
+            
         </div>
     )
 }
