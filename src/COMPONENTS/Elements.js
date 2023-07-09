@@ -258,3 +258,10 @@ export const Spacer = ({ height }) => {
     )
 }
 
+export const Divider = ({ size, color }) => {
+    return (
+        <hr style={{ border: 0, border: `${size} solid ${color}`, width: "100%" }} />
+    )
+}
+
+
