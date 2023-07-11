@@ -94,28 +94,36 @@ export default function Contact1() {
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
-                                    <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                    <Box width="100vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                    </Box>
                                 </Border>
                             </Box>
 
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
-                                    <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                    <Box width="100vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                    </Box>
                                 </Border>
                             </Box>
 
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
-                                    <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                    <Box width="100vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                    </Box>
                                 </Border>
                             </Box>
 
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
+                                    <Box width="100vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                                     <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                    </Box>
                                 </Border>
                             </Box>
                             <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
@@ -162,32 +170,40 @@ export default function Contact1() {
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
-                                    <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                    <Box width="400px" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                    </Box>
                                 </Border>
                             </Box>
 
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
-                                    <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                    <Box width="400px" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                    </Box>
                                 </Border>
                             </Box>
 
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
-                                    <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                    <Box width="400px" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                    </Box>
                                 </Border>
                             </Box>
 
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
                                 <Border size="1px" color="" radius="">
+                                    <Box width="400px" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                                     <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                    </Box>
                                 </Border>
                             </Box>
-                            <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
-                                <Box width="100%" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="">
+                                <Box width="400px" height="" radius="" paddingV="0.8em" paddingH="2em" classes="dark">
                                     <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
                                 </Box>
                             </Button>
@@ -228,111 +244,127 @@ export default function Contact1() {
 
                             {/* FORM */}
                             <Box width="" height="" radius="" paddingV="1em" paddingH="0" classes="vertical gap">
-                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="50vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                                         <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
-                                    </Border>
-                                </Box>
-
-                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
-                                        <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
-                                    </Border>
-                                </Box>
-
-                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
-                                        <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
-                                    </Border>
-                                </Box>
-
-                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
-                                        <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
-                                    </Border>
-                                </Box>
-                                <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
-                                    <Box width="100%" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
-                                        <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
                                     </Box>
-                                </Button>
+                                </Border>
                             </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="50vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                    </Box>
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="50vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                    </Box>
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="50vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                    <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                    </Box>
+                                </Border>
+                            </Box>
+                            <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
+                                <Box width="50vw" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
+                                    <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
+                                </Box>
+                            </Button>
+                        </Box>
                         </Grid>
                     </LaptopScreen>
                     <DesktopScreen>
                         <Box width="80vw" height="" radius="" paddingV="" paddingH="" classes="center">
-                        <Grid orientation="column" template="1fr 1fr" gap="1em" classes="padding">
-                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
-                                <Text text={`${c_businessPhone}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
-
-                                <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
-                                </Box>
-
-                                <Text text={`${c_businessAddress}`} fontSize="1.4em" weight="500" color="" spacing="-1px" lineHeight="" classes="" />
-                                <Box width="" height="2vh" radius="" paddingV="" paddingH="" classes="">
-
-                                </Box>
-                                {/* Socials */}
-                                <div className='horizontal gap'>
-                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                        <Icon size="1.8em" color="#D0407B">
-                                            <BsInstagram />
-                                        </Icon>
-                                    </Button>
-                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                        <Icon size="1.8em" color="#1082E5">
-                                            <BsFacebook />
-                                        </Icon>
-                                    </Button>
-                                    <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                        <Icon size="1.8em" color="#1D99E5">
-                                            <BsTwitter />
-                                        </Icon>
-                                    </Button>
-                                </div>
-                            </Box>
-
-                            {/* FORM */}
-                            <Box width="" height="" radius="" paddingV="1em" paddingH="0" classes="vertical gap">
+                            <Grid orientation="column" template="1fr 1fr" gap="1em" classes="padding">
                                 <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
-                                        <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
-                                    </Border>
-                                </Box>
+                                    <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
+                                    <Text text={`${c_businessPhone}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
 
-                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
-                                        <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
-                                    </Border>
-                                </Box>
-
-                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
-                                        <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
-                                    </Border>
-                                </Box>
-
-                                <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
-                                    <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
-                                    <Border size="1px" color="" radius="">
-                                        <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
-                                    </Border>
-                                </Box>
-                                <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
-                                    <Box width="100%" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
-                                        <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
+                                    <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
                                     </Box>
-                                </Button>
+
+                                    <Text text={`${c_businessAddress}`} fontSize="1.4em" weight="500" color="" spacing="-1px" lineHeight="" classes="" />
+                                    <Box width="" height="2vh" radius="" paddingV="" paddingH="" classes="">
+
+                                    </Box>
+                                    {/* Socials */}
+                                    <div className='horizontal gap'>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.8em" color="#D0407B">
+                                                <BsInstagram />
+                                            </Icon>
+                                        </Button>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.8em" color="#1082E5">
+                                                <BsFacebook />
+                                            </Icon>
+                                        </Button>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.8em" color="#1D99E5">
+                                                <BsTwitter />
+                                            </Icon>
+                                        </Button>
+                                    </div>
+                                </Box>
+
+                                {/* FORM */}
+                                <Box width="" height="" radius="" paddingV="1em" paddingH="0" classes="vertical gap">
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Name`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="40vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <TextField placeholder="Full Name" fontSize="1em" radius="" padding="0.8em" id="tbName" classes="" />
+                                    </Box>
+                                </Border>
                             </Box>
-                        </Grid>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Email`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="40vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <TextField placeholder="Email" fontSize="1em" radius="" padding="0.8em" id="tbEmail" classes="" />
+                                    </Box>
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Subject`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="40vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                        <DropDown options={["Message", "Question", "Concern"]} fontSize="1em" padding="0.8em" radius="" classes="" id="ddSubject" />
+                                    </Box>
+                                </Border>
+                            </Box>
+
+                            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+                                <Text text={`Message`} fontSize="1.1em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                <Border size="1px" color="" radius="">
+                                    <Box width="40vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                    <TextArea placeholder="Type message here..." fontSize="1em" radius="" padding="0.8em" id="taMessage" minHeight="125px" classes="roboto" />
+                                    </Box>
+                                </Border>
+                            </Box>
+                            <Button color="" backgroundColor="" radius="" func={() => { sendContactForm() }} classes="dark">
+                                <Box width="40vw" height="" radius="" paddingV="0.8em" paddingH="2em" classes="">
+                                    <Text text={`Submit`} fontSize="1em" weight="400" color="" spacing="" lineHeight="" classes="text-center" />
+                                </Box>
+                            </Button>
+                        </Box>
+                            </Grid>
                         </Box>
                     </DesktopScreen>
                 </ResponsiveWrapper>

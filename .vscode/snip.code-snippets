@@ -48,7 +48,7 @@
 	"Box Component": {
 		"prefix": "box",
 		"body": [
-			"<Box width=\"${2:}\" height=\"${3:}\" radius=\"${4:}\" paddingV=\"${5:}\" paddingH=\"${6:}\" classes=\"${7:}\">",
+			"<Box width=\"${2:}\" height=\"${3:}\" radius=\"${4:}\" backgroundColor=\"${5:}\" paddingV=\"${6:}\" paddingH=\"${7:}\" classes=\"${8:}\">",
 			"${1:}",
 			"</Box>"
 		],

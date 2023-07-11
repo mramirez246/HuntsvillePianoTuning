@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 
 // VARIABLES
 $padding: 1em;
@@ -120,7 +123,7 @@ $padding: 1em;
 }
 
 .full-height {
-    height: 100%
+    height: 100vh;
 }
 
 .center {
@@ -217,13 +220,26 @@ $padding: 1em;
     font-family: 'Rubik', sans-serif;
 }
 
+.bacasime {
+    font-family: 'Bacasime Antique', serif;
+}
+
+.libre {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.nanum {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
 // #endregion
 // #region MISC
 .underline {
     border-bottom: 1px solid black;
 }
+
 .bg-transparent {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 // #endregion

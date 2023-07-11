@@ -83,6 +83,7 @@ export default function Home1() {
                 <hr />
             </Box>
 
+            <Box width="" height="" radius="" backgroundColor="" paddingV="1.5em" paddingH="1.5em" classes="">
             <ResponsiveWrapper>
                 <PhoneScreen>
                     <Grid orientation="row" template="1fr" gap="1em" classes="">
@@ -115,6 +116,7 @@ export default function Home1() {
                     </Box>
                 </DesktopScreen>
             </ResponsiveWrapper>
+            </Box>
             <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
 
             </Box>

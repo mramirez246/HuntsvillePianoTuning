@@ -4,9 +4,9 @@ import { BsChevronDown } from 'react-icons/bs'
 import { c_mainURL } from "../Constants";
 
 
-export const Box = ({ width, height, radius, paddingV, paddingH, classes, children }) => {
+export const Box = ({ width, height, radius, backgroundColor, paddingV, paddingH, classes, children }) => {
     return (
-        <div className={`${classes}`} style={{ width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}` }}>
+        <div className={`${classes}`} style={{ width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}`, backgroundColor: `${backgroundColor}` }}>
             {children}
         </div>
     )
@@ -126,7 +126,7 @@ export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, key
 
 export const Border = ({ size, color, radius, children }) => {
     return (
-        <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: 'fit-content' }}>
+        <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: 'fit-content'}}>
             {children}
         </div>
     )
@@ -142,7 +142,7 @@ export const Icon = ({ size, color, children }) => {
 
 export const Underline = ({ size, color, children }) => {
     return (
-        <div style={{ borderBottom: `${size} solid ${color}` }}>
+        <div style={{ borderBottom: `${size} solid ${color}`, width: "fit-content" }}>
             {children}
         </div>
     )
