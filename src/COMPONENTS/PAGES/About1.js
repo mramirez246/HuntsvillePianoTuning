@@ -77,6 +77,7 @@ export default function About1() {
                         <Box width="90vw" height="" radius="" paddingV="" paddingH="" classes="">
                             <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
                                 <Heading5 text={`${heading2}`} />
+                                
                                 <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
                             </Grid>
                         </Box>
@@ -84,15 +85,21 @@ export default function About1() {
                         <Box width="90vw" height="" radius="" paddingV="" paddingH="" classes="">
                             <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
                                 <Heading5 text={`${heading2}`} />
+                                
                                 <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
                             </Grid>
                         </Box>
                     </LaptopScreen>
                     <DesktopScreen>
-                        
-                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="">
-                            <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
+                       
+                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Heading5 text={`${heading1}`} />
+                                {/* <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" /> */}
+                            </Grid>
+                            <Spacer height={`10vh`} />
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                {/* <Heading5 text={`${heading1}`} /> */}
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
                             </Grid>
                         </Box>
