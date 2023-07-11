@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline, Spacer } from '../Elements'
 import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
 import { c_businessName, c_routes } from '../../Constants'
@@ -56,15 +56,32 @@ export default function About1() {
                             <Heading5 text={`${heading1}`} />
                             <Text text={`${text1}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
                         </Grid>
+                        <Spacer height={`10vh`} />
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                            <Heading5 text={`${heading2}`} />
+                            <Text text={`${text2}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                        </Grid>
                     </PhoneScreen>
                     <TabletScreen>
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
                             <Heading5 text={`${heading1}`} />
                             <Text text={`${text1}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
                         </Grid>
+                        <Spacer height={`10vh`} />
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                            <Heading5 text={`${heading2}`} />
+                            <Text text={`${text2}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
+                        </Grid>
                     </TabletScreen>
                     <LaptopScreen>
-                        <Box width="80vw" height="" radius="" paddingV="" paddingH="" classes="">
+                        <Box width="90vw" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
+                                <Heading5 text={`${heading2}`} />
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                            </Grid>
+                        </Box>
+                        <Spacer height={`10vh`} />
+                        <Box width="90vw" height="" radius="" paddingV="" paddingH="" classes="">
                             <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
                                 <Heading5 text={`${heading2}`} />
                                 <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
@@ -72,39 +89,14 @@ export default function About1() {
                         </Box>
                     </LaptopScreen>
                     <DesktopScreen>
+                        
                         <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="">
                             <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
                                 <Heading5 text={`${heading1}`} />
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
                             </Grid>
                         </Box>
-                    </DesktopScreen>
-                </ResponsiveWrapper>
-                <Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="">
-
-                </Box>
-                <ResponsiveWrapper>
-                    <PhoneScreen>
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
-                            <Heading5 text={`${heading2}`} />
-                            <Text text={`${text2}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        </Grid>
-                    </PhoneScreen>
-                    <TabletScreen>
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
-                            <Heading5 text={`${heading2}`} />
-                            <Text text={`${text2}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        </Grid>
-                    </TabletScreen>
-                    <LaptopScreen>
-                        <Box width="80vw" height="" radius="" paddingV="" paddingH="" classes="">
-                            <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
-                                <Heading5 text={`${heading2}`} />
-                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                            </Grid>
-                        </Box>
-                    </LaptopScreen>
-                    <DesktopScreen>
+                        <Spacer height={`10vh`} />
                         <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="">
                             <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
                                 <Heading5 text={`${heading2}`} />
@@ -113,6 +105,8 @@ export default function About1() {
                         </Box>
                     </DesktopScreen>
                 </ResponsiveWrapper>
+                
+                
                 <Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="">
 
                 </Box>
