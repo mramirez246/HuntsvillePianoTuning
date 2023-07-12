@@ -68,13 +68,50 @@ export default function Home1() {
                         <Image src={img1} alt="" radius="" classes="padding" />
                     </Grid>
                 </LaptopScreen>
+
+                {/* testing
+                testing
+                testing
+                testing */}
+
                 <DesktopScreen>
-                <Grid orientation="column" template="2fr 3fr" gap="1em" classes="">
+                <Grid orientation="column/row" template="1fr" gap="1em" classes="center">
                         <div className='vertical v-separate padding'>
-                            <Heading1 text={`${c_businessName}`} />
-                            <Text text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. `} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Text text={`${c_businessName}`} fontSize="10em" weight="500" color="" spacing="" lineHeight="" classes="all-caps"/>
+                            </Box>
+                            <Box width="" height="7vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                            
+                            </Box>
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="2em" paddingH="" classes="">
+                            <Text text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+
+                            </Box>
                         </div>
+                        
+                        <Box width="full-width" height="" radius="" paddingV="2vh" paddingH="0" classes="center">                        
+                            <Grid orientation="column" template="1fr 1fr 1fr 1fr" gap="11em" classes="">
+                                <Text text={`Everything Bagel`} fontSize="1.6em" weight="" color="" spacing="" lineHeight="" classes=""/>
+                                
+                        <Text text={`Everything Bagel`} fontSize="1.6em" weight="" color="" spacing="" lineHeight="" classes=""/>
+                        <Text text={`Everything Bagel`} fontSize="1.6em" weight="" color="" spacing="" lineHeight="" classes=""/>
+                        <Text text={`Everything Bagel`} fontSize="1.6em" weight="" color="" spacing="" lineHeight="" classes=""/>
+                        </Grid>
+                        </Box>
+
+                        <Box width="" height="" radius="" paddingV="2vh" paddingH="3em" classes="center">                        
+                            <Grid orientation="column" template="1fr 1fr 1fr 1fr" gap="7em" classes="center">
+                            <Image src={img1} alt="" radius="" classes=""/>  
+                            <Image src={img1} alt="" radius="" classes=""/>                        
+                            <Image src={img1} alt="" radius="" classes=""/>                        
+                            <Image src={img1} alt="" radius="" classes=""/>                        
+                            </Grid>
+                        </Box>
+                        
+                        {/* <Box width="" height="50vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                         <Image src={img1} alt="" radius="" classes="padding" />
+
+                        </Box> */}
                     </Grid>
                 </DesktopScreen>
             </ResponsiveWrapper>
@@ -107,6 +144,12 @@ export default function Home1() {
                         </Grid>
                     </Box>
                 </LaptopScreen>
+
+                {/* testing
+                testing 
+                testing
+                testing */}
+
                 <DesktopScreen>
                     <Box width="80vw" height="" radius="" paddingV="2em" paddingH="0" classes="center">
                         <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">

@@ -46,56 +46,102 @@ export default function About1() {
         <div className='roboto'>
             <Navigation1 />
             <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
-                <Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="center">
+                <Box width="" height="10vh" radius="" paddingV="" paddingH="2em" classes="center">
                 <Text text={`About`} fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="all-caps"/>
+                </Box>
+                <hr/>
+
+                <Box width="" height="7vh" radius="" paddingV="" paddingH="" classes="">
+                
                 </Box>
 
                 <ResponsiveWrapper>
                     <PhoneScreen>
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
-                            <Heading5 text={`${heading1}`} />
-                            <Text text={`${text1}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        </Grid>
-                        <Spacer height={`10vh`} />
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
-                            <Heading5 text={`${heading2}`} />
-                            <Text text={`${text2}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        </Grid>
-                    </PhoneScreen>
-                    <TabletScreen>
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
-                            <Heading5 text={`${heading1}`} />
-                            <Text text={`${text1}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        </Grid>
-                        <Spacer height={`10vh`} />
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
-                            <Heading5 text={`${heading2}`} />
-                            <Text text={`${text2}`} fontSize="" weight="300" color="" spacing="" lineHeight="" classes="" />
-                        </Grid>
-                    </TabletScreen>
-                    <LaptopScreen>
-                        <Box width="90vw" height="" radius="" paddingV="" paddingH="" classes="">
-                            <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
-                                <Heading5 text={`${heading2}`} />
-                                
-                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading1}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1em" classes="" />
                             </Grid>
                         </Box>
-                        <Spacer height={`10vh`} />
-                        <Box width="90vw" height="" radius="" paddingV="" paddingH="" classes="">
-                            <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
+                       
+                        <Spacer height={`12vh`} />
+                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                                 <Heading5 text={`${heading2}`} />
-                                
-                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1em" classes="" />
+                            </Grid>
+                        </Box>
+                    </PhoneScreen>
+
+                    <TabletScreen>
+                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading1}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box>
+                       
+                        <Spacer height={`12vh`} />
+                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading2}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box>
+                    </TabletScreen>
+
+                    <LaptopScreen>
+                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading1}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box>
+                       
+                        <Spacer height={`12vh`} />
+                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading2}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
                     </LaptopScreen>
-
-
-                    {/* testing here */}
-                    {/* testing here */}
-                    {/* testing here */}
-                    {/* testing here */}
 
                     <DesktopScreen>
                         <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
@@ -123,21 +169,141 @@ export default function About1() {
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
-                            {/* <Grid orientation="column" template="1fr" gap="1em" classes="">
-                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading2}`} />
-                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                                </Box>
-                            </Grid> */}
                         </Box>
                     </DesktopScreen>
                 </ResponsiveWrapper>
                 
                 
                 <Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="">
-
+                
                 </Box>
+                <Box width="" height="50vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                 <Image src={img1} alt="" radius="" classes="" />
+                </Box>
+{/* section off  */}
+{/* section off  */}
+{/* section off  */}
+{/* section off  */}
+<Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="">
+                
+                </Box>
+                <ResponsiveWrapper>
+                    <PhoneScreen>
+                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading1}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1em" classes="" />
+                            </Grid>
+                        </Box>
+                       
+                        <Spacer height={`12vh`} />
+                        {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading2}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1em" classes="" />
+                            </Grid>
+                        </Box> */}
+                    </PhoneScreen>
+
+                    <TabletScreen>
+                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading1}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box>
+                       
+                        <Spacer height={`12vh`} />
+                        {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading2}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box> */}
+                    </TabletScreen>
+
+                    <LaptopScreen>
+                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading1}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box>
+                       
+                        <Spacer height={`12vh`} />
+                        {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading2}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box> */}
+                    </LaptopScreen>
+
+                    <DesktopScreen>
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading1}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box>
+                       
+                        <Spacer height={`12vh`} />
+                        {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading2}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                        </Box> */}
+                    </DesktopScreen>
+                </ResponsiveWrapper>
             </Box>
             <Footer1 />
         </div>
