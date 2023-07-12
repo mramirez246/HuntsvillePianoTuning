@@ -46,8 +46,8 @@ export default function About1() {
         <div className='roboto'>
             <Navigation1 />
             <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
-                <Heading1 text={`About`} />
-                <Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="">
+                <Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="center">
+                <Text text={`About`} fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="all-caps"/>
                 </Box>
 
                 <ResponsiveWrapper>
@@ -90,25 +90,45 @@ export default function About1() {
                             </Grid>
                         </Box>
                     </LaptopScreen>
+
+
+                    {/* testing here */}
+                    {/* testing here */}
+                    {/* testing here */}
+                    {/* testing here */}
+
                     <DesktopScreen>
-                       
-                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
                                 <Heading5 text={`${heading1}`} />
-                                {/* <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" /> */}
+                                </Box>
                             </Grid>
-                            <Spacer height={`10vh`} />
+                            <Spacer height={`2vh`} />
+
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
-                                {/* <Heading5 text={`${heading1}`} /> */}
-                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
-                        <Spacer height={`10vh`} />
-                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="">
-                            <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
+                       
+                        <Spacer height={`12vh`} />
+                        <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                                <Heading5 text={`${heading2}`} />
+                                </Box>
+                            </Grid>
+                            <Spacer height={`2vh`} />
+
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
+                            </Grid>
+                            {/* <Grid orientation="column" template="1fr" gap="1em" classes="">
+                                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                                 <Heading5 text={`${heading2}`} />
                                 <Text text={`${text2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                            </Grid>
+                                </Box>
+                            </Grid> */}
                         </Box>
                     </DesktopScreen>
                 </ResponsiveWrapper>
