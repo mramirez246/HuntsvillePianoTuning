@@ -78,9 +78,9 @@ export default function Home1() {
                 <Grid orientation="column/row" template="1fr" gap="1em" classes="center">
                         <div className='vertical v-separate padding'>
                             <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
-                            <Text text={`${c_businessName}`} fontSize="10em" weight="500" color="" spacing="" lineHeight="" classes="all-caps"/>
+                            <Text text={`${c_businessName}`} fontSize="8em" weight="500" color="" spacing="" lineHeight="" classes="all-caps"/>
                             </Box>
-                            <Box width="" height="7vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                            <Box width="" height="3vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                             
                             </Box>
                             <Box width="" height="" radius="" backgroundColor="" paddingV="2em" paddingH="" classes="">
@@ -89,7 +89,7 @@ export default function Home1() {
                             </Box>
                         </div>
                         
-                        <Box width="full-width" height="" radius="" paddingV="2vh" paddingH="0" classes="center">                        
+                        <Box width="full-width" height="" radius="" paddingV="1vh" paddingH="0" classes="center">                        
                             <Grid orientation="column" template="1fr 1fr 1fr 1fr" gap="11em" classes="">
                                 <Text text={`Everything Bagel`} fontSize="1.6em" weight="" color="" spacing="" lineHeight="" classes=""/>
                                 
