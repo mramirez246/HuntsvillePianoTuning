@@ -57,7 +57,7 @@
 	"Image Component": {
 		"prefix": "image",
 		"body": [
-			"<Image src={${1:}} alt=\"${2:}\" radius=\"${3:}\" classes=\"${4:}\"/>"
+			"<Image src={${1:}} alt=\"${2:}\" radius=\"${3:}\" classes=\"${4:} fill\"/>"
 		],
 		"description": "Create an <Image> component with customizable props"
 	},
@@ -203,42 +203,42 @@
 	"Heading 1": {
 		"prefix": "heading1",
 		"body": [
-			"<Heading1 text={`${1}`} />"
+			"<Heading1 text={`${1}`} classes={`${2}`} />"
 		],
 		"description": "Heading 1 component"
 	},
 	"Heading 2": {
 		"prefix": "heading2",
 		"body": [
-			"<Heading2 text={`${1}`} />"
+			"<Heading2 text={`${1}`} classes={`${2}`} />"
 		],
 		"description": "Heading 2 component"
 	},
 	"Heading 3": {
 		"prefix": "heading3",
 		"body": [
-			"<Heading3 text={`${1}`} />"
+			"<Heading3 text={`${1}`} classes={`${2}`} />"
 		],
 		"description": "Heading 3 component"
 	},
 	"Heading 4": {
 		"prefix": "heading4",
 		"body": [
-			"<Heading4 text={`${1}`} />"
+			"<Heading4 text={`${1}`} classes={`${2}`} />"
 		],
 		"description": "Heading 4 component"
 	},
 	"Heading 5": {
 		"prefix": "heading5",
 		"body": [
-			"<Heading5 text={`${1}`} />"
+			"<Heading5 text={`${1}`} classes={`${2}`} />"
 		],
 		"description": "Heading 5 component"
 	},
 	"Heading 6": {
 		"prefix": "heading6",
 		"body": [
-			"<Heading6 text={`${1}`} />"
+			"<Heading6 text={`${1}`} classes={`${2}`} />"
 		],
 		"description": "Heading 6 component"
 	},

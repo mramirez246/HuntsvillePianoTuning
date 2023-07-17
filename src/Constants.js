@@ -21,6 +21,7 @@ import Team1 from './COMPONENTS/PAGES/Team1'
 import Locations1 from './COMPONENTS/PAGES/Locations1'
 import Quote1 from './COMPONENTS/PAGES/Quote1'
 import Wedding1 from './COMPONENTS/PAGES/EVENTS/Wedding1'
+import Blog1 from './COMPONENTS/PAGES/Blog1'
 
 // BUSINESS INFO
 export const c_businessName = "Happy Code Dev"
@@ -147,6 +148,12 @@ export const c_routes = [
         Route: "quote",
         Title: `Quote ${c_metaTitleSuffix}`,
         Element: <Quote1 />,
+        Desc: ""
+    },
+    {
+        Route: "blog",
+        Title: `Blog ${c_metaTitleSuffix}`,
+        Element: <Blog1 />,
         Desc: ""
     },
     {

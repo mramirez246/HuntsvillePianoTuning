@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline, Spacer } from '../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline, Spacer, Divider } from '../Elements'
 import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
 import { c_businessName, c_routes } from '../../Constants'
@@ -47,20 +47,19 @@ export default function About1() {
             <Navigation1 />
             <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
                 <Box width="" height="10vh" radius="" paddingV="" paddingH="2em" classes="center">
-                <Text text={`About`} fontSize="2em" weight="300" color="" spacing="" lineHeight="" classes="all-caps"/>
+                    <Heading2 text={`About Us`} classes={`all-caps`} />
+                    <Divider size={`1px`} color={``} />
                 </Box>
-                <hr/>
 
-                <Box width="" height="7vh" radius="" paddingV="" paddingH="" classes="">
-                
-                </Box>
+
+                <Spacer height={`7vh`} />
 
                 <ResponsiveWrapper>
                     <PhoneScreen>
-                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -69,12 +68,12 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading2}`} />
+                                    <Heading5 text={`${heading2}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -86,10 +85,10 @@ export default function About1() {
                     </PhoneScreen>
 
                     <TabletScreen>
-                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -98,12 +97,12 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading2}`} />
+                                    <Heading5 text={`${heading2}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -115,10 +114,10 @@ export default function About1() {
                     </TabletScreen>
 
                     <LaptopScreen>
-                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -127,12 +126,12 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading2}`} />
+                                    <Heading5 text={`${heading2}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -147,7 +146,7 @@ export default function About1() {
                         <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -156,12 +155,12 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
-                        <Grid orientation="column" template="1fr" gap="1em" classes="">
+                            <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading2}`} />
+                                    <Heading5 text={`${heading2}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -172,27 +171,25 @@ export default function About1() {
                         </Box>
                     </DesktopScreen>
                 </ResponsiveWrapper>
-                
-                
+
+
                 <Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="">
-                
+
                 </Box>
-                <Box width="" height="50vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
-                <Image src={img1} alt="" radius="" classes="" />
+                <Box width="" height="70vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                    <Image src={img1} alt="" radius="" classes="fill" />
                 </Box>
-{/* section off  */}
-{/* section off  */}
-{/* section off  */}
-{/* section off  */}
-<Box width="" height="10vh" radius="" paddingV="" paddingH="" classes="">
-                
-                </Box>
+                {/* section off  */}
+                {/* section off  */}
+                {/* section off  */}
+                {/* section off  */}
+                <Spacer height={`10vh`} />
                 <ResponsiveWrapper>
                     <PhoneScreen>
-                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -201,7 +198,7 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
@@ -218,10 +215,10 @@ export default function About1() {
                     </PhoneScreen>
 
                     <TabletScreen>
-                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -230,7 +227,7 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
@@ -247,10 +244,10 @@ export default function About1() {
                     </TabletScreen>
 
                     <LaptopScreen>
-                    <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
+                        <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -259,7 +256,7 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
@@ -279,7 +276,7 @@ export default function About1() {
                         <Box width="70vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="center">
                             <Grid orientation="column" template="1fr" gap="1em" classes="">
                                 <Box width="" height="" radius="" backgroundColor="" color="" paddingV="" paddingH="" classes="center">
-                                <Heading5 text={`${heading1}`} />
+                                    <Heading5 text={`${heading1}`} />
                                 </Box>
                             </Grid>
                             <Spacer height={`2vh`} />
@@ -288,7 +285,7 @@ export default function About1() {
                                 <Text text={`${text1}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="1.5em" classes="" />
                             </Grid>
                         </Box>
-                       
+
                         <Spacer height={`12vh`} />
                         {/* <Box width="70vw" height="" radius="" paddingV="" paddingH="" classes="center">
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
