@@ -6,7 +6,7 @@ import { c_mainURL } from "../Constants";
 
 export const Box = ({ width, height, radius, backgroundColor, paddingV, paddingH, classes, children }) => {
     return (
-        <div className={`${classes}`} style={{ width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, radius: `${radius}`, backgroundColor: `${backgroundColor}` }}>
+        <div className={`${classes}`} style={{ width: `${width}`, height: `${height}`, padding: `${paddingV} ${paddingH}`, borderRadius: `${radius}`, backgroundColor: `${backgroundColor}` }}>
             {children}
         </div>
     )
