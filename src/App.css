@@ -96,11 +96,11 @@ body {
   border-radius: 50%;
 }
 
-.radio-container:hover input ~ .dot {
+.radio-container:hover input~.dot {
   background-color: #ccc;
 }
 
-.radio-container input:checked ~ .dot {
+.radio-container input:checked~.dot {
   background-color: #2196F3;
 }
 
@@ -110,7 +110,7 @@ body {
   display: none;
 }
 
-.radio-container input:checked ~ .dot:after {
+.radio-container input:checked~.dot:after {
   display: block;
 }
 
@@ -133,3 +133,267 @@ body {
   overflow-x: hidden;
   transition: 0.5s;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+
+
+
+
+
+
+.remove-app {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-border {
+  border: 0;
+}
+
+.no-bg {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.auto {
+  width: 100%;
+  height: 100%;
+}
+
+.padding {
+  padding: 1em;
+}
+
+.padding-v {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.padding-h {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.horizontal {
+  display: flex;
+  justify-content: initial;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.separate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.align-top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.align-bottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.h-space-around {
+  align-content: space-around;
+}
+
+.v-space-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.gap {
+  gap: 1em;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.h-center {
+  align-items: center;
+}
+
+.v-separate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.fit-height {
+  height: fit-content;
+}
+
+.fit-weight {
+  width: fit-content;
+}
+
+.fill {
+  object-fit: cover;
+}
+
+.fit {
+  object-fit: contain;
+}
+
+.image-top {
+  object-position: top;
+}
+
+.image-center {
+  object-position: center;
+}
+
+.image-bottom {
+  object-position: bottom;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.roboto-cond {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.rubik {
+  font-family: 'Rubik', sans-serif;
+}
+
+.bacasime {
+  font-family: 'Bacasime Antique', serif;
+}
+
+.libre {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.nanum {
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+
+.underline {
+  border-bottom: 1px solid black;
+}
+
+.bg-transparent {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.border-right-light {
+  border-right: 1px solid black;
+}
+
+.border-left-light {
+  border-left: 1px solid black;
+}
+
+.border-right-dark {
+  border-right: 1px solid rgb(249, 249, 249);
+}
+
+.border-right-dark {
+  border-left: 1px solid rgb(249, 249, 249);
+}
+
+
+
+@media only screen and (min-width: 350px) {}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}

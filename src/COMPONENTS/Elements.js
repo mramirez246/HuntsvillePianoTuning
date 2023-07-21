@@ -100,6 +100,17 @@ export const RadioButtons = ({ options, groupName, classes }) => {
     )
 }
 
+export const DatePicker = ({ id, fontSize, padding, func, classes }) => {
+    return (
+        <input type="date" className={`${classes} remove-app`} id={`${id}`} style={{ width: "100%", border: "0", fontSize: `${fontSize}`, padding: `${padding}` }} onChange={func} />
+    )
+}
+export const TimePicker = ({ id, fontSize, padding, func, classes }) => {
+    return (
+        <input type="time" className={`${classes} remove-app`} id={`${id}`} style={{ width: "100%", border: "0", fontSize: `${fontSize}`, padding: `${padding}` }} onChange={func} />
+    )
+}
+
 export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, keyClasses, valueClasses, classes }) => {
     const [chosenID, setChosenID] = useState(-1)
     return (
@@ -126,7 +137,7 @@ export const Accordion = ({ dictionary, keyFontSize, valueFontSize, padding, key
 
 export const Border = ({ size, color, radius, children }) => {
     return (
-        <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: 'fit-content'}}>
+        <div style={{ border: `${size} solid ${color}`, borderRadius: `${radius}`, height: 'fit-content' }}>
             {children}
         </div>
     )
@@ -150,14 +161,12 @@ export const Underline = ({ size, color, children }) => {
 
 export const ResponsiveWrapper = ({ children }) => {
     const [element, setElement] = useState(null);
-
     const handleResize = () => {
         const screenWidth = window.innerWidth;
 
         if (screenWidth < 600) {
             console.log("Phone")
             setElement(children.find(child => child.type === PhoneScreen));
-            console.log(children.find(child => child.type === PhoneScreen))
         } else if (screenWidth < 800) {
             console.log("Tablet")
             setElement(children.find(child => child.type === TabletScreen));

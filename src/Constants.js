@@ -22,6 +22,7 @@ import Locations1 from './COMPONENTS/PAGES/Locations1'
 import Quote1 from './COMPONENTS/PAGES/Quote1'
 import Wedding1 from './COMPONENTS/PAGES/EVENTS/Wedding1'
 import Blog1 from './COMPONENTS/PAGES/Blog1'
+import Schedule1 from './COMPONENTS/PAGES/Schedule1'
 
 // BUSINESS INFO
 export const c_businessName = "Happy Code Dev"
@@ -157,6 +158,12 @@ export const c_routes = [
         Desc: ""
     },
     {
+        Route: "schedule",
+        Title: `Schedule ${c_metaTitleSuffix}`,
+        Element: <Schedule1 />,
+        Desc: ""
+    },
+    {
         Route: "wedding",
         Title: `Wedding ${c_metaTitleSuffix}`,
         Element: <Wedding1 />,
@@ -169,12 +176,12 @@ export const c_mainURL = "https://wearehappycode.com"
 
 
 // FIREBASE
-export const firebaseConfig = {
-    apiKey: "AIzaSyAOJeLeI5q2rCqbb7JJ6aVbn0Ca_WVb79k",
-    authDomain: "happy-template.firebaseapp.com",
-    projectId: "happy-template",
-    storageBucket: "happy-template.appspot.com",
-    messagingSenderId: "196265916042",
-    appId: "1:196265916042:web:f019bb6efe377715891f73",
-    measurementId: "G-Z0SR6RR4DP"
+export const firebase_configObj = {
+    apiKey: "AIzaSyCX47_4wtf0qCTaL24m0bNmIYn1Zl21Dz4",
+  authDomain: "happy-template-v2.firebaseapp.com",
+  projectId: "happy-template-v2",
+  storageBucket: "happy-template-v2.appspot.com",
+  messagingSenderId: "397904119722",
+  appId: "1:397904119722:web:9d7f378498234864710dd3",
+  measurementId: "G-HJHPCZ7500"
 };

@@ -116,3 +116,15 @@ export function getMonth_Num(word) {
             return 0;
     }
 }
+// Function to convert the provided date and time strings to a JavaScript Date object
+export const getJSDate = (dateString, timeString) => {
+    // Split the date string into parts (month, day, and year)
+    const [month, day, year] = dateString.split('/').map(part => parseInt(part, 10));
+  
+    // Split the time string into parts (hours and minutes)
+    const [hours, minutes] = timeString.split(':').map(part => parseInt(part, 10));
+  
+    // Create a new Date object with the extracted date and time values
+    // The month value in JavaScript's Date object is zero-based, so we need to subtract 1 from the month.
+    return new Date(year, month - 1, day, hours, minutes);
+  };

@@ -77,16 +77,16 @@ export const Heading5 = ({ text, classes }) => {
     return (
         <ResponsiveWrapper>
             <PhoneScreen>
-                <Text text={`${text}`} fontSize="3vh" weight="500" color="" spacing="" lineHeight="1em" classes="all-caps center" />
+                <Text text={`${text}`} fontSize="3vh" weight="500" color="" spacing="" lineHeight="1em" classes="center" />
             </PhoneScreen>
             <TabletScreen>
-                <Text text={`${text}`} fontSize="4vh" weight="500" color="" spacing="-1px" lineHeight="1em" classes="all-caps center" />
+                <Text text={`${text}`} fontSize="4vh" weight="500" color="" spacing="-1px" lineHeight="1em" classes="center" />
             </TabletScreen>
             <LaptopScreen>
-                <Text text={`${text}`} fontSize="5vh" weight="500" color="" spacing="-1px" lineHeight="1em" classes="all-caps center" />
+                <Text text={`${text}`} fontSize="5vh" weight="500" color="" spacing="-1px" lineHeight="1em" classes="center" />
             </LaptopScreen>
             <DesktopScreen>
-                <Text text={`${text}`} fontSize="6vh" weight="500" color="" spacing="-2px" lineHeight="1em" classes="all-caps center" />
+                <Text text={`${text}`} fontSize="6vh" weight="500" color="" spacing="-2px" lineHeight="1em" classes="center" />
             </DesktopScreen>
         </ResponsiveWrapper>
     )

@@ -1,17 +1,25 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { collection, getDoc, getDocs, getFirestore, onSnapshot, query } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 //
 
 import {
-  firebase_configObj,
+    firebase_configObj,
 } from "../Constants";
 import Stripe from "stripe";
+import { removeDupes } from "../Global";
 
-const firebaseConfig = firebase_configObj;
-
+const firebaseConfig = {
+    apiKey: "AIzaSyCX47_4wtf0qCTaL24m0bNmIYn1Zl21Dz4",
+    authDomain: "happy-template-v2.firebaseapp.com",
+    projectId: "happy-template-v2",
+    storageBucket: "happy-template-v2.appspot.com",
+    messagingSenderId: "397904119722",
+    appId: "1:397904119722:web:9d7f378498234864710dd3",
+    measurementId: "G-HJHPCZ7500"
+};
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -20,7 +28,69 @@ const storage = getStorage(app);
 
 // FUNCTIONS
 
+export const firebase_GetScheduleOptions = (setOptions, setTypes) => {
+    const q = query(collection(db, "ScheduleOptions"));
+    const _ = onSnapshot(q, (querySnapshot) => {
+        const options = [];
+        querySnapshot.forEach((doc) => {
+            const option = {
+                id: doc.id,
+                ...doc.data()
+            }
+            options.push(option);
+        });
+        setOptions(options)
+        var tempArr = []
+        for (let index = 0; index < options.length; index++) {
+            const option = options[index];
+            tempArr.push(option.Type)
+        }
+        var filteredArr = removeDupes(tempArr)
+        setTypes(filteredArr)
+    });
+}
+export const firebase_GetScheduledThings = async (setScheduledThings) => {
+    const querySnapshot = await getDocs(collection(db, "ScheduledThings"));
+    var scheduledThings = []
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        const thing = {
+            id: doc.id,
+            ...doc.data()
+        }
+        scheduledThings.push(thing)
+    });
 
+    setScheduledThings(scheduledThings)
+}
+export const firebase_GetScheduleBlocks = async (setScheduleBlocks) => {
+    const querySnapshot = await getDocs(collection(db, "ScheduleBlocks"));
+    var scheduleBlocks = []
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        const thing = {
+            id: doc.id,
+            ...doc.data()
+        }
+        scheduleBlocks.push(thing)
+    });
+
+    setScheduleBlocks(scheduleBlocks)
+}
+export const firebase_GetScheduleSettings = async (setScheduleSettings) => {
+    const querySnapshot = await getDocs(collection(db, "ScheduleSettings"));
+    var scheduleSettings = []
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        const thing = {
+            id: doc.id,
+            ...doc.data()
+        }
+        scheduleSettings.push(thing)
+    });
+
+    setScheduleSettings(scheduleSettings)
+}
 
 // AUTH
 /*

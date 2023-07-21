@@ -3,7 +3,7 @@
 		"prefix": "starter",
 		"body": [
 			"import React, { useEffect } from 'react'",
-			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Spacer, Text, TextArea, TextField, Underline } from '../Elements'",
+			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, DatePicker, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Spacer, Text, TextArea, TextField, Underline } from '../Elements'",
 			"import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'",
 			"import { FiMenu } from 'react-icons/fi'",
 			"import { c_businessName, c_routes } from '../../Constants'",
@@ -97,6 +97,20 @@
 			"<DropDown options={[\"${1:}\"]} fontSize=\"${2:}\" padding=\"${3:}\" radius=\"${4:}\" classes=\"${5:}\" id=\"${6:}\"/>"
 		],
 		"description": "Create a <DropDown> component with customizable props"
+	},
+	"DatePicker Component": {
+		"prefix": "datepicker",
+		"body": [
+			"<DatePicker id={`${1:}`} fontSize={`${2:}`} padding={`${3:}`} classes=\"${4:}\" func={() => {${5:}}} />"
+		],
+		"description": "Create a <DatePicker> component with customizable props"
+	},
+	"TImePicker Component": {
+		"prefix": "timepicker",
+		"body": [
+			"<TimePicker id={`${1:}`} fontSize={`${2:}`} padding={`${3:}`} classes=\"${4:}\" func={() => {${5:}}} />"
+		],
+		"description": "Create a <TimePicker> component with customizable props"
 	},
 	"Grid Component": {
 		"prefix": "grid",
