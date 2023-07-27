@@ -5,6 +5,7 @@ import { FiMenu } from 'react-icons/fi'
 import { HiXMark } from 'react-icons/hi2'
 import { c_businessName, c_routes } from '../../../Constants'
 import { useLocation, useNavigate } from 'react-router'
+import { BsFacebook, BsInstagram, BsTwitter, BsYelp } from 'react-icons/bs'
 // 
 import logo from '../../../PHOTOS/logo.png'
 
@@ -12,6 +13,10 @@ export default function Navigation1() {
     const navigate = useNavigate()
     const location = useLocation()
     const currentLocation = location.pathname
+    
+        
+      
+      
 
     function openNav() {
         if (window.innerWidth < 600) {
@@ -40,7 +45,7 @@ export default function Navigation1() {
             <ResponsiveWrapper>
                 <PhoneScreen>
                     <div className='separate padding'>
-                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
+                        <Box width="50vw" height="" radius="" paddingV="" paddingH="" classes="">
                             <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
                                 <Image src={logo} alt="" radius="" classes="" />
                             </Button>
@@ -54,7 +59,7 @@ export default function Navigation1() {
                 </PhoneScreen>
                 <TabletScreen>
                     <div className='separate padding'>
-                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
+                        <Box width="30vw" height="" radius="" paddingV="" paddingH="" classes="">
                             <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
                                 <Image src={logo} alt="" radius="" classes="" />
                             </Button>
@@ -68,55 +73,113 @@ export default function Navigation1() {
                 </TabletScreen>
                 <LaptopScreen>
                     <div className='separate padding'>
-                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
+                        <Box width="25vw" height="" radius="" paddingV="0" paddingH="3vw" classes="">
                             <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
                                 <Image src={logo} alt="" radius="" classes="" />
                             </Button>
                         </Box>
                         <div className='horizontal gap'>
-                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="">
-                                <Text text={`About`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                            </Button>
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes="">
                             <Button color="" backgroundColor="" radius="" func={() => { navigate('/services') }} classes="">
-                                <Text text={`Services`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`Pricing`} fontSize="1.8vw" weight="400" color="" spacing="" lineHeight="" classes="" />
                             </Button>
+                            </Box>
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/bio') }} classes="">
+                                <Text text={`About`} fontSize="1.8vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                            </Button>
+                            </Box>
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes="">
+                                <Text text={`Contact`} fontSize="1.8vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                            </Button>
+                            </Box>
+                            {/* <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes=""> 
                             <Button color="" backgroundColor="" radius="" func={() => { navigate('/gallery') }} classes="">
-                                <Text text={`Gallery`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`FAQ`} fontSize="1.8vw" weight="400" color="" spacing="" lineHeight="" classes="" />
                             </Button>
+                            </Box> */}
+                            
+                            
                         </div>
 
-                        <Box width="" height="fit-content" radius="" paddingV="0.8em" paddingH="1.2em" classes="dark">
-                            <Button color="" backgroundColor="" radius="" func={() => {navigate('/contact') }} classes="">
-                                <Text text={`Contact Us`} fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                            </Button>
+                        <Box width="fit-content" height="fit-content" radius="" paddingV=".5vh" paddingH="3vw" classes="fill">
+                            <Border size="1px" color="" radius="">
+                                <Button color="" backgroundColor="#fed461" radius="" func={() => { window.open('https://gazelleapp.io/scheduling/vXpvRSzSNZbSgD86wqz3KXHw') }} classes="">
+                                    <Box width="" height="" radius="" backgroundColor="" paddingV="0.5vh" paddingH="0.7vw" classes="">
+                                        <Text text={`BOOK A TUNING`} fontSize="2.5vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    </Box>
+                                </Button>
+                            </Border>
                         </Box>
                     </div>
                 </LaptopScreen>
                 <DesktopScreen>
-                    <div className='separate padding'>
-                        <Box width="10vh" height="" radius="" paddingV="" paddingH="" classes="">
-                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
-                                <Image src={logo} alt="" radius="" classes="" />
-                            </Button>
-                        </Box>
-                        <div className='horizontal gap'>
-                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="">
-                                <Text text={`About`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                            </Button>
-                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/services') }} classes="">
-                                <Text text={`Services`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                            </Button>
-                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/gallery') }} classes="">
-                                <Text text={`Gallery`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                            </Button>
-                        </div>
+                    <Box width="" height="" radius="" backgroundColor="" paddingV="2vh" paddingH="13vw" classes="">
+                    <div className='separate'>
 
-                        <Box width="" height="fit-content" radius="" paddingV="0.8em" paddingH="1.2em" classes="dark">
-                            <Button color="" backgroundColor="" radius="" func={() => {navigate('/contact') }} classes="">
-                                <Text text={`Contact Us`} fontSize="1em" weight="300" color="" spacing="" lineHeight="" classes="" />
+
+                        <Box width="15vw" height="" radius="" paddingV="" paddingH="" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/') }} classes="">
+                                <Image src={logo} alt="Huntsville Piano Tuning" radius="" classes="" />
                             </Button>
                         </Box>
+
+                        <div className='horizontal gap'>
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/services') }} classes="">
+                                <Text text={`Pricing`} fontSize="1.2vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                            </Button>
+                            </Box>
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/bio') }} classes="">
+                                <Text text={`About`} fontSize="1.2vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                            </Button>
+                            </Box>
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes="">
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes="">
+                                <Text text={`Contact`} fontSize="1.2vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                            </Button>
+                            </Box>
+                            {/* <Box width="" height="" radius="" backgroundColor="" paddingV="1.5vh" paddingH="0" classes=""> 
+                            <Button color="" backgroundColor="" radius="" func={() => { navigate('/gallery') }} classes="">
+                                <Text text={`FAQ`} fontSize="1.2vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                            </Button>
+                            </Box> */}
+                            
+                            
+                        </div>
+                        <div className='horizontal gap'>
+                                    <div className='horizontal gap padding-v'>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.2vw" color="#D0407B">
+                                                <BsInstagram />
+                                            </Icon>
+                                        </Button>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.2vw" color="#1082E5">
+                                                <BsFacebook />
+                                            </Icon>
+                                        </Button>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.2vw" color="#1D99E5">
+                                                <BsYelp />
+                                            </Icon>
+                                        </Button>
+                                    </div>
+                            
+                        <Box width="fit-content" height="fit-content" radius="" paddingV=".5vh" paddingH="0" classes="">
+                            <Border size="1px" color="" radius="">
+                                <Button color="" backgroundColor="#fed461" radius="" func={() => { window.open('https://gazelleapp.io/scheduling/vXpvRSzSNZbSgD86wqz3KXHw') }} classes="">
+                                    <Box width="" height="" radius="" backgroundColor="" paddingV="0.5vh" paddingH="0.7vw" classes="">
+                                        <Text text={`BOOK A TUNING`} fontSize="1.5vw" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    </Box>
+                                </Button>
+                            </Border>
+                        </Box>
+                        </div>
                     </div>
+                    </Box>
                 </DesktopScreen>
             </ResponsiveWrapper>
 
@@ -135,25 +198,66 @@ export default function Navigation1() {
                 </div>
 
                 <Grid orientation="column" template="1fr" gap="0.2em" classes="padding">
-                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/about') }} classes="">
+                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/services') }} classes="">
+                        <Text text={`Pricing`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                    </Button>
+                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/bio') }} classes="">
                         <Text text={`About`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
                     </Button>
-                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/services') }} classes="">
-                        <Text text={`Services`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                    </Button>
-                    <Button color="" backgroundColor="" radius="" func={() => { navigate('/gallery') }} classes="">
-                        <Text text={`Gallery`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
-                    </Button>
                     <Button color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes="">
-                        <Text text={`Contact Us`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                        <Text text={`Contact`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
                     </Button>
+                    {/* <Button color="" backgroundColor="" radius="" func={() => { navigate('/contact') }} classes=""> 
+                        <Text text={`FAQ`} fontSize="1.6em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                    </Button> */}
+                    <Box width="fit-content" height="fit-content" radius="" paddingV=".5vh" paddingH="0" classes="">
+                            <Border size="1px" color="" radius="">
+                                <Button color="" backgroundColor="#fed461" radius="" func={() => { window.open('https://gazelleapp.io/scheduling/vXpvRSzSNZbSgD86wqz3KXHw') }} classes="">
+                                    <Box width="" height="" radius="" backgroundColor="" paddingV="0.5vh" paddingH="0.7vw" classes="">
+                                        <Text text={`BOOK A TUNING`} fontSize="1.6em" weight="400" color="" spacing="" lineHeight="" classes="" />
+                                    </Box>
+                                </Button>
+                            </Border>
+                        </Box>
                 </Grid>
+
 
                 <Box width="" height="5vh" radius="" paddingV="" paddingH="" classes="">
 
                 </Box>
-
-                <Text text={`${c_businessName} 2023. All Rights Reserved.`} fontSize="0.8em" weight="300" color="gray" spacing="" lineHeight="" classes="text-center padding" />
+                <Grid orientation="row" template="1fr" gap="4em" classes="">
+                    <Box width="30vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="left padding">
+                    <div className='horizontal gap'>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.8em" color="#D0407B">
+                                                <BsInstagram />
+                                            </Icon>
+                                        </Button>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.8em" color="#1082E5">
+                                                <BsFacebook />
+                                            </Icon>
+                                        </Button>
+                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                            <Icon size="1.8em" color="#1D99E5">
+                                                <BsYelp />
+                                            </Icon>
+                                        </Button>
+                                    </div>
+                    </Box>
+                    <Text text={`${c_businessName} 2023. All Rights Reserved.`} fontSize="0.8em" weight="300" color="gray" spacing="" lineHeight="" classes="text-left padding" />
+                </Grid>
+                
+                
+                        
+                            
+                          
+                            
+                    
+               
+                            
+                
+                            
             </div>
         </div>
     )

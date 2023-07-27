@@ -25,11 +25,11 @@ import Blog1 from './COMPONENTS/PAGES/Blog1'
 import Schedule1 from './COMPONENTS/PAGES/Schedule1'
 
 // BUSINESS INFO
-export const c_businessName = "Happy Code Dev"
-export const c_businessAddress = "1024 E 4th St, San Diego CA 91950"
-export const c_businessPhone = "123-456-7890"
-export const c_businessEmail = "bagel@happycodewebsites.com"
-export const c_businessDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. "
+export const c_businessName = "Huntsville Piano Tuning"
+export const c_businessAddress = ""
+export const c_businessPhone = "760-807-1930"
+export const c_businessEmail = "huntsvillepianotuning@gmail.com"
+export const c_businessDesc = "Welcome to Huntsville Piano Tuning, your premier destination for professional piano tuning services in Huntsville, Alabama as well as the greater Huntsville metropolitan area such as Madison, AL; Athens, AL; Decatur, AL; Hazel Green, AL; Fayetteville, TN; Ardmore, AL; Ardmore, TN; Owens Cross Roads, AL; New Market, AL; Gurley, AL; Guntersville, AL; and Arab, AL. Our expert piano tuner is dedicated to ensuring that your piano sounds its best, delivering exceptional results that bring out the full potential of your instrument. With years of experience and a keen ear for precision, we provide top-notch piano tuning and maintenance solutions tailored to meet your specific needs. Whether you own a grand piano or upright piano, our skilled technician uses state-of-the-art tools and techniques to ensure optimal pitch, tone, and resonance. Experience the joy of playing a perfectly tuned piano by scheduling an appointment with Huntsville Piano Tuning today. Trust us to elevate your musical experience with our unmatched piano tuning expertise. "
 
 // META
 export const c_metaTitleSuffix = "| The Best Websites in the World!"

@@ -6,7 +6,7 @@ import { c_businessAddress, c_businessEmail, c_businessName, c_businessPhone, c_
 import { useLocation, useNavigate } from 'react-router'
 import Navigation1 from './UTILITIES/Navigation1'
 import Footer1 from './UTILITIES/Footer1'
-import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs'
+import { BsFacebook, BsInstagram, BsTwitter, BsYelp } from 'react-icons/bs'
 
 export default function Contact1() {
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ export default function Contact1() {
 
     }
 
-    const thing1 = "If you want to let us know about the bagel, start here using our form. Thanks!"
+    const thing1 = "If you'd like to get in touch, start here using our form. Thanks!"
 
     useEffect(() => {
         // closeNav()
@@ -83,7 +83,7 @@ export default function Contact1() {
                                 </Button>
                                 <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
                                     <Icon size="1.8em" color="#1D99E5">
-                                        <BsTwitter />
+                                        <BsYelp />
                                     </Icon>
                                 </Button>
                             </div>
@@ -159,7 +159,7 @@ export default function Contact1() {
                                 </Button>
                                 <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
                                     <Icon size="1.8em" color="#1D99E5">
-                                        <BsTwitter />
+                                        <BsYelp />
                                     </Icon>
                                 </Button>
                             </div>
@@ -210,6 +210,9 @@ export default function Contact1() {
                         </Box>
                     </TabletScreen>
                     <LaptopScreen>
+                        <Box width="" height="" radius="" backgroundColor="" paddingV="0" paddingH="2vw" classes="">
+                        
+                        
                         <Grid orientation="column" template="1fr 1fr" gap="1em" classes="padding">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                 <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
@@ -236,7 +239,7 @@ export default function Contact1() {
                                     </Button>
                                     <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
                                         <Icon size="1.8em" color="#1D99E5">
-                                            <BsTwitter />
+                                            <BsYelp />
                                         </Icon>
                                     </Button>
                                 </div>
@@ -286,9 +289,10 @@ export default function Contact1() {
                             </Button>
                         </Box>
                         </Grid>
+                        </Box>
                     </LaptopScreen>
                     <DesktopScreen>
-                        <Box width="80vw" height="" radius="" paddingV="" paddingH="" classes="center">
+                        <Box width="" height="" radius="" paddingV="0" paddingH="10vw" classes="center">
                             <Grid orientation="column" template="1fr 1fr" gap="1em" classes="padding">
                                 <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
                                     <Text text={`${c_businessEmail}`} fontSize="1.4em" weight="500" color="" spacing="" lineHeight="" classes="" />
@@ -315,7 +319,7 @@ export default function Contact1() {
                                         </Button>
                                         <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
                                             <Icon size="1.8em" color="#1D99E5">
-                                                <BsTwitter />
+                                                <BsYelp />
                                             </Icon>
                                         </Button>
                                     </div>

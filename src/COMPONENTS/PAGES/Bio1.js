@@ -7,8 +7,9 @@ import { useLocation, useNavigate } from 'react-router'
 import Navigation1 from './UTILITIES/Navigation1'
 import Footer1 from './UTILITIES/Footer1'
 // 
-import img1 from '../../PHOTOS/stock4.jpg'
+import img1 from '../../PHOTOS/about.jpg'
 import img2 from '../../PHOTOS/stock5.jpg'
+import img3 from '../../PHOTOS/family.jpg'
 
 export default function Bio1() {
     const navigate = useNavigate()
@@ -33,14 +34,14 @@ export default function Bio1() {
     //     document.querySelector(".nav-body").style.width = "0";
     // }
 
-    const thing1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. "
-    const thing2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod."
+    const thing1 = "  "
+    const thing2 = "Miguel Ramirez began tuning pianos in 1998 at age 17 in his native town of San Diego, CA. He apprenticed with the current piano technician of the San Diego Symphony, Jonnel Domilos, and alongside him worked on several pianos at the former Piano Warehouse in San Marcos, CA as well as in private homes and studios. Miguel currently maintains the pianos at Huntsville Strings Shop and is building a network here in the South that includes Eric Roberts of Apex Piano Tuning in Nashville, TN, and Jonny Braun of JB Piano Tuning in Bentonville, AR."
 
-    const thing3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. "
-    const thing4 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod."
+    const thing3 = " "
+    const thing4 = "Miguel is also a concert violinist and multi-instrumentalist who has played in several orchestras and rock bands, and sings in his church choir. He also runs a successful teaching studio offering lessons in violin and other instruments, with students who have gone on to national achievements. With his detailed ear, he has also engineered and co-engineered audio recordings in the classical and rock genres."
 
-    const thing5 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. "
-    const thing6 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. Aenean est enim, porttitor quis felis ultrices, volutpat commodo nibh. Maecenas sed semper massa. Morbi tempor ligula at mi fermentum rhoncus. Phasellus euismod sollicitudin euismod. Morbi porttitor rutrum risus non pharetra. Praesent tincidunt finibus lorem ut euismod."
+    const thing5 = " "
+    const thing6 = "In 2021 Miguel moved with his wife and two daughters to the beautiful Huntsville, AL area and has enjoyed helping the wonderful people here with their pianos and all aspects of their musical journey."
 
     useEffect(() => {
         // closeNav()
@@ -49,17 +50,47 @@ export default function Bio1() {
     return (
         <div className='roboto'>
             <Navigation1 />
-            <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
+            <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
+            <ResponsiveWrapper>
+                <PhoneScreen>
+                    <Box width="" height="" radius="" backgroundColor="" paddingV="1em" paddingH="1em" classes="">
+                    <Heading1 text={`Here is a bit about me..`} />
+                        
+                    </Box>
+                
+                </PhoneScreen>
+                <TabletScreen>
+                    <Box width="" height="" radius="" backgroundColor="" paddingV="1em" paddingH="1em" classes="">
+                    <Heading1 text={`Here is a bit about me..`} />
+                        
+                    </Box>
+                
+                </TabletScreen>
+                <LaptopScreen>
+                    <Box width="" height="" radius="" backgroundColor="" paddingV="0" paddingH="5vw" classes="">
+                    <Heading1 text={`Here is a bit about me..`} />
+                        
+                    </Box>
+                </LaptopScreen>
+                <DesktopScreen>
+                <Box width="" height="" radius="" backgroundColor="" paddingV="0" paddingH="13vw" classes="">
                 <Heading1 text={`Here is a bit about me..`} />
+                    
+                </Box>
+                
+                </DesktopScreen>
+                </ResponsiveWrapper>
+                
                 <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
 
                 </Box>
                 <ResponsiveWrapper>
                     <PhoneScreen>
+                        <Box width="" height="" radius="" backgroundColor="" paddingV="0" paddingH="1em" classes="">
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing1}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing2}`} fontSize="1.2em" weight="400" color="" spacing="" lineHeight="" classes="" />
 
                             </Box>
                             <Image src={img1} alt="" radius="" classes="" />
@@ -70,7 +101,7 @@ export default function Bio1() {
                             <Image src={img2} alt="" radius="" classes="" />
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing3}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing4}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing4}`} fontSize="1.2em" weight="400" color="" spacing="" lineHeight="" classes="" />
                             </Box>
                         </Grid>
                         <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
@@ -78,20 +109,26 @@ export default function Bio1() {
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing5}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing6}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing6}`} fontSize="1.2em" weight="400" color="" spacing="" lineHeight="" classes="" />
 
                             </Box>
-                            <Image src={img1} alt="" radius="" classes="" />
+                            <Image src={img3} alt="" radius="" classes="" />
                         </Grid>
+                        </Box>
+                        
                     </PhoneScreen>
                     <TabletScreen>
+                        <Box width="" height="" radius="" backgroundColor="" paddingV="0" paddingH="1em" classes="">
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing1}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing2}`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
 
                             </Box>
-                            <Image src={img1} alt="" radius="" classes="" />
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                            <Image src={img1} alt="" radius="" classes="fill image-top" />
+                            </Box>
+                            
                         </Grid>
                         <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
                         </Box>
@@ -99,7 +136,7 @@ export default function Bio1() {
                             <Image src={img2} alt="" radius="" classes="" />
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing3}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing4}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing4}`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
                             </Box>
                         </Grid>
                         <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
@@ -107,20 +144,26 @@ export default function Bio1() {
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing5}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing6}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing6}`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
 
                             </Box>
-                            <Image src={img1} alt="" radius="" classes="" />
+                            <Image src={img3} alt="" radius="" classes="" />
                         </Grid>
+                        </Box>
+                        
                     </TabletScreen>
                     <LaptopScreen>
+                        <Box width="" height="" radius="" backgroundColor="" paddingV="0" paddingH="5vw" classes="">
                         <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing1}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing2}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing2}`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
 
                             </Box>
-                            <Image src={img1} alt="" radius="" classes="fill" />
+                            <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                <Image src={img1} alt="" radius="" classes="fill image-top" />
+                            </Box>
+                            
                         </Grid>
                         <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
                         </Box>
@@ -128,7 +171,7 @@ export default function Bio1() {
                             <Image src={img2} alt="" radius="" classes="fill" />
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing3}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing4}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing4}`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
                             </Box>
                         </Grid>
                         <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
@@ -136,19 +179,25 @@ export default function Bio1() {
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing5}`} fontSize="1.6em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing6}`} fontSize="1.2em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing6}`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes="" />
 
                             </Box>
-                            <Image src={img1} alt="" radius="" classes="" />
+                            <Image src={img3} alt="" radius="" classes="" />
                         </Grid>
+                        </Box>
+                        
                     </LaptopScreen>
                     <DesktopScreen>
-                    <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
+                        <Box width="" height="" radius="" backgroundColor="" paddingV="0" paddingH="13vw" classes="">
+                        <Grid orientation="column" template="1fr 1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing1}`} fontSize="2em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing2}`} fontSize="1.4em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing2}`} fontSize="2em" weight="400" color="" spacing="" lineHeight="" classes="" />
                             </Box>
-                            <Image src={img1} alt="" radius="" classes="fill" />
+                            <Box width="" height="60vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
+                                <Image src={img1} alt="" radius="" classes="fill image-top" />
+                            </Box>
+                            
                         </Grid>
                         <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
                         </Box>
@@ -156,7 +205,7 @@ export default function Bio1() {
                             <Image src={img2} alt="" radius="" classes="fill" />
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing3}`} fontSize="2em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing4}`} fontSize="1.4em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing4}`} fontSize="2em" weight="400" color="" spacing="" lineHeight="" classes="" />
                             </Box>
                         </Grid>
                         <Box width="" height="4vh" radius="" paddingV="" paddingH="" classes="">
@@ -164,11 +213,13 @@ export default function Bio1() {
                         <Grid orientation="column" template="1fr" gap="1em" classes="">
                             <Box width="" height="" radius="" paddingV="" paddingH="" classes="vertical gap">
                                 <Text text={`${thing5}`} fontSize="2em" weight="600" color="" spacing="" lineHeight="1em" classes="" />
-                                <Text text={`${thing6}`} fontSize="1.4em" weight="300" color="" spacing="" lineHeight="" classes="" />
+                                <Text text={`${thing6}`} fontSize="2em" weight="400" color="" spacing="" lineHeight="" classes="" />
 
                             </Box>
-                            <Image src={img1} alt="" radius="" classes="" />
+                            <Image src={img3} alt="" radius="" classes="" />
                         </Grid>
+                        </Box>
+                    
                     </DesktopScreen>
                 </ResponsiveWrapper>
 

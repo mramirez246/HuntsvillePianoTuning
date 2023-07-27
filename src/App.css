@@ -361,6 +361,9 @@ body {
   font-family: 'Nanum Myeongjo', serif;
 }
 
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .underline {
   border-bottom: 1px solid black;
