@@ -83,18 +83,18 @@ export default function Component() {
                                 </Box>
                             </div>
                             <div className='horizontal gap padding-v'>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.instagram.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#D0407B">
                                                 <BsInstagram />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.facebook.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#1082E5">
                                                 <BsFacebook />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                            <Icon size="1.8em" color="#1D99E5">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.yelp.com/biz/huntsville-piano-tuning-triana')}} classes="">
+                                            <Icon size="1.8em" color="red">
                                                 <BsYelp />
                                             </Icon>
                                         </Button>
@@ -157,18 +157,18 @@ export default function Component() {
                                 
                             </div>
                             <div className='horizontal gap padding-v'>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.instagram.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#D0407B">
                                                 <BsInstagram />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.facebook.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#1082E5">
                                                 <BsFacebook />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                            <Icon size="1.8em" color="#1D99E5">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.yelp.com/biz/huntsville-piano-tuning-triana')}} classes="">
+                                            <Icon size="1.8em" color="red">
                                                 <BsYelp />
                                             </Icon>
                                         </Button>
@@ -223,18 +223,18 @@ export default function Component() {
                                          </Border>
                                 </Box>
                                 <div className='horizontal gap padding-v'>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.instagram.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#D0407B">
                                                 <BsInstagram />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.facebook.com/huntsvillepianotuning/') }} classes="">
                                             <Icon size="1.8em" color="#1082E5">
                                                 <BsFacebook />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                            <Icon size="1.8em" color="#1D99E5">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.yelp.com/biz/huntsville-piano-tuning-triana')}} classes="">
+                                            <Icon size="1.8em" color="red">
                                                 <BsYelp />
                                             </Icon>
                                         </Button>
@@ -292,18 +292,18 @@ export default function Component() {
                                          </Border>
                                 </Box>
                                 <div className='horizontal gap padding-v'>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.instagram.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#D0407B">
                                                 <BsInstagram />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.facebook.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#1082E5">
                                                 <BsFacebook />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                            <Icon size="1.8em" color="#1D99E5">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.yelp.com/biz/huntsville-piano-tuning-triana')}} classes="">
+                                            <Icon size="1.8em" color="red">
                                                 <BsYelp />
                                             </Icon>
                                         </Button>

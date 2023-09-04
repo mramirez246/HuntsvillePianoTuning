@@ -151,18 +151,18 @@ export default function Navigation1() {
                         </div>
                         <div className='horizontal gap'>
                                     <div className='horizontal gap padding-v'>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.instagram.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.2vw" color="#D0407B">
                                                 <BsInstagram />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.facebook.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.2vw" color="#1082E5">
                                                 <BsFacebook />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                            <Icon size="1.2vw" color="#1D99E5">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.yelp.com/biz/huntsville-piano-tuning-triana')}} classes="">
+                                            <Icon size="1.2vw" color="red">
                                                 <BsYelp />
                                             </Icon>
                                         </Button>
@@ -228,18 +228,18 @@ export default function Navigation1() {
                 <Grid orientation="row" template="1fr" gap="4em" classes="">
                     <Box width="30vw" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="left padding">
                     <div className='horizontal gap'>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.instagram.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#D0407B">
                                                 <BsInstagram />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.facebook.com/huntsvillepianotuning/')}} classes="">
                                             <Icon size="1.8em" color="#1082E5">
                                                 <BsFacebook />
                                             </Icon>
                                         </Button>
-                                        <Button color="" backgroundColor="" radius="" func={() => { }} classes="">
-                                            <Icon size="1.8em" color="#1D99E5">
+                                        <Button color="" backgroundColor="" radius="" func={() => { window.open('https://www.yelp.com/biz/huntsville-piano-tuning-triana')}} classes="">
+                                            <Icon size="1.8em" color="red">
                                                 <BsYelp />
                                             </Icon>
                                         </Button>
