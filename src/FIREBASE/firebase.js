@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { collection, getDoc, getDocs, getFirestore, onSnapshot, query } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, getFirestore, onSnapshot, query, setDoc } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 //
 
@@ -28,8 +28,9 @@ const storage = getStorage(app);
 
 // FUNCTIONS
 export const firebase_SendContactForm = async (args) => {
-    await setDoc(doc(db, "ContactEntried", randomString(25)), {
-        Name : args.name,
+    const docID = randomString(25)
+    await setDoc(doc(db, "ContactEntries", docID), {
+        Name : args.Name,
         Email: args.Email,
         Subject : args.Subject,
         Message: args.Message

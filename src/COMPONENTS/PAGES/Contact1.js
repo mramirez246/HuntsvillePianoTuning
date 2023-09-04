@@ -44,6 +44,7 @@ const args = {
     Subject: subject,
     Message: message
 }
+console.log(args)
         firebase_SendContactForm(args)
         .then(() => {
             alert("Your form has been submitted.")

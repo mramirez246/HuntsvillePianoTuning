@@ -46,9 +46,9 @@ export default function Home1() {
         <div className='roboto'>
             <Box width="" height="" radius="" backgroundColor="#973228" paddingV="1.4em" paddingH="" classes="">
                 <Box width="fit-content" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="horizontal center gap">
-                <Icon size="26px" color="white">
+                {/* <Icon size="26px" color="white">
                 <MdOutlinePiano />
-                </Icon>
+                </Icon> */}
             <Text text={`Limited time New Clients Only 20% off first piano tuning. Click BOOK A TUNING and select discounted option.`} fontSize="22px" weight="500" color="white" spacing="" lineHeight="" classes="text-center"/>
                 </Box>
             </Box>
