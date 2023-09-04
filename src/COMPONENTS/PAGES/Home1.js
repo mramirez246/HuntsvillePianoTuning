@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'
 import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
+import {MdOutlinePiano} from 'react-icons/md'
 import { c_businessName, c_routes } from '../../Constants'
 import { useLocation, useNavigate } from 'react-router'
 import Navigation1 from './UTILITIES/Navigation1'
@@ -43,6 +44,14 @@ export default function Home1() {
 
     return (
         <div className='roboto'>
+            <Box width="" height="" radius="" backgroundColor="#973228" paddingV="1.4em" paddingH="" classes="">
+                <Box width="fit-content" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="horizontal center gap">
+                <Icon size="26px" color="white">
+                <MdOutlinePiano />
+                </Icon>
+            <Text text={`Limited time New Clients Only 20% off first piano tuning. Click BOOK A TUNING and select discounted option.`} fontSize="22px" weight="500" color="white" spacing="" lineHeight="" classes="text-center"/>
+                </Box>
+            </Box>
             <Navigation1 />
             
             <Box width="" height="5vh" radius="" paddingV="" paddingH="" classes="">
