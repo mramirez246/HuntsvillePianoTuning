@@ -9,16 +9,16 @@ import {
     firebase_configObj,
 } from "../Constants";
 import Stripe from "stripe";
-import { removeDupes } from "../Global";
+import { randomString, removeDupes } from "../Global";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCX47_4wtf0qCTaL24m0bNmIYn1Zl21Dz4",
-    authDomain: "happy-template-v2.firebaseapp.com",
-    projectId: "happy-template-v2",
-    storageBucket: "happy-template-v2.appspot.com",
-    messagingSenderId: "397904119722",
-    appId: "1:397904119722:web:9d7f378498234864710dd3",
-    measurementId: "G-HJHPCZ7500"
+    apiKey: "AIzaSyAZn0AqPGDw1HaMom0m_smVNuJjbL08Nbo",
+  authDomain: "huntsville-piano-tuning.firebaseapp.com",
+  projectId: "huntsville-piano-tuning",
+  storageBucket: "huntsville-piano-tuning.appspot.com",
+  messagingSenderId: "7584070685",
+  appId: "1:7584070685:web:5f45c200fe709420031af4",
+  measurementId: "G-JDZ606D1CB"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -27,7 +27,14 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 // FUNCTIONS
-
+export const firebase_SendContactForm = async (args) => {
+    await setDoc(doc(db, "ContactEntried", randomString(25)), {
+        Name : args.name,
+        Email: args.Email,
+        Subject : args.Subject,
+        Message: args.Message
+    });
+}
 export const firebase_GetScheduleOptions = (setOptions, setTypes) => {
     const q = query(collection(db, "ScheduleOptions"));
     const _ = onSnapshot(q, (querySnapshot) => {

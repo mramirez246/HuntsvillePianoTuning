@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router'
 import Navigation1 from './UTILITIES/Navigation1'
 import Footer1 from './UTILITIES/Footer1'
 import { BsFacebook, BsInstagram, BsTwitter, BsYelp } from 'react-icons/bs'
+import { firebase_SendContactForm } from '../../FIREBASE/firebase'
 
 export default function Contact1() {
     const navigate = useNavigate()
@@ -32,7 +33,21 @@ export default function Contact1() {
     // }
 
     const sendContactForm = () => {
+        const name = document.querySelector("#tbName").value
+const email = document.querySelector("#tbEmail").value
+const subject = document.querySelector("#ddSubject").value
+const message = document.querySelector("#taMessage").value
 
+const args = {
+    Name: name,
+    Email: email,
+    Subject: subject,
+    Message: message
+}
+        firebase_SendContactForm(args)
+        .then(() => {
+            alert("Your form has been submitted.")
+        })
     }
 
     const thing1 = "If you'd like to get in touch, start here using our form. Thanks!"
