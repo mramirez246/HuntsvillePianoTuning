@@ -12,7 +12,7 @@ import { firebase_SendContactForm } from '../../FIREBASE/firebase'
 export default function Contact1() {
     const navigate = useNavigate()
     const location = useLocation()
-    const currentLocation = location.pathname
+    const currentPath = location.pathname
 
     // function openNav() {
     //     if (window.innerWidth < 600) {

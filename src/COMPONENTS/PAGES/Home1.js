@@ -18,7 +18,7 @@ import img5 from '../../PHOTOS/about.jpg'
 export default function Home1() {
     const navigate = useNavigate()
     const location = useLocation()
-    const currentLocation = location.pathname
+    const currentPath = location.pathname
 
     // function openNav() {
     //     if (window.innerWidth < 600) {

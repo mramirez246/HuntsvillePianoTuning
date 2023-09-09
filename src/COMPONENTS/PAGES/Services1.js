@@ -15,7 +15,7 @@ import img4 from '../../PHOTOS/repair.jpg'
 export default function Services1() {
     const navigate = useNavigate()
     const location = useLocation()
-    const currentLocation = location.pathname
+    const currentPath = location.pathname
 
     // function openNav() {
     //     if (window.innerWidth < 600) {

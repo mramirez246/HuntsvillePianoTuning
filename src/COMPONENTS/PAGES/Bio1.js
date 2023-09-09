@@ -14,7 +14,7 @@ import img3 from '../../PHOTOS/family.jpg'
 export default function Bio1() {
     const navigate = useNavigate()
     const location = useLocation()
-    const currentLocation = location.pathname
+    const currentPath = location.pathname
 
     // function openNav() {
     //     if (window.innerWidth < 600) {
