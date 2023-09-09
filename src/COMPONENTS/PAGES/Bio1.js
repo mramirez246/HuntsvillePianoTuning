@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline, Meta } from '../Elements'
 import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
 import { c_businessName, c_routes } from '../../Constants'
@@ -50,6 +50,7 @@ export default function Bio1() {
 
     return (
         <div className='roboto'>
+            <Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath.replace("/","")) { return route; } return found; }, null)} />
             <Navigation1 />
             <Box width="" height="" radius="" paddingV="" paddingH="" classes="">
             <ResponsiveWrapper>

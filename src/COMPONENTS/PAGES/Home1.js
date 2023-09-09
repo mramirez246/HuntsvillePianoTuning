@@ -19,7 +19,7 @@ export default function Home1() {
     const navigate = useNavigate()
     const location = useLocation()
     const currentPath = location.pathname
-
+console.log(currentPath)
     // function openNav() {
     //     if (window.innerWidth < 600) {
     //         document.querySelector(".nav-body").style.width = "100vw";
@@ -44,7 +44,7 @@ export default function Home1() {
 
     return (
         <div className='roboto'>
-            <Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath) { return route; } return found; }, null)} />
+            <Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath.replace("/","")) { return route; } return found; }, null)} />
             <Box width="" height="" radius="" backgroundColor="#973228" paddingV="1.4em" paddingH="" classes="">
                 <Box width="fit-content" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="horizontal center gap">
                 {/* <Icon size="26px" color="white">

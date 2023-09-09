@@ -3,7 +3,7 @@
 		"prefix": "starter",
 		"body": [
 			"import React, { useEffect } from 'react'",
-			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, DatePicker, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Spacer, Text, TextArea, TextField, Underline } from '../Elements'",
+			"import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer,Meta, RadioButtons, DatePicker, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Spacer, Text, TextArea, TextField, Underline } from '../Elements'",
 			"import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'",
 			"import { FiMenu } from 'react-icons/fi'",
 			"import { c_businessName, c_routes } from '../../Constants'",
@@ -178,7 +178,7 @@
 	"Meta Component": {
 		"prefix": "meta",
 		"body": [
-			"<Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath) { return route; } return found; }, null)} />"
+			"<Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath.replace(\"/\",\"\")) { return route; } return found; }, null)} />"
 		],
 		"description": "Create a <Meta> component with dynamic route"
 	},

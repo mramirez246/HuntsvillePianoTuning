@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline } from '../Elements'
+import { Accordion, Border, Box, Button, Checkbox, DropDown, Grid, Icon, Image, Layer, RadioButtons, ResponsiveWrapper, PhoneScreen, TabletScreen, LaptopScreen, DesktopScreen, Text, TextArea, TextField, Underline, Meta } from '../Elements'
 import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from '../Components'
 import { FiMenu } from 'react-icons/fi'
 import { c_businessAddress, c_businessEmail, c_businessName, c_businessPhone, c_routes } from '../../Constants'
@@ -58,7 +58,9 @@ console.log(args)
     }, [])
 
     return (
+
         <div className='roboto'>
+            <Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath.replace("/","")) { return route; } return found; }, null)} />
             <Navigation1 />
             <Box width="" height="" radius="" paddingV="1em" paddingH="1em" classes="">
                 <Box width="fit-content" height="" radius="" paddingV="" paddingH="" classes="center">
