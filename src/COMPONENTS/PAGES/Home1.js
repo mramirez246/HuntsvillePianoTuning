@@ -44,6 +44,7 @@ export default function Home1() {
 
     return (
         <div className='roboto'>
+            <Meta route={c_routes.reduce((found, route) => { if (route.Route === currentPath) { return route; } return found; }, null)} />
             <Box width="" height="" radius="" backgroundColor="#973228" paddingV="1.4em" paddingH="" classes="">
                 <Box width="fit-content" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="horizontal center gap">
                 {/* <Icon size="26px" color="white">
@@ -74,7 +75,7 @@ export default function Home1() {
                         <Box width="" height="40vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                             <Image src={img3} alt="" radius="" classes="fill" />  
                         </Box>
-                        <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled technician, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes=""/>
+                        <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled piano tuner, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="1.5em" weight="400" color="" spacing="" lineHeight="" classes=""/>
                         <Box width="" height="40vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                             <Image src={img4} alt="" radius="" classes=" fill"/>
                         </Box>
@@ -97,7 +98,7 @@ export default function Home1() {
                         <Box width="" height="40vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                             <Image src={img3} alt="" radius="" classes="fill" />  
                         </Box>
-                        <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled technician, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="1.2em" weight="400" color="" spacing="" lineHeight="" classes=""/>
+                        <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled piano tuner, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="1.2em" weight="400" color="" spacing="" lineHeight="" classes=""/>
                         <Box width="" height="40vh" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                             <Image src={img4} alt="" radius="" classes=" fill"/>
                         </Box>
@@ -144,7 +145,7 @@ export default function Home1() {
                <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                <Grid orientation="row" template="" gap="1em" classes="">
 
-               <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled technician, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="2vw" weight="" color="" spacing="" lineHeight="" classes=""/>
+               <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled piano tuner, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="2vw" weight="" color="" spacing="" lineHeight="" classes=""/>
                </Grid>
                
                </Box>
@@ -196,7 +197,7 @@ export default function Home1() {
                     <Box width="" height="" radius="" backgroundColor="" paddingV="" paddingH="" classes="">
                     <Grid orientation="row" template="" gap="1em" classes="">
 
-                    <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled technician, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="1.5vw" weight="" color="" spacing="" lineHeight="" classes=""/>
+                    <Text text={`At Huntsville Piano Tuning, your musical journey takes center stage. We know that playing an in-tune piano makes you want to play more! As dedicated owner and skilled piano tuner, Miguel Ramirez believes that every musician should experience the sheer joy of playing their instrument at its finest. With meticulous attention to detail, Miguel is committed to escalating your musical experience. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey.`} fontSize="1.5vw" weight="" color="" spacing="" lineHeight="" classes=""/>
                     </Grid>
                     
                     </Box>

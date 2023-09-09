@@ -45,27 +45,27 @@ export const c_routes = [
     },
     {
         Route: "",
-        Title: `Home ${c_metaTitleSuffix}`,
+        Title: `Home | Huntsville Piano Tuning`,
         Element: <Home1 />,
-        Desc: ""
+        Desc: "As dedicated owner and skilled piano tuner, Miguel Ramirez believes every musician should experience playing their instrument at its finest. Book a tuning today and let Huntsville Piano Tuning help inspire your musical journey."
     },
     {
         Route: "about",
-        Title: `About ${c_metaTitleSuffix}`,
+        Title: `About `,
         Element: <About1 />,
         Desc: ""
     },
     {
         Route: "services",
-        Title: `Services ${c_metaTitleSuffix}`,
+        Title: `Pricing | Piano tuning and maintenance`,
         Element: <Services1 />,
-        Desc: ""
+        Desc: "Here are the costs for our professional piano tuning, cleaning, maintenance, and repair services for upright pianos and grand pianos. Emergency piano tuning is subject to availability and requires a quote."
     },
     {
         Route: "contact",
-        Title: `Contact Us ${c_metaTitleSuffix}`,
+        Title: `Contact Us`,
         Element: <Contact1 />,
-        Desc: ""
+        Desc: "We'd love to hear from you! This page gives several options for you to contact us about all your piano tuning needs. If you need an emergency piano tuning, please call for availability and to get a quote."
     },
     {
         Route: "gallery",
@@ -93,9 +93,9 @@ export const c_routes = [
     },
     {
         Route: "bio",
-        Title: `Bio ${c_metaTitleSuffix}`,
+        Title: `About | Miguel Ramirez, piano tuner.`,
         Element: <Bio1 />,
-        Desc: ""
+        Desc: "Miguel Ramirez embarked on his piano tuning journey at the age of 17, back in 1998, in his hometown of San Diego, CA. As a classically trained violinist, he brings his ear for precision to all his piano tunings"
     },
     {
         Route: "pricing",
