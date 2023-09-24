@@ -14,7 +14,7 @@ export const Box = ({ width, height, radius, backgroundColor, paddingV, paddingH
 
 export const Image = ({ src, alt, radius, classes }) => {
     return (
-        <img src={src} className={`${classes}`} alt={alt} style={{ borderRadius: `${radius}`, width: "100%", height: "100%" }} />
+        <img src={src} className={`${classes}`} alt={alt} style={{ borderRadius: `${radius}`, width: "100%", height: "100%" }} loading = "lazy" />
     );
 };
 
@@ -237,6 +237,9 @@ export const Grid = ({ children, template, orientation, gap, classes }) => {
         )
     }
 }
+// use for SEO of Pages 
+
+const imgURL = "https://huntsvillepianotuning.com/logo512.png"
 
 export const Meta = ({ route }) => {
     return (
@@ -244,11 +247,36 @@ export const Meta = ({ route }) => {
             <title>{route.Title}</title>
             <meta name="description" content={route.Desc} />
             <meta name="robots" content="index, follow" />
+        {/* crawl */}
+            <meta name="googlebot" content="index, follow" />
+            <meta name="bingbot" content="index, follow" />
+            <meta name="yandexbot" content="index, follow" />
+            <meta name="yandex" content="index, follow" />
+
             <link rel="canonical" href={`${c_mainURL}`} />
             <meta property="og:title" content={`${route.Title}`} />
             <meta property="og:description" content={route.Desc} />
             <meta property="og:url" content={`${c_mainURL}`} />
-            <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/logo.png`} />
+            <meta property="og:image" content={`${imgURL}`} />
+            <meta property="og:type" content="website" />
+            <meta property="og:locale" content="en_US" />
+            <meta property="og:site_name" content={`${c_mainURL}`} />
+
+            <meta name="twitter:title" content={`${route.Title}`} />
+            <meta name="twitter:description" content={route.Desc} />
+            <meta name="twitter:url" content={`${c_mainURL}`} />
+            <meta name="twitter:image" content={`${imgURL}`} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content={`${c_mainURL}`} />
+
+            <meta name="theme-color" content="#000000" />
+            <meta name="msapplication-TileColor" content="#000000" />
+            <meta name="msapplication-TileImage" content={`${imgURL}`} />
+            <meta name="msapplication-config" content={`${imgURL}`} />
+            <link rel="apple-touch-icon" sizes="180x180" href={`${imgURL}`} />
+            <link rel="icon" type="image/png" sizes="32x32" href={`${imgURL}`} />
+            <link rel="icon" type="image/png" sizes="16x16" href={`${imgURL}`} />
+
         </Helmet>
     )
 }
