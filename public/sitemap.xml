@@ -6,17 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://huntsvillepianotuning.com/page1</loc>
+    <loc>https://huntsvillepianotuning.com/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://huntsvillepianotuning.com/page2</loc>
+    <loc>https://huntsvillepianotuning.com/bio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://huntsvillepianotuning.com/page3</loc>
+    <loc>https://huntsvillepianotuning.com/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
